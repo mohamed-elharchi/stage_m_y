@@ -20,7 +20,14 @@
     <div class="text">
     <h2>Lycée Moulay Ismail     </h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi vel quos nisi harum minus neque repellendus? At, adipisci earum animi cumque tempora quae harum, in natus quod maxime, accusantium asperiores.</p>
+        <div>
+         <button class="but1">Lire Plus<i class="ri-arrow-right-up-fill"></i></i>
+         </button>
+         <button class="but2">Nouvelles<i class="ri-news-line"></i></button>
+        </div>
     
+          
+      
     </div>
 
     <button class="btn-left" id="prevBtn">&lt;</button>

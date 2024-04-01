@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var images = [
         '/images/269713058_427831879049165_7153829545722713717_n.jpeg',
-        '/images/pexels-pixabay-256417.jpg',
+        '/images/pexels-oleksandr-p-2831794.jpg',
         // Add more image URLs as needed
     ];
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function startSlideshow() {
-        setInterval(nextBackgroundImage, 3000); // Change every 3 seconds
+        setInterval(nextBackgroundImage, 4000); // Change every 3 seconds
     }
 
     startSlideshow(); // Start slideshow on page load

@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=Poppins:wght@300;700&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box; /* Correct value for box-sizing */
 }
 
-body{
-    font-family:'Bai Jamjuree', sans-serif,'Poppins', sans-serif;
+body {
+    font-family: 'Bai Jamjuree', sans-serif, 'Poppins', sans-serif;
+    padding-top: 60px; 
 }
+
 
 /*global tags */
 
@@ -27,14 +30,34 @@ h6{
     color: rgb(24,24,49);
 }
 /* navigation */
-nav{
+/*nav{
+    position: fixed;
+  width: 88%;
+    background-color: #fff;
      display: flex;
      flex-direction: row;
      justify-content: space-between;
      align-items: center;
      padding: 1vw 8vw;
      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15 );
+   
 }
+*/
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 8vw;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
 nav img{
     width: 150px;
     cursor: pointer;
@@ -84,11 +107,16 @@ nav .navigation ul li a:hover{
 
 /* Home */
 .text {
-    width: 400px;
-    background: linear-gradient(to right, rgba(255, 213, 202, 0.5), rgba(236, 236, 236, 0.5), rgba(254, 243, 208, 0.5), rgba(250, 217, 208, 0.5)); /* Set a transparent gradient background */
-    background-size: 400% 100%; /* Set the background size to cover the entire div */
-    animation: flowBackground 10s ease infinite; /* Apply the animation */
-  /*  border-radius: 15px; /* Add border radius */
+    width: 450px;
+    height: 280px;
+    background: linear-gradient(to right, rgba(255, 236, 236, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5),  rgba(255, 245, 245, 0.5)); /* Set a transparent gradient background */
+
+    animation: flowBackground 20s linear infinite; /* Adjust animation duration and timing function */
+    border-radius: 15px; /* Add border radius */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes flowBackground {
@@ -101,10 +129,12 @@ nav .navigation ul li a:hover{
 }
 
 
+
 #Home {
     position: relative;
+
     width: 100%;
-    height: 500px;
+    height: 550px;
     background-color: transparent; /* Set background color to transparent */
     background-image: url('/images/img1.jpg'); /* Set initial background image */
     transition: background-image 0.4s ease;  /* Default background image */
@@ -119,14 +149,53 @@ nav .navigation ul li a:hover{
 }
 
 #Home h2 {
-    font-size: 24px;
+
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 #Home p {
-    font-size: 16px;
+
+    font-size: 1rem;
     margin-bottom: 30px;
+}
+
+.but1{
+    background-color: transparent;
+    color:rgb(233, 137, 27);
+    border: 2px solid rgb(233, 137, 27);
+   width: 100px;
+   height:35px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+
+}
+.but1:hover{
+    background-color: rgb(233, 137, 27);
+    color: white;
+    border: rgb(255, 255, 255);
+}
+
+
+.but2{
+    background-color: transparent;
+    color:rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+   width: 100px;
+   height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+}
+.but2:hover{
+    background-color: black;
+    color: rgb(255, 255, 255);
 }
 
 
