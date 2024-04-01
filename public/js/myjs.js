@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
     var images = [
         '/images/269713058_427831879049165_7153829545722713717_n.jpeg',
