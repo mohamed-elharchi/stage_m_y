@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
             <div class="container">
                 <a class="navbar-brand text-white" href="#">Your Logo</a>
 
@@ -33,9 +33,12 @@
         </nav>
     </header>
 
-    <div class="container mt-5">
-        @yield('content')
-    </div>
+
+        <div class="container mt-5">
+            @yield('content')
+        </div>
+
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

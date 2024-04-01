@@ -3,7 +3,5 @@
     dashboard
 @endsection
 @section('content')
-    <h1>
-        dashboard page
-    </h1>
+<h1>general guard dashboard</h1>
 @endsection
