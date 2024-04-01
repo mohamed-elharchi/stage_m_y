@@ -5,7 +5,7 @@ use App\Http\Middleware\DirectorMiddleware;
 use App\Http\Middleware\GeneralGuardMiddleware;
 use App\Http\Middleware\TeacherMiddleware;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AccueilController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/accueil',[AccueilController::class, 'index']);
+
 
 Route::get('/login', [LoginController::class, 'indexLogin'])->name('login');
 
