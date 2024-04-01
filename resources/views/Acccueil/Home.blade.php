@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        }
+        
     </style>
 </head>
 
@@ -42,7 +42,7 @@
             <p>Découvrez toutes les fonctionnalités incroyables de notre lycée.</p>
             <div  class="carac-base" >
 
-                <div class="fea-box">         
+                <div class="fea-box">
                     <i class="ri-window-2-line"></i>
                     <h3>Système de suivi académique</h3>
                     <p>Suivez vos progrès académiques et consultez vos
@@ -50,14 +50,14 @@
                          à un système de suivi en ligne. "Massar"</p>
                 </div>
 
-                <div class="fea-box">       
-                    <i class="ri-calendar-check-line"></i>  
+                <div class="fea-box">
+                    <i class="ri-calendar-check-line"></i>
                     <h3>Activités parascolaires virtuelles</h3>
                     <p>SRejoignez des clubs et des activités parascolaires virtuelles
                          pour développer vos compétences et passions en dehors des cours.</p>
                 </div>
 
-                <div class="fea-box">         
+                <div class="fea-box">
                     <i class="ri-focus-mode"></i>
                     <h3>Orientation académique et professionnelle</h3>
                     <p>Bénéficiez de conseils et d'orientations académiques et professionnelles
@@ -65,7 +65,7 @@
                 </div>
             </div>
          </section>
-       
+
     @endsection
 
 
