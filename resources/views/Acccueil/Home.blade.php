@@ -18,7 +18,7 @@
 
  <section id="Home">
     <div class="text">
-    <h2>lycée Moulay Ismail     </h2>
+    <h2>Lycée Moulay Ismail     </h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi vel quos nisi harum minus neque repellendus? At, adipisci earum animi cumque tempora quae harum, in natus quod maxime, accusantium asperiores.</p>
     
     </div>
@@ -26,6 +26,9 @@
     <button class="btn-left" id="prevBtn">&lt;</button>
     <button class="btn-right" id="nextBtn">&gt;</button>
 </section>
+<div class="hh">
+
+</div>
 
 
 

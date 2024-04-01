@@ -20,14 +20,15 @@ scale=1">
     <img src="{{ asset('images/logo.png') }}" alt="Example">
     <div class="navigation">
         <ul>
-        <li><a href="#">Houm</a></li>
-        <li><a href="#">aboute</a></li>
-        <li><a href="#">blog</a></li>
-        <li><a href="#">courses</a></li>
-        <li><a href="#">contact</a></li>
-        <button class="butt1">Login</button>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Nouvelles</a></li>
+        <li><a href="#">Événements</a></li>
+        <li><a href="#">Calendriers</a></li>
+        <button class="butt1">Se connecter</button>
         </ul>
     </div>
+    
 </nav>
 
 
