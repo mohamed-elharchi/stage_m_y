@@ -43,14 +43,13 @@ h6{
    
 }
 */
-nav{
+nav {
     position: fixed;
     top: 0;
     left: 0;
-    width:100%;
+    width: 100%;
     background-color: #fff;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 1vw 8vw;
@@ -58,41 +57,56 @@ nav{
     z-index: 1000;
 }
 
-nav img{
+nav img {
     width: 150px;
     cursor: pointer;
-   
-
 }
+
 nav .navigation ul {
-display: flex;
-justify-content: flex-end;
-align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 nav .navigation ul li {
     list-style: none;
     margin-left: 30px;
-    
-}
-nav .navigation ul li a {
-   text-decoration: none;
-    color:  rgb(0, 0, 0);
-    font-size: 16px;
-    font-weight:500 ;
-    transition: 0.3s;
+    position: relative; 
 }
 
-nav .navigation ul li a:hover{
+nav .navigation ul li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; 
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(233, 137, 27);
+    transition: width 0.3s ease;
+}
+
+nav .navigation ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease; 
+}
+
+nav .navigation ul li:hover::after {
+    width: 100%;
+}
+
+nav .navigation ul li a:hover {
     color: rgb(233, 137, 27);
 }
 
 .butt1 {
     background-color: transparent;
-    color:rgb(233, 137, 27);
+    color: rgb(233, 137, 27);
     border: 2px solid rgb(233, 137, 27);
-   width: 110px;
-   height: 40px;
+    width: 110px;
+    height: 40px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -104,6 +118,12 @@ nav .navigation ul li a:hover{
     background-color: rgb(233, 137, 27);
     color: white;
 }
+
+
+
+
+
+
 
 /* Home */
 .text {

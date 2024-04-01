@@ -12,7 +12,7 @@
 <body> 
 
     <!-- navigation.+++++++++++++++++  -->
-<nav>
+<nav  id="main-nav">
     <img src="{{ asset('images/logo.png') }}" alt="Example">
     <div class="navigation">
         <ul>
