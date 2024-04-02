@@ -35,6 +35,12 @@ class NewsController extends Controller
             'title' => $request->input('title'),
             'paragraph' => $request->input('paragraph'),
         ]);
+        $requestData = $request->all();
+        $fileName = time().$request->file('photo')->getClientOriginalName();
+        $path = $request->file('photo')->storeAs('images', $fileName, 'public');
+        $requestData["photo"] = '/storage/'.$path;
+        News::create($requestData);
+        
 
         // Redirect back to the news index page with a success message
         return redirect()->route('news.index')->with('success', 'Nouvelle créée avec succès!');
