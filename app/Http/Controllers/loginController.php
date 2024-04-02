@@ -19,6 +19,7 @@ class LoginController extends Controller
     public function indexDashboard(){
         return view('dashboard.index');
     }
+ 
 
     public function login(Request $request)
     {
