@@ -27,16 +27,16 @@
                 {{-- <button class="butt1"><a href="{{ route('login') }}">Se connecter</a></button> --}}
                 @auth
                     @if (auth()->user()->role === 'director')
-                        <button class="butt1"><a href="{{ route('directorDashboard') }}">Dashboard</a></button>
+                        <button class="butt1"><a class="login" href="{{ route('directorDashboard') }}">Dashboard</a></button>
                     @elseif(auth()->user()->role === 'general_guard')
-                        <button class="butt1"><a href="{{ route('generalGuard_dashboard') }}">Dashboard</a></button>
+                        <button class="butt1"><a class="login" href="{{ route('generalGuard_dashboard') }}">Dashboard</a></button>
                     @elseif(auth()->user()->role === 'teacher')
-                        <button class="butt1"><a href="{{ route('teacherDashboard') }}">Dashboard</a></button>
+                        <button class="butt1"><a class="login" href="{{ route('teacherDashboard') }}">Dashboard</a></button>
                     @endif
-                    <button class="butt1"><a href="{{ route('logout') }}">Déconnecte</a></button>
+                    <button class="butt1"><a class="login" href="{{ route('logout') }}">Déconnecte</a></button>
                 @endauth
                 @guest
-                    <button class="butt1"><a href="{{ route('login') }}">Se connecter</a></button>
+                    <button class="butt1"><a  class="login" href="{{ route('login') }}">Se connecter</a></button>
                 @endguest
             </ul>
         </div>

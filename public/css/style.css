@@ -124,7 +124,13 @@ nav .navigation ul li a:hover {
     background-color: rgb(233, 137, 27);
     color: white;
 }
-
+ .login{
+    text-decoration: none;
+    color:rgb(233, 137, 27);
+ }
+ .login:hover{
+    color: #fff;
+ }
 
 
 
