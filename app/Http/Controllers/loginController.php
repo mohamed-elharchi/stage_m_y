@@ -57,7 +57,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-dd(hash::make("123"));
+        // dd(hash::make("ayoub1234"));
         if (Auth::attempt($credentials)) {
             // Authentication successful, determine the user's role and redirect accordingly
             $user = Auth::user();

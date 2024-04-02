@@ -18,7 +18,7 @@ use App\Http\Controllers\AccueilController;
 */
 
 
-Route::get('/accueil',[AccueilController::class, 'index']);
+Route::get('/accueil',[AccueilController::class, 'index'])->name('accueil');
 
 
 Route::get('/login', [LoginController::class, 'indexLogin'])->name('login');

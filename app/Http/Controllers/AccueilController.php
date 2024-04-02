@@ -10,4 +10,5 @@ class AccueilController extends Controller
     {
         return view('Acccueil.Home');
     }
+   
 }
