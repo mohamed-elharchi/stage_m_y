@@ -16,17 +16,16 @@
                     </button>
                     <button class="but2">Nouvelles<i class="ri-news-line"></i></button>
                 </div>
-
-
-
             </div>
 
             <button class="btn-left" id="prevBtn">&lt;</button>
             <button class="btn-right" id="nextBtn">&gt;</button>
         </section>
          <!--  caractéristiques -->
+
+
          <section id="caracter">
-            <h1>Nouvelles fonctionnalités</h2>
+            <h1>Nouvelles Fonctionnalités</h2>
             <p>Découvrez toutes les fonctionnalités incroyables de notre lycée.</p>
             <div  class="carac-base" >
 
@@ -53,6 +52,27 @@
                 </div>
             </div>
          </section>
+
+
+            <!--  filiers######### -->
+            <section id="filiere">
+                <h1>Découvrez Nos Filières</h1>
+                <p>Explorez les différentes voies éducatives offertes dans notre lycée pour trouver celle qui correspond le mieux à vos aspirations.</p>
+                 <div class="filier-box">
+                    
+                    <div filieres>
+                      <img src="images/pexels-edward-jenner-4033148.jpg" alt="">
+                      <div class="detais">
+                        <h6>Filière Sciences Mathématiques (SM)</h6>
+                         <p>Cette filière met l'accent sur l'étude des mathématiques et
+                             des sciences physiques, offrant aux étudiants une solide base
+                              théorique et pratique pour poursuivre des études supérieures en 
+                            ingénierie, sciences, ou mathématiques appliquées."</p>
+                            <i class="ri-ruler-line"></i>
+                      </div>
+                    </div>
+                 </div>
+            </section>
 
     @endsection
 
