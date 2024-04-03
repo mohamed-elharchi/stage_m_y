@@ -141,6 +141,8 @@
     <!-- end     filiers######### -->
 
 
+    
+
     <!-- comantairs######## -->
     <section id="Home" >
         <h1>Témoignages Des élèves</h1>
@@ -194,13 +196,13 @@
     
     <br>
     
-    <!-- Navigation dots -->
+   
     <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)" ></span>
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
         <span class="dot" onclick="currentSlide(4)"></span>
-        <!-- Add more dots as needed -->
+     
     </div>
     </section>
     
