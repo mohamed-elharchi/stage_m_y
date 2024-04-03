@@ -4,15 +4,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
-  
+
+
 }
 
 
-body,html {
+body,
+html {
     font-family: 'Bai Jamjuree', sans-serif, 'Poppins', sans-serif;
     padding-top: 60px;
-     margin: 0;
+    margin: 0;
     padding: 0;
 }
 
@@ -111,13 +112,15 @@ nav .navigation ul li a:hover {
     background-color: rgb(233, 137, 27);
     color: white;
 }
- .login{
+
+.login {
     text-decoration: none;
-    color:rgb(233, 137, 27);
- }
- .login:hover{
+    color: rgb(233, 137, 27);
+}
+
+.login:hover {
     color: #fff;
- }
+}
 
 
 
@@ -150,7 +153,7 @@ nav .navigation ul li a:hover {
 
 
 
-#Home {
+#acceuil {
     position: relative;
     width: 100%;
     height: 550px;
@@ -163,22 +166,22 @@ nav .navigation ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     margin-top: 50px;
-    margin-right: 0; 
-    margin-left: 0; 
-    padding-right: 0; 
-    padding-left: 0; 
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
 }
 
-#Home h2 {
+#acceuil h2 {
 
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-#Home p {
+#acceuil p {
 
     font-size: 1rem;
     margin-bottom: 30px;
@@ -240,18 +243,18 @@ nav .navigation ul li a:hover {
 }
 
 
-#Home .btn-left:hover,
-#Home .btn-right:hover {
+#acceuil .btn-left:hover,
+#acceuil .btn-right:hover {
     filter: brightness(1.3);
     background-color: rgb(233, 137, 27);
     color: white;
 }
 
-#Home .btn-left {
+#acceuil .btn-left {
     left: 20px;
 }
 
-#Home .btn-right {
+#acceuil .btn-right {
     right: 20px;
 
 }
@@ -267,17 +270,18 @@ nav .navigation ul li a:hover {
 
 
 
-#caracter{
- padding: 5vw 8vw 0 8vw;
- text-align: center;
+#caracter {
+    padding: 5vw 8vw 0 8vw;
+    text-align: center;
 
 }
-#caracter .carac-base{
+
+#caracter .carac-base {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 1rem;
     margin-top: 50px;
-  
+
 
 }
 
@@ -287,26 +291,26 @@ nav .navigation ul li a:hover {
     text-align: start;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#caracter .fea-box i{
+#caracter .fea-box i {
     font-size: 2.3rem;
     color: black;
 }
-#caracter .fea-box h3{
+
+#caracter .fea-box h3 {
     font-size: 1.2rem;
     font-weight: 600;
     color: black;
     padding: 13px 0 7px 0;
 
 }
-#caracter .fea-box p{
+
+#caracter .fea-box p {
     font-size: 1rem;
     font-weight: 400;
-    color: rgb(46,46,59)
-    
-
+    color: rgb(46, 46, 59)
 }
 
 /* filiers  */
@@ -314,7 +318,7 @@ nav .navigation ul li a:hover {
 #filiere {
     padding: 5vw 8vw;
     text-align: center;
-   
+
 }
 
 #filiere h1 {
@@ -333,7 +337,7 @@ nav .navigation ul li a:hover {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 1rem;
     margin-top: 20px;
-    
+
 }
 
 .filier-box {
@@ -341,7 +345,7 @@ nav .navigation ul li a:hover {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
+
 }
 
 .filier-box .imaf {
@@ -371,6 +375,127 @@ nav .navigation ul li a:hover {
 
 .filier-box i {
     font-size: 1.5rem;
-    margin-right: 5px; 
+    margin-right: 5px;
     color: rgb(233, 137, 27);
+}
+
+
+
+
+
+/*slid++++++++++++++*/
+
+#Home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+#Home h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#Home p {
+    font-size: 1rem;
+    margin-top: 17px;
+    margin-bottom: 10px;
+}
+
+.mySlides:first-child {
+    display: block;
+}
+
+
+
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.mySlides {
+    
+    display: none;
+    text-align: center;
+    padding: 20px;
+    width: 870px;
+    height: 250px;
+    background-color: rgb(240, 230, 219);
+
+}
+
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    padding: 10px;
+    margin-top: 10px;
+    color: black;
+    background-color: #ffffff;
+    font-size: 30px;
+    transition: 1s ease;
+    border: 1px solid;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+.rows {
+    font-size: 1.5rem;
+}
+
+/* Button hover effect */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+/* Style the navigation dots */
+.dot {
+    height: 15px;
+    width: 11px;
+    margin: 0 2px;
+    background-color: #afafaf;
+
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+/* Style the active dot */
+.active {
+    background-color: #151414;
+}
+
+.user {
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
 }

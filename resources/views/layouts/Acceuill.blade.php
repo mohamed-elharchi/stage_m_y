@@ -5,6 +5,12 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/myjs.js') }}"></script>
+
+ 
+
+
+
+
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <meta charset="utf-8">
 
