@@ -18,10 +18,10 @@ class LoginController extends Controller
         return view('dashboard.login');
     }
 
-    public function directorDashboard()
-    {
-        return view('dashboard.director_dashboard.index');
-    }
+    // public function directorDashboard()
+    // {
+    //     return view('layouts.directorLayout');
+    // }
     public function teacherDashboard()
     {
         return view('dashboard.teacher_dashboard.index');

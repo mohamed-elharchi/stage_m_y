@@ -6,6 +6,8 @@ use App\Http\Middleware\GeneralGuardMiddleware;
 use App\Http\Middleware\TeacherMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\directorController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,7 +35,17 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 // });
 
 Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () {
-    Route::get('/director/dashboard', [LoginController::class, "directorDashboard"])->name('directorDashboard');
+    Route::get('/director/dashboard', [directorController::class, "directorDashboard"])->name('directorDashboard');
+    Route::get('/director/dashboard/allGeneralGuard', [directorController::class, "index"])->name('general_guard');
+    Route::get('/director/dashboard/addGeneralGuard', [directorController::class, "create"])->name('addGeneralGuard');
+    Route::delete('/director/dashboard/deleteGeneralGuard/{id}', [directorController::class, "destroy"])->name('deleteGeneral_guard');
+    Route::get('/director/dashboard/updateGeneralGuard/{id}/edit', [directorController::class, "edit"])->name('updateGeneral_guard');
+    Route::patch('/director/dashboard/updateGeneralGuard/{id}', [directorController::class, "update"])->name('saveUpdate');
+    Route::post('/director/dashboard/saveGeneralGuard', [directorController::class, "store"])->name('saveGeneralGuard');
+    Route::get('/director/dashboard/filter', [directorController::class, "filter"])->name('filterGeneralGuards');
+
+
+
     Route::get('/generalGuard/dashboard', [LoginController::class, "generalGuardDashboard"])->name('generalGuard_dashboard');
 
 });
@@ -51,3 +63,8 @@ Route::group(['middleware' => ['auth', TeacherMiddleware::class]], function () {
     // Route::get('/teacher/dashboard', 'TeacherController@dashboard')->name('teacher.dashboard');
     Route::get('/teacher/dashboard', [LoginController::class, "teacherDashboard"])->name('teacherDashboard');
 });
+
+
+
+// director
+
