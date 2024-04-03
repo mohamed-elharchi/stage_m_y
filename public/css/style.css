@@ -95,31 +95,34 @@ nav .navigation ul li a:hover {
     color: rgb(233, 137, 27);
 }
 
-.butt1 {
+
+
+
+
+.login {
+    text-decoration: none;
+    color: rgb(233, 137, 27);
     background-color: transparent;
     color: rgb(233, 137, 27);
     border: 2px solid rgb(233, 137, 27);
-    width: 110px;
+    width: 130px;
     height: 40px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-left: 20px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+
 }
 
-.butt1:hover {
-    background-color: rgb(233, 137, 27);
-    color: white;
-}
 
-.login {
-    text-decoration: none;
-    color: rgb(233, 137, 27);
-}
 
 .login:hover {
     color: #fff;
+    background-color:rgb(233, 137, 27) ;
 }
 
 

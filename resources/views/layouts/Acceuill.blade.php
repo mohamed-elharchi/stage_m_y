@@ -42,7 +42,7 @@
                     <button class="butt1"><a class="login" href="{{ route('logout') }}">Déconnecte</a></button>
                 @endauth
                 @guest
-                    <button class="butt1"><a  class="login" href="{{ route('login') }}">Se connecter</a></button>
+                <a  class="login" href="{{ route('login') }}">Se connecter <i class="ri-login-circle-line"></i></a>
                 @endguest
             </ul>
         </div>
