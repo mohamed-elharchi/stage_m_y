@@ -141,7 +141,7 @@
     <!-- end     filiers######### -->
 
 
-    
+
 
     <!-- comantairs######## -->
     <section id="Home" >
@@ -154,8 +154,10 @@
                 <i class="ri-user-fill user" ></i>
                        
                 <p class="card__description">
-                   Passionate about development and design, 
-                   I carry out projects at the request of users.
+                    "J'ai trouvé au lycée un environnement propice à 
+                    l'épanouissement personnel et académique. Les opportunités
+                     offertes m'ont permis de développer mes talents et de m'engager
+                      activement dans la communauté scolaire."
                 </p>
                 <h3 class="card__name">Ayoub Jadani</h3>
             </div>
@@ -164,8 +166,9 @@
                 <i class="ri-user-fill user" ></i>
                        
                 <p class="card__description">
-                   Passionate about development and design, 
-                   I carry out projects at the request of users.
+                    "Le lycée m'a donné les outils nécessaires pour atteindre mes 
+                    objectifs académiques et professionnels. Les enseignants dévoués et les
+                     ressources disponibles ont été essentiels pour mon succès."
                 </p>
                 <h3 class="card__name">Mohamed Ezaitouni</h3>
             </div>
@@ -174,8 +177,10 @@
                 <i class="ri-user-fill user" ></i>
                        
                 <p class="card__description">
-                   Passionate about development and design, 
-                   I carry out projects at the request of users.
+                    "Les diverses activités parascolaires proposées par 
+                    le lycée ont enrichi mon expérience éducative. J'ai
+                     pu explorer mes passions et développer 
+                    des compétences transversales importantes pour mon avenir."
                 </p>
                 <h3 class="card__name">Zakaria El Baghdadi</h3>
             </div>
@@ -184,8 +189,10 @@
                 <i class="ri-user-fill user" ></i>
                        
                 <p class="card__description">
-                   Passionate about development and design, 
-                   I carry out projects at the request of users.
+                    "Mon parcours au lycée a été marqué par des rencontres 
+                    inspirantes et des défis stimulants. J'ai été soutenu par
+                     une communauté bienveillante qui m'a encouragé à
+                     viser l'excellence académique et à poursuivre mes rêves."
                 </p>
                 <h3 class="card__name">Mohamed El Harchi</h3>
             </div>
