@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.Acceuill')
 @section('title', 'lycce moulay ismail')
 
 @section('content')
