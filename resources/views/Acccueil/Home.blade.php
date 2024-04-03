@@ -160,6 +160,7 @@
                       activement dans la communauté scolaire."
                 </p>
                 <h3 class="card__name">Ayoub Jadani</h3>
+                <p class="time">2017/2020</p>
             </div>
 
             <div class="mySlides">
@@ -171,6 +172,7 @@
                      ressources disponibles ont été essentiels pour mon succès."
                 </p>
                 <h3 class="card__name">Mohamed Ezaitouni</h3>
+                <p class="time">2017/2020</p>
             </div>
 
             <div class="mySlides">
@@ -183,6 +185,7 @@
                     des compétences transversales importantes pour mon avenir."
                 </p>
                 <h3 class="card__name">Zakaria El Baghdadi</h3>
+                 <p class="time">2015/2019</p>
             </div>
 
             <div class="mySlides">
@@ -195,6 +198,7 @@
                      viser l'excellence académique et à poursuivre mes rêves."
                 </p>
                 <h3 class="card__name">Mohamed El Harchi</h3>
+                <p class="time">2017/2020</p>
             </div>
             <button class="prev" onclick="plusSlides(-1)"><i class="ri-arrow-left-s-line rows"></i></button>
             <button class="next" onclick="plusSlides(1)"><i class="ri-arrow-right-s-line rows" ></i></button>
