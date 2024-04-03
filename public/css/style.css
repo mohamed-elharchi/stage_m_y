@@ -414,7 +414,9 @@ nav .navigation ul li a:hover {
     display: block;
 }
 
-
+.time{
+    color: #8f8d8d;
+}
 
 
 .slideshow-container {
