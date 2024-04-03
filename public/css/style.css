@@ -455,27 +455,29 @@ nav .navigation ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    font-size: 4rem;
 
 }
 
 
 .prev {
-    left: 15px;
+    left: 30px;
 }
 
 .next {
-    right: 15px;
+    right: 30px;
 }
 
 .rows {
-    font-size: 1.5rem;
+    font-size: 4rem;
 }
 
 /* Button hover effect */
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
+  
+    color: rgb(233, 137, 27);
 }
 
 /* Style the navigation dots */
@@ -483,19 +485,17 @@ nav .navigation ul li a:hover {
     height: 15px;
     width: 11px;
     margin: 0 2px;
-    background-color: #afafaf;
-
+    background-color: rgb(221, 221, 221);
     display: inline-block;
     transition: background-color 0.6s ease;
     cursor: pointer;
 }
 
-/* Style the active dot */
 .active {
-    background-color: #151414;
+    background-color: rgb(0, 0, 0)
 }
 
 .user {
     color: rgb(0, 0, 0);
-    font-size: 3rem;
+    font-size: 4rem;
 }

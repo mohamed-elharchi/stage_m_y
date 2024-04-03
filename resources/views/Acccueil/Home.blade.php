@@ -143,8 +143,9 @@
 
     <!-- comantairs######## -->
     <section id="Home" >
-        <h1>des comantaires</h1>
-        <p>Explorez les différentes voies éducatives offertes dans notre lycée pour trouver celle qui correspond le mieux à
+        <h1>Témoignages Des élèves</h1>
+        <p>Découvrez les témoignages inspirants de nos élèves, illustrant la diversité des parcours éducatifs dans notre lycée.</p>
+
             vos aspirations.</p>
         <div class="slideshow-container">
             <div class="mySlides">
@@ -195,7 +196,7 @@
     
     <!-- Navigation dots -->
     <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(1)" ></span>
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
         <span class="dot" onclick="currentSlide(4)"></span>
