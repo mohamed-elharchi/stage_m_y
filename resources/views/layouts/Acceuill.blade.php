@@ -33,13 +33,13 @@
                 {{-- <button class="butt1"><a href="{{ route('login') }}">Se connecter</a></button> --}}
                 @auth
                     @if (auth()->user()->role === 'director')
-                        <button class="butt1"><a class="login" href="{{ route('directorDashboard') }}">Dashboard</a></button>
+                       <a class="login" href="{{ route('directorDashboard') }}">Dashboard</a>
                     @elseif(auth()->user()->role === 'general_guard')
-                        <button class="butt1"><a class="login" href="{{ route('generalGuard_dashboard') }}">Dashboard</a></button>
+                    <a class="login" href="{{ route('generalGuard_dashboard') }}">Dashboard</a>
                     @elseif(auth()->user()->role === 'teacher')
-                        <button class="butt1"><a class="login" href="{{ route('teacherDashboard') }}">Dashboard</a></button>
+                        <a class="login" href="{{ route('teacherDashboard') }}">Dashboard</a>
                     @endif
-                    <button class="butt1"><a class="login" href="{{ route('logout') }}">Déconnecte</a></button>
+                       <a class="login" href="{{ route('logout') }}">Déconnecte</a>
                 @endauth
                 @guest
                 <a  class="login" href="{{ route('login') }}">Se connecter <i class="ri-login-circle-line"></i></a>
