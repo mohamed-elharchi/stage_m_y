@@ -20,6 +20,8 @@
         <button class="btn-left" id="prevBtn">&lt;</button>
         <button class="btn-right" id="nextBtn">&gt;</button>
     </section>
+    <!-- end  Home -->
+
     <!--  caractéristiques -->
 
 
@@ -52,7 +54,7 @@
             </div>
     </section>
 
-    <!-- end.     caractéristiques -->
+    <!-- end.  caractéristiques -->
 
 
     <!--  filiers######### -->
@@ -138,89 +140,93 @@
             </div>
         </div>
     </section>
-    <!-- end     filiers######### -->
+    <!-- end   filiers######### -->
 
 
 
 
-    <!-- comantairs######## -->
-    <section id="Home" >
+    <!-- comantairs.   -->
+    <section id="Home">
         <h1>Témoignages Des élèves</h1>
-        <p>Découvrez les témoignages inspirants de nos élèves, illustrant la diversité des parcours éducatifs dans notre lycée.</p>
+        <p>Découvrez les témoignages inspirants de nos élèves, illustrant la diversité des parcours éducatifs dans notre
+            lycée.</p>
 
-            vos aspirations.</p>
+        vos aspirations.</p>
         <div class="slideshow-container">
             <div class="mySlides">
-                <i class="ri-user-fill user" ></i>
-                       
+                <i class="ri-user-fill user"></i>
+
                 <p class="card__description">
-                    "J'ai trouvé au lycée un environnement propice à 
+                    "J'ai trouvé au lycée un environnement propice à
                     l'épanouissement personnel et académique. Les opportunités
-                     offertes m'ont permis de développer mes talents et de m'engager
-                      activement dans la communauté scolaire."
+                    offertes m'ont permis de développer mes talents et de m'engager
+                    activement dans la communauté scolaire."
                 </p>
                 <h3 class="card__name">Ayoub Jadani</h3>
                 <p class="time">2017/2020</p>
             </div>
 
             <div class="mySlides">
-                <i class="ri-user-fill user" ></i>
-                       
+                <i class="ri-user-fill user"></i>
+
                 <p class="card__description">
-                    "Le lycée m'a donné les outils nécessaires pour atteindre mes 
+                    "Le lycée m'a donné les outils nécessaires pour atteindre mes
                     objectifs académiques et professionnels. Les enseignants dévoués et les
-                     ressources disponibles ont été essentiels pour mon succès."
+                    ressources disponibles ont été essentiels pour mon succès."
                 </p>
                 <h3 class="card__name">Mohamed Ezaitouni</h3>
                 <p class="time">2017/2020</p>
             </div>
 
             <div class="mySlides">
-                <i class="ri-user-fill user" ></i>
-                       
+                <i class="ri-user-fill user"></i>
+
                 <p class="card__description">
-                    "Les diverses activités parascolaires proposées par 
+                    "Les diverses activités parascolaires proposées par
                     le lycée ont enrichi mon expérience éducative. J'ai
-                     pu explorer mes passions et développer 
+                    pu explorer mes passions et développer
                     des compétences transversales importantes pour mon avenir."
                 </p>
                 <h3 class="card__name">Zakaria El Baghdadi</h3>
-                 <p class="time">2015/2019</p>
+                <p class="time">2015/2019</p>
             </div>
 
             <div class="mySlides">
-                <i class="ri-user-fill user" ></i>
-                       
+                <i class="ri-user-fill user"></i>
+
                 <p class="card__description">
-                    "Mon parcours au lycée a été marqué par des rencontres 
+                    "Mon parcours au lycée a été marqué par des rencontres
                     inspirantes et des défis stimulants. J'ai été soutenu par
-                     une communauté bienveillante qui m'a encouragé à
-                     viser l'excellence académique et à poursuivre mes rêves."
+                    une communauté bienveillante qui m'a encouragé à
+                    viser l'excellence académique et à poursuivre mes rêves."
                 </p>
                 <h3 class="card__name">Mohamed El Harchi</h3>
                 <p class="time">2017/2020</p>
             </div>
             <button class="prev" onclick="plusSlides(-1)"><i class="ri-arrow-left-s-line rows"></i></button>
-            <button class="next" onclick="plusSlides(1)"><i class="ri-arrow-right-s-line rows" ></i></button>
+            <button class="next" onclick="plusSlides(1)"><i class="ri-arrow-right-s-line rows"></i></button>
         </div>
-       
-    
-    <br>
-    
-   
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)" ></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-     
-    </div>
+
+
+        <br>
+
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+
+        </div>
     </section>
-    
-    
-    <!-- comantairs######## -->
 
 
+    <!--end  comantairs-->
+
+    <!-- contact -->
+
+
+     <!--  end contact -->
 
 
 

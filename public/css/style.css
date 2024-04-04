@@ -36,7 +36,7 @@ h6 {
     color: rgb(24, 24, 49);
 }
 
-
+/* nsvbar ++++++++++++++++ */
 nav {
     position: fixed;
     top: 0;
@@ -96,9 +96,6 @@ nav .navigation ul li a:hover {
 }
 
 
-
-
-
 .login {
     text-decoration: none;
     color: rgb(233, 137, 27);
@@ -124,13 +121,10 @@ nav .navigation ul li a:hover {
     color: #fff;
     background-color:rgb(233, 137, 27) ;
 }
+/* end navbar */
 
 
-
-
-
-
-/* Home */
+/* Home ++++++++++++++++*/
 .text {
     width: 450px;
     height: 280px;
@@ -265,13 +259,10 @@ nav .navigation ul li a:hover {
 .hh {
     height: 1000px;
 }
+  
+/* end home */
 
-
-/* caractéristiques */
-
-
-
-
+/* caractéristiques ++++++++++++++++++++++ */
 
 #caracter {
     padding: 5vw 8vw 0 8vw;
@@ -315,8 +306,10 @@ nav .navigation ul li a:hover {
     font-weight: 400;
     color: rgb(46, 46, 59)
 }
+/* end caracter*/
 
-/* filiers  */
+
+/* filiers +++++++++++++++++++ */
 
 #filiere {
     padding: 5vw 8vw;
@@ -382,11 +375,11 @@ nav .navigation ul li a:hover {
     color: rgb(233, 137, 27);
 }
 
+/*s end filier*/
 
 
 
-
-/*slid++++++++++++++*/
+/*slid+++++++++++++++++++*/
 
 #Home {
     width: 100%;
@@ -478,14 +471,12 @@ nav .navigation ul li a:hover {
     font-size: 4rem;
 }
 
-/* Button hover effect */
 .prev:hover,
 .next:hover {
   
     color: rgb(233, 137, 27);
 }
 
-/* Style the navigation dots */
 .dot {
     height: 15px;
     width: 11px;
@@ -504,3 +495,12 @@ nav .navigation ul li a:hover {
     color: rgb(0, 0, 0);
     font-size: 4rem;
 }
+
+/* end slid */
+
+/* contact ++++++++++++++++++++++ */
+
+
+
+
+/* end cintact */
