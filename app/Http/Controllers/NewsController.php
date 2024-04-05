@@ -30,7 +30,6 @@ class NewsController extends Controller
             'paragraph' => 'required|string',
         ]);
 
-        // Store the image using Laravel's store method
         $input = $request->all();
 
         if ($image = $request->file('image')) {
@@ -42,7 +41,6 @@ class NewsController extends Controller
 
         News::create($input);
 
-        // Redirect back to the news index page with a success message
         return redirect()->route('news.index')->with('success', 'Nouvelle créée avec succès!');
     }
 
@@ -59,7 +57,7 @@ class NewsController extends Controller
             'paragraph' => 'required|string',
         ]);
 
-        $news = News::findOrFail($id); 
+        $news = News::findOrFail($id);
 
         $input = $request->all();
 
@@ -72,7 +70,7 @@ class NewsController extends Controller
             unset($input['image']);
         }
 
-        $news->update($input); // Update the news record
+        $news->update($input); 
         return redirect()->route('news.index')->with('success', 'Nouvelle mise à jour avec succès!');
     }
 
