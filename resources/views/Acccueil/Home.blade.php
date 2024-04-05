@@ -205,19 +205,20 @@
             </div>
             <button class="prev" onclick="plusSlides(-1)"><i class="ri-arrow-left-s-line rows"></i></button>
             <button class="next" onclick="plusSlides(1)"><i class="ri-arrow-right-s-line rows"></i></button>
+     
+      
+      
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+    
+            </div>
+      
         </div>
 
-
-        <br>
-
-
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-
-        </div>
+   
     </section>
 
 
