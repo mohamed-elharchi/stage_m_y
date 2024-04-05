@@ -1,12 +1,28 @@
 @extends('layouts.dashboard1')
 
 @section('content')
-    <div class="container">
-        <h1>Liste des utilisations du temps</h1>
+   
+        <div class="container">
 
-        <div class="mb-3">
-            <a href="{{ route('utilisations.create') }}" class="btn btn-success">Ajouter</a>
-        </div>
+    <div class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-wrapper">
+
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-6 p-0 flex justify-content-lg-start justify-content-center">
+                                <h4 class="ml-lg-4">Liste des utilisations du temps</h4>
+                            </div>
+                            <div class="col-sm-6 p-0 d-flex justify-content-end">
+                                <a href="{{ route('utilisations.create') }}" class="btn " style="background-color: #db751b; color: #fff;">
+                                    <ion-icon name="add-outline"></ion-icon>
+                                    <span>Ajouter des dtemps</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
         <table class="table">
             <thead>
