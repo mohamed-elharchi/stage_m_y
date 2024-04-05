@@ -68,7 +68,7 @@
 
 </head>
 
-<body class="bod">
+<body >
 
     <div class="containerr">
         <div class="navigation">
@@ -83,22 +83,22 @@
                 <li>
                     <a href="{{ route('general_guard') }}">
                         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                        <span class="title">Responsable</span>
+                        <span class="title">Responsables</span>
                     </a>
                 </li>
                 <li>
-                    <a href="route('displayMatieres')">
+                    <a href="{{ route('displayMatieres') }}">
                         <span class="icon"><ion-icon name="archive-outline"></ion-icon></span>
                         <span class="title">Matieres</span>
                     </a>
                 </li>
-               {{--  <li>
-                    <a href="" id="add-to" class="Add-P-btn">
+                <li>
+                    <a href="{{ route('showDepartements') }}" id="add-to" class="Add-P-btn">
                         <span class="icon"><ion-icon name="bag-add-outline"></ion-icon></span>
-                        <span class="title">Add Product</span>
+                        <span class="title">departements</span>
                     </a>
                 </li>
-                <li>
+               {{-- <li>
                     <a href="" id="add-too" class="Add-o-btn">
                         <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
                         <span class="title" id="offrr">Add offer</span>

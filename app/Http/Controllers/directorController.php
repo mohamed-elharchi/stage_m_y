@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\d_u_request;
+use App\Http\Requests\departementRequest;
 use App\Http\Requests\directorRequest;
+use App\Http\Requests\matiereRequest;
 use App\Models\Admin;
+use App\Models\departement;
+use App\Models\matiere;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class directorController extends Controller
@@ -22,6 +27,56 @@ class directorController extends Controller
     {
         return view('layouts.directorLayout');
     }
+    public function displayMatieres()
+    {
+        $matieres = matiere::all();
+        return view('dashboard.director_dashboard.indexMatieres', compact('matieres'));
+    }
+    public function showCreateMatiere()
+    {
+
+        return view('dashboard.director_dashboard.addMatiere');
+    }
+    public function saveMatiere(matiereRequest $request)
+    {
+
+        $existingMatiere = Matiere::where('name', $request->input('name'))->first();
+
+        if ($existingMatiere) {
+            return redirect()->route('displayMatieres')->with('success', 'La matière existe déjà');
+        }
+
+        $matiere = new Matiere();
+        $matiere->name = $request->input('name');
+        $matiere->save();
+        return redirect()->route('displayMatieres')->with('success', 'Registration successful');
+    }
+
+    public function showDepartements()
+    {
+        $departements = departement::all();
+        return view('dashboard.director_dashboard.indexDepartement', compact('departements'));
+    }
+    public function addDepartement()
+    {
+        return view('dashboard.director_dashboard.addDepartement');
+    }
+    public function saveDepartement(departementRequest $request)
+    {
+        $existingDepartement = departement::where('name', $request->input('name'))->first();
+
+        if ($existingDepartement) {
+            return redirect()->route('showDepartements')->with('success', 'La departement existe déjà');
+        }
+
+        $matiere = new departement();
+        $matiere->name = $request->input('name');
+        $matiere->save();
+        return redirect()->route('showDepartements')->with('success', 'Registration successful');
+    }
+
+
+
     public function filter(Request $request)
     {
         $role = $request->input('role');
@@ -118,5 +173,17 @@ class directorController extends Controller
         $generalGuard = Admin::findOrFail($id);
         $generalGuard->delete();
         return redirect()->route('general_guard')->with('success', 'La garde générale a été supprimée avec succès');
+    }
+    public function destroyMatiere($id)
+    {
+        $matiere = matiere::findOrFail($id);
+        $matiere->delete();
+        return redirect()->route('displayMatieres')->with('success', 'matiere a été supprimée avec succès');
+    }
+    public function destroyDepartement($id)
+    {
+        $departement = departement::findOrFail($id);
+        $departement->delete();
+        return redirect()->route('showDepartements')->with('success', 'Departements a été supprimée avec succès');
     }
 }

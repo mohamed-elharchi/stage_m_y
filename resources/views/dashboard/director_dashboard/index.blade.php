@@ -1,6 +1,6 @@
 @extends('layouts.directorLayout')
 @section('title')
-garde général
+Responsables
 @endsection
 @section('content')
 
