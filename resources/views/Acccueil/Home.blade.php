@@ -17,8 +17,8 @@
             </div>
         </div>
 
-        <button class="btn-left" id="prevBtn">&lt;</button>
-        <button class="btn-right" id="nextBtn">&gt;</button>
+        <button class="btn-left" id="prevBtn"><i class="ri-arrow-left-s-line"></i></button>
+        <button class="btn-right" id="nextBtn"><i class="ri-arrow-right-s-line"></i></button>
     </section>
     <!-- end  Home -->
 
