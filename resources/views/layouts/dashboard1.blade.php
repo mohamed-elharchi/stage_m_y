@@ -65,6 +65,15 @@
                 <div class="toggleer" id="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
+                <div class="search">
+
+                </div>
+                <div class="user">
+                    <button type="submit" class="btn btn-primary">
+                        <a href="{{ route('general_guard') }}" class="btn btn-link text-white"
+                            style="text-decoration: none;">Dashboard</a>
+                    </button>
+                </div>
 
 
 

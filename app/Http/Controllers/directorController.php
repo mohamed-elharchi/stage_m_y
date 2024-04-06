@@ -22,11 +22,14 @@ class directorController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-
-    public function directorDashboard()
-    {
-        return view('layouts.directorLayout');
-    }
+    //  public function generalGuardDashboard()
+    // {
+    //     return view('dashboard.director_dashboard.index');
+    // }
+    // public function directorDashboard()
+    // {
+    //     return view('dashboard.director_dashboard.index');
+    // }
     public function displayMatieres()
     {
         $matieres = matiere::all();

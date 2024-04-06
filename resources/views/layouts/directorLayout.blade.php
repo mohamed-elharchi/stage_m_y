@@ -68,7 +68,7 @@
 
 </head>
 
-<body >
+<body>
 
     <div class="containerr">
         <div class="navigation">
@@ -83,10 +83,18 @@
                     </a> --}}
                 </li>
                 <li>
-                    <a href="{{ route('general_guard') }}">
+                    {{-- <a href="{{ route('general_guard') }}">
                         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                         <span class="title">Responsables</span>
-                    </a>
+                    </a> --}}
+                    @auth
+                        @if (auth()->user()->role === 'director')
+                            <a href="{{ route('general_guard') }}">
+                                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                                <span class="title">Responsables</span>
+                            </a>
+                        @endif
+                    @endauth
                 </li>
                 <li>
                     <a href="{{ route('displayMatieres') }}">
@@ -100,7 +108,19 @@
                         <span class="title">departements</span>
                     </a>
                 </li>
-               {{-- <li>
+                <li>
+                    <a href="{{ route('logout') }}" id="add-to" class="Add-P-btn">
+                        <span class="icon"><ion-icon name="bag-add-outline"></ion-icon></span>
+                        <span class="title">Déconnecte</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('accueil') }}" id="add-to" class="Add-P-btn">
+                        <span class="icon"><ion-icon name="bag-add-outline"></ion-icon></span>
+                        <span class="title">sitel web </span>
+                    </a>
+                </li>
+                {{-- <li>
                     <a href="" id="add-too" class="Add-o-btn">
                         <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
                         <span class="title" id="offrr">Add offer</span>
@@ -134,15 +154,13 @@
                 </div>
 
                 <div class="search">
-                    <form action="" method="post">
-                        <label for="">
-                            <input type="text" placeholder="Search by title or type" id="searchInput">
-                            <ion-icon name="search-outline"></ion-icon>
-                        </label>
-                    </form>
+
                 </div>
                 <div class="user">
-                    <ion-icon name="cart-outline"></ion-icon>
+                    <button type="submit" class="btn btn-primary">
+                        <a href="{{ route('siteDashboard') }}" class="btn btn-link text-white"
+                            style="text-decoration: none;">Site Dashboard</a>
+                    </button>
                 </div>
             </div>
 
