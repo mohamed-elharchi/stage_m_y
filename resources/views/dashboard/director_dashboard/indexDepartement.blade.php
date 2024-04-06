@@ -33,7 +33,7 @@ Matieres
         <tr>
             <th>Numero</th>
             <th>Matieres</th>
-            <th>action</th>
+            <th>actionn</th>
         </tr>
         @foreach ($departements as $index => $departement)
             <tr>
