@@ -141,7 +141,7 @@ body {
     pointer-events: none;
 }
 
-/* main css */
+
 
 .main {
     position: absolute;
@@ -178,10 +178,7 @@ body {
     cursor: pointer;
 }
 
-.search {
-    display: flex;
-    margin: 0 10px;
-}
+
 
 .search label {
     position: relative;
