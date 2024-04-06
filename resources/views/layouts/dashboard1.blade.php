@@ -20,8 +20,7 @@
             <ul>
                 <li>
 
-                   <img src="{{ asset('img/logo.png') }}" alt="" width="70%"
-                                height="70%">
+                    <img src="{{ asset('img/logo.png') }}" alt="" width="70%" height="70%">
 
 
                 </li>
