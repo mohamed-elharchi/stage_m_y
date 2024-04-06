@@ -8,7 +8,12 @@ use App\Http\Controllers\UtilisationDuTempsController;
 
 
 Route::resource('news', NewsController::class);
-Route::resource('utilisations', UtilisationDuTempsController::class);
+Route::resource('utilisations', UtilisationDuTempsController::class);:
+
+
+
+
+
 
 
 
