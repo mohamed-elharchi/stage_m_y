@@ -57,11 +57,76 @@
 
 
 
-    <div>
-        <h1>footer</h1>
-    </div>
+
+         <!-- footer -->
+
+         <footer class="footer-distributed">
+
+            <div class="footer-left">
+                <img src="{{ asset('images/logo2.png') }}" alt="Example" class="logo2">
+    
+                <p class="footer-links">
+                    <a href="#">Accueil</a>
+                    
+                    <a href="#">À propos</a>
+                    
+                    <a href="#">Nouvelles</a>
+                    
+                    <a href="#">Calendriers</a>
+                </p>
+    
+                <p class="footer-company-name">Copyright © 2024 (JHBZ) <strong>Lycée Moulay Ismail </strong> Tous Droits Réservés</p>
+            </div>
+    
+            <div class="footer-center">
+                <div>
+                   <p>
+                    Envoie-nous un message E-Mail
+                    <i class="ri-message-2-line"></i>
+                   </p>
+                   
+                </div>
+    
+                <div>
+                  
+                    <p>   <i class="ri-phone-line"></i> +212 706523757</p>
+                </div>
+                <div>
+                   
+                    <p> <i class="ri-mail-line"></i> <a href="mailto:moulay_ismail@gmail.com">moulay_ismail@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span><i class="ri-attachment-2"></i> Mr le Directeur</span>
+                    <strong>Lycée Moulay Ismail</strong> Bienvenue à notre lycée ! Nous sommes ravis de vous accueillir dans notre 
+                    communauté éducative dynamique où chaque élève est encouragé à exceller et à s'épanouir. Ensemble, explorons
+                     de nouveaux horizons, cultivons le savoir et construisons un avenir prometteur.
+                </p>
+                <div class="footer-icons">
+                    <a href="#"><i class="ri-facebook-box-line"></i></a>
+                    <a href="#"><i class="ri-linkedin-box-line"></i></a>
+                    <a href="#"><i class="ri-youtube-line"></i></a>
+                </div>
+            </div>
+        </footer>
 
 
+
+        
+           <!--  end footer-->
+          
+
+           <script>
+            const scrollUp =() =>{
+            const scrollUp =document.getElementById('scroll-up')
+             this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+                                  :scrollUp.classList.remove('show-scroll')
+           }
+        
+        window.addEventListener('scroll',scrollUp)
+        </script>
+          
 
 </body>
 

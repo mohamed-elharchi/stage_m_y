@@ -148,14 +148,11 @@
     <!-- comantairs.   -->
     <section id="Home">
         <h1>Témoignages Des élèves</h1>
-        <p>Découvrez les témoignages inspirants de nos élèves, illustrant la diversité des parcours éducatifs dans notre
-            lycée.</p>
+        <p>Découvrez les témoignages inspirants de nos élèves, illustrant la diversité des parcours éducatifs dans notre lycée.</p>
 
-        vos aspirations.</p>
         <div class="slideshow-container">
             <div class="mySlides">
                 <i class="ri-user-fill user"></i>
-
                 <p class="card__description">
                     "J'ai trouvé au lycée un environnement propice à
                     l'épanouissement personnel et académique. Les opportunités
@@ -168,7 +165,6 @@
 
             <div class="mySlides">
                 <i class="ri-user-fill user"></i>
-
                 <p class="card__description">
                     "Le lycée m'a donné les outils nécessaires pour atteindre mes
                     objectifs académiques et professionnels. Les enseignants dévoués et les
@@ -180,7 +176,6 @@
 
             <div class="mySlides">
                 <i class="ri-user-fill user"></i>
-
                 <p class="card__description">
                     "Les diverses activités parascolaires proposées par
                     le lycée ont enrichi mon expérience éducative. J'ai
@@ -193,7 +188,6 @@
 
             <div class="mySlides">
                 <i class="ri-user-fill user"></i>
-
                 <p class="card__description">
                     "Mon parcours au lycée a été marqué par des rencontres
                     inspirantes et des défis stimulants. J'ai été soutenu par
@@ -203,27 +197,26 @@
                 <h3 class="card__name">Mohamed El Harchi</h3>
                 <p class="time">2017/2020</p>
             </div>
-            <button class="prev" onclick="plusSlides(-1)"><i class="ri-arrow-left-s-line rows"></i></button>
-            <button class="next" onclick="plusSlides(1)"><i class="ri-arrow-right-s-line rows"></i></button>
+
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
      
-      
-      
             <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
                 <span class="dot" onclick="currentSlide(4)"></span>
-    
             </div>
-      
         </div>
-
-   
     </section>
 
 
-    <!--end  comantairs-->
+   
+ 
 
+
+    <!--end  comantairs-->
+    <button id="scrollToTopBtn">Scroll To Top</button>
     <!-- contact -->
    <section id="contact">
     <h1>Envoie-nous un message</h1>
@@ -280,9 +273,15 @@
      <!--  end contact -->
 
 
+         <!-- Button to scroll back to top -->
+         <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-s-line"></i>
+          </a>
 
-
+        
+  
 @endsection
+
 
 
 
