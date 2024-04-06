@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/myjs.js') }}"></script>
 
- 
+
 
 
 
@@ -33,7 +33,7 @@
                 {{-- <button class="butt1"><a href="{{ route('login') }}">Se connecter</a></button> --}}
                 @auth
                     @if (auth()->user()->role === 'director')
-                       <a class="login" href="{{ route('directorDashboard') }}">Dashboard</a>
+                       <a class="login" href="{{ route('general_guard') }}">Dashboard</a>
                     @elseif(auth()->user()->role === 'general_guard')
                     <a class="login" href="{{ route('generalGuard_dashboard') }}">Dashboard</a>
                     @elseif(auth()->user()->role === 'teacher')

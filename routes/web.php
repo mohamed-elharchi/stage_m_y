@@ -36,7 +36,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 // });
 
 Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () {
-    Route::get('/director/dashboard', [directorController::class, "directorDashboard"])->name('directorDashboard');
+    // Route::get('/director/dashboard', [directorController::class, "directorDashboard"])->name('directorDashboard');
     Route::get('/director/dashboard/allGeneralGuard', [directorController::class, "index"])->name('general_guard');
     Route::get('/director/dashboard/addGeneralGuard', [directorController::class, "create"])->name('addGeneralGuard');
 

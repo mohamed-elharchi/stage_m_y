@@ -74,11 +74,13 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="{{ route('directorDashboard') }}">
+                    <img src="{{ asset('img/logo.png') }}" alt="" width="70%" height="70%">
+
+                    {{-- <a href="{{ route('directorDashboard') }}">
                         <span class="logoo"><img src="{{ asset('images/logo.png') }}" alt="" width="100%"
                                 height="70%"></span>
                         <span class="title">Dashboard</span>
-                    </a>
+                    </a> --}}
                 </li>
                 <li>
                     <a href="{{ route('general_guard') }}">

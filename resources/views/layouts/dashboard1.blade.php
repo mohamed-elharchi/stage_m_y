@@ -19,10 +19,7 @@
         <div class="navigation">
             <ul>
                 <li>
-
                     <img src="{{ asset('img/logo.png') }}" alt="" width="70%" height="70%">
-
-
                 </li>
                 <li>
                     <a href="{{ url('/news') }}">
