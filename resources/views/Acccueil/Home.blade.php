@@ -216,7 +216,7 @@
 
 
     <!--end  comantairs-->
-    <button id="scrollToTopBtn">Scroll To Top</button>
+  
     <!-- contact -->
    <section id="contact">
     <h1>Envoie-nous un message</h1>
