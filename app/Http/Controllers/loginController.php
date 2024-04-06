@@ -61,7 +61,7 @@ class LoginController extends Controller
                 return redirect()->route('general_guard')->with("success", "You have been logged in successfully");
 
             } elseif ($user->role === 'general_guard') {
-                return redirect()->route('general_guard')->with("success", "You have been logged in successfully");
+                return redirect()->route('displayMatieres')->with("success", "You have been logged in successfully");
 
             } elseif ($user->role === 'teacher') {
                 return redirect()->route('teacherDashboard')->with("success", "You have been logged in successfully");
