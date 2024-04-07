@@ -18,20 +18,20 @@
     <!-- navigation.+++++++++++++++++  -->
     <nav id="main-nav">
         
-        <div class="navigation">
-            <img src="{{ asset('images/logo.png') }}" alt="Example">
-            <ul>
-                <i id="menu-close" class="ri-close-fill"></i>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Nouvelles</a></li>
-                <li><a href="#">Calendriers</a></li>
-              
-            </ul>
-          
+        <div class="navigation2">
+            <img src="{{ asset('images/logo.png') }}" alt="Example">       
         </div>
-       <div class="navigation2"> 
-        
+
+       <div class="navigation"> 
+        <ul>
+            <i id="menu-close" class="ri-close-fill"></i>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Nouvelles</a></li>
+            <li><a href="#">Calendriers</a></li>
+          
+        </ul>
+
         @auth
         @if (auth()->user()->role === 'director')
             <a class="login" href="{{ route('directorDashboard') }}">Dashboard</a>
