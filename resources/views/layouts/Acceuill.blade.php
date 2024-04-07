@@ -89,7 +89,7 @@
     
                 <div>
                   
-                    <p>   <i class="ri-phone-line"></i> +212 706523757</p>
+                    <p> <i class="ri-phone-line"></i> +212 706523757</p>
                 </div>
                 <div>
                    
@@ -113,19 +113,12 @@
 
 
 
-        
+
            <!--  end footer-->
           
 
-           <script>
-            const scrollUp =() =>{
-            const scrollUp =document.getElementById('scroll-up')
-             this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-                                  :scrollUp.classList.remove('show-scroll')
-           }
-        
-        window.addEventListener('scroll',scrollUp)
-        </script>
+       
+           
           
 
 </body>

@@ -148,7 +148,8 @@
     <!-- comantairs.   -->
     <section id="Home">
         <h1>Témoignages Des élèves</h1>
-        <p>Découvrez les témoignages inspirants de nos élèves, illustrant la diversité des parcours éducatifs dans notre lycée.</p>
+        <p>Découvrez les témoignages inspirants de nos élèves, illustrant la diversité des parcours éducatifs dans notre
+            lycée.</p>
 
         <div class="slideshow-container">
             <div class="mySlides">
@@ -200,7 +201,7 @@
 
             <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
             <button class="next" onclick="plusSlides(1)">&#10095;</button>
-     
+
             <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
@@ -211,77 +212,116 @@
     </section>
 
 
-   
- 
+
+
 
 
     <!--end  comantairs-->
-  
+
     <!-- contact -->
-   <section id="contact">
-    <h1>Envoie-nous un message</h1>
-    <p>Besoin d'aide ? Laissez-nous un message ! Nous sommes là pour vous aider avec toutes vos questions et préoccupations.</p>
+    <section id="contact">
+        <h1>Envoie-nous un message</h1>
+        <p>Besoin d'aide ? Laissez-nous un message ! Nous sommes là pour vous aider avec toutes vos questions et
+            préoccupations.</p>
 
 
 
-    <div class="container">
-        <div class="content">
-          <div class="left-side">
-            <div class="address details">
-                <i class="ri-map-pin-line"></i>
-              <div class="topic">Adresse</div>
-              <div class="text-one">Driouch</div>
-              <div class="text-two">HAY AL AMAL 06</div>
+        <div class="container">
+            <div class="content">
+                <div class="left-side">
+                    <div class="address details">
+                        <i class="ri-map-pin-line"></i>
+                        <div class="topic">Adresse</div>
+                        <div class="text-one">Driouch</div>
+                        <div class="text-two">HAY AL AMAL 06</div>
+                    </div>
+                    <div class="phone details">
+                        <i class="ri-phone-line"></i>
+                        <div class="topic">Téléphone</div>
+                        <div class="text-one">+212 70652357</div>
+                        <div class="text-two">+212 62OO21O1</div>
+                    </div>
+                    <div class="email details">
+                        <i class="ri-mail-line"></i>
+                        <div class="topic">Email</div>
+                        <div class="text-one">moulay_ismail@gmail.com</div>
+                        <div class="text-two">info_ms@gmail.com</div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="topic-text">Contact</div>
+                    <p>Si vous avez un travail de ma part ou tout type de requêtes liées à mon tutoriel, vous pouvez
+                        m'envoyer un message à partir d'ici. C'est avec plaisir que je vous aide.</p>
+                    <form action="#">
+                        <div class="input-box">
+                            <input type="text" placeholder="Entrez votre nom">
+                        </div>
+                        <div class="input-box">
+                            <input type="text" placeholder="Entrer votre Email">
+                        </div>
+                        <div class="input-box message-box">
+                            <input type="texteria" placeholder=" Entrez votre message">
+                        </div>
+                        <div class="button">
+                            <input type="button" value="Envoyer">
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="phone details">
-                <i class="ri-phone-line"></i>
-              <div class="topic">Téléphone</div>
-              <div class="text-one">+212 70652357</div>
-              <div class="text-two">+212 62OO21O1</div>
-            </div>
-            <div class="email details">
-                <i class="ri-mail-line"></i>
-              <div class="topic">Email</div>
-              <div class="text-one">moulay_ismail@gmail.com</div>
-              <div class="text-two">info_ms@gmail.com</div>
-            </div>
-          </div>
-          <div class="right-side">
-            <div class="topic-text">Contact</div>
-            <p>Si vous avez un travail de ma part ou tout type de requêtes liées à mon tutoriel, vous pouvez m'envoyer un message à partir d'ici. C'est avec plaisir que je vous aide.</p>
-          <form action="#">
-            <div class="input-box">
-              <input type="text" placeholder="Entrez votre nom">
-            </div>
-            <div class="input-box">
-              <input type="text" placeholder="Entrer votre Email">
-            </div>
-            <div class="input-box message-box">
-                <input type="texteria" placeholder=" Entrez votre message">
-            </div>
-            <div class="button">
-              <input type="button" value="Envoyer" >
-            </div>
-          </form>
         </div>
+
+
+    </section>
+
+    <!--  end contact -->
+
+
+    <!-- Button to scroll back to top -->
+    <a href="#" class="scrollup" id="scroll-up"> <i class="ri-arrow-up-s-line"></i> </a>
+
+
+    <!-- togl -->
+
+    <div class="discussion">
+        <div class="part1">
+            <h2>Ajouter Vos Témoignages</h2>
+
+            <p>
+                "Exprimez-vous ! Partagez vos expériences uniques avec nous.
+                Votre témoignage pourrait inspirer d'autres."
+            </p>
         </div>
-      </div>
+        <div class="part2">
+            <form class="formul-togl">
+                <table>
+                    <tr>
+                        <td><label for="a"><i class="ri-id-card-line"></i></label></td>
+                        <td><input id="a" type="text" name="nom" class="n1" required
+                                placeholder="Entrez votre nom"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="b"><i class="ri-calendar-2-line"></i></label></td>
+                        <td><input id="b" type="text" name="time" class="n1" required
+                                placeholder="Année scolaire"></td>
+                    </tr>
+                </table>
 
-    
-   </section>
-   
-     <!--  end contact -->
+                <div class="aa3">
+
+                    <input type="text" placeholder="Entrez votre Témoignages ici...">
+                    <button type="submit" name="ajouter" class="send"><i class="ri-send-plane-line"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="articlex1">
+        <button class="togle"><i class="ri-message-3-line"></i></button>
+    </div>
 
 
-         <!-- Button to scroll back to top -->
-         <a href="#" class="scrollup" id="scroll-up">
-            <i class="ri-arrow-up-s-line"></i>
-          </a>
 
-        
-  
 @endsection
-
 
 
 
