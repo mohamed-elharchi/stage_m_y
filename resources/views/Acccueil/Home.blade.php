@@ -285,35 +285,51 @@
     <div class="discussion">
         <div class="part1">
             <h2>Ajouter Vos Témoignages</h2>
-
-            <p>
-                "Exprimez-vous ! Partagez vos expériences uniques avec nous.
-                Votre témoignage pourrait inspirer d'autres."
-            </p>
-        </div>
+         </div>
+           
+      
         <div class="part2">
-            <form class="formul-togl">
-                <table>
-                    <tr>
-                        <td><label for="a"><i class="ri-id-card-line"></i></label></td>
-                        <td><input id="a" type="text" name="nom" class="n1" required
-                                placeholder="Entrez votre nom"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="b"><i class="ri-calendar-2-line"></i></label></td>
-                        <td><input id="b" type="text" name="time" class="n1" required
-                                placeholder="Année scolaire"></td>
-                    </tr>
-                </table>
 
-                <div class="aa3">
-
-                    <input type="text" placeholder="Entrez votre Témoignages ici...">
-                    <button type="submit" name="ajouter" class="send"><i class="ri-send-plane-line"></i></button>
-                </div>
-            </form>
+                 <p>
+                    "Exprimez-vous ! Partagez vos expériences uniques avec nous.
+                    Votre témoignage pourrait inspirer d'autres."
+                </p>
         </div>
+
+        <dir class="part3">
+            <form class="formul-togl">
+
+          <div class="inps">
+            <table>
+            <tr>
+                  <td> <label for="a" class="i1"><i class="ri-id-card-line"></i></label></td> 
+                   <td> <input id="a" type="text" name="nom" class="n1" required placeholder="Entrez votre nom"></td> 
+
+            </tr>
+            <tr>
+                <td> <label for="b" class="i1"><i class="ri-calendar-2-line"></i></label></td> 
+                 <td> <input id="b" type="text" name="time" class="n1" required placeholder="Année scolaire"></td> 
+
+            </tr>
+
+            </table>
+          </div>         
+
+       
+
+           <div class="msg">
+           <input class="n2" type="text" placeholder="Entrez votre Témoignages ici...">
+           <button type="submit" name="ajouter" class="n3"><i class="ri-send-plane-fill"></i></button>
+      
+           </div>
+              
+       </form>
+ 
+
+        </dir>
+          
     </div>
+
 
     <div class="articlex1">
         <button class="togle"><i class="ri-message-3-line"></i></button>

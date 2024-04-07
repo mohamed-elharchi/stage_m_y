@@ -18,6 +18,7 @@ html {
 }
 
 
+
 /*global tags */
 
 h1 {
@@ -166,7 +167,7 @@ nav .navigation ul li a:hover {
     text-align: center;
     overflow-x: hidden;
     margin-top: 50px;
-    margin-right: 0;
+  
     margin-left: 0;
     padding-right: 0;
     padding-left: 0;
@@ -387,6 +388,10 @@ nav .navigation ul li a:hover {
 
 
 /*slid+++++++++++++++++++*/
+.mySlides:first-child {
+    display: block;
+}
+/* Add this CSS to your existing stylesheet */
 
 #Home {
     width: 100%;
@@ -395,7 +400,6 @@ nav .navigation ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
 #Home h2 {
@@ -410,40 +414,27 @@ nav .navigation ul li a:hover {
     margin-bottom: 10px;
 }
 
-.mySlides:first-child {
-    display: block;
-}
-
-.time {
-    color: #8f8d8d;
-}
-
-
 .slideshow-container {
     position: relative;
-    width: 100%;
+    width: 100%; /* Adjusted to take up 100% width */
+    max-width: 720px; /* Added max-width to limit the width on larger screens */
     height: 300px;
     background-color: rgb(240, 230, 219);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
-
 }
 
-
 .mySlides {
-
     display: none;
     text-align: center;
     padding: 20px;
-    width: 720px;
+    width: 100%; /* Adjusted to take up 100% width */
+    max-width: 720px; /* Added max-width to limit the width on larger screens */
     height: 250px;
     background-color: rgb(240, 230, 219);
-
 }
-
 
 .prev,
 .next {
@@ -466,7 +457,6 @@ nav .navigation ul li a:hover {
     background-color: transparent;
 }
 
-
 .prev {
     left: 30px;
 }
@@ -481,15 +471,12 @@ nav .navigation ul li a:hover {
 
 .prev:hover,
 .next:hover {
-
     color: rgb(233, 137, 27);
 }
-
 
 .dot:first-child {
     background-color: rgb(0, 0, 0);
     /* Change to your desired background color */
-
 }
 
 .dot {
@@ -500,7 +487,6 @@ nav .navigation ul li a:hover {
     display: inline-block;
     transition: background-color 0.6s ease;
     cursor: pointer;
-
 }
 
 .active {
@@ -511,6 +497,7 @@ nav .navigation ul li a:hover {
     color: rgb(0, 0, 0);
     font-size: 4rem;
 }
+
 
 /* end slid */
 
@@ -671,7 +658,7 @@ nav .navigation ul li a:hover {
 
 @media (max-width: 820px) {
     .container {
-        margin: 40px 0;
+       
         height: 100%;
     }
 
@@ -701,23 +688,6 @@ nav .navigation ul li a:hover {
 /* end contact */
 
 /* footer */
-
-
-
-footer {
-    position: fixed;
-    bottom: 0;
-}
-
-@media (max-height:800px) {
-    footer {
-        position: static;
-    }
-
-    header {
-        padding-top: 40px;
-    }
-}
 
 .footer-distributed {
     background-color: #2d2a30;
@@ -848,7 +818,7 @@ footer {
     .footer-distributed .footer-left,
     .footer-distributed .footer-center,
     .footer-distributed .footer-right {
-        display: block;
+       
         width: 100%;
         margin-bottom: 40px;
         text-align: center;
@@ -860,6 +830,7 @@ footer {
 }
 
 
+
 .logo2 {
     width: 120px;
     height: auto;
@@ -868,6 +839,9 @@ footer {
 
 /* end footer */
 
+
+
+/* scrolTop */
 .scrollup {
     text-decoration: none;
     position: fixed;
@@ -886,26 +860,28 @@ footer {
     transform: translateY(-.5rem);
 }
 
-/*============= show the scroll up ========== */
 .show-scroll {
     bottom: 3rem;
 }
 
+/* end scrolTop */
 
 
 
 
-/*============= togl========== */
+
+
+
+/*============= togle ======= */
 
 
 .togle {
-
     position: fixed;
     width: 50px;
     height: 50px;
     border: none;
     background-color: rgb(233, 137, 27);
-    bottom: 27px;
+    bottom: 3rem;
     left: 15px;
     color: #ffffff;
     border-radius: 50%;
@@ -916,16 +892,13 @@ footer {
     display: none;
     position: fixed;
     top: 100px;
-    /* Adjust as needed */
     left: 10px;
-    /* Adjust as needed */
     width: 350px;
-    height: 420px;
+    height: 400px;
     background-color: white;
     border-radius: 10px;
-
     z-index: 999;
-    /* Ensure it's above other content */
+    border: 1px solid black;
 }
 
 .discussion.active {
@@ -935,4 +908,106 @@ footer {
     align-items: center;
 }
 
-/* Your other CSS styles */
+
+.part1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #020202;
+    color: #fff;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 15%;
+    width: 100%;
+
+
+}
+
+.part2 {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.part2 p {
+    width: 70%;
+    background-color: rgb(245, 240, 235);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 2px;
+}
+
+.part3 {
+    height: 55%;
+    background-color: rgb(245, 240, 235);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius:10px ;
+    border-bottom-right-radius:10px ;
+}
+
+
+.formul-togl {
+    height: 100%;
+
+}
+
+
+.inps {
+    height: 77%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.n1 {
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    border: #fff;
+    border-bottom: 2px solid rgb(233, 137, 27);
+    margin-top: 3px;
+}
+
+.i1 {
+    font-size: 1.5rem;
+    color: rgb(233, 137, 27);
+}
+
+
+.msg{
+
+    height: 23%;
+    display: flex;
+   
+}
+
+.n2{
+ width: 85%;
+ text-align: center;
+ border-bottom-left-radius:10px ;
+
+ border: #fff;
+}
+.n3{
+width: 15%;
+color:  rgb(233, 137, 27);
+border: white;
+font-size: 2rem;
+background-color: white;
+border-bottom-right-radius:10px ;
+
+}
+/* end toggl */
+
+
+
+
