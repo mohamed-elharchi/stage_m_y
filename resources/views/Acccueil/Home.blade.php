@@ -10,9 +10,8 @@
             <p> Bienvenue à l'école ! Préparez-vous pour un nouveau chapitre passionnant
                 rempli d'opportunités de croissance et de succès. Ensemble, embarquons
                 dans cette aventure et faisons de cette année scolaire un moment inoubliable !</p>
-            <div>
-                <button class="but1">Lire Plus<i class="ri-arrow-right-up-fill"></i></i>
-                </button>
+            <div class="but22">
+                <button class="but1">Lire Plus<i class="ri-arrow-right-up-fill"></i></button>
                 <button class="but2">Nouvelles<i class="ri-news-line"></i></button>
             </div>
         </div>
@@ -199,10 +198,10 @@
                 <p class="time">2017/2020</p>
             </div>
 
-            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+            <button class="prev" onclick="plusSlides(-1)"><i class="ri-arrow-left-s-line"></i></button>
+            <button class="next" onclick="plusSlides(1)"><i class="ri-arrow-right-s-line"></i></button>
 
-            <div style="text-align:center">
+            <div style="text-align:center" class="dots">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>

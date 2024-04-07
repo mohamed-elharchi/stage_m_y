@@ -22,7 +22,6 @@
                 <li><a href="#">Accueil</a></li>
                 <li><a href="#">À propos</a></li>
                 <li><a href="#">Nouvelles</a></li>
-                <li><a href="#">Événements</a></li>
                 <li><a href="#">Calendriers</a></li>
                 {{-- <button class="butt1"><a href="{{ route('login') }}">Se connecter</a></button> --}}
                 @auth
@@ -57,14 +56,13 @@
     <footer class="footer-distributed">
 
         <div class="footer-left">
-            <img src="{{ asset('images/logo2.png') }}" alt="Example" class="logo2">
+            <img src="{{ asset('images/mssmai.png') }}" alt="Example" class="logo2">
 
             <p class="footer-links">
                 <a href="#">Accueil</a>
 
                 <a href="#">À propos</a>
 
-                <a href="#">Nouvelles</a>
 
                 <a href="#">Calendriers</a>
             </p>
