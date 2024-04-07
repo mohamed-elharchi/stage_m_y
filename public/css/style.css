@@ -4,8 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-
 }
 
 
@@ -15,6 +13,7 @@ html {
     padding-top: 60px;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 
@@ -691,11 +690,13 @@ nav .navigation ul li a:hover {
 
 .footer-distributed {
     background-color: #2d2a30;
+    width: 100%;
     box-sizing: border-box;
     width: 100%;
     text-align: left;
     padding: 50px 50px 60px 50px;
-    margin-top: 80px;
+
+
 }
 
 .footer-distributed .footer-left,
@@ -703,6 +704,7 @@ nav .navigation ul li a:hover {
 .footer-distributed .footer-right {
     display: inline-block;
     vertical-align: top;
+   
 }
 
 /* Footer left */
@@ -1036,10 +1038,9 @@ border-bottom-right-radius:10px ;
 
     .but1 ,.but2{
        
-  
         width: 95px;
         height: 35px;
-       
+       margin-bottom: 10px;
     
     }
 
