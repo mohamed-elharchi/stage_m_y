@@ -901,7 +901,7 @@ nav .navigation ul li a:hover {
     height: 50px;
     border: none;
     background-color: rgb(233, 137, 27);
-    bottom: 3rem;
+    bottom: 2.7rem;
     left: 15px;
     color: #ffffff;
     border-radius: 50%;
@@ -1079,7 +1079,7 @@ border-bottom-right-radius:10px ;
     }
 
     .slideshow-container {
-        height: 370px;
+        height: 400px;
     }
 
     .mySlides {
