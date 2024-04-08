@@ -25,9 +25,9 @@
                     <img src="{{ asset('img/logo.png') }}" alt="" width="70%" height="70%">
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('teacherDashboard') }}">
                         <span class="icon"><ion-icon name="archive-outline"></ion-icon></span>
-                        <span class="title">lghiyab</span>
+                        <span class="title">Absence</span>
                     </a>
                 </li>
                 <li>

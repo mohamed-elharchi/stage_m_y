@@ -12,7 +12,8 @@
 
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,19 +38,19 @@
 
             </ul>
             @auth
-                    @if (auth()->user()->role === 'director')
-                       <a class="login" href="{{ route('general_guard') }}">Dashboard</a>
-                    @elseif(auth()->user()->role === 'general_guard')
-                    <a class="login" href="{{ route('generalGuard_dashboard') }}">Dashboard</a>
-                    @elseif(auth()->user()->role === 'teacher')
-                        <a class="login" href="{{ route('teacherDashboard') }}">Dashboard</a>
-                    @endif
-                       <a class="login" href="{{ route('logout') }}">Déconnecte</a>
-                @endauth
-                @guest
-                <a  class="login" href="{{ route('login') }}">Se connecter <i class="ri-login-circle-line"></i></a>
-                @endguest
-                <i id="menu-btn" class="ri-menu-line"></i>
+                @if (auth()->user()->role === 'director')
+                    <a class="login" href="{{ route('general_guard') }}">Dashboard</a>
+                @elseif(auth()->user()->role === 'general_guard')
+                    <a class="login" href="{{ route('displayMatieres') }}">Dashboard</a>
+                @elseif(auth()->user()->role === 'teacher')
+                    <a class="login" href="{{ route('teacherDashboard') }}">Dashboard</a>
+                @endif
+                <a class="login" href="{{ route('logout') }}">Déconnecte</a>
+            @endauth
+            @guest
+                <a class="login" href="{{ route('login') }}">Se connecter <i class="ri-login-circle-line"></i></a>
+            @endguest
+            <i id="menu-btn" class="ri-menu-line"></i>
         </div>
 
     </nav>
@@ -128,14 +129,14 @@
 
 
 
-<script>
-     $('#menu-btn').click(function(){
-      $('nav .navigation ul').addClass('active')
-    })
-    $('#menu-close').click(function(){
-      $('nav .navigation ul').removeClass('active')
-    })
-</script>
+    <script>
+        $('#menu-btn').click(function() {
+            $('nav .navigation ul').addClass('active')
+        })
+        $('#menu-close').click(function() {
+            $('nav .navigation ul').removeClass('active')
+        })
+    </script>
 </body>
 
 </html>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\teacher;
+use App\Models\departement;
+use Illuminate\Support\Facades\DB;
 
 class teacherController extends Controller
 {
@@ -15,8 +18,20 @@ class teacherController extends Controller
 
     public function teacherDashboard()
     {
-        return view('dashboard.teacher_dashboard.index');
+        $teacherId = auth()->id();
+        $departements = DB::table('teacher_departments')
+            ->join('departements', 'teacher_departments.departement_id', '=', 'departements.id')
+            ->join('teachers', 'teacher_departments.teacher_id', '=', 'teachers.id')
+            ->where('teachers.admin_id', $teacherId) 
+            ->select('departements.*')
+            ->get();
+
+        $teacher = auth()->user();
+
+        return view('dashboard.teacher_dashboard.index', compact('teacher', 'departements'));
     }
+
+
     public function create()
     {
         abort(404);
@@ -40,7 +55,6 @@ class teacherController extends Controller
      */
     public function show()
     {
-        //
     }
 
     /**
