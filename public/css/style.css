@@ -620,7 +620,7 @@ nav .navigation ul li a:hover {
     margin-top: 12px;
 }
 
-.right-side .button input[type="button"] {
+.right-side .button button {
     color: #fff;
     font-size: 18px;
     outline: none;
@@ -631,7 +631,7 @@ nav .navigation ul li a:hover {
     transition: all 0.3s ease;
 }
 
-.button input[type="button"]:hover {
+.button button:hover {
     background: rgb(233, 137, 27);
 }
 
