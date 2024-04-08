@@ -19,11 +19,7 @@
         <div class="navigation">
             <ul>
                 <li>
-
-                   <img src="{{ asset('img/logo.png') }}" alt="" width="70%"
-                                height="70%">
-
-
+                    <img src="{{ asset('img/logo.png') }}" alt="" width="70%" height="70%">
                 </li>
                 <li>
                     <a href="{{ url('/news') }}">
@@ -68,6 +64,15 @@
             <div class="topbar">
                 <div class="toggleer" id="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div class="search">
+
+                </div>
+                <div class="user">
+                    <button type="submit" class="btn btn-primary">
+                        <a href="{{ route('general_guard') }}" class="btn btn-link text-white"
+                            style="text-decoration: none;">Dashboard</a>
+                    </button>
                 </div>
 
 

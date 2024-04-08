@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
     var images = [
         '/images/269713058_427831879049165_7153829545722713717_n.jpeg',
@@ -6,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     var currentIndex = 0;
-    var homeSection = document.getElementById('Home');
+    var homeSection = document.getElementById('acceuil');
+
 
     function changeBackgroundImage() {
         homeSection.style.backgroundImage = "url('" + images[currentIndex] + "')";
@@ -34,3 +37,37 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('prevBtn').addEventListener('click', prevBackgroundImage);
     document.getElementById('nextBtn').addEventListener('click', nextBackgroundImage);
 });
+
+
+
+//++++++++++++++++++++++++++++++++
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
+
+
+
