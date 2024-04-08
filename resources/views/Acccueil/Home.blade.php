@@ -62,80 +62,31 @@
         <p>Explorez les différentes voies éducatives offertes dans notre lycée pour trouver celle qui correspond le mieux à
             vos aspirations.</p>
         <div class="filiers">
-            <div class="filier-box">
-                <img src="images/pexels-jeswin-thomas-3781338.jpg" class="imaf">
-                <div class="details">
-                    <h6>Sciences Mathématiques <i class="ri-ruler-line"></i></h6>
-                    <p>Cette filière met l'accent sur l'étude des mathématiques et des sciences physiques, offrant aux
-                        étudiants une solide base théorique et pratique pour poursuivre des études supérieures en
-                        ingénierie, sciences, ou mathématiques appliquées. </p>
-
-                </div>
-            </div>
-
+        
 
             <div class="filier-box">
-                <img src="images/pexels-lucas-pezeta-5277388.jpg" class="imaf">
-                <div class="details">
-                    <h6>Sciences de la Vie et la Terre <i class="ri-plant-line"></i></h6>
-                    <p>Cette filière explore les sciences naturelles, y compris la biologie, la géologie et l'écologie,
-                        offrant aux étudiants une compréhension approfondie du monde vivant et de l'environnement, avec
-                        des perspectives sur la santé, l'agriculture et la conservation.</p>
-
-                </div>
+                <img src="images/Sciences Mathématiques (5).png" class="imaf">
             </div>
 
             <div class="filier-box">
-                <img src="images/pexels-chokniti-khongchum-2280571.jpg" class="imaf">
-                <div class="details">
-                    <h6>Sciences Physiques Chimiques <i class="ri-ink-bottle-line"></i> </h6>
-                    <p> pour Cette filière se concentre sur l'étude approfondie de la physique et de la chimie développant
-                        les
-                        compétences essentielles en analyse et expérimentation pour l'ingénierie,la recherche scientifique
-                        et
-                        la Physique-chimie essentiel pour les étudiants. </p>
-
-                </div>
+                <img src="images/Sciences Mathématiques (1).png" class="imaf">
             </div>
 
             <div class="filier-box">
-                <img src="images/pexels-pixabay-53621.jpg" class="imaf">
-                <div class="details">
-                    <h6>Sciences Économiques <i class="ri-calculator-line"></i></h6>
-                    <p>Exploration approfondie des théories économiques et des concepts de gestion, préparant les
-                        étudiants à des carrières variées dans le domaine financier, commercial Acquisition de compétences
-                        analytiques essentielles pour comprendre
-                        les dynamiques économiques contemporaines </p>
-
-                </div>
+                <img src="images/Sciences Mathématiques (2).png" class="imaf">
             </div>
-
+   
+            <div class="filier-box">
+                <img src="images/Sciences Mathématiques (3).png" class="imaf">
+            </div>
+       
 
             <div class="filier-box">
-                <img src="images/pexels-jean-marc-bonnel-19081217.jpg" class="imaf">
-                <div class="details">
-                    <h6>Sciences Humaines <i class="ri-globe-line"></i> </h6>
-                    <p>Étude approfondie de disciplines telles que l'histoire,
-                        la géographie et la sociologie, offrant une perspective critique sur la société et la culture .
-                        Cette exploration permet aux étudiants de comprendre les dynamiques sociales,
-                        historiques et géographiques du pays.</p>
-
-                </div>
+                <img src="images/Sciences Mathématiques (4).png" class="imaf">
             </div>
 
-
-
             <div class="filier-box">
-                <img src="images/section-litteraire-lycee.jpeg" class="imaf">
-                <div class="details">
-                    <h6>Baccalauréat Lettres <i class="ri-git-repository-line"></i></h6>
-                    <p>Programme mettant l'accent sur l'étude approfondie de la littérature,
-                        de la philosophie, de l'histoire et des langues vivantes, préparant les étudiants à des études
-                        supérieures en lettres, en sciences humaines et dans d'autres domaines connexes Enseignement riche,
-                        orienté littérature,
-                        histoire </p>
-
-                </div>
+                <img src="images/Sciences Mathématiques.png" class="imaf">
             </div>
         </div>
     </section>
