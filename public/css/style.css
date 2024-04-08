@@ -880,7 +880,7 @@ nav .navigation ul li a:hover {
     background-color: white;
     border-radius: 10px;
     z-index: 999;
-    border: 1px solid black;
+    border: 2px solid rgb(233, 137, 27);
 }
 
 .discussion.active {
