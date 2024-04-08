@@ -25,4 +25,6 @@ class Admin extends Model implements Authenticatable
         'password',
         'remember_token',
     ];
+
+ 
 }

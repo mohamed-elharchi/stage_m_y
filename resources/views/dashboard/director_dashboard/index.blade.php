@@ -1,58 +1,83 @@
-@extends('layouts.login')
+@extends('layouts.directorLayout')
 @section('title')
-    dashboard
+Responsables
 @endsection
 @section('content')
-{{-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">Dashboard</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
-</nav> --}}
-
-
-
-<h2>director dashboard</h2>
-<ul class="navbar-nav ml-auto">
-
-
-        <li class="nav-item">
-            <a class="nav-link text-white btn btn-success" href="{{ route('generalGuard_dashboard') }}">general guard dashboard</a>
-        </li>
-
-
-</ul>
-<div class="container mt-4">
+<div class="container d-flex justify-content-center align-items-center" >
     <div class="row">
-        <div class="col-md-3">
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action">Analytics</a>
-                <a href="#" class="list-group-item list-group-item-action">Reports</a>
-                <a href="#" class="list-group-item list-group-item-action">Tasks</a>
-                <a href="#" class="list-group-item list-group-item-action">Settings</a>
+        <div class="col-md-12">
+            @if ($errors->any())
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    <p>{{ session('success') }}</p>
+                </div>
+            @endif
+
+            @if (session('edit'))
+                <div class="alert alert-info" role="alert">
+                    <p>The employee <span class="text text-primary">{{ session('edit') }}</span> has been updated successfully </p>
+                </div>
+            @endif
+
+            <div class="container mt-4">
+                <div class="row justify-content-between mb-3">
+                    <div class="col-lg-2">
+                        <a class="btn btn-success" href="{{ route('addGeneralGuard') }}">Ajouter</a>
+                    </div>
+                    <div class="col-lg-3">
+                        <form action="{{ route('filterGeneralGuards') }}" method="GET" class="form-inline">
+                            <div class="form-group">
+                                <label for="role" class="mr-2">Filtrer par rôle:</label>
+                                <select class="form-control mr-2" id="role" name="role">
+                                    <option value="">Tous les rôles</option>
+                                    <option value="director">Directeur</option>
+                                    <option value="teacher">Enseignant</option>
+                                    <option value="general_guard">Garde général</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Filtrer</button>
+                        </form>
+                    </div>
+                </div>
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Numéro</th>
+                        <th>Nom</th>
+                        <th>Adresse e-mail</th>
+                        <th>Le rôle</th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach ($generalGuards as $index => $generalGuard)
+                        <tr>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $generalGuard->name }}</td>
+                            <td>{{ $generalGuard->email }}</td>
+                            <td>{{ $generalGuard->role }}</td>
+                            <td>
+                                <form action="{{ route('deleteGeneral_guard', $generalGuard->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <a class="btn btn-primary" href="{{ route('updateGeneral_guard', $generalGuard->id) }}">Modifier</a>
+                                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
             </div>
-        </div>
-        <div class="col-md-9">
-            <!-- Main content goes here -->
-            <h2>Welcome to the Dashboard</h2>
         </div>
     </div>
 </div>
+
 @endsection

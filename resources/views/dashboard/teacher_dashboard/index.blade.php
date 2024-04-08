@@ -1,7 +1,7 @@
-@extends('layouts.login')
+@extends('layouts.teacherLayout')
 @section('title')
-    dashboard
+Absence
 @endsection
 @section('content')
-<h1>teacher dashboard</h1>
+    <h1>Absence</h1>
 @endsection

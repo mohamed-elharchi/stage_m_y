@@ -62,7 +62,7 @@
         <p>Explorez les différentes voies éducatives offertes dans notre lycée pour trouver celle qui correspond le mieux à
             vos aspirations.</p>
         <div class="filiers">
-        
+
 
             <div class="filier-box">
                 <img src="images/Sciences Mathématiques (5).png" class="imaf">
@@ -75,11 +75,11 @@
             <div class="filier-box">
                 <img src="images/Sciences Mathématiques (2).png" class="imaf">
             </div>
-   
+
             <div class="filier-box">
                 <img src="images/Sciences Mathématiques (3).png" class="imaf">
             </div>
-       
+
 
             <div class="filier-box">
                 <img src="images/Sciences Mathématiques (4).png" class="imaf">
@@ -101,6 +101,7 @@
         <p>Découvrez les témoignages inspirants de nos élèves, illustrant la diversité des parcours éducatifs dans notre
             lycée.</p>
 
+        vos aspirations.</p>
         <div class="slideshow-container">
             <div class="mySlides">
                 <i class="ri-user-fill user"></i>
@@ -148,17 +149,21 @@
                 <h3 class="card__name">Mohamed El Harchi</h3>
                 <p class="time">2017/2020</p>
             </div>
+            <button class="prev" onclick="plusSlides(-1)"><i class="ri-arrow-left-s-line rows"></i></button>
+            <button class="next" onclick="plusSlides(1)"><i class="ri-arrow-right-s-line rows"></i></button>
 
-            <button class="prev" onclick="plusSlides(-1)"><i class="ri-arrow-left-s-line"></i></button>
-            <button class="next" onclick="plusSlides(1)"><i class="ri-arrow-right-s-line"></i></button>
 
-            <div style="text-align:center" class="dots">
+
+            <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
                 <span class="dot" onclick="currentSlide(4)"></span>
             </div>
+
         </div>
+
+
     </section>
 
 
@@ -221,9 +226,9 @@
         </div>
 
 
-    </section>
+   </section>
 
-    <!--  end contact -->
+     <!--  end contact -->
 
 
     <!-- Button to scroll back to top -->
@@ -236,8 +241,8 @@
         <div class="part1">
             <h2>Ajouter Vos Témoignages</h2>
          </div>
-           
-      
+
+
         <div class="part2">
 
                  <p>
@@ -252,32 +257,32 @@
           <div class="inps">
             <table>
             <tr>
-                  <td> <label for="a" class="i1"><i class="ri-id-card-line"></i></label></td> 
-                   <td> <input id="a" type="text" name="nom" class="n1" required placeholder="Entrez votre nom"></td> 
+                  <td> <label for="a" class="i1"><i class="ri-id-card-line"></i></label></td>
+                   <td> <input id="a" type="text" name="nom" class="n1" required placeholder="Entrez votre nom"></td>
 
             </tr>
             <tr>
-                <td> <label for="b" class="i1"><i class="ri-calendar-2-line"></i></label></td> 
-                 <td> <input id="b" type="text" name="time" class="n1" required placeholder="Année scolaire"></td> 
+                <td> <label for="b" class="i1"><i class="ri-calendar-2-line"></i></label></td>
+                 <td> <input id="b" type="text" name="time" class="n1" required placeholder="Année scolaire"></td>
 
             </tr>
 
             </table>
-          </div>         
+          </div>
 
-       
+
 
            <div class="msg">
            <input class="n2" type="text" placeholder="Entrez votre Témoignages ici...">
            <button type="submit" name="ajouter" class="n3"><i class="ri-send-plane-fill"></i></button>
-      
+
            </div>
-              
+
        </form>
- 
+
 
         </dir>
-          
+
     </div>
 
 
