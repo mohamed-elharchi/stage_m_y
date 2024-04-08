@@ -733,6 +733,10 @@ nav .navigation ul li a:hover {
 
 /* Footer Center */
 
+.ii{
+    color: #fff;
+     margin-top: 10px;
+}
 .footer-distributed .footer-center {
     width: 35%;
 }

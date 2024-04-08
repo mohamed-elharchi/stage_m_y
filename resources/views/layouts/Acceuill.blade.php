@@ -75,7 +75,6 @@
 
                 <a href="#">À propos</a>
 
-
                 <a href="#">Calendriers</a>
             </p>
 
@@ -83,23 +82,16 @@
                 Réservés</p>
         </div>
 
-        <div class="footer-center">
-            <div>
-                <p>
-                    Envoie-nous un message E-Mail
-                    <i class="ri-message-2-line"></i>
-                </p>
-
-            </div>
-
-            <div>
-
-                <p> <i class="ri-phone-line"></i> +212 706523757</p>
-            </div>
-            <div>
-
-                <p> <i class="ri-mail-line"></i> <a href="mailto:moulay_ismail@gmail.com">moulay_ismail@gmail.com</a>
-                </p>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span><i class="ri-attachment-2"></i> Équipe du site Web</span>
+            
+            </p>
+            <div class="footer-icons">
+                <p class="ii"> <i class="ri-attachment-line"></i>Ayoub Jadani<i class="ri-linkedin-box-fill"></i></p>
+                <p class="ii"> <i class="ri-attachment-line"></i>Zakaria Baghdadi<i class="ri-linkedin-box-fill"></i></p>
+                <p class="ii"><i class="ri-attachment-line"></i>Mohamed El Harchi <i class="ri-linkedin-box-fill"></i></p>
+                <p class="ii"><i class="ri-attachment-line"></i>Mohamed Zaitouni<i class="ri-linkedin-box-fill"></i></p>
             </div>
         </div>
         <div class="footer-right">
