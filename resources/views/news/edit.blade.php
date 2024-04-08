@@ -14,8 +14,8 @@
                                 <h4 class="ml-lg-4">Editer la Nouvelle</h4>
                             </div>
                             <div class="col-sm-6 p-0 d-flex justify-content-end">
-                                <a href="{{ route('news.index') }}" class="btn" style="background-color:#db751b; color: #fff;">
-                                    <ion-icon name="arrow-undo-outline"></ion-icon> <span>Retour</span>
+                            <a href="{{ url('/news') }}" class="btn ]" style="background-color:#db751b;     color: #fff;">
+                               <ion-icon name="arrow-undo-outline"></ion-icon>        <span>Retour</span>
                                 </a>
                             </div>
                         </div>

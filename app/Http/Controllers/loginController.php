@@ -54,14 +54,14 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-        // dd(hash::make("ayoub1234"));
+        // dd(hash::make("zitouni1"));
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->role === 'director') {
                 return redirect()->route('general_guard')->with("success", "You have been logged in successfully");
 
             } elseif ($user->role === 'general_guard') {
-                return redirect()->route('general_guard')->with("success", "You have been logged in successfully");
+                return redirect()->route('displayMatieres')->with("success", "You have been logged in successfully");
 
             } elseif ($user->role === 'teacher') {
                 return redirect()->route('teacherDashboard')->with("success", "You have been logged in successfully");

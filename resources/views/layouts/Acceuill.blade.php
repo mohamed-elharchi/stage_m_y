@@ -35,7 +35,7 @@
                     @if (auth()->user()->role === 'director')
                        <a class="login" href="{{ route('general_guard') }}">Dashboard</a>
                     @elseif(auth()->user()->role === 'general_guard')
-                    <a class="login" href="{{ route('general_guard') }}">Dashboard</a>
+                    <a class="login" href="{{ route('displayMatieres') }}">Dashboard</a>
                     @elseif(auth()->user()->role === 'teacher')
                         <a class="login" href="{{ route('teacherDashboard') }}">Dashboard</a>
                     @endif

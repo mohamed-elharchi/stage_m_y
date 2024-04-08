@@ -6,11 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/director.css') }}">
-    <script src="{{ asset('js/director.js') }}"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <title>@yield('title')</title>
-
 </head>
 
 <body class="bod">
@@ -22,6 +20,27 @@
                     <img src="{{ asset('img/logo.png') }}" alt="" width="70%" height="70%">
                 </li>
                 <li>
+    <a href="{{ url('/messages') }}">
+        <span class="icon"><ion-icon name="mail-unread-outline"></ion-icon></span>
+        <span class="title"> Message</span>
+        <div class="notification-container">
+            <div class="bell-icon">
+                @if(isset($messages) && $messages->count() > 0)
+                    <span class="badge">{{ $messages->count() }}</span>
+                @endif
+            </div>
+        </div>
+    </a>
+</li>
+                    <li>
+                    <a href="{{ url('/contacts') }}">
+                        <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                        <span class="title">contact</span>
+                    </a>
+                </li>
+
+                <li>
+
                     <a href="{{ url('/news') }}">
                         <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
                         <span class="title">Nouvelles</span>
@@ -35,22 +54,13 @@
                     </a>
                 </li>
 
-                <li>
 
-                    <a href="#">
-                        <span class="icon"><ion-icon name="mail-unread-outline"></ion-icon></span>
-                        <span class="title"> Message</span>
-                    </a>
-                </li>
                 <li>
-
-                    <a href="#">
+                    <a href="{{ url('/comments') }}">
                         <span class="icon"><ion-icon name="chatbox-ellipses-outline"></ion-icon></span>
                         <span class="title"> commentaires</span>
                     </a>
                 </li>
-
-
                 <li>
                     <a href="sign-out.php">
                         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
@@ -60,34 +70,33 @@
             </ul>
         </div>
 
+
         <div class="main">
+
             <div class="topbar">
                 <div class="toggleer" id="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
                 <div class="search">
 
+
                 </div>
                 <div class="user">
-                    <button type="submit" class="btn btn-primary">
-                        <a href="{{ route('general_guard') }}" class="btn btn-link text-white"
-                            style="text-decoration: none;">Dashboard</a>
-                    </button>
+                    <a href="{{ route('general_guard') }}" class="btn btn-primary text-white" style="text-decoration: none;">Dashboard</a>
                 </div>
-
-
-
             </div>
 
             <div class="content">
                 @yield('content')
             </div>
         </div>
+    </div>
 
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/director.js') }}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </body>
 
 </html>

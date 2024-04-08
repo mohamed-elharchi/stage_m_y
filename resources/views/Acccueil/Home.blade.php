@@ -205,78 +205,83 @@
             </div>
             <button class="prev" onclick="plusSlides(-1)"><i class="ri-arrow-left-s-line rows"></i></button>
             <button class="next" onclick="plusSlides(1)"><i class="ri-arrow-right-s-line rows"></i></button>
-     
-      
-      
+
+
+
             <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
                 <span class="dot" onclick="currentSlide(4)"></span>
-    
+
             </div>
-      
+
         </div>
 
-   
+
     </section>
+
 
 
     <!--end  comantairs-->
 
     <!-- contact -->
-   <section id="contact">
+    <section id="contact">
     <h1>Envoie-nous un message</h1>
     <p>Besoin d'aide ? Laissez-nous un message ! Nous sommes là pour vous aider avec toutes vos questions et préoccupations.</p>
 
-
-
     <div class="container">
         <div class="content">
-          <div class="left-side">
-            <div class="address details">
-                <i class="ri-map-pin-line"></i>
-              <div class="topic">Adresse</div>
-              <div class="text-one">Driouch</div>
-              <div class="text-two">HAY AL AMAL 06</div>
+            <div class="left-side">
+                <div class="address details">
+                    <i class="ri-map-pin-line"></i>
+                    <div class="topic">Adresse</div>
+                    <div class="text-one">Driouch</div>
+                    <div class="text-two">HAY AL AMAL 06</div>
+                </div>
+                @foreach($contacts as $contact)
+                <div class="phone details">
+                    <i class="ri-phone-line"></i>
+                    <div class="topic">Téléphone</div>
+                    <div class="text-one">{{ $contact->telephon1 }}</div>
+                    <div class="text-two">{{ $contact->telephon2 }}</div>
+                </div>
+                <div class="email details">
+                    <i class="ri-mail-line"></i>
+                    <div class="topic">Email</div>
+                    <div class="text-one">{{ $contact->email1 }}</div>
+                    <div class="text-two">{{ $contact->email2 }}</div>
+                </div>
+                @endforeach
             </div>
-            <div class="phone details">
-                <i class="ri-phone-line"></i>
-              <div class="topic">Téléphone</div>
-              <div class="text-one">+212 70652357</div>
-              <div class="text-two">+212 62OO21O1</div>
-            </div>
-            <div class="email details">
-                <i class="ri-mail-line"></i>
-              <div class="topic">Email</div>
-              <div class="text-one">moulay_ismail@gmail.com</div>
-              <div class="text-two">info_ms@gmail.com</div>
-            </div>
-          </div>
-          <div class="right-side">
-            <div class="topic-text">Contact</div>
-            <p>Si vous avez un travail de ma part ou tout type de requêtes liées à mon tutoriel, vous pouvez m'envoyer un message à partir d'ici. C'est avec plaisir que je vous aide.</p>
-          <form action="#">
-            <div class="input-box">
-              <input type="text" placeholder="Entrez votre nom">
-            </div>
-            <div class="input-box">
-              <input type="text" placeholder="Entrer votre Email">
-            </div>
-            <div class="input-box message-box">
-                <input type="texteria" placeholder=" Entrez votre message">
-            </div>
-            <div class="button">
-              <input type="button" value="Envoyer" >
-            </div>
-          </form>
-        </div>
-        </div>
-      </div>
+            <div class="right-side">
+                <div class="topic-text">Contact</div>
+                <p>Si vous avez un travail de ma part ou tout type de requêtes liées à mon tutoriel, vous pouvez m'envoyer un message à partir d'ici. C'est avec plaisir que je vous aide.</p>
+                <form method="POST" action="{{ url('/contact') }}">
+                    @csrf
 
-    
-   </section>
-   
+                    <div class="input-box">
+                        <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" id="email" name="email" placeholder="Entrer votre Email" required>
+                    </div>
+                    <div class="input-box message-box">
+                        <input type="texteria" id="message" name="message" placeholder=" Entrez votre message" required>
+                    </div>
+                    <div class="button">
+                        <button type="submit" class="zb">Envoyer</button>
+                    </div>
+                </form>
+                @if(session('success'))
+                <div >{{ session('success') }}</div>
+                @endif
+            </div>
+        </div>
+    </div>
+</section>
+
+
      <!--  end contact -->
 
 
