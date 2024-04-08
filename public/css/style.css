@@ -365,10 +365,10 @@ nav .navigation ul li a:hover {
     height: 310px;
     width: 320px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    margin-bottom: 4px;
     margin-left: 2px;
     margin-right:2px;
-    flex: 1 1 320px; /* Allow flex items to grow and shrink equally, and set a minimum width */
+    flex: 1 1 320px; 
    
 }
 
