@@ -737,28 +737,12 @@ nav .navigation ul li a:hover {
     color: #fff;
      margin-top: 10px;
 }
-.footer-distributed .footer-center {
-    width: 35%;
-}
 
 
 
 
 
-.footer-distributed .footer-center p {
-    display: inline-block;
-    color: #ffffff;
-    vertical-align: middle;
-    margin-bottom: 5px;
-}
 
-
-
-.footer-distributed .footer-center p a {
-    color: rgb(233, 137, 27);
-    text-decoration: none;
-    ;
-}
 
 /* Footer Right */
 
@@ -1140,9 +1124,10 @@ color: #fff;
     font-weight: bold;
     cursor: pointer;
 }
+
 .filier-box {
 
-    height: 450px;
+    height: 400px;
 }
 
 }

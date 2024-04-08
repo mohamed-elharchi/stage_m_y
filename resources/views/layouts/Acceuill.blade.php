@@ -84,16 +84,17 @@
 
         <div class="footer-right">
             <p class="footer-company-about">
-                <span><i class="ri-attachment-2"></i> Équipe du site Web</span>
+                <span><i class="ri-attachment-2"></i> Développé Par :</span>
             
             </p>
             <div class="footer-icons">
-                <p class="ii"> <i class="ri-attachment-line"></i>Ayoub Jadani<i class="ri-linkedin-box-fill"></i></p>
-                <p class="ii"> <i class="ri-attachment-line"></i>Zakaria Baghdadi<i class="ri-linkedin-box-fill"></i></p>
-                <p class="ii"><i class="ri-attachment-line"></i>Mohamed El Harchi <i class="ri-linkedin-box-fill"></i></p>
-                <p class="ii"><i class="ri-attachment-line"></i>Mohamed Zaitouni<i class="ri-linkedin-box-fill"></i></p>
+                <p class="ii"> <i class="ri-attachment-line"></i>Ayoub Jadani <a href="https://www.linkedin.com/in/ayoub-jadani-a79550264/"><i class="ri-linkedin-box-fill"></i></a></p>
+                <p class="ii"> <i class="ri-attachment-line"></i>Zakaria Baghdadi<a href="https://www.linkedin.com/in/zakaria-baghdadi/"><i class="ri-linkedin-box-fill"></i></a></p>
+                <p class="ii"><i class="ri-attachment-line"></i>Mohamed El Harchi <a href="https://www.linkedin.com/in/zakaria-baghdadi/"><i class="ri-linkedin-box-fill"></i></a></p>
+                <p class="ii"><i class="ri-attachment-line"></i>Mohamed Zaitouni<a href="https://www.linkedin.com/in/mohamed-zitouni-b98518264/"><i class="ri-linkedin-box-fill"></i></a></p>
             </div>
         </div>
+
         <div class="footer-right">
             <p class="footer-company-about">
                 <span><i class="ri-attachment-2"></i> Mr le Directeur</span>
