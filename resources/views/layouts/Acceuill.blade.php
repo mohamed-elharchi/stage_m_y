@@ -26,15 +26,19 @@
         <img src="{{ asset('images/logo.png') }}" alt="Example">
         <div class="navigation">
             <ul>
+                <i id="menu-close" class="ri-close-fill"></i>
                 <li><a href="#">Accueil</a></li>
                 <li><a href="#">À propos</a></li>
                 <li><a href="#">Nouvelles</a></li>
                 <li><a href="#">Événements</a></li>
                 <li><a href="#">Calendriers</a></li>
                 {{-- <button class="butt1"><a href="{{ route('login') }}">Se connecter</a></button> --}}
-                @auth
+
+
+            </ul>
+            @auth
                     @if (auth()->user()->role === 'director')
-                       <a class="login" href="{{ route('directorDashboard') }}">Dashboard</a>
+                       <a class="login" href="{{ route('general_guard') }}">Dashboard</a>
                     @elseif(auth()->user()->role === 'general_guard')
                     <a class="login" href="{{ route('generalGuard_dashboard') }}">Dashboard</a>
                     @elseif(auth()->user()->role === 'teacher')
@@ -45,7 +49,7 @@
                 @guest
                 <a  class="login" href="{{ route('login') }}">Se connecter <i class="ri-login-circle-line"></i></a>
                 @endguest
-            </ul>
+                <i id="menu-btn" class="ri-menu-line"></i>
         </div>
 
     </nav>
