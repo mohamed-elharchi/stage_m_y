@@ -203,6 +203,7 @@
                         <div class="text-two">info_ms@gmail.com</div>
                     </div>
                 </div>
+                
                 <div class="right-side">
                     <div class="topic-text">Contact</div>
                     <p>Si vous avez un travail de ma part ou tout type de requêtes liées à mon tutoriel, vous pouvez
