@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,43 +23,11 @@
             <ul>
                 <li>
                     <img src="{{ asset('img/logo.png') }}" alt="" width="70%" height="70%">
-
-                    {{-- <a href="{{ route('directorDashboard') }}">
-                        <span class="logoo"><img src="{{ asset('images/logo.png') }}" alt="" width="100%"
-                                height="70%"></span>
-                        <span class="title">Dashboard</span>
-                    </a> --}}
                 </li>
                 <li>
-                    {{-- <a href="{{ route('general_guard') }}">
-                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                        <span class="title">Responsables</span>
-                    </a> --}}
-                    @auth
-                        @if (auth()->user()->role === 'director')
-                            <a href="{{ route('general_guard') }}">
-                                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                                <span class="title">Responsables</span>
-                            </a>
-                        @endif
-                    @endauth
-                </li>
-                <li>
-                    <a href="{{ route('displayMatieres') }}">
+                    <a href="#">
                         <span class="icon"><ion-icon name="archive-outline"></ion-icon></span>
-                        <span class="title">Matieres</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('showDepartements') }}" id="add-to" class="Add-P-btn">
-                        <span class="icon"><ion-icon name="bag-add-outline"></ion-icon></span>
-                        <span class="title">departements</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('displayTeachers') }}" id="add-too" class="Add-o-btn">
-                        <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
-                        <span class="title" id="offrr">Les professeurs</span>
+                        <span class="title">lghiyab</span>
                     </a>
                 </li>
                 <li>

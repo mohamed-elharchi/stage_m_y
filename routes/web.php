@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\directorController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\teacherController;
 use App\Http\Controllers\UtilisationDuTempsController;
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,12 @@ Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () 
 
 
 
+    Route::get('/dashboard/professeurs', [directorController::class, "displayTeachers"])->name('displayTeachers');
+    Route::get('/dashboard/addTeacher', [directorController::class, "addTeacher"])->name('addTeacher');
+    Route::get('/dashboard/updateTeacher/{id}', [directorController::class, "updateTeacher"])->name('updateTeacher');
+    Route::patch('/dashboard/updateTeacher/{id}', [directorController::class, "saveUpdate"])->name('saveUpdateTeacher');
+    Route::post('/dashboard/addTeacher', [directorController::class, "saveTeacher"])->name('saveTeacher');
+    Route::delete('/dashboard/deleteTeacher/{id}', [directorController::class, "destroyTeacher"])->name('deleteTeacher');
 
 
 
@@ -85,7 +92,7 @@ Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () 
 
 Route::group(['middleware' => ['auth', TeacherMiddleware::class]], function () {
     // Route::get('/teacher/dashboard', 'TeacherController@dashboard')->name('teacher.dashboard');
-    Route::get('/teacher/dashboard', [LoginController::class, "teacherDashboard"])->name('teacherDashboard');
+    Route::get('/teacher/dashboard', [teacherController::class, "teacherDashboard"])->name('teacherDashboard');
 });
 
 
