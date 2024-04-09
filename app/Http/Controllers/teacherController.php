@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\absence;
 use Illuminate\Http\Request;
 use App\Models\teacher;
 use App\Models\departement;
@@ -22,7 +23,7 @@ class teacherController extends Controller
         $departements = DB::table('teacher_departments')
             ->join('departements', 'teacher_departments.departement_id', '=', 'departements.id')
             ->join('teachers', 'teacher_departments.teacher_id', '=', 'teachers.id')
-            ->where('teachers.admin_id', $teacherId) 
+            ->where('teachers.admin_id', $teacherId)
             ->select('departements.*')
             ->get();
 
@@ -30,7 +31,25 @@ class teacherController extends Controller
 
         return view('dashboard.teacher_dashboard.index', compact('teacher', 'departements'));
     }
+    public function displayAbsence(Request $request)
+    {
+        $request->validate([
+            'department' => 'required|exists:departements,id',
+        ]);
 
+        $departmentId = $request->input('department');
+
+        // Fetch the last inserted absence record for the specified department
+        $absence = Absence::where('departement_id', $departmentId)->latest()->first();
+
+        // Check if an absence record exists for the department
+        if ($absence) {
+            return view('dashboard.teacher_dashboard.displayAbsence', compact('absence'));
+        } else {
+            // Handle case when no absence record is found
+            return view('dashboard.teacher_dashboard.displayAbsence')->with('error', 'No absence record found for the selected department.');
+        }
+    }
 
     public function create()
     {

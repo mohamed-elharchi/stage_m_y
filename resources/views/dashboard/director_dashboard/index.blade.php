@@ -23,11 +23,7 @@ Responsables
                 </div>
             @endif
 
-            @if (session('edit'))
-                <div class="alert alert-info" role="alert">
-                    <p>The employee <span class="text text-primary">{{ session('edit') }}</span> has been updated successfully </p>
-                </div>
-            @endif
+          
 
             <div class="container mt-4">
                 <div class="row justify-content-between mb-3">

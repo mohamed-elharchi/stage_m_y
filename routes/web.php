@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () 
     // Route::get('/dashboard', [directorController::class, "generalGuardDashboard"])->name('generalGuard_dashboard');
 
     Route::get('/dashboard/allGeneralGuard', [directorController::class, "index"])->name('general_guard');
-    Route::get('/dashboard/addGeneralGuard', [directorController::class, "create"])->name('addGeneralGuard')->middleware('');
+    Route::get('/dashboard/addGeneralGuard', [directorController::class, "create"])->name('addGeneralGuard');
     Route::delete('/dashboard/deleteGeneralGuard/{id}', [directorController::class, "destroy"])->name('deleteGeneral_guard');
     Route::get('/dashboard/updateGeneralGuard/{id}/edit', [directorController::class, "edit"])->name('updateGeneral_guard');
     Route::patch('/dashboard/updateGeneralGuard/{id}', [directorController::class, "update"])->name('saveUpdate');
@@ -118,6 +118,9 @@ Route::group(['middleware' => ['auth', GeneralGuardMiddleware::class]], function
 
 Route::group(['middleware' => ['auth', TeacherMiddleware::class]], function () {
     Route::get('/teacher/dashboard', [teacherController::class, "teacherDashboard"])->name('teacherDashboard');
+    Route::match(['get', 'post'], '/teacher/absence/', [teacherController::class, "displayAbsence"])->name('displayAbsence');
+
+
 });
 
 

@@ -2,13 +2,16 @@
 @section('title', 'Absence')
 @section('content')
     <div class="container mt-5">
+
         <div class="row justify-content-center">
+
             <div class="col-md-8">
                 <div class="card">
+                 
                     <div class="card-header">Welcome, {{ $teacher->name }}</div>
                     <div class="card-body">
                         <h2>Your Departments:</h2>
-                        <form action="" method="POST">
+                        <form action="{{ route('displayAbsence') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="department">Select Department:</label>
