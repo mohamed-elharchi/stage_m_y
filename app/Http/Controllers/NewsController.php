@@ -33,7 +33,7 @@ class NewsController extends Controller
         $input = $request->all();
 
         if ($image = $request->file('image')) {
-            $destinationPath = 'images/';
+            $destinationPath = '';
             $NewsImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $NewsImage);
             $input['image'] = "$NewsImage";
@@ -62,7 +62,7 @@ class NewsController extends Controller
         $input = $request->all();
 
         if ($image = $request->file('image')) {
-            $destinationPath = 'images/';
+            $destinationPath = 'imagess/';
             $newsImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $newsImage);
             $input['image'] = $newsImage;
@@ -70,7 +70,7 @@ class NewsController extends Controller
             unset($input['image']);
         }
 
-        $news->update($input); 
+        $news->update($input);
         return redirect()->route('news.index')->with('success', 'Nouvelle mise à jour avec succès!');
     }
 

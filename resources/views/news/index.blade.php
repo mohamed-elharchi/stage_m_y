@@ -36,7 +36,7 @@
                         <tbody>
                             @foreach($newsList as $news)
                             <tr>
-                                <td><img src="{{ asset('images/' . $news->image) }}" width="100px"></td>
+                                <td><img src="{{ asset( $news->image) }}" width="100px"></td>
                                 <td>{{ $news->title }}</td>
                                 <td>{{ $news->paragraph }}</td>
                                 <td>

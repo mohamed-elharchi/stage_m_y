@@ -78,7 +78,9 @@ Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () 
 
 
 
-Route::resource('news', NewsController::class)->names(['index' => 'siteDashboard']);
+    Route::resource('news', NewsController::class)->names(['index' => 'siteDashboard','destroy'=>'news.index']);
+
+
 Route::resource('utilisations', UtilisationDuTempsController::class);
 Route::get('/contact', [ContactController::class, 'showForm']);
 Route::post('/contact', [ContactController::class, 'submitForm']);
