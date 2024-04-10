@@ -16,10 +16,6 @@ class CommentController extends Controller
         return view('comments.index', compact('comments'));
     }
 
-    public function create()
-    {
-        return view('comments.create');
-    }
 
     public function store(Request $request)
     {
@@ -40,29 +36,13 @@ class CommentController extends Controller
         return view('comments.show',compact('comment'));
     }
 
-    public function edit(Comment $comment)
-    {
-        return view('comments.edit',compact('comment'));
-    }
+
     public function show2(Comment $comment)
 {
     return view('comments.show2', compact('comment'));
 }
 
 
-    public function update(Request $request, Comment $comment)
-    {
-        $request->validate([
-            'name' => 'required|max:255',
-            'date' => 'required|date',
-            'comment' => 'required',
-        ]);
-
-        $comment->update($request->all());
-
-        return redirect()->route('comments.index')
-                        ->with('success','Comment updated successfully');
-    }
 
     public function destroy(Comment $comment)
     {

@@ -25,7 +25,6 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'title' => 'required|string|max:255',
             'paragraph' => 'required|string',
         ]);
@@ -33,11 +32,12 @@ class NewsController extends Controller
         $input = $request->all();
 
         if ($image = $request->file('image')) {
-            $destinationPath = '';
+            $destinationPath = 'imagess/';
             $NewsImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $NewsImage);
             $input['image'] = "$NewsImage";
         }
+
 
         News::create($input);
 
@@ -62,6 +62,11 @@ class NewsController extends Controller
         $input = $request->all();
 
         if ($image = $request->file('image')) {
+            // Delete the old image
+            if (file_exists('imagess/' . $news->image)) {
+                unlink('imagess/' . $news->image);
+            }
+
             $destinationPath = 'imagess/';
             $newsImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $newsImage);
@@ -74,12 +79,18 @@ class NewsController extends Controller
         return redirect()->route('news.index')->with('success', 'Nouvelle mise à jour avec succès!');
     }
 
-
     public function destroy($id)
     {
         $news = News::findOrFail($id);
+
+        // Delete the image
+        if (file_exists('imagess/' . $news->image)) {
+            unlink('imagess/' . $news->image);
+        }
+
         $news->delete();
 
         return redirect()->route('news.index')->with('success', 'Nouvelle supprimée avec succès!');
     }
+
 }

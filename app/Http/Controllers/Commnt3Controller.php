@@ -15,9 +15,16 @@ class Commnt3Controller extends Controller
         return view('commentss.index', compact('comments'));
     }
 
+
     public function create()
     {
         return view('commentss.create');
+    }
+    public function showTestimonials()
+    {
+        $comments = Commnt3::all();
+
+        return view('Acccueil.Home', compact('comments'));
     }
 
 

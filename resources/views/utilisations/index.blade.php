@@ -1,7 +1,7 @@
 @extends('layouts.dashboard1')
 
 @section('content')
-   
+
         <div class="container">
 
     <div class="main-content">
@@ -39,7 +39,7 @@
                     <td>{{ $utilisation->classe }}</td>
                     <td>{{ $utilisation->filiere }}</td>
                     <td>
-                        <img src="{{ asset('images/' . $utilisation->image) }}" width="100px">
+                        <img src="{{ asset('imagess/' . $utilisation->image) }}" width="100px">
                     </td>
                     <td>
                         <a href="{{ route('utilisations.show', $utilisation->id) }}" class="btn btn-primary">Voir</a>

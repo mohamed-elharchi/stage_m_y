@@ -20,12 +20,14 @@ use App\Http\Controllers\Commnt3Controller;
 Route::resource('comments', CommentController::class);
 Route::get('/comments/{comment}/show2', [CommentController::class, 'show2'])->name('comments.show2');
 Route::resource('/commentss', Commnt3Controller::class );
+Route::resource('comments', 'App\Http\Controllers\CommentController');
 
 
 
 
 
-Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
+
+Route::get('/', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/accueil', [Contact2Controller::class, 'showInAyoub'])->name('accueil');
 
 
@@ -83,10 +85,11 @@ Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () 
 
 
 
-    Route::resource('news', NewsController::class)->names(['index' => 'siteDashboard','destroy'=>'news.index']);
 
 
+Route::resource('news', NewsController::class);
 Route::resource('utilisations', UtilisationDuTempsController::class);
+
 Route::get('/contact', [ContactController::class, 'showForm']);
 Route::post('/contact', [ContactController::class, 'submitForm']);
 Route::delete('/messages/{id}', [ContactController::class, 'deleteMessage']);
@@ -124,8 +127,18 @@ Route::group(['middleware' => ['auth', GeneralGuardMiddleware::class]], function
 
 
 
-    Route::resource('news', NewsController::class)->names(['index' => 'siteDashboard']);
+
+
+    Route::resource('news', NewsController::class);
     Route::resource('utilisations', UtilisationDuTempsController::class);
+    Route::get('/contact', [ContactController::class, 'showForm']);
+    Route::post('/contact', [ContactController::class, 'submitForm']);
+    Route::delete('/messages/{id}', [ContactController::class, 'deleteMessage']);
+    Route::get('/messages', [ContactController::class, 'showMessage']);
+    Route::get('/contacts', [Contact2Controller::class, 'index'])->name('contacts.index');
+    Route::get('/contacts/{contact}/edit', [Contact2Controller::class, 'edit'])->name('contacts.edit');
+    Route::put('/contacts/{contact}', [Contact2Controller::class, 'update'])->name('contacts.update');
+
 });
 
 

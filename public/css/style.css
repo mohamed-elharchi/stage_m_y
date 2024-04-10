@@ -285,7 +285,6 @@ nav .navigation ul li a:hover {
     height: 1000px;
 }
 
-
 /* end home */
 
 /* caractéristiques ++++++++++++++++++++++ */
@@ -366,14 +365,6 @@ nav .navigation ul li a:hover {
     height: 310px;
     width: 320px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px; /* Adjust margin */
-    transition: 0s;
-}
-.filier-box:hover {
-    background-color: rgb(245, 240, 235);
-
-}
-
     margin-bottom: 4px;
     margin-left: 2px;
     margin-right:2px;
@@ -431,7 +422,6 @@ nav .navigation ul li a:hover {
 }
 
 .mySlides {
-
     display: none;
     text-align: center;
     padding: 20px;
@@ -470,7 +460,6 @@ nav .navigation ul li a:hover {
 
 .prev:hover,
 .next:hover {
-
     color: rgb(233, 137, 27);
 }
 
@@ -485,7 +474,6 @@ nav .navigation ul li a:hover {
     display: inline-block;
     transition: background-color 0.6s ease;
     cursor: pointer;
-
 
 }
 .dots{
@@ -522,7 +510,6 @@ nav .navigation ul li a:hover {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
-
 
 }
 
@@ -627,31 +614,13 @@ nav .navigation ul li a:hover {
 .right-side .input-box textarea {
     padding-top: 6px;
 }
-.zb{
-    display: inline-block;
-    margin-top: 12px;
-    color: #fff;
-    font-size: 18px;
-    outline: none;
-    border: none;
-    padding: 8px 16px;
-    background: rgb(233, 137, 27);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.zb:hover{
-    background: rgb(233, 137, 27);
-  }
-.right-side  .button{
-  display: inline-block;
-  margin-top: 12px;
 
 .right-side .button {
     display: inline-block;
     margin-top: 12px;
 }
 
-.right-side .button input[type="button"] {
+.right-side .button button {
     color: #fff;
     font-size: 18px;
     outline: none;
@@ -662,7 +631,7 @@ nav .navigation ul li a:hover {
     transition: all 0.3s ease;
 }
 
-.button input[type="button"]:hover {
+.button button:hover {
     background: rgb(233, 137, 27);
 }
 
@@ -764,28 +733,16 @@ nav .navigation ul li a:hover {
 
 /* Footer Center */
 
-.footer-distributed .footer-center {
-    width: 35%;
+.ii{
+    color: #fff;
+     margin-top: 10px;
 }
 
 
 
 
 
-.footer-distributed .footer-center p {
-    display: inline-block;
-    color: #ffffff;
-    vertical-align: middle;
-    margin-bottom: 5px;
-}
 
-
-
-.footer-distributed .footer-center p a {
-    color: rgb(233, 137, 27);
-    text-decoration: none;
-    ;
-}
 
 /* Footer Right */
 
@@ -923,7 +880,7 @@ nav .navigation ul li a:hover {
     background-color: white;
     border-radius: 10px;
     z-index: 999;
-    border: 1px solid black;
+    border: 2px solid rgb(233, 137, 27);
 }
 
 .discussion.active {
@@ -1167,9 +1124,10 @@ color: #fff;
     font-weight: bold;
     cursor: pointer;
 }
+
 .filier-box {
 
-    height: 450px;
+    height: 400px;
 }
 
 }

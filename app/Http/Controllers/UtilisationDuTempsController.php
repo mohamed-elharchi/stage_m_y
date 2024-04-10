@@ -29,7 +29,7 @@ class UtilisationDuTempsController extends Controller
         $input = $request->all();
 
         if ($image = $request->file('image')) {
-            $destinationPath = 'images/';
+            $destinationPath = 'imagess/';
             $TempsImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $TempsImage);
             $input['image'] = $TempsImage;
@@ -51,33 +51,47 @@ class UtilisationDuTempsController extends Controller
         return view('utilisations.edit', compact('utilisation'));
     }
 
+   
     public function update(Request $request, $id)
-    {
-        $request->validate([
-            'classe' => 'required|string',
-            'filiere' => 'required|string',
-        ]);
+{
+    $request->validate([
+        'classe' => 'required|string',
+        'filiere' => 'required|string',
+    ]);
 
-        $input = $request->all();
+    $utilisation = UtilisationDuTemps::find($id);
 
-        if ($image = $request->file('image')) {
-            $destinationPath = 'images/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = $profileImage;
+    $input = $request->all();
+
+    if ($image = $request->file('image')) {
+        if (file_exists('imagess/' . $utilisation->image)) {
+            unlink('imagess/' . $utilisation->image);
         }
 
-        $utilisation = UtilisationDuTemps::find($id);
-        $utilisation->update($input);
-
-        return redirect()->route('utilisations.index')->with('success', 'Utilisation du temps mise à jour avec succès.');
+        $destinationPath = 'imagess/';
+        $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $image->move($destinationPath, $profileImage);
+        $input['image'] = $profileImage;
+    } else {
+        unset($input['image']);
     }
 
+    $utilisation->update($input);
+    return redirect()->route('utilisations.index')->with('success', 'Utilisation du temps supprimée avec succès');
+}
 
-    public function destroy(UtilisationDuTemps $utilisation)
-    {
-        $utilisation->delete();
+public function destroy(UtilisationDuTemps $utilisation)
+{
 
-        return redirect()->route('utilisations.index')->with('success', 'Utilisation du temps supprimée avec succès.');
+    if (file_exists('imagess/' . $utilisation->image)) {
+        unlink('imagess/' . $utilisation->image);
     }
+
+    $utilisation->delete();
+
+    return redirect()->route('utilisations.index')->with('success', 'Utilisation du temps supprimée avec succès');
+}
+
+
+
 }
