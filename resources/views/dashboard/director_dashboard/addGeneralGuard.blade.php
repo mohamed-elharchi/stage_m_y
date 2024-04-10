@@ -3,9 +3,10 @@
     Ajouter un garde général
 @endsection
 @section('content')
-    <div class="container-fluid">
-        <div class="row justify-content-center align-items-center">
+    <div class="container-fluid mt-4">
+        <div class="row justify-content-center align-items-center mt-4">
             <div class="col-md-6">
+                <h3>ajouter</h3>
                 <form method="POST" action="{{ route('saveGeneralGuard') }}">
                     @csrf
                     <div class="mb-3">

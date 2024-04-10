@@ -18,37 +18,8 @@ class LoginController extends Controller
         return view('dashboard.login');
     }
 
-    // public function directorDashboard()
-    // {
-    //     return view('layouts.directorLayout');
-    // }
-    public function teacherDashboard()
-    {
-        return view('dashboard.teacher_dashboard.index');
-    }
 
 
-    // public function login(Request $request)
-    // {
-    //     // dd(hash::make('azer1234'));
-    //     $credentials = $request->only('email', 'password');
-
-    //     $user = Admin::where('email', $credentials['email'])->first();
-
-    //     if ($user && Hash::check($credentials['password'], $user->password)) {
-
-    //         // if ($user->role === 'director') {
-    //         //     return redirect()->route('indexDashboard')->with("success", "You have been logged in successfully");
-    //         // } elseif ($user->role === 'teacher') {
-    //         // }
-
-    //         Auth::login($user);
-    //         $request->session()->regenerate();
-    //         return redirect()->route('indexDashboard')->with("success", "You have been logged in successfully");
-    //     }
-
-    //     return back()->withErrors(['email' => 'Invalid email or password.'])->withInput();
-    // }
 
 
     public function login(Request $request)

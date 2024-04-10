@@ -20,7 +20,7 @@ class DirectorMiddleware
         if (!Auth::check()) {
             return redirect()->route('login');
         }
-        if (Auth::user()->role === 'director' || Auth::user()->role === 'general_guard') {
+        if (Auth::user()->role === 'director' ) { //|| Auth::user()->role === 'general_guard'
             return $next($request);
         }
 

@@ -9,6 +9,7 @@ use App\Http\Requests\matiereRequest;
 use App\Models\Admin;
 use App\Models\departement;
 use App\Models\matiere;
+use App\Models\teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -78,6 +79,75 @@ class directorController extends Controller
         return redirect()->route('showDepartements')->with('success', 'Registration successful');
     }
 
+
+
+    //teachers
+    public function displayTeachers()
+    {
+        $teachers = Teacher::with('admin', 'matiere', 'departments')->get();
+        return view('dashboard.director_dashboard.indexTeachers', compact('teachers'));
+    }
+
+    public function addTeacher()
+    {
+        $matieres = Matiere::all();
+
+        $departements = Departement::all();
+
+        $teachers = Admin::where('role', 'teacher')->get();
+        return view('dashboard.director_dashboard.addTeacher', compact('matieres', 'departements', 'teachers'));
+    }
+
+
+
+
+    public function saveTeacher(Request $request)
+    {
+        $validatedData = $request->validate([
+            'admin_id' => 'required|exists:admins,id',
+            'matiere_id' => 'required|exists:matieres,id',
+            'departement_ids' => 'array',
+            'departement_ids.*' => 'exists:departements,id',
+        ]);
+
+        $teacher = new Teacher();
+        $teacher->admin_id = $validatedData['admin_id'];
+        $teacher->matiere_id = $validatedData['matiere_id'];
+        $teacher->save();
+
+        if (isset($validatedData['departement_ids'])) {
+            $teacher->departments()->attach($validatedData['departement_ids']);
+        }
+
+        return redirect()->route('displayTeachers')->with('success', 'Teacher added successfully');
+    }
+    public function updateTeacher($id)
+    {
+        $teacher = Teacher::findOrFail($id);
+        $matieres = Matiere::all();
+        $departments = Departement::all();
+
+        return view('dashboard.director_dashboard.updateTeacher', compact('teacher', 'matieres', 'departments'));
+    }
+
+    public function saveUpdate(Request $request, $id)
+    {
+        $teacher = Teacher::findOrFail($id);
+
+        $request->validate([
+            'matiere_id' => 'required|exists:matieres,id',
+            'department_ids' => 'array',
+            'department_ids.*' => 'exists:departements,id',
+        ]);
+
+        $teacher->matiere_id = $request->matiere_id;
+
+        $teacher->departments()->sync($request->department_ids);
+
+        $teacher->save();
+
+        return redirect()->route('displayTeachers')->with('success', 'Les informations du professeur ont été mises à jour avec succès.');
+    }
 
 
     public function filter(Request $request)
@@ -188,5 +258,11 @@ class directorController extends Controller
         $departement = departement::findOrFail($id);
         $departement->delete();
         return redirect()->route('showDepartements')->with('success', 'Departements a été supprimée avec succès');
+    }
+    public function destroyTeacher($id)
+    {
+        $teacher = teacher::findOrFail($id);
+        $teacher->delete();
+        return redirect()->route('displayTeachers')->with('success', 'Departements a été supprimée avec succès');
     }
 }

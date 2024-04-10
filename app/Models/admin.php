@@ -25,6 +25,9 @@ class Admin extends Model implements Authenticatable
         'password',
         'remember_token',
     ];
+    public function teacher()
+    {
+        return $this->hasOne(teacher::class);
+    }
 
- 
 }

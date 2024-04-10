@@ -1,58 +1,4 @@
-{{-- <!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <title>@yield('title')</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .logo {
-            margin-right: 20px;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-secondary">
-            <a class="navbar-brand" href="#">
-                <img class="logo" src="{{ asset('images/logo.png') }}" height="60" alt="Exemple">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-                <a class="nav-link text-white btn btn-success" href="{{ route('generalGuard_dashboard') }}">Tableau de bord des gardes généraux</a>
-            </div>
-        </nav>
-    </header>
-
-    <div class="container mt-2">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="list-group">
-                    <a href="{{ route('general_guard') }}" class="list-group-item list-group-item-action">garde général</a>
-                    <a href="#" class="list-group-item list-group-item-action">Analytique</a>
-                    <a href="#" class="list-group-item list-group-item-action">Rapports</a>
-                    <a href="#" class="list-group-item list-group-item-action">Tâches</a>
-                    <a href="#" class="list-group-item list-group-item-action">Paramètres</a>
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="container mt-5">
-                    @yield('content')
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html> --}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,6 +55,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('displayTeachers') }}" id="add-too" class="Add-o-btn">
+                        <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
+                        <span class="title" id="offrr">Les professeurs</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('logout') }}" id="add-to" class="Add-P-btn">
                         <span class="icon"><ion-icon name="bag-add-outline"></ion-icon></span>
                         <span class="title">Déconnecte</span>
@@ -120,13 +72,8 @@
                         <span class="title">sitel web </span>
                     </a>
                 </li>
+
                 {{-- <li>
-                    <a href="" id="add-too" class="Add-o-btn">
-                        <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
-                        <span class="title" id="offrr">Add offer</span>
-                    </a>
-                </li>
-                <li>
                     <a href="editProfile.php">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                         <span class="title">profile</span>
