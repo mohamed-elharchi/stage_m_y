@@ -181,48 +181,55 @@
 
 
 
-        <div class="container">
-            <div class="content">
-                <div class="left-side">
-                    <div class="address details">
-                        <i class="ri-map-pin-line"></i>
-                        <div class="topic">Adresse</div>
-                        <div class="text-one">Driouch</div>
-                        <div class="text-two">HAY AL AMAL 06</div>
-                    </div>
-                    <div class="phone details">
-                        <i class="ri-phone-line"></i>
-                        <div class="topic">Téléphone</div>
-                        <div class="text-one">+212 70652357</div>
-                        <div class="text-two">+212 62OO21O1</div>
-                    </div>
-                    <div class="email details">
-                        <i class="ri-mail-line"></i>
-                        <div class="topic">Email</div>
-                        <div class="text-one">moulay_ismail@gmail.com</div>
-                        <div class="text-two">info_ms@gmail.com</div>
-                    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="left-side">
+                <div class="address details">
+                    <i class="ri-map-pin-line"></i>
+                    <div class="topic">Adresse</div>
+                    <div class="text-one">Driouch</div>
+                    <div class="text-two">HAY AL AMAL 06</div>
                 </div>
+                @foreach($contacts as $contact)
+                <div class="phone details">
+                    <i class="ri-phone-line"></i>
+                    <div class="topic">Téléphone</div>
+                    <div class="text-one">{{ $contact->telephon1 }}</div>
+                    <div class="text-two">{{ $contact->telephon2 }}</div>
+                </div>
+                <div class="email details">
+                    <i class="ri-mail-line"></i>
+                    <div class="topic">Email</div>
+                    <div class="text-one">{{ $contact->email1 }}</div>
+                    <div class="text-two">{{ $contact->email2 }}</div>
+                </div>
+                @endforeach
+            </div>
 
                 <div class="right-side">
                     <div class="topic-text">Contact</div>
                     <p>Si vous avez un travail de ma part ou tout type de requêtes liées à mon tutoriel, vous pouvez
                         m'envoyer un message à partir d'ici. C'est avec plaisir que je vous aide.</p>
-                    <form action="#">
-                        <div class="input-box">
-                            <input type="text" placeholder="Entrez votre nom">
-                        </div>
-                        <div class="input-box">
-                            <input type="text" placeholder="Entrer votre Email">
-                        </div>
-                        <div class="input-box message-box">
-                            <input type="texteria" placeholder=" Entrez votre message">
-                        </div>
-                        <div class="button">
-                            <button type="submit">Envoyer <i class="ri-send-plane-fill"></i></button>
+                        <form method="POST" action="{{ url('/contact') }}">
+                    @csrf
 
-                        </div>
-                    </form>
+                    <div class="input-box">
+                        <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" id="email" name="email" placeholder="Entrer votre Email" required>
+                    </div>
+                    <div class="input-box message-box">
+                        <input type="texteria" id="message" name="message" placeholder=" Entrez votre message" required>
+                    </div>
+                    <div class="button">
+                         <button type="submit">Envoyer <i class="ri-send-plane-fill"></i></button>
+                    </div>
+                </form>
+                @if(session('success'))
+                <div >{{ session('success') }}</div>
+                @endif
                 </div>
             </div>
         </div>
@@ -254,33 +261,27 @@
         </div>
 
         <dir class="part3">
-            <form class="formul-togl">
+        <form action="{{ route('comments.store') }}" method="POST">
+    @csrf
 
-          <div class="inps">
-            <table>
+    <div class="inps">
+        <table>
             <tr>
-                  <td> <label for="a" class="i1"><i class="ri-id-card-line"></i></label></td>
-                   <td> <input id="a" type="text" name="nom" class="n1" required placeholder="Entrez votre nom"></td>
-
+                <td><label for="name" class="i1"><i class="ri-id-card-line"></i></label></td>
+                <td><input id="name" name="name" type="text" class="n1" required placeholder="Entrez votre nom"></td>
             </tr>
             <tr>
-                <td> <label for="b" class="i1"><i class="ri-calendar-2-line"></i></label></td>
-                 <td> <input id="b" type="text" name="time" class="n1" required placeholder="Année scolaire"></td>
-
+                <td><label for="date" class="i1"><i class="ri-calendar-2-line"></i></label></td>
+                <td><input type="date" id="date" name="date" class="n1" required placeholder="Année scolaire"></td>
             </tr>
+        </table>
+    </div>
 
-            </table>
-          </div>
-
-
-
-           <div class="msg">
-           <input class="n2" type="text" placeholder="Entrez votre Témoignages ici...">
-           <button type="submit" name="ajouter" class="n3"><i class="ri-send-plane-fill"></i></button>
-
-           </div>
-
-       </form>
+    <div class="msg">
+        <input class="n2" type="text" name="comment" placeholder="Entrez votre Témoignages ici..." required>
+        <button type="submit" class="n3"><i class="ri-send-plane-fill"></i></button>
+    </div>
+</form>
 
 
         </dir>

@@ -19,15 +19,24 @@ use App\Http\Controllers\Commnt3Controller;
 
 Route::resource('comments', CommentController::class);
 Route::get('/comments/{comment}/show2', [CommentController::class, 'show2'])->name('comments.show2');
-Route::resource('/commentss', Commnt3Controller::class );
+
 Route::resource('comments', 'App\Http\Controllers\CommentController');
+Route::get('/comments/{comment}', 'Commnt3Controller@show')->name('comments.show');
+Route::get('/comments/{comment}', [Commnt3Controller::class, 'show'])->name('comments.show');
+
+Route::get('/accueil', [Commnt3Controller::class, 'showInAyoubb'])->name('accueil');
+Route::resource('/commentss', Commnt3Controller::class);
+
+Route::get('/accueil', [CommentController::class, 'create'])->name('accueil');
 
 
 
 
 
 
-Route::get('/', [AccueilController::class, 'index'])->name('accueil');
+
+
+Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/accueil', [Contact2Controller::class, 'showInAyoub'])->name('accueil');
 
 

@@ -7,29 +7,26 @@ use App\Models\Commnt3;
 
 class Commnt3Controller extends Controller
 {
-
     public function index()
     {
         $comments = Commnt3::all();
-
         return view('commentss.index', compact('comments'));
     }
 
+    public function showInAyoubb()
+    {
+        $comments = Commnt3::all();
+        return view('Acccueil.Home', compact('comments'));
+    }
 
     public function create()
     {
         return view('commentss.create');
     }
-    public function showTestimonials()
-    {
-        $comments = Commnt3::all();
-
-        return view('Acccueil.Home', compact('comments'));
-    }
 
 
 
-public function store(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|max:255',
@@ -42,6 +39,7 @@ public function store(Request $request)
         return redirect()->route('commentss.index')
                         ->with('success','Comment created successfully.');
     }
+
     public function destroy(Commnt3 $comment)
     {
         $comment->delete();
@@ -49,6 +47,4 @@ public function store(Request $request)
         return redirect()->route('comments.index')
                         ->with('success','Comment deleted successfully');
     }
-
-
 }
