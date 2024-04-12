@@ -10,6 +10,11 @@
                             <p>{{ session('error') }}</p>
                         </div>
                     @endif
+                    @if (session('success'))
+                        <div class="alert alert-primary" role="alert">
+                            <p>{{ session('success') }}</p>
+                        </div>
+                    @endif
                     <div class="card-header">Absences for Selected Department</div>
                     <div class="card-body">
                         @if (!empty($absence))
@@ -19,6 +24,9 @@
                                 <li>Absence: {{ $absence->absence }}</li>
                                 <li>Signature: {{ $absence->signature }}</li>
                             </ul>
+                            @if (auth()->id() === $absence->teacher_id)
+                                <a href="{{ route('editAbsence', $absence->id) }}" class="btn btn-primary">Edit Absence</a>
+                            @endif
                         @elseif (empty($absence) && !session('error'))
                             <p>No absence record found for the selected department.</p>
                         @endif
@@ -28,18 +36,19 @@
         </div>
     </div>
 
-    <!-- Form for inserting new absence records -->
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Insert New Absence Record</div>
                     <div class="card-body">
-                        <form action="" method="POST">
+                        <form action="{{ route('saveAbsence') }}" method="POST">
                             @csrf
+                            <input type="hidden" name="department" value="{{ $departmentId }}">
                             <div class="form-group">
                                 <label for="date">Date:</label>
-                                <input type="date" class="form-control" id="date" name="date" value="{{ date('Y-m-d') }}" readonly>
+                                <input type="date" class="form-control" id="date" name="date"
+                                    value="{{ date('Y-m-d') }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="period">Period:</label>
@@ -47,11 +56,20 @@
                                     <option value="8.30/9.30">8.30/9.30</option>
                                     <option value="9.30/10.30">9.30/10.30</option>
                                     <option value="10.30/11.30">10.30/11.30</option>
+                                    <option value="10.30/11.30">11.30/12.30</option>
+                                    <option value="10.30/11.30">2.30/3.30</option>
+                                    <option value="10.30/11.30">3.30/4.30</option>
+                                    <option value="10.30/11.30">4.30/5.30</option>
+                                    <option value="10.30/11.30">5.30/5.30</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="absence">Absence:</label>
-                                <input type="text" class="form-control" id="absence" name="absence">
+                                <select multiple class="form-control" id="absence" name="absence[]">
+                                    @for ($i = 1; $i <= 40; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="signature">Signature:</label>
@@ -64,4 +82,19 @@
             </div>
         </div>
     </div>
+
+    {{-- <script>
+function formatAbsenceInput(input) {
+    let sanitizedInput = input.value.replace(/[^\d]/g, '');
+
+    let formattedInput = sanitizedInput.replace(/(\d{2})(?=\d)/g, '$1-');
+
+    formattedInput = formattedInput.replace(/^0+(?=[1-9])/, '');
+
+    input.value = formattedInput;
+}
+</script> --}}
+
+
+
 @endsection

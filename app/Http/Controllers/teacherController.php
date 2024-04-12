@@ -6,6 +6,7 @@ use App\Models\absence;
 use Illuminate\Http\Request;
 use App\Models\teacher;
 use App\Models\departement;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class teacherController extends Controller
@@ -39,22 +40,70 @@ class teacherController extends Controller
 
         $departmentId = $request->input('department');
 
-        // Fetch the last inserted absence record for the specified department
         $absence = Absence::where('departement_id', $departmentId)->latest()->first();
 
-        // Check if an absence record exists for the department
         if ($absence) {
-            return view('dashboard.teacher_dashboard.displayAbsence', compact('absence'));
+            return view('dashboard.teacher_dashboard.displayAbsence', compact('absence', 'departmentId'));
         } else {
-            // Handle case when no absence record is found
-            return view('dashboard.teacher_dashboard.displayAbsence')->with('error', 'No absence record found for the selected department.');
+            return view('dashboard.teacher_dashboard.displayAbsence', compact('departmentId'))
+                ->with('error', 'No absence record found for the selected department.');
         }
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        abort(404);
+        $request->validate([
+            'date' => 'required|date',
+            'period' => 'required',
+            'absence' => 'required|array',
+            'absence.*' => 'required|integer|between:1,40',
+            'signature' => 'required|string|max:50',
+            'department' => 'required|exists:departements,id',
+        ]);
+
+
+        $teacherId = auth()->id();
+        $departmentId = $request->input('department');
+        $absenceString = implode('-', $request->absence);
+
+        $absence = new Absence();
+        $absence->departement_id = $departmentId;
+        $absence->date = $request->date;
+        $absence->period = $request->period;
+        $absence->absence = $absenceString;
+        $absence->signature = $request->signature;
+        $absence->teacher_id = $teacherId;
+
+        $absence->save();
+        return redirect()->route('teacherDashboard')->with(['success' => 'Absence record inserted successfully.', 'absence' => $absence]);
     }
+
+    public function editAbsence($id)
+    {
+        $absence = Absence::findOrFail($id);
+        return view('dashboard.teacher_dashboard.editAbsence', compact('absence'));
+    }
+
+    public function updateAbsence(Request $request, $id)
+    {
+        $request->validate([
+            'period' => 'required',
+            'absence' => 'required',
+            'signature' => 'required|string|max:50',
+        ]);
+
+        $absence = Absence::findOrFail($id);
+
+        $absence->period = $request->period;
+        $absence->absence = $request->absence;
+        $absence->signature = $request->signature;
+
+        $absence->save();
+
+        return redirect()->route('teacherDashboard')->with('success', 'Absence record updated successfully.');
+    }
+
+
 
     /**
      * Store the newly created resource in storage.
