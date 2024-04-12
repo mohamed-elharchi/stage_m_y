@@ -13,6 +13,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/api.js"></script>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@
 
     <!-- navigation.+++++++++++++++++  -->
     <nav id="main-nav">
-        <img src="{{ asset('images/logo.png') }}" alt="Example">
+        <a href="#"><img src="{{ asset('images/logo.png') }}" alt="Example"></a>
         <div class="navigation">
             <ul>
                 <i id="menu-close" class="ri-close-fill"></i>
