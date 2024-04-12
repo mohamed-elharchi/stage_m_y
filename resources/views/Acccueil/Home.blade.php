@@ -98,10 +98,7 @@
     <!-- comantairs.   -->
     <section id="Home">
         <h1>Témoignages Des élèves</h1>
-        <p>Découvrez les témoignages inspirants de nos élèves, illustrant la diversité des parcours éducatifs dans notre
-            lycée.</p>
 
-        vos aspirations.</p>
         <div class="slideshow-container">
             <div class="mySlides">
                 <i class="ri-user-fill user"></i>
@@ -170,7 +167,6 @@
 
 
 
-
     <!--end  comantairs-->
 
     <!-- contact -->
@@ -178,11 +174,7 @@
         <h1>Envoie-nous un message</h1>
         <p>Besoin d'aide ? Laissez-nous un message ! Nous sommes là pour vous aider avec toutes vos questions et
             préoccupations.</p>
-
-
-
-
-    <div class="container">
+            <div class="container">
         <div class="content">
             <div class="left-side">
                 <div class="address details">
@@ -206,7 +198,6 @@
                 </div>
                 @endforeach
             </div>
-
                 <div class="right-side">
                     <div class="topic-text">Contact</div>
                     <p>Si vous avez un travail de ma part ou tout type de requêtes liées à mon tutoriel, vous pouvez
@@ -261,7 +252,7 @@
         </div>
 
         <dir class="part3">
-        <form action="{{ route('comments.store') }}" method="POST">
+        <form action="" method="POST">
     @csrf
 
     <div class="inps">

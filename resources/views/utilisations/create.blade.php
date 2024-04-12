@@ -27,10 +27,7 @@
                 <label for="classe">Classe</label>
                 <input type="text" class="form-control" id="classe" name="classe" placeholder="Entrez la classe">
             </div>
-            <div class="form-group">
-                <label for="filiere">Filière</label>
-                <input type="text" class="form-control" id="filiere" name="filiere" placeholder="Entrez la filière">
-            </div>
+           
             <div class="form-group">
                 <label for="image">Image</label>
                 <input type="file" class="form-control" id="image" name="image"  placeholder="Entrez le chemin de l'image">

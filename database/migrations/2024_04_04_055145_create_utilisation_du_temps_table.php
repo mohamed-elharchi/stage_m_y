@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('utilisation_du_temps', function (Blueprint $table) {
-            
+
                 $table->id();
                 $table->string('classe');
-                $table->string('filiere');
+                
                 $table->string('image')->nullable();
                 $table->timestamps();
         });

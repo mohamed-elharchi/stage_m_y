@@ -22,7 +22,7 @@ class UtilisationDuTempsController extends Controller
     {
         $request->validate([
             'classe' => 'required|string',
-            'filiere' => 'required|string',
+            
 
         ]);
 
@@ -51,12 +51,12 @@ class UtilisationDuTempsController extends Controller
         return view('utilisations.edit', compact('utilisation'));
     }
 
-   
+
     public function update(Request $request, $id)
 {
     $request->validate([
         'classe' => 'required|string',
-        'filiere' => 'required|string',
+
     ]);
 
     $utilisation = UtilisationDuTemps::find($id);

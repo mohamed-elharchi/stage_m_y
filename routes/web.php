@@ -12,22 +12,25 @@ use App\Http\Controllers\teacherController;
 use App\Http\Controllers\UtilisationDuTempsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Contact2Controller;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\Commnt3Controller;
 
 
 
-Route::resource('comments', CommentController::class);
-Route::get('/comments/{comment}/show2', [CommentController::class, 'show2'])->name('comments.show2');
 
-Route::resource('comments', 'App\Http\Controllers\CommentController');
-Route::get('/comments/{comment}', 'Commnt3Controller@show')->name('comments.show');
-Route::get('/comments/{comment}', [Commnt3Controller::class, 'show'])->name('comments.show');
 
-Route::get('/accueil', [Commnt3Controller::class, 'showInAyoubb'])->name('accueil');
-Route::resource('/commentss', Commnt3Controller::class);
 
-Route::get('/accueil', [CommentController::class, 'create'])->name('accueil');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

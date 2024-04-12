@@ -20,7 +20,7 @@
                         </div>
                         <div>
                             <p><strong>Classe:</strong> {{ $utilisation->classe }}</p>
-                            <p><strong>Filière:</strong> {{ $utilisation->filiere }}</p>
+                            
                             <p><strong>Image:</strong> <img src="{{ asset('images/' . $utilisation->image) }}" width="100px"></p>
                         </div>
                         <div class="mt-3">

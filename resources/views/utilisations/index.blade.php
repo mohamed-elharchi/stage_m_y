@@ -28,7 +28,7 @@
             <thead>
                 <tr>
                     <th>Classe</th>
-                    <th>Filière</th>
+                   
                     <th>Image</th>
                     <th>Actions</th>
                 </tr>
@@ -37,7 +37,7 @@
                 @foreach ($utilisations as $utilisation)
                 <tr>
                     <td>{{ $utilisation->classe }}</td>
-                    <td>{{ $utilisation->filiere }}</td>
+
                     <td>
                         <img src="{{ asset('imagess/' . $utilisation->image) }}" width="100px">
                     </td>
