@@ -157,8 +157,12 @@ Route::group(['middleware' => ['auth', GeneralGuardMiddleware::class]], function
 // teacher dashboard :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Route::group(['middleware' => ['auth', TeacherMiddleware::class]], function () {
-    Route::get('/teacher/dashboard', [teacherController::class, "teacherDashboard"])->name('teacherDashboard');
-    Route::match(['get', 'post'], '/teacher/absence/', [teacherController::class, "displayAbsence"])->name('displayAbsence');
+    Route::get('/dashboard', [teacherController::class, "teacherDashboard"])->name('teacherDashboard');
+    Route::match(['get', 'post'], '/dashboard/absence/', [teacherController::class, "displayAbsence"])->name('displayAbsence');
+    Route::post('/dashboard/saveAbsence', [teacherController::class, "create"])->name('saveAbsence');
+    Route::get('/dashboard/absence/{id}/edit', [teacherController::class, "editAbsence"])->name('editAbsence');
+    Route::put('/dashboard/absence/{id}', [teacherController::class, "updateAbsence"])->name('updateAbsence');
+
 
 
 });

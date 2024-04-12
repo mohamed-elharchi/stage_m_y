@@ -7,7 +7,11 @@
 
             <div class="col-md-8">
                 <div class="card">
-                 
+                    @if (session('success'))
+                        <div class="alert alert-primary" role="alert">
+                            <p>{{ session('success') }}</p>
+                        </div>
+                    @endif
                     <div class="card-header">Welcome, {{ $teacher->name }}</div>
                     <div class="card-body">
                         <h2>Your Departments:</h2>

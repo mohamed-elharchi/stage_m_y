@@ -12,8 +12,8 @@
 
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/api.js"></script>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
 
     <!-- navigation.+++++++++++++++++  -->
     <nav id="main-nav">
-        <img src="{{ asset('images/logo.png') }}" alt="Example">
+        <a href="#"><img src="{{ asset('images/logo.png') }}" alt="Example"></a>
         <div class="navigation">
             <ul>
                 <i id="menu-close" class="ri-close-fill"></i>
@@ -76,7 +76,6 @@
 
                 <a href="#">À propos</a>
 
-
                 <a href="#">Calendriers</a>
             </p>
 
@@ -84,25 +83,19 @@
                 Réservés</p>
         </div>
 
-        <div class="footer-center">
-            <div>
-                <p>
-                    Envoie-nous un message E-Mail
-                    <i class="ri-message-2-line"></i>
-                </p>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span><i class="ri-attachment-2"></i> Développé Par :</span>
 
-            </div>
-
-            <div>
-
-                <p> <i class="ri-phone-line"></i> +212 706523757</p>
-            </div>
-            <div>
-
-                <p> <i class="ri-mail-line"></i> <a href="mailto:moulay_ismail@gmail.com">moulay_ismail@gmail.com</a>
-                </p>
+            </p>
+            <div class="footer-icons">
+                <p class="ii"> <i class="ri-attachment-line"></i>Ayoub Jadani <a href="https://www.linkedin.com/in/ayoub-jadani-a79550264/"><i class="ri-linkedin-box-fill"></i></a></p>
+                <p class="ii"><i class="ri-attachment-line"></i>Mohamed Zitouni<a href="https://www.linkedin.com/in/mohamed-zitouni-b98518264/"><i class="ri-linkedin-box-fill"></i></a></p>
+                <p class="ii"> <i class="ri-attachment-line"></i>Zakaria El Baghdadi<a href="https://www.linkedin.com/in/zakaria-baghdadi/"><i class="ri-linkedin-box-fill"></i></a></p>
+                <p class="ii"><i class="ri-attachment-line"></i>Mohamed El Harchi <a href="https://www.linkedin.com/in/zakaria-baghdadi/"><i class="ri-linkedin-box-fill"></i></a></p>
             </div>
         </div>
+
         <div class="footer-right">
             <p class="footer-company-about">
                 <span><i class="ri-attachment-2"></i> Mr le Directeur</span>
