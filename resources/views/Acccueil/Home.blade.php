@@ -192,9 +192,7 @@
 
     <!--end  books -->
     <!-- contact -->
-    <section id="contact">
-       
-       
+    <section id="contact" >
         <div class="container">
             <h1>Envoie-nous un message</h1>
             <div class="content">
