@@ -98,10 +98,7 @@
     <!-- comantairs.   -->
     <section id="Home">
         <h1>Témoignages Des élèves</h1>
-        <p>Découvrez les témoignages inspirants de nos élèves, illustrant la diversité des parcours éducatifs dans notre
-            lycée.</p>
-
-        vos aspirations.</p>
+  
         <div class="slideshow-container">
             <div class="mySlides">
                 <i class="ri-user-fill user"></i>
@@ -172,16 +169,32 @@
 
 
     <!--end  comantairs-->
+    <!--books -->
+    <div id="books">
+        <h1>Livres</h1>
+        <p>Si vous êtes passionné par la lecture, parcourez notre sélection de livres:<button id="showSearchButton"><i class="ri-search-line"></i></button></p>
+        
+           
+        <div id="searchContainer" style="display: none;">
+            <div class="input-container">
+                <i class="ri-search-line input-icon"></i>
+                <input type="text" id="searchInput" placeholder="Entrez le terme de recherche">
+            </div>
+        </div>
+        
+        
+      
+        <section id="bookDisplay" class="book-display">
+            <!-- Book cards will be dynamically added here -->
+        </section>
+    </div>
+    
 
+    <!--end  books -->
     <!-- contact -->
-    <section id="contact">
-        <h1>Envoie-nous un message</h1>
-        <p>Besoin d'aide ? Laissez-nous un message ! Nous sommes là pour vous aider avec toutes vos questions et
-            préoccupations.</p>
-
-
-
+    <section id="contact" >
         <div class="container">
+            <h1>Envoie-nous un message</h1>
             <div class="content">
                 <div class="left-side">
                     <div class="address details">
@@ -203,6 +216,7 @@
                         <div class="text-two">info_ms@gmail.com</div>
                     </div>
                 </div>
+
                 <div class="right-side">
                     <div class="topic-text">Contact</div>
                     <p>Si vous avez un travail de ma part ou tout type de requêtes liées à mon tutoriel, vous pouvez
@@ -218,7 +232,8 @@
                             <input type="texteria" placeholder=" Entrez votre message">
                         </div>
                         <div class="button">
-                            <input type="button" value="Envoyer">
+                            <button type="submit">Envoyer <i class="ri-send-plane-fill"></i></button>
+
                         </div>
                     </form>
                 </div>
@@ -226,9 +241,9 @@
         </div>
 
 
-   </section>
+    </section>
 
-     <!--  end contact -->
+    <!--  end contact -->
 
 
     <!-- Button to scroll back to top -->
@@ -240,45 +255,47 @@
     <div class="discussion">
         <div class="part1">
             <h2>Ajouter Vos Témoignages</h2>
-         </div>
+        </div>
 
 
         <div class="part2">
 
-                 <p>
-                    "Exprimez-vous ! Partagez vos expériences uniques avec nous.
-                    Votre témoignage pourrait inspirer d'autres."
-                </p>
+            <p>
+                "Exprimez-vous ! Partagez vos expériences uniques avec nous.
+                Votre témoignage pourrait inspirer d'autres."
+            </p>
         </div>
 
         <dir class="part3">
             <form class="formul-togl">
 
-          <div class="inps">
-            <table>
-            <tr>
-                  <td> <label for="a" class="i1"><i class="ri-id-card-line"></i></label></td>
-                   <td> <input id="a" type="text" name="nom" class="n1" required placeholder="Entrez votre nom"></td>
+                <div class="inps">
+                    <table>
+                        <tr>
+                            <td> <label for="a" class="i1"><i class="ri-id-card-line"></i></label></td>
+                            <td> <input id="a" type="text" name="nom" class="n1" required
+                                    placeholder="Entrez votre nom"></td>
 
-            </tr>
-            <tr>
-                <td> <label for="b" class="i1"><i class="ri-calendar-2-line"></i></label></td>
-                 <td> <input id="b" type="text" name="time" class="n1" required placeholder="Année scolaire"></td>
+                        </tr>
+                        <tr>
+                            <td> <label for="b" class="i1"><i class="ri-calendar-2-line"></i></label></td>
+                            <td> <input id="b" type="text" name="time" class="n1" required
+                                    placeholder="Année scolaire"></td>
 
-            </tr>
+                        </tr>
 
-            </table>
-          </div>
+                    </table>
+                </div>
 
 
 
-           <div class="msg">
-           <input class="n2" type="text" placeholder="Entrez votre Témoignages ici...">
-           <button type="submit" name="ajouter" class="n3"><i class="ri-send-plane-fill"></i></button>
+                <div class="msg">
+                    <input class="n2" type="text" placeholder="Entrez votre Témoignages ici...">
+                    <button type="submit" name="ajouter" class="n3"><i class="ri-send-plane-fill"></i></button>
 
-           </div>
+                </div>
 
-       </form>
+            </form>
 
 
         </dir>
