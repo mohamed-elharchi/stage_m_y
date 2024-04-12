@@ -105,7 +105,7 @@
                 </div>
                 <div class="user">
                     <button type="submit" class="btn btn-primary">
-                        <a href="{{ route('general_guard') }}" class="btn btn-link text-white"
+                        <a href="{{ url('messages') }}" class="btn btn-link text-white"
                             style="text-decoration: none;">Site Dashboard</a>
                     </button>
                 </div>
