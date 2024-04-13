@@ -193,8 +193,10 @@
     <!--end  books -->
     <!-- contact -->
     <section id="contact" >
+        
         <div class="container">
             <h1>Envoie-nous un message</h1>
+            <p> vous pouvez m'envoyer un message à partir d'ici. C'est avec plaisir que je vous aide.</p>
             <div class="content">
                 <div class="left-side">
                     <div class="address details">
@@ -219,8 +221,7 @@
 
                 <div class="right-side">
                     <div class="topic-text">Contact</div>
-                    <p>Si vous avez un travail de ma part ou tout type de requêtes liées à mon tutoriel, vous pouvez
-                        m'envoyer un message à partir d'ici. C'est avec plaisir que je vous aide.</p>
+                  
                     <form action="#">
                         <div class="input-box">
                             <input type="text" placeholder="Entrez votre nom">
