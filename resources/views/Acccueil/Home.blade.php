@@ -220,7 +220,7 @@
                 </div>
 
                 <div class="right-side">
-                    <div class="topic-text">Contact</div>
+                    <div class="topic-text">Contact <i class="ri-message-3-line"></i></div>
                   
                     <form action="#">
                         <div class="input-box">
