@@ -27,7 +27,6 @@
                 <li><a href="#">Accueil</a></li>
                 <li><a href="#">À propos</a></li>
                 <li><a href="#">Nouvelles</a></li>
-                <li><a href="#">Événements</a></li>
                 <li><a href="#">Calendriers</a></li>
                 {{-- <button class="butt1"><a href="{{ route('login') }}">Se connecter</a></button> --}}
 
