@@ -95,7 +95,7 @@
 
         <div class="footer-right">
             <p class="footer-company-about">
-                <span><i class="ri-attachment-2"></i> Mr le Directeur</span>
+                <span><i class="ri-attachment-2"></i> Mr le Directeur :</span>
                 <strong>Lycée Moulay Ismail</strong> Bienvenue à notre lycée ! Nous sommes ravis de vous accueillir dans
                 notre
                 communauté éducative dynamique où chaque élève est encouragé à exceller et à s'épanouir. Ensemble,
@@ -119,6 +119,11 @@
 
 
 
+
+
+
+
+    
 <script>
      $('#menu-btn').click(function(){
       $('nav .navigation ul').addClass('active')

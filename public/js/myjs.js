@@ -87,4 +87,7 @@ function showSlides(n) {
     if (dots[slideIndex - 1]) {
         dots[slideIndex - 1].className += " active";
     }
+
+
 }
+

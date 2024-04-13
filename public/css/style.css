@@ -313,8 +313,9 @@ nav .navigation ul li a:hover {
     background-color: rgb(240, 230, 219);
     text-align: start;
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 #caracter .fea-box i {
@@ -556,6 +557,9 @@ input[type="text"] {
     text-align: center;
     cursor: pointer;
     overflow: auto;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+
 }
 
 .book-card img {
@@ -686,7 +690,7 @@ input[type="text"] {
 }
 
 .right-side .input-box input,
-.right-side .input-box textarea {
+.right-side .input-box textarea{
     height: 100%;
     width: 100%;
     border: none;
@@ -700,10 +704,13 @@ input[type="text"] {
  
 }
 
-.right-side .message-box {
+.right-side .inpnom{
+    border-top-left-radius: 15px;
+} 
+.right-side .message-box{
     min-height: 110px;
+    border-bottom-right-radius: 15px;
 }
-
 
 
 .right-side .button {

@@ -224,13 +224,13 @@
                   
                     <form action="#">
                         <div class="input-box">
-                            <input type="text" placeholder="Entrez votre nom">
+                            <input type="text" placeholder="Entrez votre nom" class="inpnom">
                         </div>
                         <div class="input-box">
                             <input type="text" placeholder="Entrer votre Email">
                         </div>
                         <div class="input-box message-box">
-                            <input type="texteria" placeholder=" Entrez votre message">
+                            <input type="texteria" placeholder=" Entrez votre message" class="message-box">
                         </div>
                         <div class="button">
                             <button type="submit">Envoyer <i class="ri-send-plane-fill"></i></button>
