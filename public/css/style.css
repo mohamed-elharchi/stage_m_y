@@ -1164,6 +1164,11 @@ input[type="text"] {
 
 
 
+     
+ 
+
+
+
 }
 
 /*end total media screen */
@@ -1232,11 +1237,13 @@ input[type="text"] {
         cursor: pointer;
     }
     
-
     .filier-box {
-
-        height: 400px;
+        height: 420px;
+        width: 320px;
+       
+    
     }
+  
 
 }
 
