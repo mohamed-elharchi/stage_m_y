@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to fetch default books
     async function fetchDefaultBooks() {
         try {
-            const defaultBooks = ["Le malentendu", "Candide, Ou L'Optimisme", "Le Petit Prince", "Les Misérables", "Le Dernier Jour d'un condamné"];
+            const defaultBooks = ["Le malentendu", "Candide, Ou L'Optimisme", "Le Petit Prince", "Les Misérables", "Le dernier jour d'un condamné"];
             for (const title of defaultBooks) {
                 const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${title}&maxResults=1`);
                 const data = await response.json();

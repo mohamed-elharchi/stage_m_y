@@ -545,7 +545,7 @@ input[type="text"] {
 }
 
 .book-card {
-    border: 1px solid #000000;
+    border: 2px solid #000000;
     padding: 6px;
     margin: 10px;
     width: 180px;
