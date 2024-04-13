@@ -697,15 +697,14 @@ input[type="text"] {
     resize: none;
     text-align: start;
     color: rgb(233, 137, 27);
+ 
 }
 
 .right-side .message-box {
     min-height: 110px;
 }
 
-.right-side .input-box textarea {
-    padding-top: 6px;
-}
+
 
 .right-side .button {
     display: inline-block;
@@ -722,6 +721,9 @@ input[type="text"] {
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid rgb(233, 137, 27) ;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+
  
 }
 
