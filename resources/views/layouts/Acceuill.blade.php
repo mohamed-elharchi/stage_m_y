@@ -5,15 +5,11 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/myjs.js') }}"></script>
-
-
-
-
-
-
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/api.js"></script>
+    <link rel="shortcut icon" href="{{ asset('16x16-x-icon-vector-16.png') }}" >
+
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,10 +85,12 @@
             
             </p>
             <div class="footer-icons">
-                <p class="ii"> <i class="ri-attachment-line"></i>Ayoub Jadani <a href="https://www.linkedin.com/in/ayoub-jadani-a79550264/"><i class="ri-linkedin-box-fill"></i></a></p>
-                <p class="ii"><i class="ri-attachment-line"></i>Mohamed Zitouni<a href="https://www.linkedin.com/in/mohamed-zitouni-b98518264/"><i class="ri-linkedin-box-fill"></i></a></p>
-                <p class="ii"> <i class="ri-attachment-line"></i>Zakaria El Baghdadi<a href="https://www.linkedin.com/in/zakaria-baghdadi/"><i class="ri-linkedin-box-fill"></i></a></p>
-                <p class="ii"><i class="ri-attachment-line"></i>Mohamed El Harchi <a href="https://www.linkedin.com/in/zakaria-baghdadi/"><i class="ri-linkedin-box-fill"></i></a></p>
+                <p class="ii"> <i class="ri-attachment-line "></i>Ayoub Jadani <a href="https://www.linkedin.com/in/ayoub-jadani-a79550264/"><i class="ri-linkedin-box-fill   iiii"></i></a></p>
+                <p class="ii"><i class="ri-attachment-line"></i>Mohamed Zitouni<a href="https://www.linkedin.com/in/mohamed-zitouni-b98518264/"><i class="ri-linkedin-box-fill iiii"></i></a></p>
+                <p class="ii"> <i class="ri-attachment-line"></i>Zakaria El Baghdadi<a href="https://www.linkedin.com/in/zakaria-baghdadi/"><i class="ri-linkedin-box-fill iiii"></i></a></p>
+                <p class="ii"><i class="ri-attachment-line"></i>Mohamed El Harchi <a href="https://www.linkedin.com/in/mohamed-elharchi-b14566264/"><i class="ri-linkedin-box-fill iiii"></i></a></p>
+                <p class="ii"><i class="ri-attachment-line"></i>Isam Najah <a href="https://www.linkedin.com/in/issam-najah-6b8a96177/"><i class="ri-linkedin-box-fill iiii"></i></a></p>
+
             </div>
         </div>
 

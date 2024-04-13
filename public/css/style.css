@@ -58,7 +58,7 @@ nav {
 }
 
 nav img {
-    width: 150px;
+    width: 130px;
     cursor: pointer;
 }
 
@@ -555,6 +555,7 @@ input[type="text"] {
     align-items: center;
     text-align: center;
     cursor: pointer;
+    overflow: auto;
 }
 
 .book-card img {
@@ -816,8 +817,13 @@ input[type="text"] {
 /* Footer Center */
 
 .ii {
-    color: #fff;
+    color: #92999f;
     margin-top: 10px;
+    font-size: 13px;
+    
+}
+.iiii{
+    font-size: 1.3rem;
 }
 
 
