@@ -815,19 +815,9 @@ input[type="text"] {
 
 /* Footer Center */
 
-.footer-distributed .footer-center {
-    width: 35%;
-}
-
-
-
-
-
-.footer-distributed .footer-center p {
-    display: inline-block;
-    color: #ffffff;
-    vertical-align: middle;
-    margin-bottom: 5px;
+.ii {
+    color: #fff;
+    margin-top: 10px;
 }
 
 
@@ -1219,21 +1209,18 @@ input[type="text"] {
     }
 
 
-.login {
-    width: 125px;
-    height: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+    .login {
+        width: 125px;
+        height: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+
+    .filier-box {
+
+        height: 400px;
+    }
+
 }
-.filier-box {
-
-    height: 450px;
-}
-
-}
-
-
-
-
-

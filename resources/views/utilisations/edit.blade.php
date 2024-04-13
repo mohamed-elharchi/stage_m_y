@@ -28,12 +28,12 @@
                 <label for="classe">Classe</label>
                 <input type="text" class="form-control" id="classe" name="classe" value="{{ $utilisation->classe }}">
             </div>
-           
+
             <div class="form-group">
                 <label for="image">Image :</label>
                 <input type="file" class="form-control" id="image" name="image">
                 @if($utilisation->image)
-                    <img src="/images/{{ $utilisation->image }}" alt="Current Image" class="mt-2" style="max-width: 100px;">
+                    <img src="/imagess/{{ $utilisation->image }}" alt="Current Image" class="mt-2" style="max-width: 100px;">
                 @endif
             </div>
             <button type="submit" class="btn" style="background-color:#db751b; color: #fff;">Mettre à jour</button>

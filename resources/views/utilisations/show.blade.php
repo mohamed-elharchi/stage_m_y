@@ -20,8 +20,8 @@
                         </div>
                         <div>
                             <p><strong>Classe:</strong> {{ $utilisation->classe }}</p>
-                            
-                            <p><strong>Image:</strong> <img src="{{ asset('images/' . $utilisation->image) }}" width="100px"></p>
+
+                            <p><strong>Image:</strong> <img src="{{ asset('imagess/' . $utilisation->image) }}" width="100px"></p>
                         </div>
                         <div class="mt-3">
                             <a href="{{ route('utilisations.edit', $utilisation->id) }}" class="btn btn-primary">Modifier</a>
