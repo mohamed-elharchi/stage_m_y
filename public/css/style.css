@@ -642,12 +642,12 @@ input[type="text"] {
 .content .left-side::before {
     content: '';
     position: absolute;
-    height: 70%;
+    height: 90%;
     width: 2px;
     right: -15px;
     top: 50%;
     transform: translateY(-50%);
-    background: #afafb6;
+    background:rgb(233, 137, 27);
 }
 
 .content .left-side .details {
@@ -876,31 +876,25 @@ input[type="text"] {
     margin-bottom: 20px;
 }
 
-.footer-distributed .footer-icons {
-    margin-top: 25px;
 
-}
 
 .footer-distributed .footer-icons a {
     display: inline-block;
+    color: #92999f;;
+    text-align: center;
+    line-height: 35px;
+    text-decoration: none;
+}
+.footer-distributed .footer-icons a i{
     width: 35px;
     height: 35px;
     cursor: pointer;
-    background-color: #33383b;
     border-radius: 2px;
     font-size: 20px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 35px;
-    margin-right: 3px;
-    margin-bottom: 5px;
-    text-decoration: none;
 }
-
-.footer-distributed .footer-icons a:hover {
-    background-color: rgb(233, 137, 27);
+.footer-distributed .footer-icons a i:hover{
+    color: rgb(0, 0, 225);
 }
-
 .footer-links a:hover {
     color: rgb(233, 137, 27);
 }

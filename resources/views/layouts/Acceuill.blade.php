@@ -84,11 +84,12 @@
             
             </p>
             <div class="footer-icons">
-                <p class="ii"> <i class="ri-attachment-line "></i>Ayoub Jadani <a href="https://www.linkedin.com/in/ayoub-jadani-a79550264/"><i class="ri-linkedin-box-fill   iiii"></i></a></p>
-                <p class="ii"><i class="ri-attachment-line"></i>Mohamed Zitouni<a href="https://www.linkedin.com/in/mohamed-zitouni-b98518264/"><i class="ri-linkedin-box-fill iiii"></i></a></p>
-                <p class="ii"> <i class="ri-attachment-line"></i>Zakaria El Baghdadi<a href="https://www.linkedin.com/in/zakaria-baghdadi/"><i class="ri-linkedin-box-fill iiii"></i></a></p>
-                <p class="ii"><i class="ri-attachment-line"></i>Mohamed El Harchi <a href="https://www.linkedin.com/in/mohamed-elharchi-b14566264/"><i class="ri-linkedin-box-fill iiii"></i></a></p>
-                <p class="ii"><i class="ri-attachment-line"></i>Isam Najah <a href="https://www.linkedin.com/in/issam-najah-6b8a96177/"><i class="ri-linkedin-box-fill iiii"></i></a></p>
+               
+                <pre class="ii"><i class="ri-attachment-line"></i><a href="https://www.linkedin.com/in/ayoub-jadani-a79550264/"> Ayoub Jadani      <i class="ri-linkedin-box-fill   iiii"></i></a> </pre>
+                <pre class="ii"><i class="ri-attachment-line"></i><a href="https://www.linkedin.com/in/mohamed-zitouni-b98518264/"> Mohamed Zitouni   <i class="ri-linkedin-box-fill iiii"></i></a></pre>
+                <pre class="ii"><i class="ri-attachment-line"></i><a href="https://www.linkedin.com/in/zakaria-baghdadi/"> Zakaria Baghdadi  <i class="ri-linkedin-box-fill iiii"></i></a></pre>
+                <pre class="ii"><i class="ri-attachment-line"></i><a href="https://www.linkedin.com/in/mohamed-elharchi-b14566264/"> Mohamed El Harchi <i class="ri-linkedin-box-fill iiii"></i></a></pre>
+                <pre class="ii"><i class="ri-attachment-line"></i><a href="https://www.linkedin.com/in/issam-najah-6b8a96177/"> Issam Najah       <i class="ri-linkedin-box-fill iiii"></i></a></pre>
 
             </div>
         </div>
