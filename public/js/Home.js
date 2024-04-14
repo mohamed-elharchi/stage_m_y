@@ -1,3 +1,39 @@
+document.addEventListener('DOMContentLoaded', function () {
+    var currentIndex = 0;
+    var images = [
+        '/images/269713058_427831879049165_7153829545722713717_n.jpeg',
+        '/images/pexels-oleksandr-p-2831794.jpg',
+        // Ajoutez d'autres URL d'images au besoin
+    ];
+    var homeSection = document.getElementById('acceuil');
+
+    function changeBackgroundImage() {
+        homeSection.style.backgroundImage = "url('" + images[currentIndex] + "')";
+    }
+
+    function nextBackgroundImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        changeBackgroundImage();
+    }
+
+    function prevBackgroundImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        changeBackgroundImage();
+    }
+
+    function startSlideshow() {
+        setInterval(nextBackgroundImage, 4000); // Changement toutes les 4 secondes
+    }
+
+    changeBackgroundImage(); // Appel initial
+    startSlideshow(); // Démarre le diaporama au chargement de la page
+});
+
+
+
+// api books 
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const bookDisplay = document.getElementById("bookDisplay");
     const searchInput = document.getElementById("searchInput");

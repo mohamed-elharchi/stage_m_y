@@ -98,7 +98,7 @@
     <!-- comantairs.   -->
     <section id="Home">
         <h1>Témoignages Des élèves</h1>
-  
+
         <div class="slideshow-container">
             <div class="mySlides">
                 <i class="ri-user-fill user"></i>
@@ -172,28 +172,29 @@
     <!--books -->
     <div id="books">
         <h1>Livres</h1>
-        <p>Si vous êtes passionné par la lecture, parcourez notre sélection de livres:<button id="showSearchButton"><i class="ri-search-line"></i></button></p>
-        
-           
+        <p>Si vous êtes passionné par la lecture, parcourez notre sélection de livres:<button id="showSearchButton"><i
+                    class="ri-search-line"></i></button></p>
+
+
         <div id="searchContainer" style="display: none;">
             <div class="input-container">
                 <i class="ri-search-line input-icon"></i>
                 <input type="text" id="searchInput" placeholder="Entrez le terme de recherche">
             </div>
         </div>
-        
-        
-      
+
+
+
         <section id="bookDisplay" class="book-display">
             <!-- Book cards will be dynamically added here -->
         </section>
     </div>
-    
+
 
     <!--end  books -->
     <!-- contact -->
-    <section id="contact" >
-        
+    <section id="contact">
+
         <div class="container">
             <h1>Envoie-nous un message</h1>
             <p> vous pouvez m'envoyer un message à partir d'ici. C'est avec plaisir que je vous aide.</p>
@@ -221,7 +222,7 @@
 
                 <div class="right-side">
                     <div class="topic-text">Contact <i class="ri-message-3-line"></i></div>
-                  
+
                     <form action="#">
                         <div class="input-box">
                             <input type="text" placeholder="Entrez votre nom" class="inpnom">
@@ -245,75 +246,5 @@
     </section>
 
     <!--  end contact -->
-
-
-    <!-- Button to scroll back to top -->
-    <a href="#" class="scrollup" id="scroll-up"> <i class="ri-arrow-up-s-line"></i> </a>
-
-
-    <!-- togl -->
-
-    <div class="discussion">
-        <div class="part1">
-            <h2>Ajouter Vos Témoignages</h2>
-        </div>
-
-
-        <div class="part2">
-
-            <p>
-                "Exprimez-vous ! Partagez vos expériences uniques avec nous.
-                Votre témoignage pourrait inspirer d'autres."
-            </p>
-        </div>
-
-        <dir class="part3">
-            <form class="formul-togl">
-
-                <div class="inps">
-                    <table>
-                        <tr>
-                            <td> <label for="a" class="i1"><i class="ri-id-card-line"></i></label></td>
-                            <td> <input id="a" type="text" name="nom" class="n1" required
-                                    placeholder="Entrez votre nom"></td>
-
-                        </tr>
-                        <tr>
-                            <td> <label for="b" class="i1"><i class="ri-calendar-2-line"></i></label></td>
-                            <td> <input id="b" type="text" name="time" class="n1" required
-                                    placeholder="Année scolaire"></td>
-
-                        </tr>
-
-                    </table>
-                </div>
-
-
-
-                <div class="msg">
-                    <input class="n2" type="text" placeholder="Entrez votre Témoignages ici...">
-                    <button type="submit" name="ajouter" class="n3"><i class="ri-send-plane-fill"></i></button>
-
-                </div>
-
-            </form>
-
-
-        </dir>
-
-    </div>
-
-
-    <div class="articlex1">
-        <button class="togle"><i class="ri-message-3-line"></i></button>
-    </div>
-
-
-
 @endsection
-
-
-
-</body>
-
-</html>
+<script src="js/Home.js"></script>

@@ -10,4 +10,9 @@ class AccueilController extends Controller
     {
         return view('Acccueil.Home');
     }
+
+    public function index2()
+    {
+        return view('Acccueil.About');
+    }
 }

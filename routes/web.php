@@ -23,6 +23,10 @@ use App\Http\Controllers\UtilisationDuTempsController;
 
 
 Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
+Route::get('/About', [AccueilController::class, 'index2'])->name('About');
+
+
+
 
 
 Route::get('/login', [LoginController::class, 'indexLogin'])->name('login');
