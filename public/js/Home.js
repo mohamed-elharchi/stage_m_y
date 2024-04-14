@@ -3,9 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var images = [
         '/images/269713058_427831879049165_7153829545722713717_n.jpeg',
         '/images/pexels-oleksandr-p-2831794.jpg',
-        // Ajoutez d'autres URL d'images au besoin
+        // Add more image URLs as needed
     ];
     var homeSection = document.getElementById('acceuil');
+    var nextBtn = document.getElementById('nextBtn'); // Get the next button
+    var prevBtn = document.getElementById('prevBtn'); // Get the previous button
 
     function changeBackgroundImage() {
         homeSection.style.backgroundImage = "url('" + images[currentIndex] + "')";
@@ -22,13 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function startSlideshow() {
-        setInterval(nextBackgroundImage, 4000); // Changement toutes les 4 secondes
+        setInterval(nextBackgroundImage, 4000); // Change every 4 seconds
     }
 
-    changeBackgroundImage(); // Appel initial
-    startSlideshow(); // Démarre le diaporama au chargement de la page
-});
+    changeBackgroundImage(); // Initial call
+    startSlideshow(); // Start slideshow on page load
 
+    nextBtn.addEventListener('click', nextBackgroundImage); // Add event listener for next button
+    prevBtn.addEventListener('click', prevBackgroundImage); // Add event listener for previous button
+});
 
 
 // api books 

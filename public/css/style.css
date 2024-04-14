@@ -556,7 +556,7 @@ input[type="text"] {
     padding: 6px;
     margin: 10px;
     width: 180px;
-    height: 240px;
+    height: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -663,7 +663,7 @@ input[type="text"] {
 
 .content .left-side .details i {
     font-size: 30px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     margin-bottom: 10px;
 }
 
@@ -733,9 +733,10 @@ input[type="text"] {
     margin-top: 12px;
 }
 
+
 .right-side .button button {
     color: rgb(255, 255, 255) ;
-    font-size: 1.3rem;
+    font-size:19px;
     width: 130px;
     height: 40px;
     outline: none;
@@ -933,6 +934,9 @@ input[type="text"] {
     .footer-distributed .footer-center i {
         margin-left: 0;
     }
+    .footer-left{
+        margin-left: 0px;
+     }
 }
 
 
@@ -1115,6 +1119,20 @@ input[type="text"] {
 }
 
 /* end toggl */
+
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 9px; 
+   background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #5a5a5a;
+    border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar handle on hover */
+}
+
 
 
 /* total media screen */
