@@ -337,6 +337,12 @@ nav .navigation ul li a:hover {
     color: rgb(46, 46, 59)
 }
 
+.jj{
+    text-decoration: none;
+}
+#caracter .fea-box h3:hover{
+    color:rgb(233, 137, 27) ;
+}
 /* end caracter*/
 
 
@@ -614,7 +620,7 @@ input[type="text"] {
 
 .container {
     width: 100%;
-    background: #fff;
+    background:  rgb(240, 230, 219);
     border-radius: 6px;
     padding: 20px 60px 30px 40px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -647,7 +653,7 @@ input[type="text"] {
     right: -15px;
     top: 50%;
     transform: translateY(-50%);
-    background:rgb(233, 137, 27);
+    background:black;
 }
 
 .content .left-side .details {
@@ -657,7 +663,7 @@ input[type="text"] {
 
 .content .left-side .details i {
     font-size: 30px;
-    color: rgb(233, 137, 27);
+    color: black;
     margin-bottom: 10px;
 }
 
@@ -680,10 +686,11 @@ input[type="text"] {
 .content .right-side .topic-text {
     font-size: 23px;
     font-weight: 600;
-    color: rgb(233, 137, 27);
+    color: black;
 }
 
 .right-side .input-box {
+    position: relative;
     height: 50px;
     width: 100%;
     margin: 12px 0;
@@ -700,10 +707,18 @@ input[type="text"] {
     padding: 0 15px;
     resize: none;
     text-align: start;
-    color: rgb(233, 137, 27);
- 
+    color: black;
+    padding-left: 30px;
 }
-
+.input-box i {
+    position: absolute;
+    left: 10px; 
+    top: 50%; 
+    transform: translateY(-50%);
+    color: #999; 
+    pointer-events: none; 
+    
+}
 .right-side .inpnom{
     border-top-left-radius: 15px;
 } 
@@ -719,16 +734,16 @@ input[type="text"] {
 }
 
 .right-side .button button {
-    color: rgb(233, 137, 27) ;
+    color: rgb(255, 255, 255) ;
     font-size: 1.3rem;
     width: 130px;
     height: 40px;
     outline: none;
     border: none;
-    background: rgb(255, 255, 255);
+    background:rgb(0, 0, 0);
     cursor: pointer;
     transition: all 0.3s ease;
-    border: 2px solid rgb(233, 137, 27) ;
+    border: none;
     border-bottom-right-radius: 15px;
     border-top-left-radius: 15px;
 
@@ -736,8 +751,8 @@ input[type="text"] {
 }
 
 .button button:hover {
-    background: rgb(233, 137, 27);
-    color: #fff;
+    background: rgb(255, 255, 255) ;
+    color: #000000;
     border: none;
 }
 
@@ -798,7 +813,9 @@ input[type="text"] {
 
 
 }
-
+.footer-left{
+   margin-left: 50px;
+}
 .footer-distributed .footer-left,
 .footer-distributed .footer-center,
 .footer-distributed .footer-right {

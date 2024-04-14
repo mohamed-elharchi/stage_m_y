@@ -61,21 +61,6 @@
 
     <footer class="footer-distributed">
 
-        <div class="footer-left">
-            <img src="{{ asset('images/mssmai.png') }}" alt="Example" class="logo2">
-
-            <p class="footer-links">
-                <a href="{{ route('accueil') }}">Accueil</a>
-
-                <a href="{{ route('About') }}">À propos</a>
-
-                <a href="#">Calendriers</a>
-            </p>
-
-            <p class="footer-company-name">Copyright © 2024 (JHBZ) <strong>Lycée Moulay Ismail </strong> Tous Droits
-                Réservés</p>
-        </div>
-
         <div class="footer-right">
             <p class="footer-company-about">
                 <span><i class="ri-attachment-2"></i> Développé Par :</span>
@@ -95,7 +80,7 @@
         <div class="footer-right">
             <p class="footer-company-about">
                 <span><i class="ri-attachment-2"></i> Mr le Directeur :</span>
-                <strong>Lycée Moulay Ismail</strong> Bienvenue à notre lycée ! Nous sommes ravis de vous accueillir dans
+                <strong>Lycée Moulay Ismail</strong>  Bienvenue à notre lycée ! Nous sommes ravis de vous accueillir dans
                 notre
                 communauté éducative dynamique où chaque élève est encouragé à exceller et à s'épanouir. Ensemble,
                 explorons
@@ -107,6 +92,23 @@
 
             </div>
         </div>
+
+      
+        <div class="footer-left">
+            <img src="{{ asset('images/mssmai.png') }}" alt="Example" class="logo2">
+
+            <p class="footer-links">
+                <a href="{{ route('accueil') }}">Accueil</a>
+
+                <a href="{{ route('About') }}">À propos</a>
+
+                <a href="#">Calendriers</a>
+            </p>
+
+            <p class="footer-company-name">Copyright © 2024 (JHBZ) <strong>Lycée Moulay Ismail </strong> Tous Droits
+                Réservés</p>
+        </div>
+        
     </footer>
 
     <!--  end footer-->

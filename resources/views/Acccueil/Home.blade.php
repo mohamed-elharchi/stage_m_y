@@ -31,7 +31,7 @@
 
                 <div class="fea-box">
                     <i class="ri-window-2-line"></i>
-                    <h3>Système de suivi académique</h3>
+                    <a  class="jj"  href="https://massarservice.men.gov.ma/moutamadris/Account"> <h3>Système de suivi académique</h3></a> 
                     <p>Suivez vos progrès académiques et consultez vos
                         résultats en temps réel grâce
                         à un système de suivi en ligne. "Massar"</p>
@@ -39,14 +39,14 @@
 
                 <div class="fea-box">
                     <i class="ri-calendar-check-line"></i>
-                    <h3>Activités parascolaires virtuelles</h3>
+                    <a class="jj"  href="#"><h3>Activités parascolaires virtuelles</h3></a>
                     <p>SRejoignez des clubs et des activités parascolaires virtuelles
                         pour développer vos compétences et passions en dehors des cours.</p>
                 </div>
 
                 <div class="fea-box">
                     <i class="ri-focus-mode"></i>
-                    <h3>Orientation académique et professionnelle</h3>
+                    <a class="jj" href="https://www.tawjihnet.net/"><h3>Orientation académique et professionnelle</h3></a>    
                     <p>Bénéficiez de conseils et d'orientations académiques et professionnelles
                         personnalisés pour planifier votre avenir.</p>
                 </div>
@@ -226,16 +226,19 @@
                     <form action="#">
                         <div class="input-box">
                             <input type="text" placeholder="Entrez votre nom" class="inpnom">
+                            <i class="ri-user-3-line"></i>
                         </div>
                         <div class="input-box">
                             <input type="text" placeholder="Entrer votre Email">
+                            <i class="ri-mail-open-line"></i>
                         </div>
                         <div class="input-box message-box">
                             <input type="texteria" placeholder=" Entrez votre message" class="message-box">
+                            <i class="ri-wechat-line"></i>
                         </div>
                         <div class="button">
                             <button type="submit">Envoyer <i class="ri-send-plane-fill"></i></button>
-
+                           
                         </div>
                     </form>
                 </div>
