@@ -663,7 +663,7 @@ input[type="text"] {
 
 .content .left-side .details i {
     font-size: 30px;
-    color: black;
+    color: rgb(255, 255, 255);
     margin-bottom: 10px;
 }
 
@@ -675,7 +675,7 @@ input[type="text"] {
 .content .left-side .details .text-one,
 .content .left-side .details .text-two {
     font-size: 14px;
-    color: #afafb6;
+    color: #000000;
 }
 
 .container .content .right-side {
@@ -703,7 +703,7 @@ input[type="text"] {
     border: none;
     outline: none;
     font-size: 16px;
-    background: rgb(245, 240, 235);
+    background: rgb(249, 245, 241);
     padding: 0 15px;
     resize: none;
     text-align: start;
