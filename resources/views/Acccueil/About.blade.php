@@ -14,3 +14,4 @@
 </section>
 
 @endsection
+<link rel="stylesheet" href="{{ asset('css/About.css') }}">
