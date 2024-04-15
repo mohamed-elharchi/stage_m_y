@@ -39,7 +39,7 @@
 
                 <div class="fea-box">
                     <i class="ri-calendar-check-line"></i>
-                    <a class="jj"  href="#"><h3>Activités parascolaires virtuelles</h3></a>
+                    <a class="jj" href="{{ route('Nouvelles') }}"><h3>Activités parascolaires virtuelles</h3></a>
                     <p>SRejoignez des clubs et des activités parascolaires virtuelles
                         pour développer vos compétences et passions en dehors des cours.</p>
                 </div>
