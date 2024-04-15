@@ -11,9 +11,20 @@ class AccueilController extends Controller
     {
         return view('Acccueil.Home');
     }
-    public function ok()
+
+    public function index2()
     {
-        return view('Acccueil.ok');
+        return view('Acccueil.About');
+    }
+
+
+    public function index3()
+    {
+        return view('Acccueil.Nouvelles');
+    }
+    public function index4()
+    {
+        return view('Acccueil.Calendriers');
     }
 }
 

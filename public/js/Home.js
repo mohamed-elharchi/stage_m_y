@@ -1,3 +1,43 @@
+document.addEventListener('DOMContentLoaded', function () {
+    var currentIndex = 0;
+    var images = [
+        '/images/269713058_427831879049165_7153829545722713717_n.jpeg',
+        '/images/pexels-oleksandr-p-2831794.jpg',
+        // Add more image URLs as needed
+    ];
+    var homeSection = document.getElementById('acceuil');
+    var nextBtn = document.getElementById('nextBtn'); // Get the next button
+    var prevBtn = document.getElementById('prevBtn'); // Get the previous button
+
+    function changeBackgroundImage() {
+        homeSection.style.backgroundImage = "url('" + images[currentIndex] + "')";
+    }
+
+    function nextBackgroundImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        changeBackgroundImage();
+    }
+
+    function prevBackgroundImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        changeBackgroundImage();
+    }
+
+    function startSlideshow() {
+        setInterval(nextBackgroundImage, 4000); // Change every 4 seconds
+    }
+
+    changeBackgroundImage(); // Initial call
+    startSlideshow(); // Start slideshow on page load
+
+    nextBtn.addEventListener('click', nextBackgroundImage); // Add event listener for next button
+    prevBtn.addEventListener('click', prevBackgroundImage); // Add event listener for previous button
+});
+
+
+// api books 
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const bookDisplay = document.getElementById("bookDisplay");
     const searchInput = document.getElementById("searchInput");
@@ -32,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to fetch default books
     async function fetchDefaultBooks() {
         try {
-            const defaultBooks = ["مئة عام من العزلة", "الأجنحة المتكسرة", "Le Petit Prince", "Les Misérables", "The Catcher in the Rye"];
+            const defaultBooks = ["Le malentendu", "Candide, Ou L'Optimisme", "Le Petit Prince", "Les Misérables", "Le dernier jour d'un condamné"];
             for (const title of defaultBooks) {
                 const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${title}&maxResults=1`);
                 const data = await response.json();
