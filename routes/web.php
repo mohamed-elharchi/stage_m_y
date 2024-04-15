@@ -24,6 +24,8 @@ use App\Http\Controllers\UtilisationDuTempsController;
 
 Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/About', [AccueilController::class, 'index2'])->name('About');
+Route::get('/Nouvelles', [AccueilController::class, 'index3'])->name('Nouvelles');
+Route::get('/Calendriers', [AccueilController::class, 'index4'])->name('Calendriers');
 
 
 

@@ -24,8 +24,8 @@
                 <i id="menu-close" class="ri-close-fill"></i>
                 <li><a href="{{ route('accueil') }}">Accueil</a></li>
                 <li><a href="{{ route('About') }}">À propos</a></li>
-                <li><a href="#">Nouvelles</a></li>
-                <li><a href="#">Calendriers</a></li>
+                <li><a href="{{ route('Nouvelles') }}">Nouvelles</a></li>
+                <li><a href="{{ route('Calendriers') }}">Calendriers</a></li>
                 {{-- <button class="butt1"><a href="{{ route('login') }}">Se connecter</a></button> --}}
 
 
@@ -102,7 +102,7 @@
 
                 <a href="{{ route('About') }}">À propos</a>
 
-                <a href="#">Calendriers</a>
+                <a href="{{ route('Calendriers') }}">Calendriers</a>
             </p>
 
             <p class="footer-company-name">Copyright © 2024 (JHBZ) <strong>Lycée Moulay Ismail </strong> Tous Droits
