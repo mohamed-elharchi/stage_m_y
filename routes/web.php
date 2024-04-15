@@ -37,8 +37,8 @@ use App\Http\Controllers\Contact2Controller;
 
 
 
-
-
+Route::get('/okk', [UtilisationDuTempsController::class, 'okk'])->name('accueil');
+Route::get('/ok', [AccueilController::class, 'ok'])->name('accueil');
 Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/accueil', [Contact2Controller::class, 'showInAyoub'])->name('accueil');
 

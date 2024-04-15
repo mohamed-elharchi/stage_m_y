@@ -11,4 +11,9 @@ class AccueilController extends Controller
     {
         return view('Acccueil.Home');
     }
+    public function ok()
+    {
+        return view('Acccueil.ok');
+    }
 }
+

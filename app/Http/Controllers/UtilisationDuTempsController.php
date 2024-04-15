@@ -9,9 +9,31 @@ class UtilisationDuTempsController extends Controller
 {
     public function index()
     {
-        $utilisations = UtilisationDuTemps::all();
+        $searchQuery = request('search2');
+        $utilisations = UtilisationDuTemps::query();
+
+        if ($searchQuery) {
+            $utilisations->where('classe', 'like', '%' . $searchQuery . '%');
+        }
+
+        $utilisations = $utilisations->get();
+
         return view('utilisations.index', compact('utilisations'));
     }
+    public function okk()
+    {
+        $searchQuery = request('search2');
+        $utilisations = UtilisationDuTemps::query();
+
+        if ($searchQuery) {
+            $utilisations->where('classe', 'like', '%' . $searchQuery . '%');
+        }
+
+        $utilisations = $utilisations->get();
+
+        return view('Acccueil.ok', compact('utilisations'));
+    }
+
 
     public function create()
     {
@@ -22,7 +44,7 @@ class UtilisationDuTempsController extends Controller
     {
         $request->validate([
             'classe' => 'required|string',
-            
+
 
         ]);
 
