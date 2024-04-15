@@ -174,8 +174,6 @@
         <p>Si vous êtes passionné par la lecture, parcourez notre sélection de livres:<button id="showSearchButton"><i class="ri-search-line"></i></button></p>
 
 
-        <p>Si vous êtes passionné par la lecture, parcourez notre sélection de livres:<button id="showSearchButton"><i
-                    class="ri-search-line"></i></button></p>
 
 
         <div id="searchContainer" style="display: none;">
