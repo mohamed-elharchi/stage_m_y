@@ -44,6 +44,7 @@ Route::get('/About', [AccueilController::class, 'index2'])->name('About');
 Route::get('/Nouvelles', [AccueilController::class, 'index3'])->name('Nouvelles');
 Route::get('/Calendriers', [AccueilController::class, 'index4'])->name('Calendriers');
 
+>>>>>>> 304bb9688d3b4acab12b8feb62887b59a0b14e18
 
 
 
