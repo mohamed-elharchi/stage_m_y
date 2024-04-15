@@ -715,7 +715,7 @@ input[type="text"] {
     left: 10px; 
     top: 50%; 
     transform: translateY(-50%);
-    color: #999; 
+    color: #000000; 
     pointer-events: none; 
     
 }
@@ -1286,8 +1286,37 @@ input[type="text"] {
 
 
 
-/* style about  */
+/* style about page  */
+.articl1{
+    margin-top:110px;
+    width: 100%;
+   display: flex;
+}
+.p1{
+width: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.p1 img{
+    width: 450px;
+}
+.p2{
+    width: 50%;
+}
+
+
+
 .map_section{
-   margin-top: 90px;
-   height: 100vh; 
+  
+   height: 100vh;
+   width: 100%; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.map{
+    height: 60vh;
+    width: 80%; 
 }
