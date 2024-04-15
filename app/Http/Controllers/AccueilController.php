@@ -22,9 +22,6 @@ class AccueilController extends Controller
     {
         return view('Acccueil.Nouvelles');
     }
-    public function index4()
-    {
-        return view('Acccueil.Calendriers');
-    }
+   
 }
 

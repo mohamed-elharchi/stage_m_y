@@ -1,11 +1,96 @@
 .total_cal{
-    margin-top: 89px;
-    height:500px ;
-    background-color: blue;
+    margin-top: 100px;
+    height:1500px ;
+    margin-left: 10px;
+    margin-left: 10px;
+
+
 }
 
 .total_novel{
     margin-top: 89px;
-    height:500px ;
+    height:800px ;
     background-color: rgb(255, 55, 0);
 }
+
+
+div.gallery {
+    border: 3px solid  #f8e0b0;
+  }
+
+  div.gallery:hover {
+    border: 3px solid rgb(233, 137, 27);
+  }
+
+  div.gallery img {
+    width: 100%;
+    height: 200px;
+  }
+
+  div.desc {
+    padding: 15px;
+    text-align: center;
+    color:#3f1c0b;
+    background-color: #f8e0b0;
+
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .responsive {
+    padding: 0 6px;
+    float: left;
+    width: 50%;
+    margin-top:5px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+.z {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.z div {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.z form {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+}
+
+.z select {
+    width: 100%;
+    background-color: rgb(233, 137, 27);
+    font-size: 20px;
+
+
+}
+

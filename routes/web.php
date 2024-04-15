@@ -36,15 +36,13 @@ use App\Http\Controllers\Contact2Controller;
 
 
 
-
-Route::get('/okk', [UtilisationDuTempsController::class, 'okk'])->name('accueil');
-Route::get('/ok', [AccueilController::class, 'ok'])->name('accueil');
 Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/About', [AccueilController::class, 'index2'])->name('About');
 Route::get('/Nouvelles', [AccueilController::class, 'index3'])->name('Nouvelles');
-Route::get('/Calendriers', [AccueilController::class, 'index4'])->name('Calendriers');
+Route::get('/Calendriers', [UtilisationDuTempsController::class, 'index4'])->name('Calendriers');
 
->>>>>>> 304bb9688d3b4acab12b8feb62887b59a0b14e18
+
+
 
 
 

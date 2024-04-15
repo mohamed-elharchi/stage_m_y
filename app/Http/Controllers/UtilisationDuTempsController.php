@@ -7,6 +7,7 @@ use App\Models\UtilisationDuTemps;
 
 class UtilisationDuTempsController extends Controller
 {
+    
     public function index()
     {
         $searchQuery = request('search2');
@@ -20,7 +21,7 @@ class UtilisationDuTempsController extends Controller
 
         return view('utilisations.index', compact('utilisations'));
     }
-    public function okk()
+    public function index4()
     {
         $searchQuery = request('search2');
         $utilisations = UtilisationDuTemps::query();
@@ -31,7 +32,7 @@ class UtilisationDuTempsController extends Controller
 
         $utilisations = $utilisations->get();
 
-        return view('Acccueil.ok', compact('utilisations'));
+        return view('Acccueil.Calendriers', compact('utilisations'));
     }
 
 
