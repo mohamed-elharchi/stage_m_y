@@ -3,6 +3,7 @@
     margin-top:110px;
     width: 100%;
    display: flex;
+   margin-bottom: 22px;
 }
 
 
@@ -11,7 +12,7 @@
     display: flex;
     flex-direction: column;
     text-align: start;
-    padding-left: 50px; 
+    padding-left: 52px; 
 }
 
 .p1 p{
@@ -32,19 +33,166 @@
     width: 100px;
     height: 37px;
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 20px;
 }
 
 .p2{
 width: 50%;
+flex-direction: row-reverse;
+text-align:end;
 display: flex;
-justify-content: center;
-align-items: center;
+padding-right:52px ;
+
 }
 .p2 img{
     width: 450px;
 }
+@media screen and (max-width: 1024px) {
+    .articl1 {
+        flex-direction: column-reverse;
+        align-items: center;
+      
+    }
+
+    .p1, .p2 {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0 20px;
+    }
+
+    
+    .p2 img {
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+    }
+}
+
+/* Media query for phones */
+@media screen and (max-width: 550px) {
+    .p1 a {
+        width: 80px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .p1 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+.slide{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    display: flex;
+    max-width: 1168px;
+    position: relative;
+}
+
+.wrapper i {
+    top: 50%;
+    height: 44px;
+    width: 44px;
+    color: #343F4F;
+    cursor: pointer;
+    font-size: 1.15rem;
+    position: absolute;
+    text-align: center;
+    line-height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+    display: block; /* Ensure both arrows are always displayed */
+}
+
+.wrapper i:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+.wrapper i:hover {
+    background: #f2f2f2;
+}
+
+.wrapper i:first-child {
+    left: -22px;
+}
+
+.wrapper i:last-child {
+    right: -22px;
+}
+
+.wrapper .carousel {
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.carousel.dragging {
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging img {
+    pointer-events: none;
+}
+
+.carousel img {
+    height: 340px;
+    object-fit: cover;
+    user-select: none;
+    margin-left: 14px;
+    width: calc(100% / 3);
+}
+
+.carousel img:first-child {
+    margin-left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+    .carousel img {
+        width: calc(100% / 2);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .carousel img {
+        width: 100%;
+        margin-left: 0; 
+    }
+    .wrapper i:first-child {
+        left: 0; 
+    }
+
+    .wrapper i:last-child {
+        right: 0; 
+    }
+}
+
+
+
+
+
 
 
 
