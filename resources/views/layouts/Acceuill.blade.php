@@ -10,7 +10,8 @@
     <script src="js/my.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- image icon page ++++++++++  -->
-    <link rel="shortcut icon" href="{{ asset('16x16-x-icon-vector-16.png') }}">
+    <link rel="icon" href="{{ asset('images/moulay ismai (2).png') }}" type="image/x-icon"/>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
