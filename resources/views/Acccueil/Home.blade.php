@@ -98,7 +98,6 @@
     <!-- comantairs.   -->
     <section id="Home">
         <h1>Témoignages Des élèves</h1>
-
         <div class="slideshow-container">
             <div class="mySlides">
                 <i class="ri-user-fill user"></i>

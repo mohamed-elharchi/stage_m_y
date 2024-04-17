@@ -26,19 +26,20 @@
        </div>
 </section>
 <section class="slide">
-
+     <h1>Exploration Visuelle</h1>
+     <p>Explorez notre lycée à travers des moments capturés en images</p>
     <div class="wrapper">
         <i id="left" class="ri-arrow-left-s-line"></i>
         <div class="carousel">
-          <img src="images/Purple & Yellow Minimal School Admission Facebook Post (1).jpg" alt="img" draggable="false">
-          <img src="images/Purple & Yellow Minimal School Admission Facebook Post (1).jpg" alt="img" draggable="false">
-          <img src="images/Purple & Yellow Minimal School Admission Facebook Post (1).jpg" alt="img" draggable="false">
-          <img src="images/Purple & Yellow Minimal School Admission Facebook Post (1).jpg" alt="img" draggable="false">
-          <img src="images/Purple & Yellow Minimal School Admission Facebook Post (1).jpg" alt="img" draggable="false">
-          <img src="images/Purple & Yellow Minimal School Admission Facebook Post (1).jpg" alt="img" draggable="false">
-          <img src="images/Purple & Yellow Minimal School Admission Facebook Post (1).jpg" alt="img" draggable="false">
-          <img src="images/Purple & Yellow Minimal School Admission Facebook Post (1).jpg" alt="img" draggable="false">
-          <img src="images/Purple & Yellow Minimal School Admission Facebook Post (1).jpg" alt="img" draggable="false">
+          <img src="images/269885572_427831775715842_3003663538937367989_n.jpeg" alt="img" draggable="false">
+          <img src="images/253859420_397013705464316_8809724315648159396_n.jpeg" alt="img" draggable="false">
+          <img src="images/244537636_375378307627856_1269251700359181826_n.jpeg" alt="img" draggable="false">
+          <img src="images/277778883_389967766466286_8547034403029128305_n.jpeg" alt="img" draggable="false">
+          <img src="images/269598944_427832089049144_2516702295568106996_n.jpeg" alt="img" draggable="false">
+          <img src="images/244450771_375378944294459_7198891489275396272_n.jpeg" alt="img" draggable="false">
+          <img src="images/257444330_406965834469103_8332665903877178941_n.jpeg" alt="img" draggable="false">
+          <img src="images/270013764_427831915715828_6359339326940119472_n.jpeg" alt="img" draggable="false">
+          <img src="images/269611737_427831815715838_1603714381976731170_n.jpeg" alt="img" draggable="false">
         </div>
         <i id="right" class="ri-arrow-right-s-line"></i>
       </div>
