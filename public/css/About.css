@@ -1,4 +1,13 @@
 /* style about page  */
+body{
+  
+    padding-top: 60px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    margin-left: 50px;
+}
+
 .articl1{
     margin-top:110px;
     width: 100%;
@@ -33,8 +42,10 @@
     width: 100px;
     height: 37px;
     font-size: 18px;
-    margin-top: 15px;
     padding: 20px;
+}
+.p1 h4{
+    margin-top: 5px;
 }
 
 .p2{
@@ -203,10 +214,17 @@ padding-right:52px ;
    height: 100vh;
    width: 100%; 
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
 }
-
+.map_section p{
+    margin-bottom: 40px;
+    text-align: center;
+}
+.map_section h1{
+    text-align: center;
+}
 .map{
     height: 60vh;
     width: 80%; 
