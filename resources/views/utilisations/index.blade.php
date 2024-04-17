@@ -46,7 +46,6 @@
                                     <img src="{{ asset('imagess/' . $utilisation->image) }}" width="100px">
                                 </td>
                                 <td>
-                                    <a href="{{ route('utilisations.show', $utilisation->id) }}" class="btn btn-primary">Voir</a>
                                     <a href="{{ route('utilisations.edit', $utilisation->id) }}" class="btn btn-primary">Modifier</a>
                                     <form action="{{ route('utilisations.destroy', $utilisation->id) }}" method="POST" style="display: inline;">
                                         @csrf

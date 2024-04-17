@@ -4,6 +4,8 @@
 <head>
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="js/my.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -31,7 +33,6 @@
                 @if (auth()->user()->role === 'director')
                     <a class="login" href="{{ route('general_guard') }}">Dashboard</a>
                 @elseif(auth()->user()->role === 'general_guard')
-                    <a class="login" href="{{ route('generalGuard_dashboard') }}">Dashboard</a>
                 @elseif(auth()->user()->role === 'teacher')
                     <a class="login" href="{{ route('teacherDashboard') }}">Dashboard</a>
                 @endif

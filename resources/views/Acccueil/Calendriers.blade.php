@@ -1,43 +1,88 @@
 @extends('layouts.Acceuill')
 @section('content')
-<div class="total_cal">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>PhotoFolio Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+
+
+  <!-- Google Fonts -->
+
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
 
 
 
+<body>
 
+  <!-- ======= Header ======= -->
+  <!-- End Header -->
 
-<div class="z">
-        <div><h2>Cherchez votre département</h2></div>
-        <form class="d-flex" name="form2">
-            <select class="form-control" onchange="form2.submit()" name="search2" id="search2">
-                @foreach ($utilisations as $utilisation)
+<!-- End Hero Section -->
 
-                <option>{{ $utilisation->classe }}</option>
-                @endforeach
-            </select>
-        </form>
+<main id="main" data-aos="fade" data-aos-delay="1500">
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery">
+    <div class="container-fluid">
+      <div class="row gy-4 justify-content-center">
+        @foreach ($utilisations as $utilisation)
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <div class="gallery-item h-100">
+            <img src="{{ asset('imagess/' . $utilisation->image) }}" class="img-fluid" alt="">
+            <div class="gallery-links d-flex align-items-center justify-content-center">
+              <a href="{{ asset('imagess/' . $utilisation->image) }}" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+              <a href="{{ asset('imagess/' . $utilisation->image) }}" download="{{ $utilisation->image }}" class="btn btn-primary"><i class="bi bi-download"></i> Download</a>
+            </div>
+          </div>
+        </div>
+
+        @endforeach
+      </div>
     </div>
+  </section>
+  <!-- End Gallery Section -->
 
-
-
-@foreach ($utilisations as $key => $utilisation)
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="{{ route('utilisations.show', $utilisation->id) }}">
-    <img src="{{ asset('imagess/' . $utilisation->image) }}" >
-    </a>
-    <div class="desc"><h2>class:{{ $utilisation->classe }}</h2></div>
+</main>
+  <div id="preloader">
+    <div class="line">
+    </div>
   </div>
-</div>
-@endforeach
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
 
 
 
 
 
-</div>
+
+
+
+
+
+
 @endsection
-<link rel="stylesheet" href="{{ asset('css/pages.css') }}">
+
 
 
 

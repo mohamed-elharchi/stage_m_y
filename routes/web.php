@@ -31,15 +31,18 @@ use App\Http\Controllers\Contact2Controller;
 
 
 
+Route::get('/utilisations/create', [UtilisationDuTempsController::class, 'create'])->name('utilisations.create');
 
 
+Route::get('/Calendriers', [UtilisationDuTempsController::class, 'index4'])->name('Calendriers');
 
+
+Route::get('/utilisations/{utilisation}', [UtilisationDuTempsController::class, 'show'])->name('utilisations.show');
 
 
 Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/About', [AccueilController::class, 'index2'])->name('About');
 Route::get('/Nouvelles', [AccueilController::class, 'index3'])->name('Nouvelles');
-Route::get('/Calendriers', [UtilisationDuTempsController::class, 'index4'])->name('Calendriers');
 
 
 
