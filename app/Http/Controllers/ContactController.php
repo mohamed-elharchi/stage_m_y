@@ -29,7 +29,7 @@ class ContactController extends Controller
             'message' => $request->message,
         ]);
 
-        return redirect('/accueil')->with('success', 'Votre message a été envoyé avec succès!');
+        return redirect('/')->with('success', 'Votre message a été envoyé avec succès!');
     }
 
     public function deleteMessage($id)

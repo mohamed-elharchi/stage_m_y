@@ -24,6 +24,7 @@ class AccueilController extends Controller
     {
         return view('Acccueil.Nouvelles');
     }
+    
 
 }
 
