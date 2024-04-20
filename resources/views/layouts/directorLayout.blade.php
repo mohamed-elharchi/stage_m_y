@@ -60,6 +60,13 @@
                         <span class="title" id="offrr">Les professeurs</span>
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{ route('selectDepartement') }}" id="add-to" class="Add-P-btn">
+                        <span class="icon"><ion-icon name="bag-add-outline"></ion-icon></span>
+                        <span class="title">absence</span>
+                    </a>
+                </li>
                 <li>
                     <a href="{{ route('logout') }}" id="add-to" class="Add-P-btn">
                         <span class="icon"><ion-icon name="bag-add-outline"></ion-icon></span>
@@ -72,14 +79,7 @@
                         <span class="title">sitel web </span>
                     </a>
                 </li>
-
                 {{-- <li>
-                    <a href="editProfile.php">
-                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                        <span class="title">profile</span>
-                    </a>
-                </li>
-                <li>
                     <a href="">
                         <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
                         <span class="title">Help</span>

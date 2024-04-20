@@ -254,3 +254,20 @@ body {
         left: 300px;
     }
 }
+/* table,
+      tr,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      } */
+      tr,
+      td {
+        /* padding: 4px; */
+        text-align: center;
+      }
+      /* table,
+      tr,
+      .borderRemove {
+        border-top: none !important;
+        border-right: none !important;
+      } */

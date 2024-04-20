@@ -10,23 +10,27 @@
                         <form action="{{ route('updateAbsence', $absence->id) }}" method="POST">
                             @csrf
                             @method('PUT')
-                        
+
                             <div class="form-group">
                                 <label for="period">Period:</label>
                                 <select class="form-control" id="period" name="period">
-                                    <option value="8.30/9.30">8.30/9.30</option>
-                                    <option value="9.30/10.30">9.30/10.30</option>
-                                    <option value="10.30/11.30">10.30/11.30</option>
-                                    <option value="10.30/11.30">11.30/12.30</option>
-                                    <option value="10.30/11.30">2.30/3.30</option>
-                                    <option value="10.30/11.30">3.30/4.30</option>
-                                    <option value="10.30/11.30">4.30/5.30</option>
-                                    <option value="10.30/11.30">5.30/5.30</option>
+                                    <option value="8.30/9.30" {{ $absence->period === '8.30/9.30' ? 'selected' : '' }}>08/09</option>
+                                    <option value="9.30/10.30" {{ $absence->period === '9.30/10.30' ? 'selected' : '' }}>09/10</option>
+                                    <option value="10.30/11.30" {{ $absence->period === '10.30/11.30' ? 'selected' : '' }}>10/11</option>
+                                    <option value="11.30/12.30" {{ $absence->period === '11.30/12.30' ? 'selected' : '' }}>11/12</option>
+                                    <option value="2.30/3.30" {{ $absence->period === '2.30/3.30' ? 'selected' : '' }}>02/03</option>
+                                    <option value="3.30/4.30" {{ $absence->period === '3.30/4.30' ? 'selected' : '' }}>03/04</option>
+                                    <option value="4.30/5.30" {{ $absence->period === '4.30/5.30' ? 'selected' : '' }}>04/05</option>
+                                    <option value="5.30/6.30" {{ $absence->period === '5.30/6.30' ? 'selected' : '' }}>05/06</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="absence">Absence:</label>
-                                <input type="text" class="form-control" id="absence" name="absence" value="{{ $absence->absence }}">
+                                <select multiple class="form-control" id="absence" name="absence[]">
+                                    @for ($i = 1; $i <= 40; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="signature">Signature:</label>

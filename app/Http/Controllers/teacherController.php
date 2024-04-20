@@ -88,20 +88,21 @@ class teacherController extends Controller
     {
         $request->validate([
             'period' => 'required',
-            'absence' => 'required',
+            'absence' => 'required|array',
             'signature' => 'required|string|max:50',
         ]);
 
         $absence = Absence::findOrFail($id);
 
         $absence->period = $request->period;
-        $absence->absence = $request->absence;
+        $absence->absence = implode('-', $request->absence);
         $absence->signature = $request->signature;
 
         $absence->save();
 
         return redirect()->route('teacherDashboard')->with('success', 'Absence record updated successfully.');
     }
+
 
 
 

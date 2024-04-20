@@ -31,6 +31,13 @@ class directorController extends Controller
     // {
     //     return view('dashboard.director_dashboard.index');
     // }
+
+    // public function selectDepartement(){
+    //     return view('dashboard.director_dashboard.selectDepartement');
+    // }
+
+
+
     public function displayMatieres()
     {
         $matieres = matiere::all();

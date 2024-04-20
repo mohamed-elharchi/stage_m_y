@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\absenceController;
 use App\Http\Controllers\LoginController;
 use App\Http\Middleware\DirectorMiddleware;
 use App\Http\Middleware\GeneralGuardMiddleware;
@@ -12,32 +13,7 @@ use App\Http\Controllers\teacherController;
 use App\Http\Controllers\UtilisationDuTempsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Contact2Controller;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+use App\Models\absence;
 
 Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/accueil', [Contact2Controller::class, 'showInAyoub'])->name('accueil');
@@ -96,6 +72,14 @@ Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () 
 
 
 
+// absence ::::::::::::::::::::::::::::::::::::::::::::
+
+// Route::get('/dashboard/absence', [directorController::class, "selectDepartement"])->name('selectDepartement');
+Route::get('/dashboard/selectAbsence', [absenceController::class, "selectDepartement"])->name('selectDepartement');
+
+
+Route::get('/dashboard/weekAbsence',[absenceController::class, "displayAbsence"])->name("showweekAbsence");
+
 
 
 
@@ -138,6 +122,9 @@ Route::group(['middleware' => ['auth', GeneralGuardMiddleware::class]], function
     Route::delete('/dashboard/deleteTeacher/{id}', [directorController::class, "destroyTeacher"])->name('deleteTeacher');
 
 
+//absence :::::::::::::::::::::::::::::::::
+// Route::get('/dashboard/selectAbsence', [absenceController::class, "selectDepartement"])->name('selectDepartement');
+// Route::get('/dashboard/absence', [absenceController::class, "displayDepartementAbsence"])->name('displayDepartementAbsence');
 
 
 

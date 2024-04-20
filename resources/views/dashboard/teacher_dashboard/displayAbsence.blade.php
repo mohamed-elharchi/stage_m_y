@@ -48,19 +48,19 @@
                             <div class="form-group">
                                 <label for="date">Date:</label>
                                 <input type="date" class="form-control" id="date" name="date"
-                                    value="{{ date('Y-m-d') }}" readonly>
+                                    value="{{ date('Y-m-d') }}" >
                             </div>
                             <div class="form-group">
                                 <label for="period">Period:</label>
                                 <select class="form-control" id="period" name="period">
-                                    <option value="8.30/9.30">8.30/9.30</option>
-                                    <option value="9.30/10.30">9.30/10.30</option>
-                                    <option value="10.30/11.30">10.30/11.30</option>
-                                    <option value="10.30/11.30">11.30/12.30</option>
-                                    <option value="10.30/11.30">2.30/3.30</option>
-                                    <option value="10.30/11.30">3.30/4.30</option>
-                                    <option value="10.30/11.30">4.30/5.30</option>
-                                    <option value="10.30/11.30">5.30/5.30</option>
+                                    <option value="8.30/9.30">08/09</option>
+                                    <option value="9.30/10.30">09/10</option>
+                                    <option value="10.30/11.30">10/11</option>
+                                    <option value="11.30/12.30">11/12</option>
+                                    <option value="2.30/3.30">02/03</option>
+                                    <option value="3.30/4.30">03/04</option>
+                                    <option value="4.30/5.30">04/05</option>
+                                    <option value="5.30/6.30">05/06</option>
                                 </select>
                             </div>
                             <div class="form-group">
