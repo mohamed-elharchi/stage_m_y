@@ -21,12 +21,16 @@
                         </div>
                     </div>
                     <form class="d-flex" name="form2">
-                  <select class="form-control" onchange="form2.submit()" name="search2" id="search2">
-                           @foreach ($utilisations as $utilisation)
-                               <option>{{ $utilisation->classe }}</option>
-                             @endforeach
+
+                <select onchange="form2.submit()" name="search2" id="search2" class="custom-select sources" placeholder="Search classe">
+                <option value="Search classe" style="text-align: center;">rechercher class :</option>
+                @foreach ($utilisations as $utilisation)
+                      <option value="{{ $utilisation->classe }}">{{ $utilisation->classe }}</option>
+                 @endforeach
                 </select>
+
                       </form>
+
 
 <!-- Add Bootstrap JS -->
 

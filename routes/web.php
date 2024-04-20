@@ -40,9 +40,16 @@ Route::get('/Calendriers', [UtilisationDuTempsController::class, 'index4'])->nam
 Route::get('/utilisations/{utilisation}', [UtilisationDuTempsController::class, 'show'])->name('utilisations.show');
 
 
-Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
+
 Route::get('/About', [AccueilController::class, 'index2'])->name('About');
 Route::get('/Nouvelles', [AccueilController::class, 'index3'])->name('Nouvelles');
+
+
+
+
+
+Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
+
 
 
 

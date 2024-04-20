@@ -205,32 +205,34 @@
                         <div class="text-one">Driouch</div>
                         <div class="text-two">HAY AL AMAL 06</div>
                     </div>
+                    @foreach($contacts as $contact)
                     <div class="phone details">
-                       
                         <i class="ri-phone-fill"></i>
-                        <div class="text-one">+212 70652357</div>
-                        <div class="text-two">+212 62OO21O1</div>
+                        <div class="text-one"> {{ $contact->telephon1 }}</div>
+                        <div class="text-two">{{ $contact->telephon2 }}</div>
                     </div>
                     <div class="email details">
                         <i class="ri-mail-fill"></i>
                         <div class="topic">Email</div>
-                        <div class="text-one">moulay_ismail@gmail.com</div>
-                        <div class="text-two">info_ms@gmail.com</div>
+                        <div class="text-one">{{ $contact->email1 }}</div>
+                        <div class="text-two">{{ $contact->email2 }}</div>
                     </div>
+                    @endforeach
                 </div>
 
                 <div class="right-side">
                     <div class="topic-text">Contact <i class="ri-message-3-line"></i></div>
 
-                    <form action="#">
+                    <form method="POST" action="{{ url('/contact') }}">
+                    @csrf
                         <div class="input-box">
-                            <input type="text" placeholder="Entrez votre nom" class="inpnom">
+                            <input type="text" id="name" name="name" placeholder="Entrez votre nom" class="inpnom">
                             <i class="ri-user-3-fill"></i>                        </div>
                         <div class="input-box">
-                            <input type="text" placeholder="Entrer votre Email">
+                            <input type="text"   id="email" name="email"  placeholder="Entrer votre Email">
                             <i class="ri-mail-fill"></i>                        </div>
                         <div class="input-box message-box">
-                            <input type="texteria" placeholder=" Entrez votre message" class="message-box">
+                            <input type="texteria" id="message" name="message" placeholder=" Entrez votre message" class="message-box">
                             <i class="ri-chat-forward-fill"></i>                        </div>
                         <div class="button">
                             <button type="submit">Envoyer <i class="ri-send-plane-fill"></i></button>
