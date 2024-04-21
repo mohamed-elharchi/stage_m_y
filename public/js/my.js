@@ -78,3 +78,5 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('nav .navigation ul').classList.remove('active');
     });
 });
+
+

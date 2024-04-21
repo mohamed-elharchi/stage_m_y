@@ -4,7 +4,7 @@
 @section('content')
     <!--  Home -->
 
-    <section id="acceuil">
+    <section id="acceuil" >
         <div class="text">
             <h2>Bienvenue pour une Nouvelle Année Scolaire ! </h2>
             <p> Bienvenue à l'école ! Préparez-vous pour un nouveau chapitre passionnant
@@ -57,7 +57,7 @@
 
 
     <!--  filiers######### -->
-    <section id="filiere">
+    <section id="filiere" >
         <h1>Découvrez Nos Filières</h1>
         <p>Explorez les différentes voies éducatives offertes dans notre lycée pour trouver celle qui correspond le mieux à
             vos aspirations.</p>
@@ -96,7 +96,7 @@
 
 
     <!-- comantairs.   -->
-    <section id="Home">
+    <section id="Home" >
         <h1>Témoignages Des élèves</h1>
         <div class="slideshow-container">
             <div class="mySlides">
@@ -169,7 +169,7 @@
 
     <!--end  comantairs-->
     <!--books -->
-    <div id="books">
+    <div id="books" >
         <h1>Livres</h1>
         <p>Si vous êtes passionné par la lecture, parcourez notre sélection de livres:<button id="showSearchButton"><i
                     class="ri-search-line"></i></button></p>
@@ -192,7 +192,7 @@
 
     <!--end  books -->
     <!-- contact -->
-    <section id="contact">
+    <section id="contact" >
 
         <div class="container">
             <h1>Envoie-nous un message</h1>
@@ -247,3 +247,5 @@
     <!--  end contact -->
 @endsection
 <script src="js/Home.js"></script>
+
+
