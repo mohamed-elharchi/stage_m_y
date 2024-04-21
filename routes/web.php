@@ -76,10 +76,9 @@ Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () 
 
 // Route::get('/dashboard/absence', [directorController::class, "selectDepartement"])->name('selectDepartement');
 Route::get('/dashboard/selectAbsence', [absenceController::class, "selectDepartement"])->name('selectDepartement');
-
-
 Route::get('/dashboard/weekAbsence',[absenceController::class, "displayAbsence"])->name("showweekAbsence");
 
+Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])->name('download.pdf');
 
 
 

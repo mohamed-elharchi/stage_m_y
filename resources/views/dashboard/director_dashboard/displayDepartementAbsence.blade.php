@@ -1,6 +1,6 @@
 @extends('layouts.directorLayout')
 @section('title')
-absence
+    absence
 @endsection
 @section('content')
     <div class="container mt-4">
@@ -46,11 +46,196 @@ absence
                     <tr>
                         <td>تلاميذ يوجهون الى مكتب الغياب</td>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            @php
+                                $periods = [
+                                    '8.30/9.30',
+                                    '9.30/10.30',
+                                    '10.30/11.30',
+                                    '11.30/12.30',
+                                    '2.30/3.30',
+                                    '3.30/4.30',
+                                    '4.30/5.30',
+                                    '5.30/6.30',
+                                ]; // Add more periods as needed
+                                $latestAbsence = null;
+
+                                foreach ($periods as $period) {
+                                    $previousDayAbsence = $absences
+                                        ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                        ->where('period', $period)
+                                        ->sortByDesc('created_at')
+                                        ->first();
+
+                                    if ($previousDayAbsence) {
+                                        // If this is the first valid absence found or if its creation timestamp is later than the current latest absence
+                                        if (
+                                            !$latestAbsence ||
+                                            $previousDayAbsence->created_at > $latestAbsence->created_at
+                                        ) {
+                                            $latestAbsence = $previousDayAbsence;
+                                        }
+                                    }
+                                }
+
+                                // Display the absence for the last period studied
+                                if ($latestAbsence) {
+                                    echo $latestAbsence->absence . '<br>';
+                                }
+                            @endphp
+
+                        </td>
+                        <td>
+                            @php
+                                $periods = [
+                                    '8.30/9.30',
+                                    '9.30/10.30',
+                                    '10.30/11.30',
+                                    '11.30/12.30',
+                                    '2.30/3.30',
+                                    '3.30/4.30',
+                                    '4.30/5.30',
+                                    '5.30/6.30',
+                                ]; // Add more periods as needed
+                                $latestAbsence = null;
+
+                                foreach ($periods as $period) {
+                                    $previousDayAbsence = $absences
+                                        ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                        ->where('period', $period)
+                                        ->sortByDesc('created_at')
+                                        ->first();
+
+                                    if ($previousDayAbsence) {
+                                        // If this is the first valid absence found or if its creation timestamp is later than the current latest absence
+                                        if (
+                                            !$latestAbsence ||
+                                            $previousDayAbsence->created_at > $latestAbsence->created_at
+                                        ) {
+                                            $latestAbsence = $previousDayAbsence;
+                                        }
+                                    }
+                                }
+
+                                // Display the absence for the last period studied
+                                if ($latestAbsence) {
+                                    echo $latestAbsence->absence . '<br>';
+                                }
+                            @endphp
+                        </td>
+                        <td>
+                            @php
+                                $periods = [
+                                    '8.30/9.30',
+                                    '9.30/10.30',
+                                    '10.30/11.30',
+                                    '11.30/12.30',
+                                    '2.30/3.30',
+                                    '3.30/4.30',
+                                    '4.30/5.30',
+                                    '5.30/6.30',
+                                ]; // Add more periods as needed
+                                $latestAbsence = null;
+
+                                foreach ($periods as $period) {
+                                    $previousDayAbsence = $absences
+                                        ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 day')))
+                                        ->where('period', $period)
+                                        ->sortByDesc('created_at')
+                                        ->first();
+
+                                    if ($previousDayAbsence) {
+                                        // If this is the first valid absence found or if its creation timestamp is later than the current latest absence
+                                        if (
+                                            !$latestAbsence ||
+                                            $previousDayAbsence->created_at > $latestAbsence->created_at
+                                        ) {
+                                            $latestAbsence = $previousDayAbsence;
+                                        }
+                                    }
+                                }
+
+                                // Display the absence for the last period studied
+                                if ($latestAbsence) {
+                                    echo $latestAbsence->absence . '<br>';
+                                }
+                            @endphp
+                        </td>
+                        <td>
+                            @php
+                                $periods = [
+                                    '8.30/9.30',
+                                    '9.30/10.30',
+                                    '10.30/11.30',
+                                    '11.30/12.30',
+                                    '2.30/3.30',
+                                    '3.30/4.30',
+                                    '4.30/5.30',
+                                    '5.30/6.30',
+                                ]; // Add more periods as needed
+                                $latestAbsence = null;
+
+                                foreach ($periods as $period) {
+                                    $previousDayAbsence = $absences
+                                        ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 day')))
+                                        ->where('period', $period)
+                                        ->sortByDesc('created_at')
+                                        ->first();
+
+                                    if ($previousDayAbsence) {
+                                        // If this is the first valid absence found or if its creation timestamp is later than the current latest absence
+                                        if (
+                                            !$latestAbsence ||
+                                            $previousDayAbsence->created_at > $latestAbsence->created_at
+                                        ) {
+                                            $latestAbsence = $previousDayAbsence;
+                                        }
+                                    }
+                                }
+
+                                // Display the absence for the last period studied
+                                if ($latestAbsence) {
+                                    echo $latestAbsence->absence . '<br>';
+                                }
+                            @endphp
+                        </td>
+                        <td>
+                            @php
+                                $periods = [
+                                    '8.30/9.30',
+                                    '9.30/10.30',
+                                    '10.30/11.30',
+                                    '11.30/12.30',
+                                    '2.30/3.30',
+                                    '3.30/4.30',
+                                    '4.30/5.30',
+                                    '5.30/6.30',
+                                ]; // Add more periods as needed
+                                $latestAbsence = null;
+
+                                foreach ($periods as $period) {
+                                    $previousDayAbsence = $absences
+                                        ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 day')))
+                                        ->where('period', $period)
+                                        ->sortByDesc('created_at')
+                                        ->first();
+
+                                    if ($previousDayAbsence) {
+                                        if (
+                                            !$latestAbsence ||
+                                            $previousDayAbsence->created_at > $latestAbsence->created_at
+                                        ) {
+                                            $latestAbsence = $previousDayAbsence;
+                                        }
+                                    }
+                                }
+
+                                // Display the absence for the last period studied
+                                if ($latestAbsence) {
+                                    echo $latestAbsence->absence . '<br>';
+                                }
+                            @endphp
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="7">الــــــــــصـــــــــبـــــــــــــاح</td>
@@ -59,50 +244,68 @@ absence
                         <td>09-08</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -111,50 +314,68 @@ absence
                         <td>التوقيع</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '8.30/9.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '8.30/9.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -162,50 +383,68 @@ absence
                         <td>10-09</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -214,50 +453,68 @@ absence
                         <td>التوقيع</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '9.30/10.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '9.30/10.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -268,50 +525,68 @@ absence
                         <td>11-10</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -320,50 +595,68 @@ absence
                         <td>التوقيع</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '10.30/11.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '10.30/11.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -372,50 +665,68 @@ absence
                         <td>12-11</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -424,50 +735,68 @@ absence
                         <td>التوقيع</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '11.30/12.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '11.30/12.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -479,50 +808,68 @@ absence
                         <td>03-02</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -531,50 +878,68 @@ absence
                         <td>التوقيع</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '2.30/3.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '2.30/3.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -583,50 +948,68 @@ absence
                         <td>04-03</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -635,50 +1018,68 @@ absence
                         <td>التوقيع</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '3.30/4.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '3.30/4.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -686,50 +1087,68 @@ absence
                         <td>05-04</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -738,50 +1157,68 @@ absence
                         <td>التوقيع</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '4.30/5.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '4.30/5.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -790,50 +1227,68 @@ absence
                         <td>06-05</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->absence; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->absence; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -842,50 +1297,68 @@ absence
                         <td>التوقيع</td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate)))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate)))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +1 day')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +2 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +3 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +4 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                         <td>
                             @php
-                            $absence = $absences->where('period', '5.30/6.30')->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))->first();
-                            if($absence) {
-                                echo $absence->signature; // Replace 'data' with the actual column name you want to display
-                            }
+                                $absence = $absences
+                                    ->where('period', '5.30/6.30')
+                                    ->where('date', date('Y-m-d', strtotime($fromDate . ' +5 days')))
+                                    ->first();
+                                if ($absence) {
+                                    echo $absence->signature; // Replace 'data' with the actual column name you want to display
+                                }
                             @endphp
                         </td>
                     </tr>
@@ -894,10 +1367,11 @@ absence
             </div>
         </div>
         <div class="d-flex justify-content-center">
-            <button id="downloadPDF" class="btn btn-primary mt-3 mb-3">Download PDF</button> <!-- Add the button and center it -->
+            <button id="downloadPDF" class="btn btn-primary mt-3 mb-3">
+                <a href="{{ route('download.pdf', ['department_name' => $departmentName, 'from_date_display' => $fromDate, 'to_date_display' => $toDate]) }}"
+                    style="color: white; text-decoration: none;">Download PDF</a>
+            </button>
         </div>
 
     </div>
-
-
 @endsection
