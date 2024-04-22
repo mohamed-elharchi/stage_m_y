@@ -17,6 +17,8 @@
     <h4> Localisation: Driouch - Maroc <i class="ri-map-pin-range-fill"></i></h4>
     <h4>Année d'ouverture: 1991 <i class="ri-calendar-schedule-fill"></i></h4>
    </p>
+    <h4>Année d'ouverture: 01-01-2000 <i class="ri-calendar-schedule-fill"></i></h4>
+   </p>
    <a href="{{ route('accueil') }}">Accueil  <i class="ri-home-3-line"></i> </a>
 
     </div>
