@@ -59,7 +59,7 @@ body {
 #preloader:before,
 #preloader:after {
   content: "";
-  background-color: var(--color-secondary);
+  background-color: rgb(233, 137, 27);
   position: absolute;
   inset: 0;
   width: 50%;

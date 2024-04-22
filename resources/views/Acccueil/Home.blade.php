@@ -118,7 +118,7 @@
                     objectifs académiques et professionnels. Les enseignants dévoués et les
                     ressources disponibles ont été essentiels pour mon succès."
                 </p>
-                <h3 class="card__name">Mohamed Ezaitouni</h3>
+                <h3 class="card__name">Mohamed Zitouni</h3>
                 <p class="time">2017/2020</p>
             </div>
 
