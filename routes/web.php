@@ -54,6 +54,10 @@ Route::post('/contact', [ContactController::class, 'submitForm']);
 
 
 
+
+
+
+
 Route::get('/login', [LoginController::class, 'indexLogin'])->name('login');
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');

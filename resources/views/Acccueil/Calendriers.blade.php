@@ -63,7 +63,7 @@
           <div class="gallery-item">
             <img  src="{{ asset('imagess/' . $utilisation->image) }}" class="zzz" alt="">
             <div class="gallery-links ">
-              <a href="{{ asset('imagess/' . $utilisation->image) }}" title="Gallery 1" class="glightbox "><i class="bi bi-arrows-angle-expand"></i></a>
+              <a href="{{ asset('imagess/' . $utilisation->image) }}" title="class:{{ $utilisation->classe }} " class="glightbox "><i class="bi bi-arrows-angle-expand"></i></a>
             </div>
             <div class="dd" style="color:black;"><h4><span style="color:blue;    font-size: 30px;">class:</span>{{ $utilisation->classe }} <a href="{{ asset('imagess/' . $utilisation->image) }}" download="{{ $utilisation->image }}" class="btn btn-primary"><i class="bi bi-download"></i> </a></h4>
 

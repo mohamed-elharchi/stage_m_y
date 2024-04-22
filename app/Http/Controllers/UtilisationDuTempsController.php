@@ -7,7 +7,7 @@ use App\Models\UtilisationDuTemps;
 
 class UtilisationDuTempsController extends Controller
 {
-    
+
     public function index()
     {
         $searchQuery = request('search2');
