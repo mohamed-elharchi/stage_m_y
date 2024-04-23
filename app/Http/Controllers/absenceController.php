@@ -33,13 +33,13 @@ class absenceController extends Controller
         $fromDate = $request->input('from_date_display');
         $toDate = $request->input('to_date_display');
 
-        $fromDateMinusThreeDays = Carbon::parse($fromDate)->subDays(3)->format('Y-m-d');
+        // $fromDateMinusThreeDays = Carbon::parse($fromDate)->subDays(3)->format('Y-m-d');
 
         $department = departement::where('name', $departmentName)->first();
         $departmentId = $department->id;
 
         $absences = absence::where('departement_id', $departmentId)
-            ->whereBetween('date', [$fromDateMinusThreeDays, $toDate])
+            // ->whereBetween('date', [$fromDateMinusThreeDays, $toDate])
             ->get();
 
         return view('dashboard.director_dashboard.displayDepartementAbsence', compact('departmentName', 'fromDate', 'toDate', 'absences'));

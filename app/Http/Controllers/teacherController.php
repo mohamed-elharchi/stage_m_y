@@ -50,21 +50,54 @@ class teacherController extends Controller
         }
     }
 
+    // public function create(Request $request)
+    // {
+    //     $request->validate([
+    //         'date' => 'required|date',
+    //         'period' => 'required',
+    //         'absence' => 'required|array',
+    //         'absence.*' => 'required|integer|between:1,40',
+    //         'signature' => 'required|string|max:50',
+    //         'department' => 'required|exists:departements,id',
+    //     ]);
+
+
+    //     $teacherId = auth()->id();
+    //     $departmentId = $request->input('department');
+    //     $absenceString = implode('-', $request->absence);
+
+    //     $absence = new Absence();
+    //     $absence->departement_id = $departmentId;
+    //     $absence->date = $request->date;
+    //     $absence->period = $request->period;
+    //     $absence->absence = $absenceString;
+    //     $absence->signature = $request->signature;
+    //     $absence->teacher_id = $teacherId;
+
+    //     $absence->save();
+    //     return redirect()->route('teacherDashboard')->with(['success' => 'Absence record inserted successfully.', 'absence' => $absence]);
+    // }
     public function create(Request $request)
     {
         $request->validate([
             'date' => 'required|date',
             'period' => 'required',
-            'absence' => 'required|array',
-            'absence.*' => 'required|integer|between:1,40',
+            'absence' => 'array',
+            'absence.*' => 'integer|between:1,40',
             'signature' => 'required|string|max:50',
             'department' => 'required|exists:departements,id',
         ]);
 
-
         $teacherId = auth()->id();
         $departmentId = $request->input('department');
-        $absenceString = implode('-', $request->absence);
+
+        // Check if absences were recorded
+        if ($request->has('absence') && count($request->absence) > 0) {
+            $absenceString = implode('-', $request->absence);
+        } else {
+            // If no absences recorded, insert the string
+            $absenceString = 'Tous les étudiants sont présents';
+        }
 
         $absence = new Absence();
         $absence->departement_id = $departmentId;
@@ -75,8 +108,10 @@ class teacherController extends Controller
         $absence->teacher_id = $teacherId;
 
         $absence->save();
+
         return redirect()->route('teacherDashboard')->with(['success' => 'Absence record inserted successfully.', 'absence' => $absence]);
     }
+
 
     public function editAbsence($id)
     {
