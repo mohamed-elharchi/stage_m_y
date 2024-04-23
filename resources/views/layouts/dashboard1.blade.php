@@ -56,13 +56,13 @@
 
 
                 <li>
-                    <a href="{{ url('/comments') }}">
+                    <a href="{{ route('accueil') }}">
                         <span class="icon"><ion-icon name="chatbox-ellipses-outline"></ion-icon></span>
-                        <span class="title"> commentaires</span>
+                        <span class="title"> site web</span>
                     </a>
                 </li>
                 <li>
-                    <a href="sign-out.php">
+                    <a href="{{ route('logout') }}">
                         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                         <span class="title">Sign out</span>
                     </a>
@@ -91,6 +91,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

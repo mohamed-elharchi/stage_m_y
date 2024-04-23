@@ -13,10 +13,68 @@ use App\Http\Controllers\teacherController;
 use App\Http\Controllers\UtilisationDuTempsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Contact2Controller;
-use App\Models\absence;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
-Route::get('/accueil', [Contact2Controller::class, 'showInAyoub'])->name('accueil');
+Route::get('/About', [AccueilController::class, 'index2'])->name('About');
+Route::get('/Nouvelles', [AccueilController::class, 'index3'])->name('Nouvelles');
+Route::get('/Calendriers', [UtilisationDuTempsController::class, 'index4'])->name('Calendriers');
+Route::post('/contact', [ContactController::class, 'submitForm']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -84,9 +142,8 @@ Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])
 
 Route::resource('news', NewsController::class);
 Route::resource('utilisations', UtilisationDuTempsController::class);
-
+Route::get('/utilisations/create', [UtilisationDuTempsController::class, 'create'])->name('utilisations.create');
 Route::get('/contact', [ContactController::class, 'showForm']);
-Route::post('/contact', [ContactController::class, 'submitForm']);
 Route::delete('/messages/{id}', [ContactController::class, 'deleteMessage']);
 Route::get('/messages', [ContactController::class, 'showMessage']);
 Route::get('/contacts', [Contact2Controller::class, 'index'])->name('contacts.index');
@@ -130,8 +187,8 @@ Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])
 
     Route::resource('news', NewsController::class);
     Route::resource('utilisations', UtilisationDuTempsController::class);
+    Route::get('/utilisations/{utilisation}', [UtilisationDuTempsController::class, 'show'])->name('utilisations.show');
     Route::get('/contact', [ContactController::class, 'showForm']);
-    Route::post('/contact', [ContactController::class, 'submitForm']);
     Route::delete('/messages/{id}', [ContactController::class, 'deleteMessage']);
     Route::get('/messages', [ContactController::class, 'showMessage']);
     Route::get('/contacts', [Contact2Controller::class, 'index'])->name('contacts.index');

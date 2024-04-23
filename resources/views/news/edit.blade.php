@@ -35,7 +35,7 @@
                         <div class="form-group">
                             <label for="photo">Image :</label>
                             <input type="file" name="image" id="image" class="form-control" placeholder="image">
-                                                        <img src="/images/{{ $news->image }}" alt="Current Image" class="mt-2" style="max-width: 100px;">
+                                                        <img src="/imagess/{{ $news->image }}" alt="Current Image" class="mt-2" style="max-width: 100px;">
                         </div>
                         <button type="submit" class="btn" style="background-color:#db751b; color: #fff;">Mettre à jour</button>
                     </form>

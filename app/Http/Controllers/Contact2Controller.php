@@ -10,11 +10,7 @@ class Contact2Controller extends Controller
 {
 
 
-    public function showInAyoub()
-    {
-        $contacts = Contact::all();
-        return view('Acccueil.Home', compact('contacts'));
-    }
+   
 
     public function index()
     {
