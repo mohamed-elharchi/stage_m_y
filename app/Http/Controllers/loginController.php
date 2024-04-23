@@ -38,7 +38,7 @@ class LoginController extends Controller
                 return redirect()->route('teacherDashboard')->with("success", "You have been logged in successfully");
             }
 
-            return redirect()->route('ayoubACCUAUSD')->with("success", "You have been logged in successfully");
+            return redirect()->route('accueil')->with("success", "You have been logged in successfully");
         }
 
         return back()->withErrors(['email' => 'Invalid email or password.'])->withInput();

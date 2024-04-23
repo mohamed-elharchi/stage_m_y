@@ -15,68 +15,11 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Contact2Controller;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Route::get('/accueil', [AccueilController::class, 'index'])->name('accueil');
+Route::get('/', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/About', [AccueilController::class, 'index2'])->name('About');
 Route::get('/Nouvelles', [AccueilController::class, 'index3'])->name('Nouvelles');
 Route::get('/Calendriers', [UtilisationDuTempsController::class, 'index4'])->name('Calendriers');
 Route::post('/contact', [ContactController::class, 'submitForm']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Route::get('/login', [LoginController::class, 'indexLogin'])->name('login');
@@ -85,10 +28,7 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Route::middleware(['director'])->group(function () {
-//     Route::get('/dashboard', [LoginController::class, "indexDashboard"])->name('indexDashboard');
 
-// });
 
 
 
