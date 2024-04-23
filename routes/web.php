@@ -152,7 +152,6 @@ Route::group(['middleware' => ['auth', TeacherMiddleware::class]], function () {
 });
 
 
-
 // director
 
 
