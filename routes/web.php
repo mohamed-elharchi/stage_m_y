@@ -122,8 +122,9 @@ Route::group(['middleware' => ['auth', GeneralGuardMiddleware::class]], function
 
 
 //absence :::::::::::::::::::::::::::::::::
-// Route::get('/dashboard/selectAbsence', [absenceController::class, "selectDepartement"])->name('selectDepartement');
-// Route::get('/dashboard/absence', [absenceController::class, "displayDepartementAbsence"])->name('displayDepartementAbsence');
+Route::get('/dashboard/selectAbsence', [absenceController::class, "selectDepartement"])->name('selectDepartement');
+Route::get('/dashboard/weekAbsence',[absenceController::class, "displayAbsence"])->name("showweekAbsence");
+Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])->name('download.pdf');
 
 
 
