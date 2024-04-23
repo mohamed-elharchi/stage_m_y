@@ -62,7 +62,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('logout') }}">
+                    <a href="">
                         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                         <span class="title">Sign out</span>
                     </a>
