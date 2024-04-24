@@ -22,6 +22,7 @@
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/pages.css') }}">
 
 
 
@@ -31,7 +32,22 @@
   <!-- End Header -->
 
 <!-- End Hero Section -->
+<div class="d">
+			<div class="website-d">
 
+				<h1> Moulay Ismail</h1>
+
+			<div class="breaking-news-section">
+				<span id="btext">NEWS Lycée</span>
+				<marquee direction="left" onmouseover="this.stop()" onmouseout="this.start()">
+					<a href="#" class="breaking-news">
+						<p class="bntime">11 Jan 2019</p>
+						Congress under pressure to reach a deal</a>
+					<a href="#" class="breaking-news"><p class="bntime">11 Jan 2019</p>Powerful laser beam is helping track the moon</a>
+					<a href="#" class="breaking-news"><p class="bntime">11 Jan 2019</p>Snowstorm buries Pacific Northwest, with more on the way</a>
+				</marquee>
+			</div>
+		</div>
 <main id="main" data-aos="fade" data-aos-delay="1500">
 
   <!-- Gallery Section -->
