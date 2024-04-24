@@ -81,10 +81,7 @@
   <!-- End Gallery Section -->
 
 </main>
-  <div id="preloader">
-    <div class="line">
-    </div>
-  </div>
+  
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>

@@ -9,10 +9,7 @@
 <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 <link rel="stylesheet" href="{{ asset('css/pages.css') }}">
 </head>
-<style>
 
-
-</style>
 <body>
 <div class="d">
 			<div class="website-d">
@@ -46,7 +43,7 @@
             </h3>
             <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
             <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-            <a href="#" class="read-more">read more</a>
+            <a href="#" class="read-more">Show</a>
           </div>
         </div>
 
@@ -61,7 +58,7 @@
             </h3>
             <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
             <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-            <a href="#" class="read-more">read more</a>
+            <a href="#" class="read-more">Show</a>
           </div>
         </div>
 
@@ -76,7 +73,7 @@
             </h3>
             <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
             <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-            <a href="#" class="read-more">read more</a>
+            <a href="#" class="read-more">Show</a>
           </div>
         </div>
 
@@ -91,7 +88,7 @@
             </h3>
             <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
             <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-            <a href="#" class="read-more">read more</a>
+            <a href="#" class="read-more">Show</a>
           </div>
         </div>
 
@@ -106,7 +103,7 @@
             </h3>
             <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
             <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-            <a href="#" class="read-more">read more</a>
+            <a href="#" class="read-more">Show</a>
           </div>
         </div>
 
@@ -121,7 +118,7 @@
             </h3>
             <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur cumque dolorum, ex incidunt ipsa laudantium necessitatibus neque quae tempora......</p>
             <span class="post-date"><i class="fa fa-clock-o"></i>Out 27, 2019</span>
-            <a href="#" class="read-more">read more</a>
+            <a href="#" class="read-more">Show</a>
           </div>
         </div>
       </div>
