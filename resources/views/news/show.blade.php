@@ -11,7 +11,6 @@
 
     <style>
 
-
 .a {
 	position: relative;
 	width: 100%;
@@ -19,8 +18,6 @@
     margin-bottom: 50px;
     margin-top: 80px;
     overflow: auto;
-
-
 }
 .lefteee {
 	float: left;
