@@ -18,7 +18,7 @@
 	height: 100vh;
     margin-bottom: 50px;
     margin-top: 80px;
-
+    overflow: auto;
 
 
 }
@@ -92,7 +92,7 @@ h3 {
 	font-size: 5rem;
 	font-style: italic;
 }
-h3 +  {
+h3   {
 	font-size: 1.6rem;
 	display: inline-block;
 	color: #fff;
@@ -129,20 +129,7 @@ li.prev {
 	text-align: center;
 	z-index: 10;
 }
-navv  {
-	display: inline-block;
-	border-radius: 50%;
-	width: 1.2rem;
 
-  min-width: 12px;
-  min-height: 12px;
-	background: #fff;
-	margin: 0 1rem;
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
-}
 .current_dot {
 	-webkit-transform: scale(1.4);
 	        transform: scale(1.4);
@@ -150,13 +137,25 @@ navv  {
 @media screen and (max-width: 700px) {
 	.lefteee {
 		width: 100%;
-		height: 30%;
+
 	}
 	.sliderrr {
 		width: 100%;
-		height: 70%;
+
+
 	}
+    .zzz{
+        font-size: 25px;
+    }
+.zzz + .bb {
+  color: #949494;
+  font-size: 20px;
+  margin-bottom: 4rem;
 }
+
+}
+
+
     </style>
 
 
@@ -166,7 +165,7 @@ navv  {
 
 <div class="a">
       <div class="lefteee">
-        <div>
+        <div class="zzzz">
           <span>{{ \Carbon\Carbon::parse($news->created_at)->format('d M Y') }}</span>
           <h1 class="zzz"> {{ $news->title }}</h1>
           <p class="bb">{{ $news->paragraph }} </p>
