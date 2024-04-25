@@ -17,9 +17,12 @@ use App\Http\Controllers\Contact2Controller;
 
 Route::get('/', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/About', [AccueilController::class, 'index2'])->name('About');
-Route::get('/Nouvelles', [AccueilController::class, 'index3'])->name('Nouvelles');
+Route::get('/Nouvelles', [NewsController::class, 'index3'])->name('Nouvelles');
 Route::get('/Calendriers', [UtilisationDuTempsController::class, 'index4'])->name('Calendriers');
 Route::post('/contact', [ContactController::class, 'submitForm']);
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
+
+
 
 
 Route::get('/login', [LoginController::class, 'indexLogin'])->name('login');

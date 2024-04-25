@@ -30,15 +30,17 @@
                                 <th scope="col">Image</th>
                                 <th scope="col">Titre</th>
                                 <th scope="col">Paragraphe</th>
+                                <th scope="col">Date de création</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($newsList as $news)
                             <tr>
-                            <td><img src="{{ asset('imagess/' . $news->image) }}" width="100" height="100"></td>
+                                <td><img src="{{ asset('imagess/' . $news->image) }}" width="100" height="100"></td>
                                 <td>{{ $news->title }}</td>
                                 <td>{{ $news->paragraph }}</td>
+                                <td>{{ \Carbon\Carbon::parse($news->created_at)->format('d M Y') }}</td>
                                 <td>
                                     <a href="{{ route('news.edit', $news->id) }}" class="btn btn-sm btn-primary">Editer</a>
                                     <form action="{{ route('news.destroy', $news->id) }}" method="POST" style="display: inline;">
