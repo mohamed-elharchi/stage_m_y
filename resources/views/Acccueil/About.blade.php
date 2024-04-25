@@ -40,7 +40,7 @@
                 <img src="images/277778883_389967766466286_8547034403029128305_n.jpeg" alt="img" draggable="false">
                 <img src="images/269598944_427832089049144_2516702295568106996_n.jpeg" alt="img" draggable="false">
                 <img src="images/244450771_375378944294459_7198891489275396272_n.jpeg" alt="img" draggable="false">
-                <img src="images/257444330_406965834469103_8332665903877178941_n.jpeg" alt="img" draggable="false">
+                <img src="images/PHOTO-2024-04-19-18-30-49.jpg" alt="img" draggable="false">
                 <img src="images/270013764_427831915715828_6359339326940119472_n.jpeg" alt="img" draggable="false">
                 <img src="images/269611737_427831815715838_1603714381976731170_n.jpeg" alt="img" draggable="false">
             </div>
