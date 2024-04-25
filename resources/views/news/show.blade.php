@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <title>Slider using property Clip</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ asset('css/pages.css') }}">
+
 
 
     <style>
@@ -56,6 +56,7 @@ span {
 .bb  {
   font-size: 2.6rem;
   color: #000;
+
 
 
 }
@@ -162,22 +163,7 @@ navv  {
 </head>
 
 <body>
-<div class="d">
-    <div class="website-d">
-        <h1>Moulay Ismail</h1>
-        <div class="breaking-news-section">
-            <span id="btext">NEWS Lycée</span>
-            <marquee direction="left" onmouseover="this.stop()" onmouseout="this.start()">
-                @foreach($newsList as $news)
-                    <a href="{{ route('news.show', $news->id) }}" class="breaking-news">
-                        <p class="bntime">{{ \Carbon\Carbon::parse($news->created_at)->format('d M Y') }}</p>
-                        {{ $news->title }}
-                    </a>
-                @endforeach
-            </marquee>
-        </div>
-    </div>
-</div>
+
 <div class="a">
       <div class="lefteee">
         <div>
