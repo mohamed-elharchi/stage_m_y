@@ -1,6 +1,6 @@
 /* style about page  */
-body{
-  
+body {
+
     padding-top: 60px;
     margin: 0;
     padding: 0;
@@ -8,30 +8,33 @@ body{
     margin-left: 50px;
 }
 
-.articl1{
-    margin-top:110px;
+
+/* Articl1 */
+.articl1 {
+    margin-top: 110px;
     width: 100%;
-   display: flex;
-   margin-bottom: 25px;
+    display: flex;
+    margin-bottom: 50px;
+
 }
 
 
-.p1{
+.p1 {
     width: 50%;
     display: flex;
     flex-direction: column;
     text-align: start;
-    padding-left: 52px; 
+    padding-left: 52px;
 }
 
-.p1 p{
+.p1 p {
     font-size: 16px;
-    line-height: 24px; /* Interligne de 24 pixels */
+    line-height: 24px;
     margin-top: 15px;
 
 }
- 
-.p1 a{
+
+.p1 a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,29 +47,33 @@ body{
     font-size: 18px;
     padding: 20px;
 }
-.p1 h4{
+
+.p1 h4 {
     margin-top: 5px;
 }
 
-.p2{
-width: 50%;
-flex-direction: row-reverse;
-text-align:end;
-display: flex;
-padding-right:52px ;
+.p2 {
+    width: 50%;
+    flex-direction: row-reverse;
+    text-align: end;
+    display: flex;
+    padding-right: 52px;
 
 }
-.p2 img{
+
+.p2 img {
     width: 450px;
 }
+
 @media screen and (max-width: 1024px) {
     .articl1 {
         flex-direction: column-reverse;
         align-items: center;
-      
+
     }
 
-    .p1, .p2 {
+    .p1,
+    .p2 {
         width: 100%;
         text-align: center;
         display: flex;
@@ -76,7 +83,7 @@ padding-right:52px ;
         padding: 0 20px;
     }
 
-    
+
     .p2 img {
         width: 100%;
         max-width: 450px;
@@ -91,6 +98,7 @@ padding-right:52px ;
         height: 30px;
         font-size: 14px;
     }
+
     .p1 {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -98,29 +106,28 @@ padding-right:52px ;
 
 }
 
+/* end Articl1 */
 
-
-
-
-
-
-
-
-.slide{
+/* slid */
+.slide {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
 }
+
 .slide h1 {
     text-align: center;
     margin-bottom: 15px;
 }
-.slide p{
+
+.slide p {
     margin-bottom: 25px;
     text-align: center;
 }
+
 .wrapper {
     display: flex;
     max-width: 1168px;
@@ -141,7 +148,8 @@ padding-right:52px ;
     border-radius: 50%;
     transform: translateY(-50%);
     transition: transform 0.1s linear;
-    display: block; /* Ensure both arrows are always displayed */
+    display: block;
+    /* Ensure both arrows are always displayed */
 }
 
 .wrapper i:active {
@@ -198,43 +206,49 @@ padding-right:52px ;
 @media screen and (max-width: 550px) {
     .carousel img {
         width: 100%;
-        margin-left: 0; 
+        margin-left: 0;
     }
+
     .wrapper i:first-child {
-        left: 0; 
+        left: 0;
     }
 
     .wrapper i:last-child {
-        right: 0; 
+        right: 0;
     }
 }
 
 
+/* end Slid  */
 
 
 
 
-
-
-
-
-.map_section{ 
-   height: 100vh;
-   width: 100%; 
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+/* map */
+.map_section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
 }
-.map_section p{
+
+.map_section p {
     margin-bottom: 40px;
     text-align: center;
 }
-.map_section h1{
+
+.map_section h1 {
     text-align: center;
     margin-bottom: 15px;
 }
-.map{
+
+.map {
     height: 60vh;
-    width: 94%; 
+    width: 94%;
+  
 }
+
+/* end map */
