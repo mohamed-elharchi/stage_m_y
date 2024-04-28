@@ -15,12 +15,14 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Contact2Controller;
 
 
+
 Route::get('/', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/About', [AccueilController::class, 'index2'])->name('About');
 Route::get('/Nouvelles', [NewsController::class, 'index3'])->name('Nouvelles');
 Route::get('/Calendriers', [UtilisationDuTempsController::class, 'index4'])->name('Calendriers');
 Route::post('/contact', [ContactController::class, 'submitForm']);
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
+
 
 
 
@@ -82,7 +84,7 @@ Route::get('/dashboard/weekAbsence',[absenceController::class, "displayAbsence"]
 Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])->name('download.pdf');
 
 
-
+Route::get('/news/create', 'App\Http\Controllers\NewsController@create');
 Route::resource('news', NewsController::class);
 Route::resource('utilisations', UtilisationDuTempsController::class);
 Route::get('/utilisations/create', [UtilisationDuTempsController::class, 'create'])->name('utilisations.create');
@@ -127,7 +129,7 @@ Route::get('/dashboard/weekAbsence',[absenceController::class, "displayAbsence"]
 Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])->name('download.pdf');
 
 
-
+     Route::get('/news/create', 'App\Http\Controllers\NewsController@create');
     Route::resource('news', NewsController::class);
     Route::resource('utilisations', UtilisationDuTempsController::class);
     Route::get('/utilisations/{utilisation}', [UtilisationDuTempsController::class, 'show'])->name('utilisations.show');
