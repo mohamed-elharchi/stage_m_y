@@ -17,7 +17,25 @@ class LoginController extends Controller
     {
         return view('dashboard.login');
     }
+    public function displayInfo()
+    {
+        $user = Auth::user();
+        return view('dashboard.director_dashboard.editInfo', compact('user'));
+    }
 
+    public function saveInfo(Request $request)
+    {
+        $request->validate([
+            'password' => 'required|min:8',
+        ]);
+
+        $user = Auth::user();
+        Admin::where('id', $user->id)->update([
+            'password' => Hash::make($request->input('password')),
+        ]);
+
+        return redirect()->route('logout')->with('success', 'Password updated successfully.');
+    }
 
 
 
@@ -30,10 +48,8 @@ class LoginController extends Controller
             $user = Auth::user();
             if ($user->role === 'director') {
                 return redirect()->route('general_guard')->with("success", "You have been logged in successfully");
-
             } elseif ($user->role === 'general_guard') {
                 return redirect()->route('displayMatieres')->with("success", "You have been logged in successfully");
-
             } elseif ($user->role === 'teacher') {
                 return redirect()->route('teacherDashboard')->with("success", "You have been logged in successfully");
             }

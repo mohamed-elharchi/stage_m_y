@@ -7,12 +7,13 @@
     <div class="row justify-content-center mt-4">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Modifier les informations de professeur</div>
+                <div class="card-header"> <h4>Modifier les informations de professeur {{ $teacherNmae }}</h4></div>
 
                 <div class="card-body">
                     <form method="post" action="{{ route('saveUpdateTeacher', $teacher->id) }}">
                         @method('PATCH')
                         @csrf
+
 
                         <div class="form-group">
                             <label for="matiere">Matière:</label>

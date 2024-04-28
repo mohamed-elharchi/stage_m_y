@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- image icon page ++++++++++  -->
-    <link rel="icon" href="{{ asset('images/moulay ismai (2).png') }}" type="image/x-icon"/>
+    <link rel="icon" href="{{ asset('images/moulayIsmail.png') }}" type="image/x-icon"/>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

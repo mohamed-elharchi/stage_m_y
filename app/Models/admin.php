@@ -29,5 +29,5 @@ class Admin extends Model implements Authenticatable
     {
         return $this->hasOne(teacher::class);
     }
-
+    
 }

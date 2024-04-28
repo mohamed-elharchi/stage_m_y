@@ -13,7 +13,7 @@
                         <td colspan="2" rowspan="2">
                             <img src="{{ asset('img/dd.png') }}" alt="" width="100%" />
                         </td>
-                        <td colspan="2">السنة الدراسية : 2024 - 2023</td>
+                        <td colspan="2">السنة الدراسية : {{ date('Y') }} - {{ date('Y') - 1 }}</td>
                     </tr>
                     <tr>
                         <!-- <td class="borderRemove" colspan="1"></td> -->
@@ -80,7 +80,7 @@
 
                                 $previousDay->subDay();
 
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
+                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
                                     break;
                                 }
                             }
@@ -125,7 +125,7 @@
 
                                 $previousDay->subDay();
 
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
+                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
                                     break;
                                 }
                             }
@@ -170,7 +170,7 @@
 
                                 $previousDay->subDay();
 
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
+                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
                                     break;
                                 }
                             }
@@ -215,7 +215,7 @@
 
                                 $previousDay->subDay();
 
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
+                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
                                     break;
                                 }
                             }
@@ -260,7 +260,7 @@
 
                                 $previousDay->subDay();
 
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
+                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
                                     break;
                                 }
                             }
@@ -304,7 +304,7 @@
 
                                 $previousDay->subDay();
 
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
+                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
                                     break;
                                 }
                             }

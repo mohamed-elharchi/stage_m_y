@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/director.css') }}">
     <script src="{{ asset('js/director.js') }}"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/moulay ismai (2).png') }}" type="image/x-icon"/>
 
     <title>@yield('title')</title>
 
@@ -22,7 +23,7 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <img src="{{ asset('img/logo.png') }}" alt="" width="70%" height="70%">
+                    <img src="{{ asset('img/moulayIsmail.png') }}" alt="logo" width="50%" >
                 </li>
                 <li>
                     <a href="{{ route('teacherDashboard') }}">

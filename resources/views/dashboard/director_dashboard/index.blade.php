@@ -1,11 +1,11 @@
 @extends('layouts.directorLayout')
 @section('title')
-Responsables
+    Responsables
 @endsection
 @section('content')
 
-<div class="container d-flex justify-content-center align-items-center" >
-    <div class="row">
+<div class="container mt-4">
+    <div class="row justify-content-center">
         <div class="col-md-12">
             @if ($errors->any())
                 <div class="alert alert-danger" role="alert">
@@ -23,30 +23,35 @@ Responsables
                 </div>
             @endif
 
-          
-
-            <div class="container mt-4">
-                <div class="row justify-content-between mb-3">
+            <div class="container mb-3">
+                <div class="row justify-content-between">
                     <div class="col-lg-2">
                         <a class="btn btn-success" href="{{ route('addGeneralGuard') }}">Ajouter</a>
                     </div>
                     <div class="col-lg-3">
                         <form action="{{ route('filterGeneralGuards') }}" method="GET" class="form-inline">
-                            <div class="form-group">
-                                <label for="role" class="mr-2">Filtrer par rôle:</label>
-                                <select class="form-control mr-2" id="role" name="role">
-                                    <option value="">Tous les rôles</option>
-                                    <option value="director">Directeur</option>
-                                    <option value="teacher">Enseignant</option>
-                                    <option value="general_guard">Garde général</option>
-                                </select>
+                            <div class="row align-items-center">
+                                <div class="col-sm-8">
+                                    <div class="form-group mr-2">
+                                        <select class="form-control" id="role" name="role">
+                                            <option value="">Tous les rôles</option>
+                                            <option value="director">Directeur</option>
+                                            <option value="teacher">Enseignant</option>
+                                            <option value="general_guard">Garde général</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="submit" class="btn btn-primary">Filtrer</button>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Filtrer</button>
                         </form>
                     </div>
                 </div>
+            </div>
 
-                <table class="table table-bordered">
+            <table class="table table-bordered">
+                <thead>
                     <tr>
                         <th>Numéro</th>
                         <th>Nom</th>
@@ -54,6 +59,8 @@ Responsables
                         <th>Le rôle</th>
                         <th>Action</th>
                     </tr>
+                </thead>
+                <tbody>
                     @foreach ($generalGuards as $index => $generalGuard)
                         <tr>
                             <td>{{ $index + 1 }}</td>
@@ -70,8 +77,8 @@ Responsables
                             </td>
                         </tr>
                     @endforeach
-                </table>
-            </div>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

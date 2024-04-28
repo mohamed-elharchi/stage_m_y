@@ -10,6 +10,7 @@ use App\Models\Admin;
 use App\Models\departement;
 use App\Models\matiere;
 use App\Models\teacher;
+use App\Models\teacher_department;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -101,7 +102,33 @@ class directorController extends Controller
 
         $departements = Departement::all();
 
-        $teachers = Admin::where('role', 'teacher')->get();
+        $teachers = Admin::where('role', 'teacher')
+            ->leftJoin('teachers', 'admins.id', '=', 'teachers.admin_id')
+            ->leftJoin('teacher_departments', 'teachers.id', '=', 'teacher_departments.teacher_id')
+            ->whereNull('teacher_departments.departement_id')
+            ->select('admins.*')
+            ->distinct()
+            ->get();
+        // $teachers = Admin::where('role', 'teacher')->get();
+
+        // $ids = [];
+        // foreach ($teachers as $teacher) {
+        //     $ids[] = $teacher->id;
+        // }
+        // $ttt = [];
+        // foreach ($ids as $id) {
+        //     $ttt [] = Teacher::where('admin_id', $id)->get();
+        // }
+
+
+        // $teacherNames = [];
+        // foreach ($ttt as $t) {
+        //     $teacherNames[] = teacher_department::where('teacher_id', '!=', $t->id)->whereNull('departement_id')->first();        }
+        // dd($teacherNames);
+
+
+
+
         return view('dashboard.director_dashboard.addTeacher', compact('matieres', 'departements', 'teachers'));
     }
 
@@ -131,10 +158,12 @@ class directorController extends Controller
     public function updateTeacher($id)
     {
         $teacher = Teacher::findOrFail($id);
+
+        $teacherNmae = $teacher->admin->name;
         $matieres = Matiere::all();
         $departments = Departement::all();
 
-        return view('dashboard.director_dashboard.updateTeacher', compact('teacher', 'matieres', 'departments'));
+        return view('dashboard.director_dashboard.updateTeacher', compact('teacher', 'matieres', 'departments', 'teacherNmae'));
     }
 
     public function saveUpdate(Request $request, $id)
@@ -200,7 +229,6 @@ class directorController extends Controller
 
         $generalGuard->save();
 
-        // Redirect back with success message
         return redirect()->route('general_guard')->with('success', 'Registration successful');
     }
     /**

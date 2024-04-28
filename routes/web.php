@@ -13,7 +13,7 @@ use App\Http\Controllers\teacherController;
 use App\Http\Controllers\UtilisationDuTempsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Contact2Controller;
-
+use FontLib\Table\Type\name;
 
 Route::get('/', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/About', [AccueilController::class, 'index2'])->name('About');
@@ -77,6 +77,13 @@ Route::get('/dashboard/selectAbsence', [absenceController::class, "selectDeparte
 Route::get('/dashboard/weekAbsence',[absenceController::class, "displayAbsence"])->name("showweekAbsence");
 
 Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])->name('download.pdf');
+
+
+// edit info
+Route::get('dashboard/info', [LoginController::class, "displayInfo"])->name('displayInfo');
+Route::post('dashboard/saveInfo', [LoginController::class, "saveInfo"])->name('saveInfo');
+
+
 
 
 

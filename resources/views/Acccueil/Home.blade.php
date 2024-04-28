@@ -11,8 +11,8 @@
                 rempli d'opportunités de croissance et de succès. Ensemble, embarquons
                 dans cette aventure et faisons de cette année scolaire un moment inoubliable !</p>
             <div class="but22">
-                <button class="but1">Lire Plus<i class="ri-arrow-right-up-fill"></i></button>
-                <button class="but2">Nouvelles<i class="ri-news-line"></i></button>
+                <a class="but1" href="{{ route('About') }}">Lire Plus<i class="ri-arrow-right-up-fill"></i></a>
+                <a class="but2" href="{{ route('Nouvelles') }}">Nouvelles<i class="ri-news-line"></i></a>
             </div>
         </div>
 
