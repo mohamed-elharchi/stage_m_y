@@ -36,7 +36,7 @@
                 @foreach($newsList as $news)
                 <div class="post-slide">
                     <div class="post-img">
-                        <img src="{{ asset('imagess/' . $news->image) }}" alt="">
+                        <img src="{{ asset('imagess/' . $news->image) }}" style="width: 100%; height: 300px;" alt="">
                         <a href="{{ route('news.show', $news->id) }}" class="over-layer"><i class="fa fa-link"></i></a>
                     </div>
                     <div class="post-content">
