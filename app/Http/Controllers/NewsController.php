@@ -4,9 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
+use Illuminate\Support\Facades\File;
 
 class NewsController extends Controller
 {
+    public function show($id)
+{
+    $news = News::findOrFail($id);
+    $newsList = News::all(); // Fetching all news articles
+    return view('news.show', compact('news', 'newsList'));
+}
+
+    public function index3()
+    {
+        $newsList = News::all();
+        return view('Acccueil.Nouvelles', compact('newsList'));
+    }
+
     public function index()
     {
         $newsList = News::all();
@@ -17,6 +31,7 @@ class NewsController extends Controller
     {
         return view('news.create');
     }
+
     public function app()
     {
         return view('app');
@@ -37,7 +52,6 @@ class NewsController extends Controller
             $image->move($destinationPath, $NewsImage);
             $input['image'] = "$NewsImage";
         }
-
 
         News::create($input);
 
@@ -63,8 +77,8 @@ class NewsController extends Controller
 
         if ($image = $request->file('image')) {
             // Delete the old image
-            if (file_exists('imagess/' . $news->image)) {
-                unlink('imagess/' . $news->image);
+            if (File::exists(public_path('imagess/' . $news->image))) {
+                File::delete(public_path('imagess/' . $news->image));
             }
 
             $destinationPath = 'imagess/';
@@ -84,13 +98,12 @@ class NewsController extends Controller
         $news = News::findOrFail($id);
 
         // Delete the image
-        if (file_exists('imagess/' . $news->image)) {
-            unlink('imagess/' . $news->image);
+        if (File::exists(public_path('imagess/' . $news->image))) {
+            File::delete(public_path('imagess/' . $news->image));
         }
 
         $news->delete();
 
         return redirect()->route('news.index')->with('success', 'Nouvelle supprimée avec succès!');
     }
-
 }

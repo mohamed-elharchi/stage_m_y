@@ -100,9 +100,9 @@
 
             <p class="footer-links">
                 <a href="{{ route('accueil') }}">Accueil</a>
-
+                <br>
                 <a href="{{ route('About') }}">À propos</a>
-
+               <br>
                 <a href="{{ route('Calendriers') }}">Calendriers</a>
             </p>
 

@@ -973,7 +973,7 @@ input[type="text"] {
     font-size: 1.25rem;
     color: white;
     z-index: 10;
-    transition: bottom .4s, transform .4s, background-color .4s;
+    transition: bottom .7s, transform .7s, background-color .7s;
 }
 
 .scrollup:hover {
