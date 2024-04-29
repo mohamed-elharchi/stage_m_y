@@ -91,6 +91,7 @@ Route::post('dashboard/saveInfo', [LoginController::class, "saveInfo"])->name('s
 
 
 Route::resource('news', NewsController::class);
+
 Route::resource('utilisations', UtilisationDuTempsController::class);
 Route::get('/utilisations/create', [UtilisationDuTempsController::class, 'create'])->name('utilisations.create');
 Route::get('/contact', [ContactController::class, 'showForm']);

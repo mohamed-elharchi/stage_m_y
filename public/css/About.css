@@ -1,5 +1,5 @@
 /* style about page  */
-body{
+body {
 
     padding-top: 60px;
     margin: 0;
@@ -33,8 +33,6 @@ body{
     margin-top: 15px;
 
 }
-
-.p1 a{
 
 .p1 a {
     display: flex;
@@ -226,16 +224,6 @@ body{
 
 
 
-
-
-
-.map_section{
-   height: 100vh;
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
 /* map */
 .map_section {
     height: 100vh;
@@ -260,9 +248,7 @@ body{
 .map {
     height: 60vh;
     width: 94%;
-    width: 94%;
 
 }
-
 
 /* end map */
