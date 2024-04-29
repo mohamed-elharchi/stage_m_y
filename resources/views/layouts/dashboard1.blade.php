@@ -34,7 +34,7 @@
 </li>
                     <li>
                     <a href="{{ url('/contacts') }}">
-                        <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
                         <span class="title">contact</span>
                     </a>
                 </li>
@@ -57,7 +57,7 @@
 
                 <li>
                     <a href="{{ route('accueil') }}">
-                        <span class="icon"><ion-icon name="chatbox-ellipses-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="globe-outline"></ion-icon></span>
                         <span class="title"> site web</span>
                     </a>
                 </li>
