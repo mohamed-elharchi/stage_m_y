@@ -35,9 +35,9 @@
             <th>Départements</th>
             <th>Action</th>
         </tr>
-        @forelse ($teachers as $teacher)
+        @forelse ($teachers as $index => $teacher)
             <tr>
-                <td>{{ $teacher->id }}</td>
+                <td>{{ $index + 1 }}</td>
                 <td>{{ $teacher->admin->name }}</td>
                 <td>{{ $teacher->matiere->name }}</td>
                 <td>
@@ -58,6 +58,9 @@
             <tr><td colspan="5">Aucun professeur trouvé</td></tr>
         @endforelse
     </table>
+    <div class=" justify-content-center">
+        {{ $teachers->links() }}
+    </div>
 </div>
 
 @endsection

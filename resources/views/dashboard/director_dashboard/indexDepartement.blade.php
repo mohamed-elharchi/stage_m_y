@@ -1,6 +1,6 @@
 @extends('layouts.directorLayout')
 @section('title')
-Matieres
+departement
 @endsection
 @section('content')
 
@@ -32,13 +32,17 @@ Matieres
     <table class="table table-bordered">
         <tr>
             <th>Numero</th>
-            <th>Matieres</th>
+            <th>departement</th>
             <th>actionn</th>
+            <th>Liste des étudiants</th>
         </tr>
         @foreach ($departements as $index => $departement)
             <tr>
                 <td>{{ $index + 1 }}</td>
                 <td>{{ $departement->name }}</td>
+                <td>
+                    <img src="{{ asset('imagess/' . $departement->students_list) }}" width="100px">
+                </td>
                 <td>
                     <form action="{{ route('deleteDepartement', $departement->id) }}" method="POST">
                         @csrf
@@ -49,6 +53,9 @@ Matieres
             </tr>
         @endforeach
     </table>
+    <div class=" justify-content-center">
+        {{ $departements->links() }}
+    </div>
 </div>
 
 

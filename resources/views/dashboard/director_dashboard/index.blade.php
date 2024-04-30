@@ -79,7 +79,9 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
+            <div class=" justify-content-center">
+                {{ $generalGuards->links() }}
+            </div>
     </div>
 </div>
 

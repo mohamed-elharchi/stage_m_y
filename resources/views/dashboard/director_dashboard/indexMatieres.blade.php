@@ -48,7 +48,11 @@ Matieres
                 </td>
             </tr>
         @endforeach
+
     </table>
+    <div class=" justify-content-center">
+        {{ $matieres->links() }}
+    </div>
 </div>
 
 

@@ -41,7 +41,7 @@ class directorController extends Controller
 
     public function displayMatieres()
     {
-        $matieres = matiere::all();
+        $matieres = matiere::paginate(5);
         return view('dashboard.director_dashboard.indexMatieres', compact('matieres'));
     }
     public function showCreateMatiere()
@@ -66,7 +66,7 @@ class directorController extends Controller
 
     public function showDepartements()
     {
-        $departements = departement::all();
+        $departements = departement::paginate(5);
         return view('dashboard.director_dashboard.indexDepartement', compact('departements'));
     }
     public function addDepartement()
@@ -81,18 +81,29 @@ class directorController extends Controller
             return redirect()->route('showDepartements')->with('success', 'La departement existe déjà');
         }
 
-        $matiere = new departement();
-        $matiere->name = $request->input('name');
-        $matiere->save();
+        $departement = new departement();
+        $departement->name = $request->input('name');
+
+        if ($request->hasFile('students_list')) {
+            $image = $request->file('students_list');
+            $destinationPath = 'imagess/';
+            $filename = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $filename);
+            $departement->students_list = $filename;
+        }
+
+        $departement->save();
+
         return redirect()->route('showDepartements')->with('success', 'Registration successful');
     }
+
 
 
 
     //teachers
     public function displayTeachers()
     {
-        $teachers = Teacher::with('admin', 'matiere', 'departments')->get();
+        $teachers = Teacher::with('admin', 'matiere', 'departments')->paginate(5);
         return view('dashboard.director_dashboard.indexTeachers', compact('teachers'));
     }
 
@@ -187,22 +198,40 @@ class directorController extends Controller
 
 
     public function filter(Request $request)
-    {
-        $role = $request->input('role');
+    { {
+            // Retrieve the role filter value from the request
+            $role = $request->input('role');
 
-        if ($role) {
-            $generalGuards = Admin::where('role', $role)->get();
-        } else {
-            $generalGuards = Admin::all();
+            // Start building the query
+            $query = Admin::query();
+
+            // Apply filtering based on the role if it's provided
+            if ($role) {
+                $query->where('role', $role);
+            }
+
+            // Paginate the filtered results with 5 items per page
+            $generalGuards = $query->paginate(5);
+
+            // Pass the paginated results to the view
+            return view('dashboard.director_dashboard.index', compact('generalGuards'));
         }
+        // remove the pagination if you want to run this code without any error
+        // $role = $request->input('role');
 
-        return view('dashboard.director_dashboard.index', compact('generalGuards'));
+        // if ($role) {
+        //     $generalGuards = Admin::where('role', $role)->get();
+        // } else {
+        //     $generalGuards = Admin::all();
+        // }
+
+        // return view('dashboard.director_dashboard.index', compact('generalGuards'));
     }
 
 
     public function index()
     {
-        $generalGuards = Admin::all();
+        $generalGuards = Admin::paginate(5);
         return view('dashboard.director_dashboard.index', compact('generalGuards'));
     }
 
@@ -291,9 +320,16 @@ class directorController extends Controller
     public function destroyDepartement($id)
     {
         $departement = departement::findOrFail($id);
+        if (!empty($departement->students_list)) {
+            $imagePath = public_path('imagess/' . $departement->students_list);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
         $departement->delete();
-        return redirect()->route('showDepartements')->with('success', 'Departements a été supprimée avec succès');
+        return redirect()->route('showDepartements')->with('success', 'Département a été supprimé avec succès');
     }
+
     public function destroyTeacher($id)
     {
         $teacher = teacher::findOrFail($id);

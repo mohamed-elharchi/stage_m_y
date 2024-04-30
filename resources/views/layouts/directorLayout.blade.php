@@ -69,7 +69,7 @@
                 </li>
                 <li>
                     <a href="{{ route('accueil') }}" id="add-to" class="Add-P-btn">
-                        <span class="icon"><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="globe-outline"></ion-icon></span>
                         <span class="title">Site web</span>
                     </a>
                 </li>
