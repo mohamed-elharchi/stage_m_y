@@ -13,14 +13,17 @@ use App\Http\Controllers\teacherController;
 use App\Http\Controllers\UtilisationDuTempsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Contact2Controller;
-use FontLib\Table\Type\name;
+
+
 
 Route::get('/', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/About', [AccueilController::class, 'index2'])->name('About');
 Route::get('/Nouvelles', [NewsController::class, 'index3'])->name('Nouvelles');
 Route::get('/Calendriers', [UtilisationDuTempsController::class, 'index4'])->name('Calendriers');
 Route::post('/contact', [ContactController::class, 'submitForm']);
+Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
+
 
 
 
@@ -133,7 +136,6 @@ Route::group(['middleware' => ['auth', GeneralGuardMiddleware::class]], function
 Route::get('/dashboard/selectAbsence', [absenceController::class, "selectDepartement"])->name('selectDepartement');
 Route::get('/dashboard/weekAbsence',[absenceController::class, "displayAbsence"])->name("showweekAbsence");
 Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])->name('download.pdf');
-
 
 
     Route::resource('news', NewsController::class);

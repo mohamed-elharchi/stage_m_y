@@ -31,6 +31,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Message</th>
+                            <th scope="col">Date de Message </th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -40,6 +41,8 @@
                                 <td>{{ $message->name }}</td>
                                 <td>{{ $message->email }}</td>
                                 <td>{{ $message->message }}</td>
+                                <td>{{ $message->created_at }}</td>
+
                                 <td>
                                     <form action="/messages/{{ $message->id }}" method="POST">
                                         @csrf

@@ -159,12 +159,13 @@ li.prev {
 </head>
 
 <body>
-
+@include('Acccueil.zi')
 <div class="a">
       <div class="lefteee">
         <div class="zzzz">
-          <span>{{ \Carbon\Carbon::parse($news->created_at)->format('d M Y') }}</span>
+
           <h1 class="zzz"> {{ $news->title }}</h1>
+          <span>{{ \Carbon\Carbon::parse($news->created_at)->format('d M Y') }}</span>
           <p class="bb">{{ $news->paragraph }} </p>
         </div>
       </div>
