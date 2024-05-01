@@ -25,15 +25,17 @@
                             <div class="mb-3">
                                 <label for="email" class="form-label">Adresse e-mail</label>
                                 <input type="email" name="email" class="form-control" id="email"
-                                    value="{{ old('email') }}">
+                                    value="{{ old('email') }}"
+                                    placeholder="example@gmail.com">
                                 @error('email')
                                     <span class="text text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
 
                             <div class="mb-3">
-                                <label for="role" class="form-label">Choisir le rôle:</label>
+                                <label for="role" class="form-label">le rôle:</label>
                                 <select class="form-control" id="role" name="role">
+                                    <option value="" selected disabled>Choisir le rôle</option>
                                     <option value="general_guard">Garde générale</option>
                                     <option value="teacher">Professeur</option>
                                     <option value="director">directeur</option>

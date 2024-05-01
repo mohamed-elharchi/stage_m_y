@@ -20,6 +20,8 @@ Route::get('/', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/About', [AccueilController::class, 'index2'])->name('About');
 Route::get('/Nouvelles', [NewsController::class, 'index3'])->name('Nouvelles');
 Route::get('/Calendriers', [UtilisationDuTempsController::class, 'index4'])->name('Calendriers');
+Route::get('/filterB', [UtilisationDuTempsController::class,'index4'])->name('filterByDepartement');
+
 Route::post('/contact', [ContactController::class, 'submitForm']);
 Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
@@ -97,6 +99,7 @@ Route::resource('news', NewsController::class);
 
 Route::resource('utilisations', UtilisationDuTempsController::class);
 Route::get('/utilisations/create', [UtilisationDuTempsController::class, 'create'])->name('utilisations.create');
+Route::get('/filter', [UtilisationDuTempsController::class, 'index'])->name('filterByDepartementInZitouniDash');
 Route::get('/contact', [ContactController::class, 'showForm']);
 Route::delete('/messages/{id}', [ContactController::class, 'deleteMessage']);
 Route::get('/messages', [ContactController::class, 'showMessage']);

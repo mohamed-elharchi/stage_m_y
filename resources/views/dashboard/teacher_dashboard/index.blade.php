@@ -20,7 +20,7 @@
                             <div class="form-group">
                                 <label for="department">Select Department:</label>
                                 <select class="form-control" id="department" name="department">
-                                    <option value="" selected disabled>Select Department</option>
+                                    <option value="" selected disabled >Select Department</option>
                                     @foreach ($departements as $departement)
                                         <option value="{{ $departement->id }}">{{ $departement->name }}</option>
                                     @endforeach

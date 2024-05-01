@@ -20,16 +20,18 @@
                             </div>
                         </div>
                     </div>
-                    <form class="d-flex" name="form2">
+                    <form action="{{ route('filterByDepartementInZitouniDash') }}" method="GET" class="form-inline justify-content-end m-4">
+                        <div class="form-group mr-2">
+                            <select class="form-control" id="role" name="role">
+                                <option value="" disabled selected>select your class</option>
+                                @foreach ($utilisationss as $utilisation)
+                                    <option value="{{ $utilisation->departement->name }}">{{ $utilisation->departement->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Filter</button>
+                    </form>
 
-                <select onchange="form2.submit()" name="search2" id="search2" class="custom-select sources" placeholder="Search classe">
-                <option value="Search classe" style="text-align: center;">rechercher class :</option>
-                @foreach ($utilisations as $utilisation)
-                      <option value="{{ $utilisation->classe }}">{{ $utilisation->classe }}</option>
-                 @endforeach
-                </select>
-
-                      </form>
 
 
 <!-- Add Bootstrap JS -->
@@ -45,7 +47,7 @@
                         <tbody>
                             @foreach ($utilisations as $utilisation)
                             <tr>
-                                <td>{{ $utilisation->classe }}</td>
+                                <td>{{ $utilisation->departement->name }}</td>
                                 <td>
                                     <img src="{{ asset('imagess/' . $utilisation->image) }}" width="100px">
                                 </td>

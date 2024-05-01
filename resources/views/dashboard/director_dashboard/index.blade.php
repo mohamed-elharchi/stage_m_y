@@ -34,7 +34,7 @@
                                 <div class="col-sm-8">
                                     <div class="form-group mr-2">
                                         <select class="form-control" id="role" name="role">
-                                            <option value="">Tous les rôles</option>
+                                            <option value="" disabled selected>Tous les rôles</option>
                                             <option value="director">Directeur</option>
                                             <option value="teacher">Enseignant</option>
                                             <option value="general_guard">Garde général</option>

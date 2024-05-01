@@ -15,7 +15,7 @@
                             <div class="form-group">
                                 <label for="name">Nom</label>
                                 <select name="admin_id" id="name" class="form-control">
-                                    <option value="">Tous les professeurs</option>
+                                    <option value="" disabled selected>Tous les professeurs</option>
                                     @foreach($teachers as $teacher)
                                         @if($teacher)
                                             <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <label for="matiere">Matière</label>
                                 <select name="matiere_id" id="matiere" class="form-control">
-                                    <option value="">Tous les Matière</option>
+                                    <option value="" disabled selected>Tous les Matière</option>
                                     @foreach($matieres as $matiere)
                                         <option value="{{ $matiere->id }}">{{ $matiere->name }}</option>
                                     @endforeach

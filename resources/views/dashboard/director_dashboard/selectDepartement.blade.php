@@ -59,21 +59,17 @@
     </div>
 
     <script>
-        // Function to set the "to_date" based on the selected Monday
         function setToDate() {
             var fromDate = document.getElementById("from_date").value;
             var toDate = new Date(fromDate);
-            toDate.setDate(toDate.getDate() + 5); // Add 5 days to the selected Monday
+            toDate.setDate(toDate.getDate() + 5);
             document.getElementById("to_date").value = toDate.toISOString().split('T')[0];
         }
 
-        // Call the function initially to set the "to_date" input field for the default selected Monday date
         setToDate();
 
-        // Add event listener to the "from_date" select input to update "to_date" when "from_date" changes
         document.getElementById('from_date').addEventListener('change', setToDate);
 
-        // Function to populate hidden inputs with department name and dates before form submission
         document.querySelector('form').addEventListener('submit', function () {
             var departmentSelect = document.getElementById('departement');
             var departmentName = departmentSelect.options[departmentSelect.selectedIndex].text;
