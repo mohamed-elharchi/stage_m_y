@@ -43,7 +43,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-// dd(hash::make('azer1234'));
+ // dd(hash::make('12345678zi'));
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->role === 'director') {

@@ -28,7 +28,7 @@
                         <h3 class="post-title">
                             <a href="{{ route('news.show', $news->id) }}">  {{ $news->title }}.</a>
                         </h3>
-                        <p class="post-description">{{ substr($news->paragraph, 0, 80) }}@if (strlen($news->paragraph) > 100)@endif ..........</p>
+                        <p class="post-description">{{ substr($news->paragraph, 0, 40) }}@if (strlen($news->paragraph) > 100)@endif ..........</p>
                         <span class="post-date"><i class="fa fa-clock-o"></i>{{ \Carbon\Carbon::parse($news->created_at)->format('d M Y') }}</span>
                         <a href="{{ route('news.show', $news->id) }}" class="read-more">Show</a>
                     </div>
