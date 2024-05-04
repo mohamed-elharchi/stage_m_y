@@ -44,7 +44,10 @@
             @guest
                 <a class="login" href="{{ route('login') }}">Se connecter <i class="ri-login-circle-line"></i></a>
             @endguest
-            <i id="menu-btn" class="ri-menu-line"></i>
+            
+                <i id="menu-btn" class="ri-menu-line"></i>
+
+
         </div>
 
     </nav>

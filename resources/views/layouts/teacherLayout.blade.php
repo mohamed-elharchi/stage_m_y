@@ -32,9 +32,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('logout') }}" id="add-to" class="Add-P-btn">
-                        <span class="icon"><ion-icon name="bag-add-outline"></ion-icon></span>
-                        <span class="title">Déconnecte</span>
+                    <a href="{{ route('displayProfile') }}" id="add-to" class="Add-P-btn">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="title">Profil</span>
                     </a>
                 </li>
                 <li>
@@ -43,25 +43,12 @@
                         <span class="title">sitel web </span>
                     </a>
                 </li>
-
-                {{-- <li>
-                    <a href="editProfile.php">
-                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                        <span class="title">profile</span>
+                <li>
+                    <a href="{{ route('logout') }}" id="add-to" class="Add-P-btn">
+                        <span class="icon"><ion-icon name="bag-add-outline"></ion-icon></span>
+                        <span class="title">Déconnecte</span>
                     </a>
                 </li>
-                <li>
-                    <a href="">
-                        <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
-                        <span class="title">Help</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="sign-out.php">
-                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                        <span class="title">Sign out</span>
-                    </a>
-                </li> --}}
             </ul>
         </div>
 
@@ -75,10 +62,7 @@
 
                 </div>
                 <div class="user">
-                    <button type="submit" class="btn btn-primary">
-                        <a href="#" class="btn btn-link text-white"
-                            style="text-decoration: none;">Site Dashboard</a>
-                    </button>
+
                 </div>
             </div>
 
@@ -87,7 +71,7 @@
             </div>
         </div>
 
-
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
