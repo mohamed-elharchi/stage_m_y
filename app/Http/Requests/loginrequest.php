@@ -24,15 +24,24 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
+            'current_password' => 'required',
+            'new_password' => 'required|min:8|confirmed',
+            'new_password_confirmation' => 'required',
             'email' => 'required|email',
-            'password' => 'required',
+            'name' => 'required',
         ];
     }
     public function messages()
     {
         return [
-            'email.required'=>'dakhal email li msagal bih',
-            'password.required'=>'katab password dyalak'
+            'current_password.required' => 'The current password field is required.',
+            'new_password.required' => 'The new password field is required.',
+            'new_password.min' => 'The new password must be at least :min characters.',
+            'new_password.confirmed' => 'The new password confirmation does not match.',
+            'new_password_confirmation.required' => 'The password confirmation field is required.',
+            'email.required' => 'The email field is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'name.required' => 'The name field is required.',
         ];
     }
 }

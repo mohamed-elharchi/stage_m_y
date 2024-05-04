@@ -14,5 +14,10 @@ class absence extends Model
         'period',
         'absence',
         'signature',
+        'students_list',
     ];
+    public function departement()
+    {
+        return $this->belongsTo(departement::class);
+    }
 }

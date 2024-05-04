@@ -43,9 +43,13 @@ class teacherController extends Controller
         $absence = Absence::where('departement_id', $departmentId)->latest()->first();
 
         if ($absence) {
-            return view('dashboard.teacher_dashboard.displayAbsence', compact('absence', 'departmentId'));
+            $departementName = $absence->departement->name;
+            $studentsList = $absence->departement->students_list;
+            return view('dashboard.teacher_dashboard.displayAbsence', compact('absence', 'departmentId', 'departementName', 'studentsList'));
         } else {
-            return view('dashboard.teacher_dashboard.displayAbsence', compact('departmentId'))
+            $departementName = departement::findOrFail($departmentId)->name;
+            $studentsList = departement::findOrFail($departmentId)->students_list;
+            return view('dashboard.teacher_dashboard.displayAbsence', compact('departmentId','departementName', 'studentsList'))
                 ->with('error', 'No absence record found for the selected department.');
         }
     }

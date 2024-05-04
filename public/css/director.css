@@ -86,7 +86,7 @@ body {
 }
 
 .navigation ul li:nth-child(1) {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     pointer-events: none;
 }
 
@@ -106,7 +106,7 @@ body {
 .navigation ul li a .icon {
     position: relative;
     display: block;
-    margin-top: 6px;
+    margin-top: 3px;
     min-width: 60px;
     height: 60px;
     line-height: 70px;
@@ -118,16 +118,16 @@ body {
 }
 
 .navigation ul li a .icon ion-icon {
-    font-size: 1.75em;
+    font-size: 1.5em;
 }
 .navigation ul li a .title {
     position: relative;
     display: block;
     padding: 0 15px;
-    height: 60px;
+    height: 50px;
     line-height: 60px;
-    font-size: 1.05em;
-    font-weight: 500;
+    font-size: 1em;
+    font-weight: 300;
     text-align: start;
     white-space: nowrap;
 }

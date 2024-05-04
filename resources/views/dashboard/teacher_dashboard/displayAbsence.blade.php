@@ -15,7 +15,7 @@
                             <p>{{ session('success') }}</p>
                         </div>
                     @endif
-                    <div class="card-header">Absences for Selected Department</div>
+                    <div class="card-header"><h4>Absences for Selected Department </h4><span>{{ $departementName }}</span></div>
                     <div class="card-body">
                         @if (!empty($absence))
                             <ul>
@@ -78,23 +78,11 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
+                    <div class="card-footer text-center">
+                        <img src="{{ asset('imagess/'. $studentsList) }}" alt="Image" class="img-fluid">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    {{-- <script>
-function formatAbsenceInput(input) {
-    let sanitizedInput = input.value.replace(/[^\d]/g, '');
-
-    let formattedInput = sanitizedInput.replace(/(\d{2})(?=\d)/g, '$1-');
-
-    formattedInput = formattedInput.replace(/^0+(?=[1-9])/, '');
-
-    input.value = formattedInput;
-}
-</script> --}}
-
-
-
 @endsection

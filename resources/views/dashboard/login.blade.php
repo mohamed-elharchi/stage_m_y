@@ -30,29 +30,40 @@
         <button type="submit" class="btn btn-primary">Login</button>
     </form> --}}
 
-    <div class="center">
-        <h1>Se connecter</h1>
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-            <div class="txt_field">
-                <input type="email" id="email" name="email" value="{{ old('email') }}" required>
+    <div class="loginContent">
+        <div class="loginImage">
+            <img src="{{ asset('images/books.jpg') }}" alt="lignImage" width="100%">
+        </div>
+        <div class="center">
 
-                <span></span>
-                <label>Email</label>
 
-            </div>
-            @error('email')
-                <span class="">{{ $message }}</span>
-            @enderror
-            <div class="txt_field">
-                <input type="password" class="form-control" id="password" name="password" required>
-                <span></span>
-                <label>Mot de passe</label>
+            <h1>Se connecter</h1>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="txt_field">
+                    <input type="email" id="email" name="email" value="{{ old('email') }}" required>
 
-            </div>
-            <input type="submit" class="connecter" value="connecter" />
-            <div class="signup_link" type="submit">Spécial pour la gestion de l'institution!</div>
-        </form>
+                    <span></span>
+                    <label>Email</label>
+
+                </div>
+                @error('email')
+                    <span class="">{{ $message }}</span>
+                @enderror
+                <div class="txt_field">
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    <span></span>
+                    <label>Mot de passe</label>
+
+                </div>
+                <input type="submit" class="connecter" value="connecter" />
+                <div class="signup_link" type="submit">Spécial pour la gestion de l'institution!</div>
+            </form>
+
+
+        </div>
+
+
     </div>
 
 @endsection

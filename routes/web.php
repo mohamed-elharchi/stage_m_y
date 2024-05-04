@@ -20,7 +20,7 @@ Route::get('/', [AccueilController::class, 'index'])->name('accueil');
 Route::get('/About', [AccueilController::class, 'index2'])->name('About');
 Route::get('/Nouvelles', [NewsController::class, 'index3'])->name('Nouvelles');
 Route::get('/Calendriers', [UtilisationDuTempsController::class, 'index4'])->name('Calendriers');
-Route::get('/filterB', [UtilisationDuTempsController::class,'index4'])->name('filterByDepartement');
+Route::get('/filterB', [UtilisationDuTempsController::class, 'index4'])->name('filterByDepartement');
 
 Route::post('/contact', [ContactController::class, 'submitForm']);
 Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
@@ -43,8 +43,6 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 // director dashboard :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () {
-    // Route::get('/director/dashboard', [directorController::class, "directorDashboard"])->name('directorDashboard');
-    // Route::get('/dashboard', [directorController::class, "generalGuardDashboard"])->name('generalGuard_dashboard');
 
     Route::get('/dashboard/allGeneralGuard', [directorController::class, "index"])->name('general_guard');
     Route::get('/dashboard/addGeneralGuard', [directorController::class, "create"])->name('addGeneralGuard');
@@ -78,34 +76,31 @@ Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () 
 
 
 
-// absence ::::::::::::::::::::::::::::::::::::::::::::
+    // absence ::::::::::::::::::::::::::::::::::::::::::::
 
-// Route::get('/dashboard/absence', [directorController::class, "selectDepartement"])->name('selectDepartement');
-Route::get('/dashboard/selectAbsence', [absenceController::class, "selectDepartement"])->name('selectDepartement');
-Route::get('/dashboard/weekAbsence',[absenceController::class, "displayAbsence"])->name("showweekAbsence");
-
-Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])->name('download.pdf');
+    Route::get('/dashboard/selectAbsence', [absenceController::class, "selectDepartement"])->name('selectDepartement');
+    Route::get('/dashboard/weekAbsence', [absenceController::class, "displayAbsence"])->name("showweekAbsence");
+    Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])->name('download.pdf');
 
 
-// edit info
-Route::get('dashboard/info', [LoginController::class, "displayInfo"])->name('displayInfo');
-Route::post('dashboard/saveInfo', [LoginController::class, "saveInfo"])->name('saveInfo');
+    // edit info  ::::::::::::::::::::::::::::::::::
+    Route::get('dashboard/info', [LoginController::class, "displayInfo"])->name('displayInfo');
+    Route::post('dashboard/saveInfo', [LoginController::class, "saveInfo"])->name('saveInfo');
 
 
 
+    //zitouni routes  ::::::::::::::::::::::::::::::::
 
-
-Route::resource('news', NewsController::class);
-
-Route::resource('utilisations', UtilisationDuTempsController::class);
-Route::get('/utilisations/create', [UtilisationDuTempsController::class, 'create'])->name('utilisations.create');
-Route::get('/filter', [UtilisationDuTempsController::class, 'index'])->name('filterByDepartementInZitouniDash');
-Route::get('/contact', [ContactController::class, 'showForm']);
-Route::delete('/messages/{id}', [ContactController::class, 'deleteMessage']);
-Route::get('/messages', [ContactController::class, 'showMessage']);
-Route::get('/contacts', [Contact2Controller::class, 'index'])->name('contacts.index');
-Route::get('/contacts/{contact}/edit', [Contact2Controller::class, 'edit'])->name('contacts.edit');
-Route::put('/contacts/{contact}', [Contact2Controller::class, 'update'])->name('contacts.update');
+    Route::resource('news', NewsController::class);
+    Route::resource('utilisations', UtilisationDuTempsController::class);
+    Route::get('/utilisations/create', [UtilisationDuTempsController::class, 'create'])->name('utilisations.create');
+    Route::get('/filter', [UtilisationDuTempsController::class, 'index'])->name('filterByDepartementInZitouniDash');
+    Route::get('/contact', [ContactController::class, 'showForm']);
+    Route::delete('/messages/{id}', [ContactController::class, 'deleteMessage']);
+    Route::get('/messages', [ContactController::class, 'showMessage']);
+    Route::get('/contacts', [Contact2Controller::class, 'index'])->name('contacts.index');
+    Route::get('/contacts/{contact}/edit', [Contact2Controller::class, 'edit'])->name('contacts.edit');
+    Route::put('/contacts/{contact}', [Contact2Controller::class, 'update'])->name('contacts.update');
 });
 
 
@@ -135,10 +130,14 @@ Route::group(['middleware' => ['auth', GeneralGuardMiddleware::class]], function
     Route::delete('/dashboard/deleteTeacher/{id}', [directorController::class, "destroyTeacher"])->name('deleteTeacher');
 
 
-//absence :::::::::::::::::::::::::::::::::
-Route::get('/dashboard/selectAbsence', [absenceController::class, "selectDepartement"])->name('selectDepartement');
-Route::get('/dashboard/weekAbsence',[absenceController::class, "displayAbsence"])->name("showweekAbsence");
-Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])->name('download.pdf');
+    //absence :::::::::::::::::::::::::::::::::
+    Route::get('/dashboard/selectAbsence', [absenceController::class, "selectDepartement"])->name('selectDepartement');
+    Route::get('/dashboard/weekAbsence', [absenceController::class, "displayAbsence"])->name("showweekAbsence");
+    Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])->name('download.pdf');
+
+    //profil :::::::::::::::::::::::::::::::::::::
+    Route::get('dashboard/info', [LoginController::class, "displayInfo"])->name('displayInfo');
+    Route::post('dashboard/saveInfo', [LoginController::class, "saveInfo"])->name('saveInfo');
 
 
     Route::resource('news', NewsController::class);
@@ -150,7 +149,6 @@ Route::get('/dashboard/download-pdf', [absenceController::class, "downloadPdf"])
     Route::get('/contacts', [Contact2Controller::class, 'index'])->name('contacts.index');
     Route::get('/contacts/{contact}/edit', [Contact2Controller::class, 'edit'])->name('contacts.edit');
     Route::put('/contacts/{contact}', [Contact2Controller::class, 'update'])->name('contacts.update');
-
 });
 
 
@@ -162,35 +160,10 @@ Route::group(['middleware' => ['auth', TeacherMiddleware::class]], function () {
     Route::post('/dashboard/saveAbsence', [teacherController::class, "create"])->name('saveAbsence');
     Route::get('/dashboard/absence/{id}/edit', [teacherController::class, "editAbsence"])->name('editAbsence');
     Route::put('/dashboard/absence/{id}', [teacherController::class, "updateAbsence"])->name('updateAbsence');
-
-
-
+    // edit password
+    Route::get('dashboard/profile', [LoginController::class, "displayInfo"])->name('displayProfile');
+    Route::post('dashboard/save', [LoginController::class, "saveNew"])->name('saveNew');
 });
 
 
 // director
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

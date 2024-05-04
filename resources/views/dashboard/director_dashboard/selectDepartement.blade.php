@@ -3,16 +3,25 @@
     select departements
 @endsection
 @section('content')
-
     <?php
     $today = new DateTime();
-    $startDate = new DateTime('first Monday of ' . $today->format('F Y'));
     $mondays = [];
-    while ($startDate < $today) {
-        $mondays[] = clone $startDate;
-        $startDate->modify('+1 week');
+
+    $currentDate = clone $today;
+    while ($currentDate->format('N') != 1) {
+        $currentDate->modify('-1 day');
+    }
+
+    $daysCount = 0;
+    while ($daysCount < 8) {
+        $mondays[] = clone $currentDate;
+        $currentDate->modify('-7 days');
+        $daysCount++;
     }
     ?>
+
+    <!-- Your HTML code here -->
+
 
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -60,9 +69,9 @@
 
     <script>
         function setToDate() {
-            var fromDate = document.getElementById("from_date").value;
+            var fromDate = new Date(document.getElementById("from_date").value);
             var toDate = new Date(fromDate);
-            toDate.setDate(toDate.getDate() + 5);
+            toDate.setDate(toDate.getDate() + 5); // Add 5 days to get to Saturday
             document.getElementById("to_date").value = toDate.toISOString().split('T')[0];
         }
 
@@ -81,4 +90,6 @@
             document.getElementById('to_date_display').value = toDateDisplay;
         });
     </script>
+
+
 @endsection
