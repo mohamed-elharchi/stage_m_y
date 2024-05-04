@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DisplayAbsenceRequest;
 use App\Models\absence;
 use App\Models\departement;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
@@ -27,7 +28,7 @@ class absenceController extends Controller
         return view('dashboard.director_dashboard.selectDepartement', compact('departements'));
     }
 
-    public function displayAbsence(Request $request)
+    public function displayAbsence(DisplayAbsenceRequest $request)
     {
         $departmentName = $request->input('department_name');
         $fromDate = $request->input('from_date_display');

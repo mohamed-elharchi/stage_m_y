@@ -25,8 +25,8 @@ class departementRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'students_list' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            
+            'students_list' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+
 
         ];
     }

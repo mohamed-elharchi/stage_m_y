@@ -6,6 +6,7 @@ use App\Http\Requests\d_u_request;
 use App\Http\Requests\departementRequest;
 use App\Http\Requests\directorRequest;
 use App\Http\Requests\matiereRequest;
+use App\Http\Requests\SaveTeacherRequest;
 use App\Models\Admin;
 use App\Models\departement;
 use App\Models\matiere;
@@ -146,14 +147,9 @@ class directorController extends Controller
 
 
 
-    public function saveTeacher(Request $request)
+    public function saveTeacher(SaveTeacherRequest $request)
     {
-        $validatedData = $request->validate([
-            'admin_id' => 'required|exists:admins,id',
-            'matiere_id' => 'required|exists:matieres,id',
-            'departement_ids' => 'array',
-            'departement_ids.*' => 'exists:departements,id',
-        ]);
+        $validatedData = $request->validated();
 
         $teacher = new Teacher();
         $teacher->admin_id = $validatedData['admin_id'];
@@ -199,33 +195,19 @@ class directorController extends Controller
 
     public function filter(Request $request)
     { {
-            // Retrieve the role filter value from the request
             $role = $request->input('role');
 
-            // Start building the query
             $query = Admin::query();
 
-            // Apply filtering based on the role if it's provided
             if ($role) {
                 $query->where('role', $role);
             }
 
-            // Paginate the filtered results with 5 items per page
             $generalGuards = $query->paginate(5);
 
-            // Pass the paginated results to the view
             return view('dashboard.director_dashboard.index', compact('generalGuards'));
         }
-        // remove the pagination if you want to run this code without any error
-        // $role = $request->input('role');
 
-        // if ($role) {
-        //     $generalGuards = Admin::where('role', $role)->get();
-        // } else {
-        //     $generalGuards = Admin::all();
-        // }
-
-        // return view('dashboard.director_dashboard.index', compact('generalGuards'));
     }
 
 

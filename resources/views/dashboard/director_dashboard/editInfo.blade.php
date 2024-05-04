@@ -66,15 +66,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="current_password">Current Password:</label>
-                                <input type="password" class="form-control" id="current_password" name="current_password" required>
+                                <input type="password" class="form-control" id="current_password" name="current_password" >
                             </div>
                             <div class="form-group">
                                 <label for="new_password">New Password:</label>
-                                <input type="password" class="form-control" id="new_password" name="new_password" required>
+                                <input type="password" class="form-control" id="new_password" name="new_password" >
                             </div>
                             <div class="form-group">
                                 <label for="confirm_password">Confirm New Password:</label>
-                                <input type="password" class="form-control" id="confirm_password" name="new_password_confirmation" required>
+                                <input type="password" class="form-control" id="confirm_password" name="new_password_confirmation" >
                             </div>
 
                             <button type="submit" class="btn btn-primary">Save</button>
