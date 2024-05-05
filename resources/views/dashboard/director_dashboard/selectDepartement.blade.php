@@ -31,11 +31,21 @@
                         <h2 class="card-title">Select Departements:</h2>
                     </div>
                     <div class="card-body">
+                        @if ($errors->any())
+                            <div class="alert alert-danger" role="alert">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form action="{{ route('showweekAbsence') }}" method="GET">
                             @csrf
                             <div class="form-group">
                                 <label for="departement">Select Departement:</label>
                                 <select name="departement" id="departement" class="form-control">
+                                    <option value="" disabled selected>departement name</option>
                                     @foreach ($departements as $departement)
                                         <option value="{{ $departement->id }}">{{ $departement->name }}</option>
                                     @endforeach

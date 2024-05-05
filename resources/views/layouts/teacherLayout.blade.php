@@ -27,7 +27,7 @@
                 </li>
                 <li>
                     <a href="{{ route('teacherDashboard') }}">
-                        <span class="icon"><ion-icon name="archive-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
                         <span class="title">Absence</span>
                     </a>
                 </li>
@@ -39,13 +39,13 @@
                 </li>
                 <li>
                     <a href="{{ route('accueil') }}" id="add-to" class="Add-P-btn">
-                        <span class="icon"><ion-icon name="bag-add-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="globe-outline"></ion-icon></span>
                         <span class="title">sitel web </span>
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('logout') }}" id="add-to" class="Add-P-btn">
-                        <span class="icon"><ion-icon name="bag-add-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="exit-outline"></ion-icon></span>
                         <span class="title">Déconnecte</span>
                     </a>
                 </li>

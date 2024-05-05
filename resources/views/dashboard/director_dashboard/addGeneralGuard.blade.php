@@ -38,7 +38,7 @@
                                     <option value="" selected disabled>Choisir le rôle</option>
                                     <option value="general_guard">Garde générale</option>
                                     <option value="teacher">Professeur</option>
-                                    <option value="director">directeur</option>
+                                    {{-- <option value="director">directeur</option> --}}
                                 </select>
                                 @error('role')
                                     <span class="text text-danger">{{ $message }}</span>
