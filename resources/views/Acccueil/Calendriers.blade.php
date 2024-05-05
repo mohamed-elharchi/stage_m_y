@@ -11,7 +11,7 @@
         <meta content="" name="description">
         <meta content="" name="keywords">
 
-     
+
 
 
         <!-- Vendor CSS Files -->
@@ -74,11 +74,14 @@
                                             class="glightbox "><i class="bi bi-arrows-angle-expand"></i></a>
                                     </div>
                                     <div class="dd" style="color:black;">
-                                        <h4><span
-                                                style="color:rgb(233, 137, 27);    font-size: 30px;">class:</span>{{ $utilisation->departement->name }}
-                                            <a href="{{ asset('imagess/' . $utilisation->image) }}"
-                                                download="{{ $utilisation->image }}" class="btn btn-primary"><i
-                                                    class="bi bi-download"></i> </a></h4>
+                                    <h4>
+    <span style="color:rgb(233, 137, 27); font-size: 25px;">Class </span>
+    <span style="margin-left: 90px;font-size: 15px; color: #000;">{{ $utilisation->departement->name }}</span>
+    <a href="{{ asset('imagess/' . $utilisation->image) }}" download="{{ $utilisation->image }}" class="dowland">
+        <i class="bi bi-download"></i>
+    </a>
+</h4>
+
 
 
                                     </div>
