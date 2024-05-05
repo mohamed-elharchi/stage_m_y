@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('period');
             $table->string('absence');
             $table->string('signature');
+            $table->string(' teacher_id');
             $table->timestamps();
         });
     }

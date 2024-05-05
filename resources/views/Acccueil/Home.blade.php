@@ -226,7 +226,7 @@
                     <form method="POST" action="{{ url('/contact') }}">
                     @csrf
                         <div class="input-box">
-                            <input type="text" id="name" name="name" placeholder="Entrez votre nom" class="inpnom">
+                            <input type="text" id="name" name="name" placeholder="Entrez votre nom" class="inpnom" >
                             <i class="ri-user-3-fill"></i>                        </div>
                         <div class="input-box">
                             <input type="text"   id="email" name="email"  placeholder="Entrer votre Email">

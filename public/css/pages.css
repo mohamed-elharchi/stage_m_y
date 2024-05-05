@@ -1,6 +1,9 @@
-body{
-
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=Poppins:wght@300;700&display=swap');
+html {
+    font-family: 'Bai Jamjuree', sans-serif, 'Poppins', sans-serif;
+  
 }
+
 #news-slider{
     margin-top: 80px;
 }

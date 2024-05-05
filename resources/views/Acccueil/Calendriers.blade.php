@@ -11,95 +11,16 @@
         <meta content="" name="description">
         <meta content="" name="keywords">
 
-        <!-- Favicons -->
 
-
-        <!-- Google Fonts -->
 
 
         <!-- Vendor CSS Files -->
         <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
         <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
         <link href="assets/css/main.css" rel="stylesheet">
+        <link href="assets/css/ma.css" rel="stylesheet">
 
-        <style>
-            /* Form container */
-            .form-inline {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                /* Center align the form */
-            }
 
-            /* Form group */
-            .form-group {
-                margin-bottom: 1rem;
-            }
-
-            /* Form control */
-            .form-control {
-                display: block;
-                width: 100%;
-                padding: 0.375rem 0.75rem;
-                font-size: 1rem;
-                line-height: 1.5;
-                color: #495057;
-                background-color: #fff;
-                background-clip: padding-box;
-                border: 1px solid #ced4da;
-                border-radius: 0.25rem;
-                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-            }
-
-            .form-control:focus {
-                color: #495057;
-                background-color: #fff;
-                border-color: #80bdff;
-                outline: 0;
-                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-            }
-
-            /* Button */
-            .btn {
-                display: inline-block;
-                font-weight: 400;
-                color: #fff;
-                text-align: center;
-                vertical-align: middle;
-                user-select: none;
-                background-color: #007bff;
-                border: 1px solid transparent;
-                padding: 0.19rem 0.72rem;
-                font-size: 1rem;
-                line-height: 1.5;
-                border-radius: 0.25rem;
-                transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-                cursor: pointer;
-            }
-
-            .btn:hover {
-                color: #fff;
-                background-color: #0056b3;
-                border-color: #0056b3;
-            }
-
-            .btn:focus {
-                color: #fff;
-                background-color: #0056b3;
-                border-color: #0056b3;
-                box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-            }
-
-            .btn:active {
-                color: #fff;
-                background-color: #0056b3;
-                border-color: #0056b3;
-            }
-
-            .btn:active:focus {
-                box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-            }
-        </style>
 
     <body>
 
@@ -153,11 +74,14 @@
                                             class="glightbox "><i class="bi bi-arrows-angle-expand"></i></a>
                                     </div>
                                     <div class="dd" style="color:black;">
-                                        <h4><span
-                                                style="color:rgb(233, 137, 27);    font-size: 30px;">class:</span>{{ $utilisation->departement->name }}
-                                            <a href="{{ asset('imagess/' . $utilisation->image) }}"
-                                                download="{{ $utilisation->image }}" class="btn btn-primary"><i
-                                                    class="bi bi-download"></i> </a></h4>
+                                    <h4>
+    <span style="color:rgb(233, 137, 27); font-size: 25px;">Class </span>
+    <span style="margin-left: 90px;font-size: 15px; color: #000;">{{ $utilisation->departement->name }}</span>
+    <a href="{{ asset('imagess/' . $utilisation->image) }}" download="{{ $utilisation->image }}" class="dowland">
+        <i class="bi bi-download"></i>
+    </a>
+</h4>
+
 
 
                                     </div>
