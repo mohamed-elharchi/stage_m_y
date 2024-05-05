@@ -12,7 +12,7 @@
         tr,
         td {
             border: 1px solid rgb(150, 150, 150);
-            border-collapse:collapse;
+            border-collapse: collapse;
         }
 
         tr,
@@ -38,7 +38,8 @@
             <td style="background-color: rgb(201, 198, 198)" class="borderRemove" colspan="1" rowspan="5"></td>
             <td style="background-color: rgb(201, 198, 198)" colspan="2">ثانوية مولاي اسماعيل التأهيلية</td>
             <td style="background-color: rgb(201, 198, 198)" colspan="2" rowspan="2">
-                <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/dd.png'))) }}" alt="" width="100%" />
+                <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/dd.png'))) }}"
+                    alt="" width="100%" />
             </td>
             <td style="background-color: rgb(201, 198, 198)" colspan="2">السنة الدراسية : 2024 - 2023</td>
         </tr>
@@ -50,9 +51,9 @@
         <tr style="background-color: rgb(201, 198, 198)">
             <!-- <td colspan="1"></td> -->
             <td colspan="3">مـن :{{ date('d-m-Y', strtotime($fromDate)) }}</td>
-            <td  colspan="3">إلـى : {{ date('d-m-Y', strtotime($fromDate . ' +5 days')) }}</td>
+            <td colspan="3">إلـى : {{ date('d-m-Y', strtotime($fromDate . ' +5 days')) }}</td>
         </tr>
-        <tr >
+        <tr>
             <!-- <td class="borderRemove"></td> -->
             <td style="width: 15%">الاثنين</td>
             <td style="width: 15%">الثلاثاء</td>
@@ -71,279 +72,261 @@
             <td>{{ date('d-m-Y', strtotime($fromDate . ' +5 days')) }}</td>
         </tr>
         <tr>
-        <td>تلاميذ يوجهون الى مكتب الغياب</td>
-                        <td>
-                            @php
-                            $periods = [
-                                '8.30/9.30',
-                                '9.30/10.30',
-                                '10.30/11.30',
-                                '11.30/12.30',
-                                '2.30/3.30',
-                                '3.30/4.30',
-                                '4.30/5.30',
-                                '5.30/6.30',
-                            ];
-                            $latestAbsence = null;
-                            $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' -1 day'))->subDay();
+            <td>تلاميذ يوجهون الى مكتب الغياب</td>
+            <td>
+                @php
+                    $periods = [
+                        '8.30/9.30',
+                        '9.30/10.30',
+                        '10.30/11.30',
+                        '11.30/12.30',
+                        '2.30/3.30',
+                        '3.30/4.30',
+                        '4.30/5.30',
+                        '5.30/6.30',
+                    ];
+                    $latestAbsence = null;
+                    $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' -1 day'))->subDay();
 
-                            while (!$latestAbsence) {
-                                foreach ($periods as $period) {
-                                    $previousDayAbsence = $absences
-                                        ->where('date', $previousDay->format('Y-m-d'))
-                                        ->where('period', $period)
-                                        ->sortByDesc('created_at')
-                                        ->first();
+                    while (!$latestAbsence) {
+                        foreach ($periods as $period) {
+                            $previousDayAbsence = $absences
+                                ->where('date', $previousDay->format('Y-m-d'))
+                                ->where('period', $period)
+                                ->sortByDesc('created_at')
+                                ->first();
 
-                                    if ($previousDayAbsence) {
-                                        if (
-                                            !$latestAbsence ||
-                                            $previousDayAbsence->created_at > $latestAbsence->created_at
-                                        ) {
-                                            $latestAbsence = $previousDayAbsence;
-                                        }
-                                    }
-                                }
-
-                                $previousDay->subDay();
-
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
-                                    break;
+                            if ($previousDayAbsence) {
+                                if (!$latestAbsence || $previousDayAbsence->created_at > $latestAbsence->created_at) {
+                                    $latestAbsence = $previousDayAbsence;
                                 }
                             }
+                        }
 
-                            if ($latestAbsence) {
-                                echo $latestAbsence->absence . '<br>';
-                            }
-                        @endphp
-                        </td>
-                        <td>
-                            @php
-                            $periods = [
-                                '8.30/9.30',
-                                '9.30/10.30',
-                                '10.30/11.30',
-                                '11.30/12.30',
-                                '2.30/3.30',
-                                '3.30/4.30',
-                                '4.30/5.30',
-                                '5.30/6.30',
-                            ];
-                            $latestAbsence = null;
-                            $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' +1 day'))->subDay();
+                        $previousDay->subDay();
 
-                            while (!$latestAbsence) {
-                                foreach ($periods as $period) {
-                                    $previousDayAbsence = $absences
-                                        ->where('date', $previousDay->format('Y-m-d'))
-                                        ->where('period', $period)
-                                        ->sortByDesc('created_at')
-                                        ->first();
+                        if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
+                            break;
+                        }
+                    }
 
-                                    if ($previousDayAbsence) {
-                                        if (
-                                            !$latestAbsence ||
-                                            $previousDayAbsence->created_at > $latestAbsence->created_at
-                                        ) {
-                                            $latestAbsence = $previousDayAbsence;
-                                        }
-                                    }
-                                }
+                    if ($latestAbsence) {
+                        echo $latestAbsence->absence . '<br>';
+                    }
+                @endphp
+            </td>
+            <td>
+                @php
+                    $periods = [
+                        '8.30/9.30',
+                        '9.30/10.30',
+                        '10.30/11.30',
+                        '11.30/12.30',
+                        '2.30/3.30',
+                        '3.30/4.30',
+                        '4.30/5.30',
+                        '5.30/6.30',
+                    ];
+                    $latestAbsence = null;
+                    $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' +1 day'))->subDay();
 
-                                $previousDay->subDay();
+                    while (!$latestAbsence) {
+                        foreach ($periods as $period) {
+                            $previousDayAbsence = $absences
+                                ->where('date', $previousDay->format('Y-m-d'))
+                                ->where('period', $period)
+                                ->sortByDesc('created_at')
+                                ->first();
 
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
-                                    break;
+                            if ($previousDayAbsence) {
+                                if (!$latestAbsence || $previousDayAbsence->created_at > $latestAbsence->created_at) {
+                                    $latestAbsence = $previousDayAbsence;
                                 }
                             }
+                        }
 
-                            if ($latestAbsence) {
-                                echo $latestAbsence->absence . '<br>';
-                            }
-                        @endphp
-                        </td>
-                        <td>
-                            @php
-                            $periods = [
-                                '8.30/9.30',
-                                '9.30/10.30',
-                                '10.30/11.30',
-                                '11.30/12.30',
-                                '2.30/3.30',
-                                '3.30/4.30',
-                                '4.30/5.30',
-                                '5.30/6.30',
-                            ];
-                            $latestAbsence = null;
-                            $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' +2 day'))->subDay();
+                        $previousDay->subDay();
 
-                            while (!$latestAbsence) {
-                                foreach ($periods as $period) {
-                                    $previousDayAbsence = $absences
-                                        ->where('date', $previousDay->format('Y-m-d'))
-                                        ->where('period', $period)
-                                        ->sortByDesc('created_at')
-                                        ->first();
+                        if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
+                            break;
+                        }
+                    }
 
-                                    if ($previousDayAbsence) {
-                                        if (
-                                            !$latestAbsence ||
-                                            $previousDayAbsence->created_at > $latestAbsence->created_at
-                                        ) {
-                                            $latestAbsence = $previousDayAbsence;
-                                        }
-                                    }
-                                }
+                    if ($latestAbsence) {
+                        echo $latestAbsence->absence . '<br>';
+                    }
+                @endphp
+            </td>
+            <td>
+                @php
+                    $periods = [
+                        '8.30/9.30',
+                        '9.30/10.30',
+                        '10.30/11.30',
+                        '11.30/12.30',
+                        '2.30/3.30',
+                        '3.30/4.30',
+                        '4.30/5.30',
+                        '5.30/6.30',
+                    ];
+                    $latestAbsence = null;
+                    $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' +2 day'))->subDay();
 
-                                $previousDay->subDay();
+                    while (!$latestAbsence) {
+                        foreach ($periods as $period) {
+                            $previousDayAbsence = $absences
+                                ->where('date', $previousDay->format('Y-m-d'))
+                                ->where('period', $period)
+                                ->sortByDesc('created_at')
+                                ->first();
 
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
-                                    break;
+                            if ($previousDayAbsence) {
+                                if (!$latestAbsence || $previousDayAbsence->created_at > $latestAbsence->created_at) {
+                                    $latestAbsence = $previousDayAbsence;
                                 }
                             }
+                        }
 
-                            if ($latestAbsence) {
-                                echo $latestAbsence->absence . '<br>';
-                            }
-                        @endphp
-                        </td>
-                        <td>
-                            @php
-                            $periods = [
-                                '8.30/9.30',
-                                '9.30/10.30',
-                                '10.30/11.30',
-                                '11.30/12.30',
-                                '2.30/3.30',
-                                '3.30/4.30',
-                                '4.30/5.30',
-                                '5.30/6.30',
-                            ];
-                            $latestAbsence = null;
-                            $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' +3 day'))->subDay();
+                        $previousDay->subDay();
 
-                            while (!$latestAbsence) {
-                                foreach ($periods as $period) {
-                                    $previousDayAbsence = $absences
-                                        ->where('date', $previousDay->format('Y-m-d'))
-                                        ->where('period', $period)
-                                        ->sortByDesc('created_at')
-                                        ->first();
+                        if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
+                            break;
+                        }
+                    }
 
-                                    if ($previousDayAbsence) {
-                                        if (
-                                            !$latestAbsence ||
-                                            $previousDayAbsence->created_at > $latestAbsence->created_at
-                                        ) {
-                                            $latestAbsence = $previousDayAbsence;
-                                        }
-                                    }
-                                }
+                    if ($latestAbsence) {
+                        echo $latestAbsence->absence . '<br>';
+                    }
+                @endphp
+            </td>
+            <td>
+                @php
+                    $periods = [
+                        '8.30/9.30',
+                        '9.30/10.30',
+                        '10.30/11.30',
+                        '11.30/12.30',
+                        '2.30/3.30',
+                        '3.30/4.30',
+                        '4.30/5.30',
+                        '5.30/6.30',
+                    ];
+                    $latestAbsence = null;
+                    $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' +3 day'))->subDay();
 
-                                $previousDay->subDay();
+                    while (!$latestAbsence) {
+                        foreach ($periods as $period) {
+                            $previousDayAbsence = $absences
+                                ->where('date', $previousDay->format('Y-m-d'))
+                                ->where('period', $period)
+                                ->sortByDesc('created_at')
+                                ->first();
 
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
-                                    break;
+                            if ($previousDayAbsence) {
+                                if (!$latestAbsence || $previousDayAbsence->created_at > $latestAbsence->created_at) {
+                                    $latestAbsence = $previousDayAbsence;
                                 }
                             }
+                        }
 
-                            if ($latestAbsence) {
-                                echo $latestAbsence->absence . '<br>';
-                            }
-                        @endphp
-                        </td>
-                        <td>
-                            @php
-                            $periods = [
-                                '8.30/9.30',
-                                '9.30/10.30',
-                                '10.30/11.30',
-                                '11.30/12.30',
-                                '2.30/3.30',
-                                '3.30/4.30',
-                                '4.30/5.30',
-                                '5.30/6.30',
-                            ];
-                            $latestAbsence = null;
-                            $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' +4 day'))->subDay();
+                        $previousDay->subDay();
 
-                            while (!$latestAbsence) {
-                                foreach ($periods as $period) {
-                                    $previousDayAbsence = $absences
-                                        ->where('date', $previousDay->format('Y-m-d'))
-                                        ->where('period', $period)
-                                        ->sortByDesc('created_at')
-                                        ->first();
+                        if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
+                            break;
+                        }
+                    }
 
-                                    if ($previousDayAbsence) {
-                                        if (
-                                            !$latestAbsence ||
-                                            $previousDayAbsence->created_at > $latestAbsence->created_at
-                                        ) {
-                                            $latestAbsence = $previousDayAbsence;
-                                        }
-                                    }
-                                }
+                    if ($latestAbsence) {
+                        echo $latestAbsence->absence . '<br>';
+                    }
+                @endphp
+            </td>
+            <td>
+                @php
+                    $periods = [
+                        '8.30/9.30',
+                        '9.30/10.30',
+                        '10.30/11.30',
+                        '11.30/12.30',
+                        '2.30/3.30',
+                        '3.30/4.30',
+                        '4.30/5.30',
+                        '5.30/6.30',
+                    ];
+                    $latestAbsence = null;
+                    $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' +4 day'))->subDay();
 
-                                $previousDay->subDay();
+                    while (!$latestAbsence) {
+                        foreach ($periods as $period) {
+                            $previousDayAbsence = $absences
+                                ->where('date', $previousDay->format('Y-m-d'))
+                                ->where('period', $period)
+                                ->sortByDesc('created_at')
+                                ->first();
 
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
-                                    break;
+                            if ($previousDayAbsence) {
+                                if (!$latestAbsence || $previousDayAbsence->created_at > $latestAbsence->created_at) {
+                                    $latestAbsence = $previousDayAbsence;
                                 }
                             }
+                        }
 
-                            if ($latestAbsence) {
-                                echo $latestAbsence->absence . '<br>';
-                            }
-                        @endphp
-                        </td>
-                        <td>
-                            @php
-                            $periods = [
-                                '8.30/9.30',
-                                '9.30/10.30',
-                                '10.30/11.30',
-                                '11.30/12.30',
-                                '2.30/3.30',
-                                '3.30/4.30',
-                                '4.30/5.30',
-                                '5.30/6.30',
-                            ];
-                            $latestAbsence = null;
-                            $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' +5 days'))->subDay();
-                            while (!$latestAbsence) {
-                                foreach ($periods as $period) {
-                                    $previousDayAbsence = $absences
-                                        ->where('date', $previousDay->format('Y-m-d'))
-                                        ->where('period', $period)
-                                        ->sortByDesc('created_at')
-                                        ->first();
+                        $previousDay->subDay();
 
-                                    if ($previousDayAbsence) {
-                                        if (
-                                            !$latestAbsence ||
-                                            $previousDayAbsence->created_at > $latestAbsence->created_at
-                                        ) {
-                                            $latestAbsence = $previousDayAbsence;
-                                        }
-                                    }
-                                }
+                        if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
+                            break;
+                        }
+                    }
 
-                                $previousDay->subDay();
+                    if ($latestAbsence) {
+                        echo $latestAbsence->absence . '<br>';
+                    }
+                @endphp
+            </td>
+            <td>
+                @php
+                    $periods = [
+                        '8.30/9.30',
+                        '9.30/10.30',
+                        '10.30/11.30',
+                        '11.30/12.30',
+                        '2.30/3.30',
+                        '3.30/4.30',
+                        '4.30/5.30',
+                        '5.30/6.30',
+                    ];
+                    $latestAbsence = null;
+                    $previousDay = Carbon\Carbon::parse(strtotime($fromDate . ' +5 days'))->subDay();
+                    while (!$latestAbsence) {
+                        foreach ($periods as $period) {
+                            $previousDayAbsence = $absences
+                                ->where('date', $previousDay->format('Y-m-d'))
+                                ->where('period', $period)
+                                ->sortByDesc('created_at')
+                                ->first();
 
-                                if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(4)) {
-                                    break;
+                            if ($previousDayAbsence) {
+                                if (!$latestAbsence || $previousDayAbsence->created_at > $latestAbsence->created_at) {
+                                    $latestAbsence = $previousDayAbsence;
                                 }
                             }
+                        }
 
-                            if ($latestAbsence) {
-                                echo $latestAbsence->absence . '<br>';
-                            }
-                        @endphp
-                        </td>
+                        $previousDay->subDay();
+
+                        if ($previousDay < Carbon\Carbon::parse($fromDate)->subDays(30)) {
+                            break;
+                        }
+                    }
+
+                    if ($latestAbsence) {
+                        echo $latestAbsence->absence . '<br>';
+                    }
+                @endphp
+            </td>
 
 
-                    </tr>
+        </tr>
         <tr>
             <td colspan="7">الــــــــــصـــــــــبـــــــــــــاح</td>
         </tr>
