@@ -1,10 +1,12 @@
 @extends('layouts.Acceuill')
 @section('content')
+@section('title', 'Nouvelles')
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Nouvelles</title>
+  <title></title>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css'>
 <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 <link rel="stylesheet" href="{{ asset('css/pages.css') }}">
