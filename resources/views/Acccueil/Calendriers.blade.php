@@ -1,4 +1,5 @@
 @extends('layouts.Acceuill')
+@section('title','calendries')
 @section('content')
     <!DOCTYPE html>
     <html lang="en">
@@ -7,14 +8,13 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <title>PhotoFolio Bootstrap Template - Index</title>
+        <title></title>
         <meta content="" name="description">
         <meta content="" name="keywords">
 
 
 
 
-        <!-- Vendor CSS Files -->
         <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
         <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
         <link href="assets/css/main.css" rel="stylesheet">
@@ -38,7 +38,6 @@
                     <a href="#default" class="logo">Pour rechercher Calendriers</a>
 
                     <div class="header-right">
-                        <a class="activeee" href="#home">
 
                             <form action="{{ route('filterByDepartement') }}" method="GET" class="form-inline">
                                 <div class="row align-items-center">
@@ -54,11 +53,10 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <button type="submit" class="btn btn-primary">Filtrer</button>
+                                        <button type="submit" class="btn">Filtrer</button>
                                     </div>
                                 </div>
                             </form>
-                        </a>
 
                     </div>
                 </div>
@@ -74,13 +72,15 @@
                                             class="glightbox "><i class="bi bi-arrows-angle-expand"></i></a>
                                     </div>
                                     <div class="dd" style="color:black;">
-                                    <h4>
-    <span style="color:rgb(233, 137, 27); font-size: 25px;">Class </span>
-    <span style="margin-left: 90px;font-size: 15px; color: #000;">{{ $utilisation->departement->name }}</span>
-    <a href="{{ asset('imagess/' . $utilisation->image) }}" download="{{ $utilisation->image }}" class="dowland">
-        <i class="bi bi-download"></i>
-    </a>
-</h4>
+                                        <h4>
+                                            <span style="color:rgb(233, 137, 27); font-size: 25px;">Class </span>
+                                            <span
+                                                style="margin-left: 90px;font-size: 15px; color: #000;">{{ $utilisation->departement->name }}</span>
+                                            <a href="{{ asset('imagess/' . $utilisation->image) }}"
+                                                download="{{ $utilisation->image }}" class="dowland">
+                                                <i class="bi bi-download"></i>
+                                            </a>
+                                        </h4>
 
 
 

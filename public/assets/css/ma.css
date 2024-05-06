@@ -42,17 +42,18 @@
             /* Button */
             .btn {
                 padding: 5px;
-    text-decoration: none;
-    background-color: transparent;
-    color: rgb(233, 137, 27);
-    border: 2px solid rgb(233, 137, 27);
-    width: 100px;
-    height: 35px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-left: 20px;
+                text-decoration: none;
+                background-color: transparent;
+                color: rgb(233, 137, 27);
+                border: 2px solid rgb(233, 137, 27);
+                width: 100px;
+                height: 35px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-left: 20px;
+
             }
 
             .btn:hover {
@@ -63,17 +64,22 @@
 
             .btn:focus {
                 color: #fff;
-                background-color: #0056b3;
-                border-color: #0056b3;
-                box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+                background-color: rgb(233, 130, 13);
+                border-color: rgb(213, 124, 23);
+                box-shadow: 0 0 0 0.2rem rgb(102, 66, 24);
             }
 
             .btn:active {
                 color: #fff;
-                background-color: #0056b3;
-                border-color: #0056b3;
+                background-color: rgb(233, 137, 27);
+                border-color: rgb(182, 101, 8);
             }
 
             .btn:active:focus {
-                box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+                box-shadow: 0 0 0 0.2rem rgb(205, 117, 16);
+            }
+            @media only screen and (max-width: 1024px) {
+                .btn {
+                    align-items: center;
+                }
             }
