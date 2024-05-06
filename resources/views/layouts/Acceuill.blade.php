@@ -5,7 +5,7 @@
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <script src="js/my.js"></script>
+    <script src="{{ asset('js/my.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- image icon page ++++++++++  -->
@@ -44,7 +44,7 @@
             @guest
                 <a class="login" href="{{ route('login') }}">Se connecter <i class="ri-login-circle-line"></i></a>
             @endguest
-            
+
                 <i id="menu-btn" class="ri-menu-line"></i>
 
 

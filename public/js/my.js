@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//slid dives 
+//slid dives
 var slideIndex = 1;
 showSlides(slideIndex);
 

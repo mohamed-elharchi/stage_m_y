@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/director.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="{{ asset('images/moulayIsmail.png') }}" type="image/x-icon"/>
     <title>@yield('title')</title>
