@@ -113,7 +113,7 @@ class teacherController extends Controller
 
         $absence->save();
 
-        return redirect()->route('teacherDashboard')->with(['success' => 'Absence record inserted successfully.', 'absence' => $absence]);
+        return redirect()->route('teacherDashboard')->with(['success' => "Enregistrement d'absence inséré avec succès.", 'absence' => $absence]);
     }
 
 
@@ -139,7 +139,7 @@ class teacherController extends Controller
 
         $absence->save();
 
-        return redirect()->route('teacherDashboard')->with('success', 'Absence record updated successfully.');
+        return redirect()->route('teacherDashboard')->with('success', "L'absence a été mise à jour avec succès.");
     }
 
 

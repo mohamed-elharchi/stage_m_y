@@ -43,7 +43,7 @@
                 <li>
                     <a href="{{ route('showDepartements') }}" id="add-to" class="Add-P-btn">
                         <span class="icon"><ion-icon name="pricetags-outline"></ion-icon></span>
-                        <span class="title">departements</span>
+                        <span class="title">Les classes</span>
                     </a>
                 </li>
                 <li>
@@ -95,7 +95,7 @@
                 <div class="user">
                     <button type="submit" class="btn btn-primary">
                         <a href="{{ url('messages') }}" class="btn btn-link text-white"
-                            style="text-decoration: none;">Site Dashboard</a>
+                            style="text-decoration: none;">WebSite Dashboard</a>
                     </button>
                 </div>
             </div>

@@ -24,9 +24,9 @@
         <form action="{{ url('utilisations') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="department">Select Department:</label>
+                <label for="department">Selectionner la classe:</label>
                 <select class="form-control" id="department" name="departement_id">
-                    <option value="" selected disabled>Select Department</option>
+                    <option value="" selected disabled>selectionner un classe</option>
                     @foreach ($departements as $departement)
                         <option value="{{ $departement->id }}">{{ $departement->name }}</option>
                     @endforeach
@@ -34,10 +34,10 @@
             </div>
 
             <div class="form-group">
-                <label for="image">Image</label>
+                <label for="image">L'emploi de temps</label>
                 <input type="file" class="form-control" id="image" name="image"  placeholder="Entrez le chemin de l'image">
             </div>
-            <button type="submit" class="btn btn-primary">Enregistrer</button>
+            <button type="submit" class="btn btn-primary">Confiremer</button>
         </form>
     </div>
     </div>

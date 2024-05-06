@@ -15,7 +15,7 @@
                             @csrf
 
                             <div class="form-group">
-                                <label for="name">Teacher Name</label>
+                                <label for="name">Selectionner le nom de professeurs</label>
                                 <select name="admin_id" id="name" class="form-control">
                                     <option value="" disabled selected>Tous les professeurs</option>
                                     @foreach ($teachers as $teacher)
@@ -30,7 +30,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="matiere">Matière</label>
+                                <label for="matiere">Selectionner un matière</label>
                                 <select name="matiere_id" id="matiere" class="form-control">
                                     <option value="" disabled selected>Tous les Matière</option>
                                     @foreach ($matieres as $matiere)
@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="departements">Départements</label>
+                                <label for="departements">Selectionner les classes</label>
                                 <select name="departement_ids[]" id="departements" class="form-control" multiple required>
                                     @foreach ($departements as $departement)
                                         <option value="{{ $departement->id }}">{{ $departement->name }}</option>

@@ -321,7 +321,7 @@
                         <td colspan="7">الــــــــــصـــــــــبـــــــــــــاح</td>
                     </tr>
                     <tr>
-                        <td>09-08</td>
+                        <td>09:00-08:00</td>
                         <td>
                             @php
                                 $absence = $absences
@@ -460,7 +460,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>10-09</td>
+                        <td>10:00-09:00</td>
                         <td>
                             @php
                                 $absence = $absences
@@ -602,7 +602,7 @@
                     {{-- 11-10 --}}
 
                     <tr>
-                        <td>11-10</td>
+                        <td>11:00-10:00</td>
                         <td>
                             @php
                                 $absence = $absences
@@ -742,7 +742,7 @@
                     </tr>
 
                     <tr>
-                        <td>12-11</td>
+                        <td>12:00-11:00</td>
                         <td>
                             @php
                                 $absence = $absences
@@ -885,7 +885,7 @@
                     </tr>
 
                     <tr>
-                        <td>03-02</td>
+                        <td>15:00-14:00</td>
                         <td>
                             @php
                                 $absence = $absences
@@ -1025,7 +1025,7 @@
                     </tr>
 
                     <tr>
-                        <td>04-03</td>
+                        <td>16:00-15:00</td>
                         <td>
                             @php
                                 $absence = $absences
@@ -1164,7 +1164,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>05-04</td>
+                        <td>17:00-16:00</td>
                         <td>
                             @php
                                 $absence = $absences
@@ -1304,7 +1304,7 @@
                     </tr>
 
                     <tr>
-                        <td>06-05</td>
+                        <td>18:00-17:00</td>
                         <td>
                             @php
                                 $absence = $absences

@@ -43,7 +43,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"><h3>Edit info</h3></div>
+                    <div class="card-header"><h3>Modifiez vos informations</h3></div>
                     <div class="card-body">
                         @if ($errors->any())
                             <div class="alert alert-danger" role="alert">
@@ -61,23 +61,23 @@
                                 <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="name">Name:</label>
+                                <label for="name">nom et prénom:</label>
                                 <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="current_password">Current Password:</label>
+                                <label for="current_password">Mot de passe actuel:</label>
                                 <input type="password" class="form-control" id="current_password" name="current_password" >
                             </div>
                             <div class="form-group">
-                                <label for="new_password">New Password:</label>
+                                <label for="new_password">Nouveau mot de passe:</label>
                                 <input type="password" class="form-control" id="new_password" name="new_password" >
                             </div>
                             <div class="form-group">
-                                <label for="confirm_password">Confirm New Password:</label>
+                                <label for="confirm_password">Confirmer le nouveau mot de passe:</label>
                                 <input type="password" class="form-control" id="confirm_password" name="new_password_confirmation" >
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary">Confirmer</button>
                         </form>
                     </div>
                 </div>

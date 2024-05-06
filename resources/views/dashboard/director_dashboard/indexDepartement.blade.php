@@ -32,9 +32,10 @@ departement
     <table class="table table-bordered">
         <tr>
             <th>Numero</th>
-            <th>departement</th>
-            <th>actionn</th>
+            <th>les classes</th>
             <th>Liste des étudiants</th>
+            <th>actionn</th>
+
         </tr>
         @foreach ($departements as $index => $departement)
             <tr>

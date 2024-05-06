@@ -28,20 +28,20 @@
                     <div class="col-lg-2">
                         <a class="btn btn-success" href="{{ route('addGeneralGuard') }}">Ajouter</a>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <form action="{{ route('filterGeneralGuards') }}" method="GET" class="form-inline">
                             <div class="row align-items-center">
-                                <div class="col-sm-8">
-                                    <div class="form-group mr-2">
+                                <div class="col-sm-8 ">
+                                    <div class="form-group ">
                                         <select class="form-control" id="role" name="role">
                                             <option value="" disabled selected>Tous les rôles</option>
                                             <option value="director">Directeur</option>
-                                            <option value="teacher">Enseignant</option>
-                                            <option value="general_guard">Garde général</option>
+                                            <option value="teacher">Professeurs</option>
+                                            <option value="general_guard">Surveillant général</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-4 ">
                                     <button type="submit" class="btn btn-primary">Filtrer</button>
                                 </div>
                             </div>
