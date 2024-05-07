@@ -28,7 +28,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="card-title">Select Departements:</h2>
+                        <h2 class="card-title">l'absence des classes:</h2>
                     </div>
                     <div class="card-body">
                         @if ($errors->any())
@@ -43,7 +43,7 @@
                         <form action="{{ route('showweekAbsence') }}" method="GET">
                             @csrf
                             <div class="form-group">
-                                <label for="departement">Select Departement:</label>
+                                <label for="departement">Selectionner une classe:</label>
                                 <select name="departement" id="departement" class="form-control">
                                     <option value="" disabled selected>departement name</option>
                                     @foreach ($departements as $departement)
@@ -52,7 +52,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="from_date">From Date:</label>
+                                <label for="from_date">A partir de la date:</label>
                                 <select name="from_date" id="from_date" class="form-control">
                                     @foreach ($mondays as $monday)
                                         <option value="{{ $monday->format('Y-m-d') }}">{{ $monday->format('l, F j, Y') }}
@@ -61,7 +61,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="to_date">To Date:</label>
+                                <label for="to_date">Jusqu'à la date:</label>
                                 <input type="date" name="to_date" id="to_date" class="form-control" readonly>
                             </div>
                             <!-- Hidden inputs to pass selected department name and dates -->
@@ -69,7 +69,7 @@
                             <input type="hidden" name="from_date_display" id="from_date_display">
                             <input type="hidden" name="to_date_display" id="to_date_display">
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Confirmer</button>
                         </form>
                     </div>
                 </div>

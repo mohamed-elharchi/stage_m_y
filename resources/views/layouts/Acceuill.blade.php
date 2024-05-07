@@ -26,7 +26,7 @@
                 <li><a href="{{ route('accueil') }}">Accueil</a></li>
                 <li><a href="{{ route('About') }}">À propos</a></li>
                 <li><a href="{{ route('Nouvelles') }}">Nouvelles</a></li>
-                <li><a href="{{ route('Calendriers') }}">Calendriers</a></li>
+                <li><a href="{{ route('Calendriers') }}">Emploi de temps</a></li>
                 {{-- <button class="butt1"><a href="{{ route('login') }}">Se connecter</a></button> --}}
 
 
@@ -37,7 +37,7 @@
                 @elseif(auth()->user()->role === 'general_guard')
 
                 @elseif(auth()->user()->role === 'teacher')
-                    <a class="login" href="{{ route('teacherDashboard') }}">Dashboard</a>
+                    <a class="login" href="{{ route('teacherDashboard') }}">G.Absence</a>
                 @endif
                 <a class="login" href="{{ route('logout') }}">Déconnecte</a>
             @endauth

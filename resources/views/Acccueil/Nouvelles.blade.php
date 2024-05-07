@@ -1,4 +1,5 @@
 @extends('layouts.Acceuill')
+@section('title','Nouvelles')
 @section('content')
 @section('title', 'Nouvelles')
 

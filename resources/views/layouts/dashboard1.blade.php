@@ -52,7 +52,7 @@
                 <li>
                     <a href="{{ url('/utilisations') }}">
                         <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
-                        <span class="title">Utilisation du temps</span>
+                        <span class="title">L'emploi de tempss</span>
                     </a>
                 </li>
 

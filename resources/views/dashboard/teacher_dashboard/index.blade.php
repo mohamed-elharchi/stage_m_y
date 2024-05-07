@@ -12,21 +12,21 @@
                             <p>{{ session('success') }}</p>
                         </div>
                     @endif
-                    <div class="card-header">Welcome, {{ $teacher->name }}</div>
+                    <div class="card-header">Bienvenue, {{ $teacher->name }}</div>
                     <div class="card-body">
-                        <h2>Your Departments:</h2>
+                        <h2>Votre classes:</h2>
                         <form action="{{ route('displayAbsence') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label for="department">Select Department:</label>
+                                <label for="department">Selectioner la classe:</label>
                                 <select class="form-control" id="department" name="department">
-                                    <option value="" selected disabled >Select Department</option>
+                                    <option value="" selected disabled >Selectionner classe</option>
                                     @foreach ($departements as $departement)
                                         <option value="{{ $departement->id }}">{{ $departement->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Confirmer</button>
                         </form>
                     </div>
                 </div>

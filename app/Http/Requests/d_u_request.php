@@ -27,7 +27,7 @@ class d_u_request extends FormRequest
          return [
              'name' => 'required|string|max:255',
              'email' => 'required|email|max:255',
-             'role' => 'required|in:general_guard,teacher',
+             'role' => 'required|in:general_guard,teacher,director',
          ];
      }
      public function messages()
@@ -40,7 +40,7 @@ class d_u_request extends FormRequest
             'email.email' => 'L\'adresse e-mail doit être valide.',
             'email.max' => 'L\'adresse e-mail ne peut pas dépasser :max caractères.',
             'role.required' => 'Le rôle est requis.',
-            'role.in' => 'Le rôle doit être soit "general_guard" soit "teacher".',
+            'role.in' => 'Le rôle doit être soit "Garde générale", "Professeur" ou "Directeur".', 
         ];
     }
 }

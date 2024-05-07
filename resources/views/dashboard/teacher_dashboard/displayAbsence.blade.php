@@ -15,20 +15,21 @@
                             <p>{{ session('success') }}</p>
                         </div>
                     @endif
-                    <div class="card-header"><h4>Absences for Selected Department </h4><span>{{ $departementName }}</span></div>
+                    <div class="card-header"><h4>l'absence du la classe que vous avez sélectionné</h4><span>{{ $departementName }}</span></div>
                     <div class="card-body">
                         @if (!empty($absence))
                             <ul>
                                 <li>Date: {{ $absence->date }}</li>
-                                <li>Period: {{ $absence->period }}</li>
+                                <li>Période: {{ $absence->period }}</li>
                                 <li>Absence: {{ $absence->absence }}</li>
                                 <li>Signature: {{ $absence->signature }}</li>
                             </ul>
                             @if (auth()->id() === $absence->teacher_id)
-                                <a href="{{ route('editAbsence', $absence->id) }}" class="btn btn-primary">Edit Absence</a>
+                            <p class="text-danger">si vous voulez changer l'absence de séance en cours</p>
+                                <a href="{{ route('editAbsence', $absence->id) }}" class="btn btn-primary">Editer l'absence</a>
                             @endif
                         @elseif (empty($absence) && !session('error'))
-                            <p>No absence record found for the selected department.</p>
+                            <p>Aucun enregistrement d'absence trouvé pour la classe sélectionné.</p>
                         @endif
                     </div>
                 </div>
@@ -39,8 +40,11 @@
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <div >
+                    <p class="text-danger">si vous avez la même classe pour la séance suivante . tapez l'absence ici</p>
+                </div>
                 <div class="card">
-                    <div class="card-header">Insert New Absence Record</div>
+                    <div class="card-header">Insérer un nouvel enregistrement d'absence</div>
                     <div class="card-body">
                         <form action="{{ route('saveAbsence') }}" method="POST">
                             @csrf
@@ -48,19 +52,19 @@
                             <div class="form-group">
                                 <label for="date">Date:</label>
                                 <input type="date" class="form-control" id="date" name="date"
-                                    value="{{ date('Y-m-d') }}" >
+                                    value="{{ date('Y-m-d') }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="period">Period:</label>
+                                <label for="period">Période:</label>
                                 <select class="form-control" id="period" name="period">
-                                    <option value="8.30/9.30">08/09</option>
-                                    <option value="9.30/10.30">09/10</option>
-                                    <option value="10.30/11.30">10/11</option>
-                                    <option value="11.30/12.30">11/12</option>
-                                    <option value="2.30/3.30">02/03</option>
-                                    <option value="3.30/4.30">03/04</option>
-                                    <option value="4.30/5.30">04/05</option>
-                                    <option value="5.30/6.30">05/06</option>
+                                    <option value="8.30/9.30">08:00/09:00</option>
+                                    <option value="9.30/10.30">09:00/10:00</option>
+                                    <option value="10.30/11.30">10:00/11:00</option>
+                                    <option value="11.30/12.30">11:00/12:00</option>
+                                    <option value="2.30/3.30">14:00/15:00</option>
+                                    <option value="3.30/4.30">15:00/16:00</option>
+                                    <option value="4.30/5.30">16:00/17:00</option>
+                                    <option value="5.30/6.30">17:00/18:00</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -75,7 +79,7 @@
                                 <label for="signature">Signature:</label>
                                 <input type="text" class="form-control" id="signature" name="signature">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Confirmer</button>
                         </form>
                     </div>
                     <div class="card-footer text-center">

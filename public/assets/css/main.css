@@ -272,7 +272,8 @@ body {
   }
 
   .header-right {
-    float: none;
+
+    float: center;
   }
 }
 

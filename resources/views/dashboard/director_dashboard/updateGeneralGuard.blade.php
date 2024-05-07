@@ -31,7 +31,6 @@
 
                     <select class="form-control" id="role" name="role">
                         <option value="general_guard" {{ $generalGuard->role === 'general_guard' ? 'selected' : '' }}>Garde générale</option>
-
                         <option value="teacher" {{ $generalGuard->role === 'teacher' ? 'selected' : '' }}>Professeur</option>
                         <option value="director" {{ $generalGuard->role === 'director' ? 'selected' : '' }}>directeur</option>
                     </select>

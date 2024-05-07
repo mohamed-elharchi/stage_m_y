@@ -80,17 +80,17 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->role === 'director') {
-                return redirect()->route('general_guard')->with("success", "You have been logged in successfully");
+                return redirect()->route('general_guard')->with("success", "Vous avez été connecté avec succès");
             } elseif ($user->role === 'general_guard') {
-                return redirect()->route('displayMatieres')->with("success", "You have been logged in successfully");
+                return redirect()->route('displayMatieres')->with("success", "Vous avez été connecté avec succès");
             } elseif ($user->role === 'teacher') {
-                return redirect()->route('teacherDashboard')->with("success", "You have been logged in successfully");
+                return redirect()->route('teacherDashboard')->with("success", "Vous avez été connecté avec succès");
             }
 
-            return redirect()->route('accueil')->with("success", "You have been logged in successfully");
+            return redirect()->route('accueil')->with("success", "Vous avez été connecté avec succès");
         }
 
-        return back()->withErrors(['email' => 'Invalid email or password.'])->withInput();
+        return back()->withErrors(['email' => 'Email ou mot de passe incorrect.'])->withInput();
     }
 
 
