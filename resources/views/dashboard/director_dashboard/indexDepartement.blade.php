@@ -48,6 +48,7 @@ departement
                     <form action="{{ route('deleteDepartement', $departement->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
+                        <a class="btn btn-primary" href="{{ route('updateDepartement', $departement->id) }}">Modifier</a>
                         <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
                 </td>

@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class directorController extends Controller
 {
@@ -98,7 +99,48 @@ class directorController extends Controller
         return redirect()->route('showDepartements')->with('success', 'Registration successful');
     }
 
+    public function updateDepartement($id)
+    {
+        $departement = departement::findOrFail($id);
+        return view('dashboard.director_dashboard.updateDepartement', compact('departement'));
+    }
 
+    public function saveUpdateDepartement(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'students_list' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+        ],
+        [
+            'students_list.required' => 'Le champ liste des étudiants est requis.',
+            'students_list.image' => 'Le fichier doit être une image.',
+            'students_list.mimes' => 'Le fichier doit être de type :jpeg, png, jpg, gif.',
+            'students_list.max' => 'Le fichier ne doit pas dépasser :max kilo-octets.',
+        ]);
+
+        $departement = Departement::findOrFail($id);
+
+        $departement->name = $validatedData['name'];
+
+        if ($request->hasFile('students_list')) {
+            if ($departement->students_list) {
+                Storage::delete('imagess/' . $departement->students_list);
+            }
+            $image = $request->file('students_list');
+            $destinationPath = 'imagess/';
+            $filename = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $filename);
+            $departement->students_list = $filename;
+
+            
+
+            $departement->students_list = $filename;
+        }
+
+        $departement->save();
+
+        return redirect()->route('showDepartements')->with('success', 'la classe a été mise à jour avec succès.');
+    }
 
 
     //teachers
@@ -207,7 +249,6 @@ class directorController extends Controller
 
             return view('dashboard.director_dashboard.index', compact('generalGuards'));
         }
-
     }
 
 
