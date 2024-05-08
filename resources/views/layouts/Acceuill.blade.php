@@ -133,7 +133,7 @@
                 <input type="text" placeholder="(06 0000 0000)">
                 <button type="submit" class="bouton-principal" ><i class="ri-send-plane-fill"></i></button>
                </form>
-               <div><p style="color: red">Lorem ipsum dolor sit pariatur.!!</p></div>
+               <div></div>
 
              
             </div>
