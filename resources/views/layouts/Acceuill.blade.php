@@ -205,22 +205,23 @@
 
                     <div class="formulaire">
 
-                        <form>
+                       <form method="POST" action="{{ route('certificats2.store') }}">
+                            @csrf
                             <div class="groupe">
                                 <label>Le nom complet:الاسم الكامل</label>
-                                <input type="text" placeholder="الاسم الكامل">
+                                <input type="text"name="nom_complet" id="nom_complet" placeholder="الاسم الكامل">
                             </div>
                             <div class="groupe">
                                 <label> Dernier année scolaire :اخر سنه دراسيه</label>
-                                <input type="text" placeholder="0000/0000 ">
+                                <input type="text" name="derniere_annee_scolaire" id="derniere_annee_scolaire" placeholder="0000/0000 ">
                             </div>
                             <div class="groupe">
                                 <label> Date de naissance:تاريخ الازدياد</label>
-                                <input type="date" placeholder="(0000-00-00)">
+                                <input type="date" name="date_de_naissance" id="date_de_naissance" placeholder="(0000-00-00)">
                             </div>
                             <div class="groupe">
                                 <label>Numéro de téléphone:رقم الهاتف</label>
-                                <input type="text" placeholder="(06 0000 0000)">
+                                <input type="text" name="numero_telephone" id="numero_telephone"  placeholder="(06 0000 0000)">
                             </div>
 
                             <button type="submit" class="bouton-principal">Envoyer la demande</button>

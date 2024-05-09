@@ -14,6 +14,14 @@ use App\Http\Controllers\UtilisationDuTempsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Contact2Controller;
 use App\Http\Controllers\CertificatController;
+use App\Http\Controllers\CertificatInterrompuController;
+
+Route::get('/certificats2', [CertificatInterrompuController::class, 'indexx'])->name('certificats2.indexx');
+Route::get('/certificats2/create', [CertificatInterrompuController::class, 'create'])->name('certificats2.create');
+Route::post('/certificats2', [CertificatInterrompuController::class, 'store'])->name('certificats2.store');
+Route::get('/certificats2/{certificat}', [CertificatInterrompuController::class, 'show'])->name('certificats2.show');
+Route::delete('/certificats2/{certificat}', [CertificatInterrompuController::class, 'destroy'])->name('certificats2.destroy');
+
 
 
 
