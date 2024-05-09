@@ -80,3 +80,27 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+function showSection(gender) {
+    // Hide all sections
+    var sections = document.querySelectorAll('.section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].style.display = 'none';
+    }
+    
+    // Show the selected section
+    var selectedSection = document.getElementById(gender + 'Section');
+    if (selectedSection) {
+      selectedSection.style.display = 'block';
+    }
+}
+
+// Make sure "homme" section is displayed by default
+window.onload = function() {
+    showSection('homme');
+};
+
+  
+
+  
+  
+  
