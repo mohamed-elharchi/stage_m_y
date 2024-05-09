@@ -229,6 +229,8 @@ body {
     border-radius: 0;
 }
 
+
+
 @media (max-width: 1115px) {
     .navigation {
         left: -300px;

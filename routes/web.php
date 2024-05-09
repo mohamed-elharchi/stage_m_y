@@ -63,6 +63,8 @@ Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () 
 
 
     Route::get('/dashboard/departements', [directorController::class, "showDepartements"])->name('showDepartements');
+    Route::get('/dashboard/updateDepartement/{id}', [directorController::class, "updateDepartement"])->name('updateDepartement');
+    Route::patch('/dashboard/updateDepartement/{id}', [directorController::class, "saveUpdateDepartement"])->name('saveUpdateDepartement');
     Route::get('/dashboard/addDepartement', [directorController::class, "addDepartement"])->name('addDepartement');
     Route::post('/dashboard/addDepartement', [directorController::class, "saveDepartement"])->name('saveDepartement');
     Route::delete('/dashboard/deleteDepartement/{id}', [directorController::class, "destroyDepartement"])->name('deleteDepartement');
@@ -118,6 +120,8 @@ Route::group(['middleware' => ['auth', GeneralGuardMiddleware::class]], function
 
 
     Route::get('/dashboard/departements', [directorController::class, "showDepartements"])->name('showDepartements');
+    Route::get('/dashboard/updateDepartement/{id}', [directorController::class, "updateDepartement"])->name('updateDepartement');
+    Route::patch('/dashboard/updateDepartement/{id}', [directorController::class, "saveUpdateDepartement"])->name('saveUpdateDepartement');
     Route::get('/dashboard/addDepartement', [directorController::class, "addDepartement"])->name('addDepartement');
     Route::post('/dashboard/addDepartement', [directorController::class, "saveDepartement"])->name('saveDepartement');
     Route::delete('/dashboard/deleteDepartement/{id}', [directorController::class, "destroyDepartement"])->name('deleteDepartement');

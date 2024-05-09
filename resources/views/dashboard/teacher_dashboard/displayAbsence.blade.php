@@ -15,7 +15,9 @@
                             <p>{{ session('success') }}</p>
                         </div>
                     @endif
-                    <div class="card-header"><h4>l'absence du la classe que vous avez sélectionné</h4><span>{{ $departementName }}</span></div>
+                    <div class="card-header">
+                        <h4>l'absence du la classe que vous avez sélectionné</h4><span>{{ $departementName }}</span>
+                    </div>
                     <div class="card-body">
                         @if (!empty($absence))
                             <ul>
@@ -25,8 +27,9 @@
                                 <li>Signature: {{ $absence->signature }}</li>
                             </ul>
                             @if (auth()->id() === $absence->teacher_id)
-                            <p class="text-danger">si vous voulez changer l'absence de séance en cours</p>
-                                <a href="{{ route('editAbsence', $absence->id) }}" class="btn btn-primary">Editer l'absence</a>
+                                <p class="text-danger">si vous voulez changer l'absence de séance en cours</p>
+                                <a href="{{ route('editAbsence', $absence->id) }}" class="btn btn-primary">Editer
+                                    l'absence</a>
                             @endif
                         @elseif (empty($absence) && !session('error'))
                             <p>Aucun enregistrement d'absence trouvé pour la classe sélectionné.</p>
@@ -40,7 +43,7 @@
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div >
+                <div>
                     <p class="text-danger">si vous avez la même classe pour la séance suivante . tapez l'absence ici</p>
                 </div>
                 <div class="card">
@@ -82,11 +85,36 @@
                             <button type="submit" class="btn btn-primary">Confirmer</button>
                         </form>
                     </div>
-                    <div class="card-footer text-center">
-                        <img src="{{ asset('imagess/'. $studentsList) }}" alt="Image" class="img-fluid">
+                    <div class="card-footer pointter text-center">
+                        <img id="expandedImage" src="{{ asset('imagess/' . $studentsList) }}" alt="Image"
+                            class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <script>
+        document.getElementById('expandedImage').addEventListener('click', function() {
+            this.classList.toggle('expanded');
+        });
+    </script>
+    <style>
+        .pointter {
+            cursor: pointer;
+        }
+        .expanded {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: rgba(41, 41, 41, 0.9);
+            object-fit: contain;
+            object-position: center;
+            cursor: zoom-out;
+        }
+    </style>
 @endsection
