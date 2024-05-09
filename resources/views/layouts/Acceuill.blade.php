@@ -123,10 +123,10 @@
     <div class="discussion">
         <div class="part11">
             <div class="ppa">
-
-            </div>
-            <h3>:تتبع الطلب</h3>
+<h3>:تتبع الطلب</h3>
           <p>ادخل رقمك الهاتفي لتتابع حالة طلبك</p>
+            </div>
+            
             <div class="ppb">
                <form>
                 <label>Numéro de téléphone:</label>
@@ -236,7 +236,7 @@
 
 
     <div class="articlex1">
-        <button class="togle"><div class="ll"> <h4>Services</h4><p>الخدمات <i class="ri-cursor-fill"></i></p></div></button>
+        <button class="togle"><div class="ll" title="اضغط لتظهر لك نافذة الخدمات ثم ضغط مرة ثانية لتختفي">  <h4>Services</h4><p>الخدمات <i class="ri-cursor-fill"></i></p></div></button>
     </div>
 
 

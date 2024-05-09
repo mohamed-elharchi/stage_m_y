@@ -1008,7 +1008,7 @@ input[type="text"] {
 .discussion {
     display: none;
     position: fixed;
-    top: 100px;
+    top: 90px;
     left: 10px;
     width: 400px;
     height: 500px;
@@ -1328,7 +1328,12 @@ justify-content: center;
        
     
     }
-  
+    .discussion {
+       
+        top: 200px;
+        left: 10px;
+    }
+    
 
 }
 
