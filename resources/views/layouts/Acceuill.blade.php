@@ -129,7 +129,7 @@
 <h3>:تتبع الطلب</h3>
           <p>ادخل رقمك الهاتفي لتتابع حالة طلبك</p>
             </div>
-            
+
             <div class="ppb">
                <form>
                 <label>Numéro de téléphone:</label>
@@ -170,25 +170,26 @@
                 <div id="hommeSection" class="section">
                     <div class="formulaire">
 
-                        <form>
+                    <form action="{{ route('certificats.store') }}" method="POST">
+                        @csrf
                             <div class="groupe">
                                 <label>Le nom complet:الاسم الكامل</label>
-                                <input type="text" placeholder="الاسم الكامل">
+                                <input type="text" name="nom_complet" id="nom_complet" placeholder="الاسم الكامل">
                             </div>
 
                             <div class="groupe">
                                 <label> Date de naissance:تاريخ الازدياد</label>
-                                <input type="date">
+                                <input type="date" name="date_naissance" id="date_naissance">
                             </div>
 
                             <div class="groupe">
                                 <label>Code Massar:رقم مسار</label>
-                                <input type="text" placeholder="(H00000000000)">
+                                <input type="text" placeholder="(H00000000000)" name="code_mssar" id="code_mssar">
                             </div>
 
                             <div class="groupe">
                                 <label>Numéro de téléphone:رقم الهاتف</label>
-                                <input type="text" placeholder="(06 0000 0000)">
+                                <input type="text" placeholder="(06 0000 0000)" name="numero_telephone" id="numero_telephone">
                             </div>
                             <div>
                                 <button type="submit" class="bouton-principal" >Envoyer la demande</button>

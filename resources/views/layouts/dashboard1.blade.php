@@ -35,11 +35,18 @@
     </a>
 </li>
                     <li>
+                    <a href="{{ url('/certificats') }}">
+                        <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
+                        <span class="title">contact</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ url('/contacts') }}">
                         <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
                         <span class="title">contact</span>
                     </a>
                 </li>
+
 
                 <li>
 

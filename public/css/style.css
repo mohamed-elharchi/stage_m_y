@@ -27,7 +27,7 @@ h1 {
 
 span {
     font-size: .9rem;
-    color: #d74a4a;
+    color: #757373;
 }
 
 h6 {
@@ -207,8 +207,6 @@ nav .navigation ul li a:hover {
 }
 
 .but1 {
-    padding: 5px;
-    text-decoration: none;
     background-color: transparent;
     color: rgb(233, 137, 27);
     border: 2px solid rgb(233, 137, 27);
@@ -220,7 +218,6 @@ nav .navigation ul li a:hover {
     transition: all 0.3s ease;
     margin-left: 20px;
 
-
 }
 
 .but1:hover {
@@ -231,8 +228,6 @@ nav .navigation ul li a:hover {
 
 
 .but2 {
-    text-decoration: none;
-    padding: 5px;
     background-color: transparent;
     color: rgb(0, 0, 0);
     border: 2px solid rgb(0, 0, 0);
@@ -611,7 +606,6 @@ input[type="text"] {
 
 .container h1 {
     text-align: center;
-
     margin-bottom: 15px;
 
 
@@ -723,9 +717,6 @@ input[type="text"] {
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #999;
-    pointer-events: none;
-
     color: #000000;
     pointer-events: none;
 
@@ -1220,7 +1211,7 @@ justify-content: center;
 
     .but1,
     .but2 {
-        font-size: 0.9rem;
+
         width: 95px;
         height: 35px;
         margin-bottom: 10px;
@@ -1260,20 +1251,6 @@ justify-content: center;
     .next {
         right: 5px;
     }
-    /* FOR LOGIN FORM */
-
-    .loginContent{
-        flex-direction: column;
-        margin-top: 10%;
-        margin-bottom: 5%;
-
-    }
-
-    .loginContent .loginImage img{
-        display: none;
-
-
-    }
 
 }
 
@@ -1286,15 +1263,9 @@ justify-content: center;
     }
 
     nav img {
-        width: 100px;
+        width: 130px;
     }
-    /* .navigation .menu-btn-div .ri-menu-line{
-        margin-bottom: 10px ;
-    } */
-    .ri-menu-line{
-        width: 100%;
-        height: 100%;
-    }
+
     #menu-btn {
         font-size: 2rem;
         display: inline;
@@ -1357,14 +1328,11 @@ justify-content: center;
 
 
     }
+    .discussion {
+
+        top: 200px;
+        left: 10px;
+    }
 
 
 }
-
-
-
-
-
-
-
-
