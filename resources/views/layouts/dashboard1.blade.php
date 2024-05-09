@@ -37,7 +37,7 @@
                     <li>
                     <a href="{{ url('/certificats') }}">
                         <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
-                        <span class="title">contact</span>
+                        <span class="title">certificats</span>
                     </a>
                 </li>
                 <li>
