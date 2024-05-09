@@ -1295,146 +1295,41 @@ input[type="text"] {
     }
 
 
-.login {
-    margin-top: 4px;
-    width: 100px;
-    height: 25px;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.filier-box {
-
-    height: 450px;
-}
- /* FOR LOGIN FORM */
- .loginContent{
-    flex-direction: column;
-    margin-top: 10%;
-    margin-bottom: 5%;
-
-}
-
-.loginContent .loginImage img{
-    display:  none;
-}
-
-}
+    .login {
+        width: 125px;
+        height: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
 
-/* for login form */
 
-.loginContent {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 12%;
-    margin-bottom:7%;
-    position: relative;
-    max-width: 100%;
-    width: 100%;
+    .filier-box {
+        height: 400px;
+        width: 320px;
 
-}
-  .center  {
-
-    width: 40%;
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: 0 15px 20px 20px rgba(0, 0, 0, 0.05);
-
-  }
-  .loginImage {
-    width: 40%;
-  }
-  .center h1 {
-    text-align: center;
-    font-size: 1.7rem;
-    padding: 20px;
-    border-bottom: 1px solid silver;
-  }
-  .center form {
-    padding: 0 40px;
-    box-sizing: border-box;
-  }
-  form .txt_field {
-    position: relative;
-    border-bottom: 2px solid #adadad;
-    margin: 30px 0;
-
-  }
-  .txt_field input {
-    width: 100%;
-    padding: 0 5px;
-    height: 40px;
-    font-size: 15px;
-    font-weight: 500;
-    border: none;
-    background: none;
-    outline: none;
-  }
-  .txt_field label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    color: #adadad;
-    transform: translateY(-50%);
-    font-size: 16px;
-    pointer-events: none;
-    transition: 0.5s;
-  }
-  .txt_field span::before {
-    content: "";
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: rgb(233, 137, 27);
-    transition: 0.5s;
-  }
-  .txt_field input:focus ~ label,
-  .txt_field input:valid ~ label {
-    top: -5px;
-    color: rgb(233, 137, 27);
-  }
-  .txt_field input:focus ~ span::before,
-  .txt_field input:valid ~ span::before {
-    width: 100%;
-  }
-
-  .connecter {
-    width: 100%;
-    height: 50px;
-    background: rgb(233, 137, 27);
-    border-radius: 25px;
-    font-size: 18px;
-    color: #e9f4fb;
-    font-weight: 700;
-    cursor: pointer;
-    outline: none;
-    transition: 0.5s;
-    border: none;
-  }
-  .connecter:hover {
-    border-color: rgb(60, 41, 20);
-  }
-  .signup_link {
-    padding-bottom: 10px;
-    margin: 30px 0;
-    text-align: center;
-    font-size: 16px;
-    color: #666666;
-  }
-/*for login form */
-  @media only screen and (max-width: 1024px) {
-
-    .center{
-        margin-top: 25%;
-        margin-bottom: 5%;
-        max-width: 300;
-        width: 100%;
 
     }
-    .center h1 {
-        font-size: 1.7rem;
+    .discussion {
+
+        top: 200px;
+        left: 10px;
     }
-  }
+    .iiiiiiii {
+
+        top: 200px;
+        left: 10px;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
