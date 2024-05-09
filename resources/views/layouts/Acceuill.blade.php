@@ -179,7 +179,7 @@
                             </div>
 
                             <div class="groupe">
-                                <label>Numéro de Massar:رقم مسار</label>
+                                <label>Code Massar:رقم مسار</label>
                                 <input type="text" placeholder="(H00000000000)">
                             </div>
 
@@ -236,7 +236,7 @@
 
 
     <div class="articlex1">
-        <button class="togle"><i class="ri-message-3-line"></i></button>
+        <button class="togle"><div class="ll"> <h4>Services</h4><p>الخدمات <i class="ri-cursor-fill"></i></p></div></button>
     </div>
 
 
