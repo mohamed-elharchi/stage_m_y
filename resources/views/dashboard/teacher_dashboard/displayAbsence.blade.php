@@ -5,9 +5,13 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    @if (session('error'))
-                        <div class="alert alert-primary" role="alert">
-                            <p>{{ session('error') }}</p>
+                    @if ($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
                     @endif
                     @if (session('success'))
@@ -27,7 +31,7 @@
                                 <li>Signature: {{ $absence->signature }}</li>
                             </ul>
                             @if (auth()->id() === $absence->teacher_id)
-                                <p class="text-danger">si vous voulez changer l'absence de séance en cours</p>
+                                <p class="text-primary">si vous voulez changer l'absence de séance en cours</p>
                                 <a href="{{ route('editAbsence', $absence->id) }}" class="btn btn-primary">Editer
                                     l'absence</a>
                             @endif
@@ -44,7 +48,13 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div>
-                    <p class="text-danger">si vous avez la même classe pour la séance suivante . tapez l'absence ici</p>
+                    @if (!empty($absence))
+                        <p></p>
+                        @if (auth()->id() === $absence->teacher_id)
+                            <p class="text-danger">si vous avez la même classe pour la séance suivante . tapez l'absence ici
+                            </p>
+                        @endif
+                    @endif
                 </div>
                 <div class="card">
                     <div class="card-header">Insérer un nouvel enregistrement d'absence</div>
@@ -60,14 +70,14 @@
                             <div class="form-group">
                                 <label for="period">Période:</label>
                                 <select class="form-control" id="period" name="period">
-                                    <option value="8.30/9.30">08:00/09:00</option>
-                                    <option value="9.30/10.30">09:00/10:00</option>
-                                    <option value="10.30/11.30">10:00/11:00</option>
-                                    <option value="11.30/12.30">11:00/12:00</option>
-                                    <option value="2.30/3.30">14:00/15:00</option>
-                                    <option value="3.30/4.30">15:00/16:00</option>
-                                    <option value="4.30/5.30">16:00/17:00</option>
-                                    <option value="5.30/6.30">17:00/18:00</option>
+                                    <option value="8.30/9.30">08:30/09:30</option>
+                                    <option value="9.30/10.30">09:30/10:30</option>
+                                    <option value="10.30/11.30">10:30/11:30</option>
+                                    <option value="11.30/12.30">11:30/12:30</option>
+                                    <option value="2.30/3.30">14:30/15:30</option>
+                                    <option value="3.30/4.30">15:30/16:30</option>
+                                    <option value="4.30/5.30">16:30/17:30</option>
+                                    <option value="5.30/6.30">17:30/18:30</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -104,6 +114,7 @@
         .pointter {
             cursor: pointer;
         }
+
         .expanded {
             position: fixed;
             top: 0;

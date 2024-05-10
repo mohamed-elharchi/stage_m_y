@@ -49,7 +49,7 @@ class teacherController extends Controller
         } else {
             $departementName = departement::findOrFail($departmentId)->name;
             $studentsList = departement::findOrFail($departmentId)->students_list;
-            return view('dashboard.teacher_dashboard.displayAbsence', compact('departmentId','departementName', 'studentsList'))
+            return view('dashboard.teacher_dashboard.displayAbsence', compact('departmentId', 'departementName', 'studentsList'))
                 ->with('error', 'No absence record found for the selected department.');
         }
     }
@@ -90,16 +90,26 @@ class teacherController extends Controller
             'absence.*' => 'integer|between:1,40',
             'signature' => 'required|string|max:50',
             'department' => 'required|exists:departements,id',
+        ], [
+            'date.required' => 'La date est requise.',
+            'date.date' => 'La date doit être une date valide.',
+            'period.required' => 'La période est requise.',
+            'absence.array' => 'Les absences doivent être fournies sous forme de tableau.',
+            'absence.*.integer' => 'La valeur d\'absence doit être un entier.',
+            'absence.*.between' => 'La valeur d\'absence doit être comprise entre 1 et 40.',
+            'signature.required' => 'La signature est requise.',
+            'signature.string' => 'La signature doit être une chaîne de caractères.',
+            'signature.max' => 'La signature ne doit pas dépasser :max caractères.',
+            'department.required' => 'Le département est requis.',
+            'department.exists' => 'Le département sélectionné est invalide.',
         ]);
 
         $teacherId = auth()->id();
         $departmentId = $request->input('department');
 
-        // Check if absences were recorded
         if ($request->has('absence') && count($request->absence) > 0) {
             $absenceString = implode('-', $request->absence);
         } else {
-            // If no absences recorded, insert the string
             $absenceString = 'Tous les étudiants sont présents';
         }
 

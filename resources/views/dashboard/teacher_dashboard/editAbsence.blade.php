@@ -14,14 +14,14 @@
                             <div class="form-group">
                                 <label for="period">Période:</label>
                                 <select class="form-control" id="period" name="period">
-                                    <option value="8.30/9.30" {{ $absence->period === '8.30/9.30' ? 'selected' : '' }}>08:00/09:00</option>
-                                    <option value="9.30/10.30" {{ $absence->period === '9.30/10.30' ? 'selected' : '' }}>09:00/10:00</option>
-                                    <option value="10.30/11.30" {{ $absence->period === '10.30/11.30' ? 'selected' : '' }}>10:00/11:00</option>
-                                    <option value="11.30/12.30" {{ $absence->period === '11.30/12.30' ? 'selected' : '' }}>11:00/12:00</option>
-                                    <option value="2.30/3.30" {{ $absence->period === '2.30/3.30' ? 'selected' : '' }}>14:00/15:00</option>
-                                    <option value="3.30/4.30" {{ $absence->period === '3.30/4.30' ? 'selected' : '' }}>15:00/16:00</option>
-                                    <option value="4.30/5.30" {{ $absence->period === '4.30/5.30' ? 'selected' : '' }}>16:00/17:00</option>
-                                    <option value="5.30/6.30" {{ $absence->period === '5.30/6.30' ? 'selected' : '' }}>17:00/18:00</option>
+                                    <option value="8.30/9.30" {{ $absence->period === '8.30/9.30' ? 'selected' : '' }}>08:30/09:30</option>
+                                    <option value="9.30/10.30" {{ $absence->period === '9.30/10.30' ? 'selected' : '' }}>09:30/10:30</option>
+                                    <option value="10.30/11.30" {{ $absence->period === '10.30/11.30' ? 'selected' : '' }}>10:30/11:30</option>
+                                    <option value="11.30/12.30" {{ $absence->period === '11.30/12.30' ? 'selected' : '' }}>11:30/12:30</option>
+                                    <option value="2.30/3.30" {{ $absence->period === '2.30/3.30' ? 'selected' : '' }}>14:30/15:30</option>
+                                    <option value="3.30/4.30" {{ $absence->period === '3.30/4.30' ? 'selected' : '' }}>15:30/16:30</option>
+                                    <option value="4.30/5.30" {{ $absence->period === '4.30/5.30' ? 'selected' : '' }}>16:30/17:30</option>
+                                    <option value="5.30/6.30" {{ $absence->period === '5.30/6.30' ? 'selected' : '' }}>17:30/18:30</option>
                                 </select>
                             </div>
                             <div class="form-group">
