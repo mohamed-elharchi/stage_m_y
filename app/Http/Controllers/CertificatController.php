@@ -4,14 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Certificat;
 use Illuminate\Http\Request;
+use App\Models\Student;
 
 class CertificatController extends Controller
 {
     public function index()
     {
         $certificats = Certificat::all();
-        return view('certificats.index', compact('certificats'));
+        $students = Student::all();
+
+        return view('certificats.index', compact('certificats', 'students'));
     }
+
+
 
     public function create()
     {

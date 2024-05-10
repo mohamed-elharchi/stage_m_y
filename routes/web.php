@@ -14,13 +14,24 @@ use App\Http\Controllers\UtilisationDuTempsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Contact2Controller;
 use App\Http\Controllers\CertificatController;
-use App\Http\Controllers\CertificatInterrompuController;
 
-Route::get('/certificats2', [CertificatInterrompuController::class, 'indexx'])->name('certificats2.indexx');
-Route::get('/certificats2/create', [CertificatInterrompuController::class, 'create'])->name('certificats2.create');
-Route::post('/certificats2', [CertificatInterrompuController::class, 'store'])->name('certificats2.store');
-Route::get('/certificats2/{certificat}', [CertificatInterrompuController::class, 'show'])->name('certificats2.show');
-Route::delete('/certificats2/{certificat}', [CertificatInterrompuController::class, 'destroy'])->name('certificats2.destroy');
+
+use App\Http\Controllers\StudentController;
+
+
+
+Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
+Route::post('/students', [StudentController::class, 'store'])->name('students.store');
+Route::get('/students/{student}', [StudentController::class, 'show'])->name('students.show');
+Route::get('/students/{student}/edit', [StudentController::class, 'edit'])->name('students.edit');
+Route::put('/students/{student}', [StudentController::class, 'update'])->name('students.update');
+Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy');
+
+
+
+
+
 
 
 
