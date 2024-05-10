@@ -1,6 +1,8 @@
 @extends('layouts.Acceuill')
 @section('title','Nouvelles')
 @section('content')
+@section('title', 'Nouvelles')
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>

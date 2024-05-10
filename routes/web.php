@@ -13,8 +13,33 @@ use App\Http\Controllers\teacherController;
 use App\Http\Controllers\UtilisationDuTempsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Contact2Controller;
+use App\Http\Controllers\CertificatController;
 
 
+use App\Http\Controllers\StudentController;
+
+
+
+Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
+Route::post('/students', [StudentController::class, 'store'])->name('students.store');
+Route::get('/students/{student}', [StudentController::class, 'show'])->name('students.show');
+Route::get('/students/{student}/edit', [StudentController::class, 'edit'])->name('students.edit');
+Route::put('/students/{student}', [StudentController::class, 'update'])->name('students.update');
+Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy');
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/certificats/create', [CertificatController::class, 'create'])->name('certificats.create');
+Route::post('/certificats', [CertificatController::class, 'store'])->name('certificats.store');
 
 
 
@@ -94,7 +119,9 @@ Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () 
 
 
     //zitouni routes  ::::::::::::::::::::::::::::::::
-
+    Route::get('/certificats/{certificat}', [CertificatController::class, 'show'])->name('certificats.show');
+    Route::delete('/certificats/{certificat}', [CertificatController::class, 'destroy'])->name('certificats.destroy');
+    Route::get('/certificats', [CertificatController::class, 'index'])->name('certificats.index');
     Route::resource('news', NewsController::class);
     Route::resource('utilisations', UtilisationDuTempsController::class);
     Route::get('/utilisations/create', [UtilisationDuTempsController::class, 'create'])->name('utilisations.create');
@@ -145,6 +172,11 @@ Route::group(['middleware' => ['auth', GeneralGuardMiddleware::class]], function
     Route::get('dashboard/info', [LoginController::class, "displayInfo"])->name('displayInfo');
     Route::post('dashboard/saveInfo', [LoginController::class, "saveInfo"])->name('saveInfo');
 
+
+    //zitouni routes  ::::::::::::::::::::::::::::::::
+
+    Route::get('/certificats/{certificat}', [CertificatController::class, 'show'])->name('certificats.show');
+     Route::get('/certificats', [CertificatController::class, 'index'])->name('certificats.index');
 
     Route::resource('news', NewsController::class);
     Route::resource('utilisations', UtilisationDuTempsController::class);

@@ -1,6 +1,8 @@
 @extends('layouts.dashboard1')
 
 @section('content')
+@section('title', 'Contact')
+
     <div class="container">
         <h1>Liste des contacts</h1>
         <table class="table">

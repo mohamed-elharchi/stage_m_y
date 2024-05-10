@@ -46,10 +46,6 @@
             </div>
             <i id="right" class="ri-arrow-right-s-line"></i>
         </div>
-
-
-
-
     </section>
 
     <section class="map_section">

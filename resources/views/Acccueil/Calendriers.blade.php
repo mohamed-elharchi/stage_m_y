@@ -1,6 +1,8 @@
 @extends('layouts.Acceuill')
 @section('title','calendries')
 @section('content')
+@section('title', 'Calendriers')
+
     <!DOCTYPE html>
     <html lang="en">
 
