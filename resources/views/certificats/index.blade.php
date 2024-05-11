@@ -34,9 +34,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($certificats as $certificatt)
+                                @foreach ($certificats as $index => $certificatt)
                                     <tr>
-                                        <td>{{ $certificatt->id }}</td>
+                                        <td>{{ $index + 1 }}</td>
                                         <td>{{ $certificatt->nom_complet }}</td>
                                         <td>{{ $certificatt->date_naissance }}</td>
                                         <td>{{ $certificatt->code_mssar }}</td>

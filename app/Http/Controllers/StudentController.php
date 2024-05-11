@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Certificat;
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Termwind\Components\Span;
 
 class StudentController extends Controller
 {
@@ -79,9 +80,22 @@ class StudentController extends Controller
         }
 
         if ($certificat) {
-            $message = 'Statut de votre demande :' . $certificat->statut;
+            if ($certificat->statut === 'en cours') {
+                $message = 'Votre demande de certificat scolaire est en cours de traitement.'.
+                'جارٍ معالجة طلب الشهادة المدرسية الخاص بك.';
+            } elseif ($certificat->statut === 'complété') {
+                $message = 'Votre demande de certificat scolaire a été complétée. '.
+                'الآن يمكنك الذهاب إلى الإدارة واستلام شهادتك المدرسية';
+
+            }
         } elseif ($student) {
-            $message = 'Statut de votre demande : ' . $student->statut;
+            if ($student->statut === 'en cours') {
+                $message = 'Votre demande de certificat scolaire est en cours de traitement.'.
+                'جارٍ معالجة طلب الشهادة المدرسية الخاص بك.';
+            } elseif ($student->statut === 'complété') {
+                $message = 'Votre demande de certificat scolaire a été complétée.'.
+                'الآن يمكنك الذهاب إلى الإدارة واستلام شهادتك المدرسية';
+            }
         } else {
             $message = "Votre demande de certificat scolaire n a pas été trouvée dans nos données. Vous pouvez soumettre à nouveau une demande.";
         }

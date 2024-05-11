@@ -24,9 +24,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($students as $student)
+                    @foreach ($students as $index => $student)
                         <tr>
-                            <td>{{ $student->id }}</td>
+                            <td>{{ $index + 1 }}</td>
                             <td>{{ $student->nom }}</td>
                             <td>{{ $student->scolaire }}</td>
                             <td>{{ $student->date }}</td>

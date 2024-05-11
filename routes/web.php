@@ -22,6 +22,8 @@ use App\Http\Controllers\StudentController;
 
 Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
 Route::post('/students', [StudentController::class, 'store'])->name('students.store');
+Route::get('/search', [StudentController::class, 'searchByPhoneNumber'])->name('searchByPhoneNumber');
+
 
 
 Route::get('/certificats/create', [CertificatController::class, 'create'])->name('certificats.create');
@@ -184,7 +186,6 @@ Route::group(['middleware' => ['auth', GeneralGuardMiddleware::class]], function
     Route::put('/student/{id}/update_statut', [StudentController::class, 'updateStatut'])->name('update_statut');
     Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 
-    Route::get('/search', [StudentController::class, 'searchByPhoneNumber'])->name('searchByPhoneNumber');
 
 
     Route::resource('news', NewsController::class);
