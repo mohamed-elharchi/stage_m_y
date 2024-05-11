@@ -10,7 +10,7 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- image icon page ++++++++++  -->
-    <link rel="icon" href="{{ asset('images/moulay ismai (2).png') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('images/moulayIsmail.png') }}" type="image/x-icon"/>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,9 +125,11 @@
     <a href="#" class="scrollup" id="scroll-up"> <i class="ri-arrow-up-s-line"></i> </a>
     <!-- togl -->
     <div class="discussion">
+
         <div class="part11">
             <div class="ppa">
-                <h3>:تتبع الطلب</h3>
+                <img src="{{ asset('images/elharchiClose.png') }}" class="elharchiClose" alt="close" width="30px">
+                <h3>تتبع الطلب</h3>
                 <p>ادخل رقمك الهاتفي لتتابع حالة طلبك</p>
             </div>
 
