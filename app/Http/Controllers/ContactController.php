@@ -21,6 +21,11 @@ class ContactController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'message' => 'required',
+        ], [
+            'name.required' => 'Le nom est requis.',
+            'email.required' => 'L\'adresse e-mail est requise.',
+            'email.email' => 'L\'adresse e-mail doit être une adresse e-mail valide.',
+            'message.required' => 'Le message est requis.',
         ]);
 
         ContactMessage::create([
@@ -29,7 +34,7 @@ class ContactController extends Controller
             'message' => $request->message,
         ]);
 
-        return redirect('/')->with('success', 'Votre message a été envoyé avec succès!');
+        return back()->with('message', 'Votre message a été envoyé avec succès!');
     }
 
     public function deleteMessage($id)

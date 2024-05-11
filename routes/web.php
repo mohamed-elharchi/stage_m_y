@@ -20,26 +20,18 @@ use App\Http\Controllers\StudentController;
 
 
 
-Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
 Route::post('/students', [StudentController::class, 'store'])->name('students.store');
-Route::get('/students/{student}', [StudentController::class, 'show'])->name('students.show');
-Route::get('/students/{student}/edit', [StudentController::class, 'edit'])->name('students.edit');
-Route::put('/students/{student}', [StudentController::class, 'update'])->name('students.update');
-Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy');
-
-
-
-
-
-
-
-
-
 
 
 Route::get('/certificats/create', [CertificatController::class, 'create'])->name('certificats.create');
 Route::post('/certificats', [CertificatController::class, 'store'])->name('certificats.store');
+
+
+
+
+
+
 
 
 
@@ -122,6 +114,13 @@ Route::group(['middleware' => ['auth', DirectorMiddleware::class]], function () 
     Route::get('/certificats/{certificat}', [CertificatController::class, 'show'])->name('certificats.show');
     Route::delete('/certificats/{certificat}', [CertificatController::class, 'destroy'])->name('certificats.destroy');
     Route::get('/certificats', [CertificatController::class, 'index'])->name('certificats.index');
+    Route::put('/certificats/{id}/update_statut', [CertificatController::class, 'updateStatut'])->name('update_statuttt');
+
+    Route::get('/students/{student}', [StudentController::class, 'show'])->name('students.show');
+    Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy');
+    Route::put('/student/{id}/update_statut', [StudentController::class, 'updateStatut'])->name('update_statut');
+    Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+
     Route::resource('news', NewsController::class);
     Route::resource('utilisations', UtilisationDuTempsController::class);
     Route::get('/utilisations/create', [UtilisationDuTempsController::class, 'create'])->name('utilisations.create');
@@ -176,7 +175,17 @@ Route::group(['middleware' => ['auth', GeneralGuardMiddleware::class]], function
     //zitouni routes  ::::::::::::::::::::::::::::::::
 
     Route::get('/certificats/{certificat}', [CertificatController::class, 'show'])->name('certificats.show');
-     Route::get('/certificats', [CertificatController::class, 'index'])->name('certificats.index');
+    Route::delete('/certificats/{certificat}', [CertificatController::class, 'destroy'])->name('certificats.destroy');
+    Route::get('/certificats', [CertificatController::class, 'index'])->name('certificats.index');
+    Route::put('/certificats/{id}/update_statut', [CertificatController::class, 'updateStatut'])->name('update_statuttt');
+
+    Route::get('/students/{student}', [StudentController::class, 'show'])->name('students.show');
+    Route::delete('/students/{student}', [StudentController::class, 'destroy'])->name('students.destroy');
+    Route::put('/student/{id}/update_statut', [StudentController::class, 'updateStatut'])->name('update_statut');
+    Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+
+    Route::get('/search', [StudentController::class, 'searchByPhoneNumber'])->name('searchByPhoneNumber');
+
 
     Route::resource('news', NewsController::class);
     Route::resource('utilisations', UtilisationDuTempsController::class);

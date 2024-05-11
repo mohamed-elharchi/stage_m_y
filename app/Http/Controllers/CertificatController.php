@@ -30,12 +30,14 @@ class CertificatController extends Controller
             'date_naissance' => 'required|date',
             'code_mssar' => 'required|string',
             'numero_telephone' => 'required|string',
+            'statut' => 'nullable|string',
+
         ]);
 
         Certificat::create($request->all());
 
 
-          return redirect('/')->with('success', 'Certificat créé avec succès.');
+          return back()->with('message', 'Votre demande a été reçue et va maintenant être traitée');
     }
 
     public function show(Certificat $certificat)
@@ -50,6 +52,21 @@ class CertificatController extends Controller
         $certificat->delete();
 
         return redirect()->route('certificats.index')->with('success', 'Certificat supprimé avec succès.');
+    }
+    public function updateStatut(Request $request, $id)
+    {
+        $request->validate([
+            'statut' => 'required|in:en cours,complété',
+        ], [
+            'statut.required' => 'Le statut est requis.',
+            'statut.in' => 'Le statut doit être soit « En cours », soit « Complété ».',
+        ]);
+        $student = Certificat::findOrFail($id);
+
+        $student->statut = $request->statut;
+        $student->save();
+
+        return redirect()->route('certificats.index')->with('success', 'Statut mis à jour avec succès');
     }
 }
 

@@ -4,7 +4,7 @@
 @section('content')
     <!--  Home -->
 
-    <section id="acceuil" >
+    <section id="acceuil">
         <div class="text">
             <h2>Bienvenue pour une Nouvelle Année Scolaire ! </h2>
             <p> Bienvenue à l'école ! Préparez-vous pour un nouveau chapitre passionnant
@@ -31,7 +31,9 @@
 
                 <div class="fea-box">
                     <i class="ri-window-2-line"></i>
-                    <a  class="jj"  href="https://massarservice.men.gov.ma/moutamadris/Account"> <h3>Système de suivi académique</h3></a>
+                    <a class="jj" href="https://massarservice.men.gov.ma/moutamadris/Account">
+                        <h3>Système de suivi académique</h3>
+                    </a>
                     <p>Suivez vos progrès académiques et consultez vos
                         résultats en temps réel grâce
                         à un système de suivi en ligne. "Massar"</p>
@@ -39,14 +41,18 @@
 
                 <div class="fea-box">
                     <i class="ri-calendar-check-line"></i>
-                    <a class="jj" href="{{ route('Nouvelles') }}"><h3>Activités parascolaires virtuelles</h3></a>
+                    <a class="jj" href="{{ route('Nouvelles') }}">
+                        <h3>Activités parascolaires virtuelles</h3>
+                    </a>
                     <p>SRejoignez des clubs et des activités parascolaires virtuelles
                         pour développer vos compétences et passions en dehors des cours.</p>
                 </div>
 
                 <div class="fea-box">
                     <i class="ri-focus-mode"></i>
-                    <a class="jj" href="https://www.tawjihnet.net/"><h3>Orientation académique et professionnelle</h3></a>
+                    <a class="jj" href="https://www.tawjihnet.net/">
+                        <h3>Orientation académique et professionnelle</h3>
+                    </a>
                     <p>Bénéficiez de conseils et d'orientations académiques et professionnelles
                         personnalisés pour planifier votre avenir.</p>
                 </div>
@@ -57,7 +63,7 @@
 
 
     <!--  filiers######### -->
-    <section id="filiere" >
+    <section id="filiere">
         <h1>Découvrez Nos Filières</h1>
         <p>Explorez les différentes voies éducatives offertes dans notre lycée pour trouver celle qui correspond le mieux à
             vos aspirations.</p>
@@ -96,7 +102,7 @@
 
 
     <!-- comantairs.   -->
-    <section id="Home" >
+    <section id="Home">
         <h1>Témoignages Des élèves</h1>
         <div class="slideshow-container">
             <div class="mySlides">
@@ -168,9 +174,10 @@
 
     <!--end  comantairs-->
     <!--books -->
-    <div id="books" >
+    <div id="books">
         <h1>Livres</h1>
-        <p>Si vous êtes passionné par la lecture, parcourez notre sélection de livres:<button id="showSearchButton"><i class="ri-search-line"></i></button></p>
+        <p>Si vous êtes passionné par la lecture, parcourez notre sélection de livres:<button id="showSearchButton"><i
+                    class="ri-search-line"></i></button></p>
 
 
 
@@ -192,7 +199,7 @@
 
     <!--end  books -->
     <!-- contact -->
-    <section id="contact" >
+    <section id="contact">
 
         <div class="container">
             <h1>Envoie-nous un message</h1>
@@ -205,43 +212,90 @@
                         <div class="text-one">Driouch</div>
                         <div class="text-two">HAY AL AMAL 06</div>
                     </div>
-                    @foreach($contacts as $contact)
-                    <div class="phone details">
-                        <i class="ri-phone-fill"></i>
-                        <div class="text-one"> {{ $contact->telephon1 }}</div>
-                        <div class="text-two">{{ $contact->telephon2 }}</div>
-                    </div>
-                    <div class="email details">
-                        <i class="ri-mail-fill"></i>
-                        <div class="topic">Email</div>
-                        <div class="text-one">{{ $contact->email1 }}</div>
-                        <div class="text-two">{{ $contact->email2 }}</div>
-                    </div>
+                    @foreach ($contacts as $contact)
+                        <div class="phone details">
+                            <i class="ri-phone-fill"></i>
+                            <div class="text-one"> {{ $contact->telephon1 }}</div>
+                            <div class="text-two">{{ $contact->telephon2 }}</div>
+                        </div>
+                        <div class="email details">
+                            <i class="ri-mail-fill"></i>
+                            <div class="topic">Email</div>
+                            <div class="text-one">{{ $contact->email1 }}</div>
+                            <div class="text-two">{{ $contact->email2 }}</div>
+                        </div>
                     @endforeach
                 </div>
 
                 <div class="right-side">
                     <div class="topic-text">Contact <i class="ri-message-3-line"></i></div>
-
+                    @if ($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                            <ul style="list-style-type: none;">
+                                @foreach ($errors->all() as $error)
+                                    <li style=" color:red">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form method="POST" action="{{ url('/contact') }}">
-                    @csrf
+                        @csrf
                         <div class="input-box">
-                            <input type="text" id="name" name="name" placeholder="Entrez votre nom" class="inpnom" >
-                            <i class="ri-user-3-fill"></i>                        </div>
+                            <input type="text" id="name" name="name" placeholder="Entrez votre nom"
+                                class="inpnom" required>
+                            <i class="ri-user-3-fill"></i>
+
+                        </div>
                         <div class="input-box">
-                            <input type="text"   id="email" name="email"  placeholder="Entrer votre Email">
-                            <i class="ri-mail-fill"></i>                        </div>
+                            <input type="email" id="email" name="email" placeholder="Entrer votre Email" required>
+                            <i class="ri-mail-fill"></i>
+
+                        </div>
                         <div class="input-box message-box">
-                            <input type="texteria" id="message" name="message" placeholder=" Entrez votre message" class="message-box">
-                            <i class="ri-chat-forward-fill"></i>                        </div>
+                            <input type="texteria" id="message" name="message" placeholder=" Entrez votre message"
+                                class="message-box" required>
+                            <i class="ri-chat-forward-fill"></i>
+
+                        </div>
                         <div class="button">
                             <button type="submit">Envoyer <i class="ri-send-plane-fill"></i></button>
 
                         </div>
                     </form>
-                    @if(session('success'))
-                <div >{{ session('success') }}</div>
-                @endif
+
+                    {{-- @if (Session::has('message'))
+                        <script>
+                            swal("message", "{{ Session::get('message') }}", 'success', {
+                                button: true,
+                                button: "OK"
+                            })
+                        </script>
+                    @endif --}}
+                    @if (Session::has('message'))
+                        @php
+                            $message = Session::get('message');
+                            $alertType = 'success';
+
+                            if (strpos($message, 'en cours') !== false) {
+                                $alertType = 'warning';
+                            } elseif (strpos($message, 'complété') !== false) {
+                                $alertType = 'success';
+                            }  elseif (strpos($message, 'Votre demande de certificat scolaire n a pas été trouvée dans nos données. Vous pouvez soumettre à nouveau une demande.') !== false)  {
+                                $alertType = 'error';
+                            }
+
+                        @endphp
+
+                        <script>
+                            swal("Message", "{{ $message }}", '{{ $alertType }}', {
+                                button: true,
+                                button: "OK"
+                            });
+                        </script>
+                    @endif
+
+
+
                 </div>
             </div>
         </div>
@@ -252,6 +306,3 @@
     <!--  end contact -->
 @endsection
 <script src="js/Home.js"></script>
-
-
-
