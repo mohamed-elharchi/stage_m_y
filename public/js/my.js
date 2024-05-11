@@ -67,6 +67,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// elharchi close im sorry ayoub
+
+document.addEventListener('DOMContentLoaded', function () {
+    const msgeButton = document.querySelector(".elharchiClose");
+    const discussionBox = document.querySelector(".discussion");
+
+    msgeButton.addEventListener('click', () => {
+        discussionBox.classList.toggle('active');
+    });
+});
+
 
 //nav media js
 document.addEventListener('DOMContentLoaded', function () {
@@ -86,7 +97,7 @@ function showSection(gender) {
     for (var i = 0; i < sections.length; i++) {
       sections[i].style.display = 'none';
     }
-    
+
     // Show the selected section
     var selectedSection = document.getElementById(gender + 'Section');
     if (selectedSection) {
@@ -99,8 +110,7 @@ window.onload = function() {
     showSection('homme');
 };
 
-  
 
-  
-  
-  
+
+
+

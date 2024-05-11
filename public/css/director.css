@@ -267,3 +267,32 @@ body {
         border-top: none !important;
         border-right: none !important;
       } */
+
+
+      .badgee {
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+    }
+
+    .badgee-warning {
+        color: #212529;
+        background-color: #ffc107;
+    }
+
+    .badgee-success {
+        color: #212529;
+        background-color: #28a745;
+    }
+
+
+    .status-img {
+        vertical-align: middle;
+        margin-left: 5px;
+    }

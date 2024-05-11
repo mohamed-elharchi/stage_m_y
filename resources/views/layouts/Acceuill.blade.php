@@ -10,10 +10,11 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- image icon page ++++++++++  -->
-    <link rel="icon" href="{{ asset('images/moulay ismai (2).png') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('images/moulayIsmail.png') }}" type="image/x-icon"/>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -46,7 +47,7 @@
                 <a class="login" href="{{ route('login') }}">Se connecter <i class="ri-login-circle-line"></i></a>
             @endguest
 
-                <i id="menu-btn" class="ri-menu-line"></i>
+            <i id="menu-btn" class="ri-menu-line"></i>
 
 
         </div>
@@ -124,19 +125,21 @@
     <a href="#" class="scrollup" id="scroll-up"> <i class="ri-arrow-up-s-line"></i> </a>
     <!-- togl -->
     <div class="discussion">
+
         <div class="part11">
             <div class="ppa">
-<h3>:تتبع الطلب</h3>
-          <p>ادخل رقمك الهاتفي لتتابع حالة طلبك</p>
+                <img src="{{ asset('images/elharchiClose.png') }}" class="elharchiClose" alt="close" width="30px">
+                <h3>تتبع الطلب</h3>
+                <p>ادخل رقمك الهاتفي لتتابع حالة طلبك</p>
             </div>
 
             <div class="ppb">
-               <form>
-                <label>Numéro de téléphone:</label>
-                <input type="text" placeholder="(06 0000 0000)">
-                <button type="submit" class="bouton-principal" ><i class="ri-send-plane-fill"></i></button>
+                <form action="{{ route('searchByPhoneNumber') }}" method="GET">
+                    <label>Numéro de téléphone:</label>
+                    <input type="tel" name="phone_number" placeholder="(06 0000 0000)" required>
+                    <button type="submit" class="bouton-principal"><i class="ri-send-plane-fill"></i></button>
                </form>
-               <div></div>
+
 
 
             </div>
@@ -147,16 +150,19 @@
             <div class="part33">
                 <div class="pp3t">
                     <h3>:طلب الشهادة المدرسية</h3>
-                    <p style="font-size: 0.8rem">اختر وضعيتك الحالية , هل انت منقطع عن الدراسه او حاصل على شهاده البكالورية,  او تدرس في المدرسه الثانوية </p>
+                    <p style="font-size: 0.8rem">اختر وضعيتك الحالية , هل انت منقطع عن الدراسه او حاصل على شهاده
+                        البكالورية, او تدرس في المدرسه الثانوية </p>
                 </div>
                 <div class="pp3i">
                     <div class="groupg">
-                        <input type="radio" name="gender" value="homme" id="hommeRadio" onclick="showSection('homme')" checked="checked">
+                        <input type="radio" name="gender" value="homme" id="hommeRadio"
+                            onclick="showSection('homme')" checked="checked" >
 
                         <label for="hommeRadio">ادرس في امدرسة الثانوية</label>
                     </div>
                     <div class="groupg">
-                        <input type="radio" name="gender" value="femme" id="femmeRadio" onclick="showSection('femme')">
+                        <input type="radio" name="gender" value="femme" id="femmeRadio"
+                            onclick="showSection('femme')">
                         <label for="femmeRadio">منقطع عن الدراسة او حاصل على شهادة البكالورية</label>
                     </div>
 
@@ -170,29 +176,34 @@
                 <div id="hommeSection" class="section">
                     <div class="formulaire">
 
-                    <form action="{{ route('certificats.store') }}" method="POST">
-                        @csrf
+                        <form action="{{ route('certificats.store') }}" method="POST">
+                            @csrf
                             <div class="groupe">
                                 <label>Le nom complet:الاسم الكامل</label>
-                                <input type="text" name="nom_complet" id="nom_complet" placeholder="الاسم الكامل">
+                                <input type="text" name="nom_complet" id="nom_complet"
+                                    placeholder="الاسم الكامل" required>
+                                <input type="hidden" name="statut" id="statut" value="en cours">
+
                             </div>
 
                             <div class="groupe">
                                 <label> Date de naissance:تاريخ الازدياد</label>
-                                <input type="date" name="date_naissance" id="date_naissance">
+                                <input type="date" name="date_naissance" id="date_naissance" required>
                             </div>
 
                             <div class="groupe">
                                 <label>Code Massar:رقم مسار</label>
-                                <input type="text" placeholder="(H00000000000)" name="code_mssar" id="code_mssar">
+                                <input type="text" placeholder="(H00000000000)" name="code_mssar"
+                                    id="code_mssar" required>
                             </div>
 
                             <div class="groupe">
                                 <label>Numéro de téléphone:رقم الهاتف</label>
-                                <input type="text" placeholder="(06 0000 0000)" name="numero_telephone" id="numero_telephone">
+                                <input type="tel" placeholder="(06 0000 0000)" name="numero_telephone"
+                                    id="numero_telephone" required>
                             </div>
                             <div>
-                                <button type="submit" class="bouton-principal" >Envoyer la demande</button>
+                                <button type="submit" class="bouton-principal">Envoyer la demande</button>
                                 <label>:ارسال الطلب</label>
                             </div>
 
@@ -202,30 +213,32 @@
                 </div>
 
                 <div id="femmeSection" class="section">
-    <div class="formulaire">
-        <form method="POST" action="{{ route('students.store') }}">
-            @csrf
-            <div class="groupe">
-                <label>Le nom complet:الاسم الكامل</label>
-                <input type="text" name="nom" placeholder="الاسم الكامل">
-            </div>
-            <div class="groupe">
-                <label> Dernier année scolaire :اخر سنه دراسيه</label>
-                <input type="text" name="scolaire" placeholder="0000/0000 ">
-            </div>
-            <div class="groupe">
-                <label> Date de naissance:تاريخ الازدياد</label>
-                <input type="date" name="date" placeholder="(0000-00-00)">
-            </div>
-            <div class="groupe">
-                <label>Numéro de téléphone:رقم الهاتف</label>
-                <input type="text" name="téléphone" placeholder="(06 0000 0000)">
-            </div>
-            <button type="submit" class="bouton-principal">Envoyer la demande</button>
-            <label>:ارسال الطلب</label>
-        </form>
-    </div>
-</div>
+                    <div class="formulaire">
+                        <form method="POST" action="{{ route('students.store') }}">
+                            @csrf
+                            <div class="groupe">
+                                <label>Le nom complet:الاسم الكامل</label>
+                                <input type="text" name="nom" placeholder="الاسم الكامل" required>
+                                <input type="hidden" name="statut" id="statut" value="en cours">
+
+                            </div>
+                            <div class="groupe">
+                                <label> Dernier année scolaire :اخر سنه دراسيه</label>
+                                <input type="text" name="scolaire" placeholder="Example : 2022/2023" required>
+                            </div>
+                            <div class="groupe">
+                                <label> Date de naissance:تاريخ الازدياد</label>
+                                <input type="date" name="date" placeholder="(0000-00-00)" required>
+                            </div>
+                            <div class="groupe">
+                                <label>Numéro de téléphone:رقم الهاتف</label>
+                                <input type="text" name="téléphone" placeholder="(06 0000 0000)" required>
+                            </div>
+                            <button type="submit" class="bouton-principal">Envoyer la demande</button>
+                            <label>:ارسال الطلب</label>
+                        </form>
+                    </div>
+                </div>
 
         </div>
 
@@ -238,7 +251,12 @@
 
 
     <div class="articlex1">
-        <button class="togle"><div class="ll" title="اضغط لتظهر لك نافذة الخدمات ثم ضغط مرة ثانية لتختفي">  <h4>Services</h4><p>الخدمات <i class="ri-cursor-fill"></i></p></div></button>
+        <button class="togle">
+            <div class="ll" title="اضغط لتظهر لك نافذة الخدمات ثم ضغط مرة ثانية لتختفي">
+                <h4>Services</h4>
+                <p>الخدمات <i class="ri-cursor-fill"></i></p>
+            </div>
+        </button>
     </div>
 
 
